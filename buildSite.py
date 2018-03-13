@@ -1,7 +1,14 @@
 #!/usr/bin/python
 
 from yattag import Doc
+import             urllib2  # the lib that handles the url stuff
 
+#load the currently tracked projects
+trackedProjects = open('trackedProjects.txt')
+projects = trackedProjects.readlines()
+print projects
+
+#generate the HTML for the site
 doc, tag, text = Doc().tagtext()
 
 with tag('html'):
@@ -10,13 +17,32 @@ with tag('html'):
         with tag('h1'):
             text('The Maslow Community Garden')
         with tag('p'):
-            text('This page is a place for community driven open source projects to live')
+            text('A place for community driven open source projects to live')
         
-        with tag('p'):
-            text('hopefully final configuration test')
+        #Generate a grid of tracked projects
+        
+        for project in projects:
+            try:
+                readmeUrl = project + '/master/README.md'
+                readmeUrl = "".join(readmeUrl.split())
+                print "readme url: "
+                print readmeUrl
+                linesInReadme = urllib2.urlopen(readmeUrl)
+                for line in linesInReadme: 
+                    if line[0] is '#':
+                        with tag('h1'):
+                            text(line[1:])
+                    elif line[0] is not '!':
+                        with tag('p'):
+                            text(line)
+                doc.stag('img', src= project + '/master/mainpicture.jpg')
+            except Exception as e:
+                print "\n\n\n\n@#$#@$@"
+                print project
+                print "could not be read"
+                print (e)
 
 
-print "got to the end of the script...almost"
 
 f = open('index.html','w')
 f.write(doc.getvalue())
