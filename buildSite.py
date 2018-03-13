@@ -1,21 +1,6 @@
 #!/usr/bin/python
 
-import sys
-print(sys.version)
-
-f = open('itRan','w')
-f.write(sys.version)
-f.close()
-
 from yattag import Doc
-
-import time
-
-'''#!/usr/bin/python
-
-
-
-
 
 doc, tag, text = Doc().tagtext()
 
@@ -35,10 +20,4 @@ print "got to the end of the script...almost"
 
 f = open('index.html','w')
 f.write(doc.getvalue())
-f.close()
-
-print "really got to the end"'''
-
-f = open('index.html','w')
-f.write("test")
 f.close()
