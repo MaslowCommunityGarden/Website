@@ -12,7 +12,7 @@ print projects
 doc, tag, text = Doc().tagtext()
 
 with tag('html'):
-    doc.stag('img', src="logo.png", width="1328", height="360")
+    doc.stag('img', src="logo.png", width="664", height="180")
     with tag('body'):
         with tag('h1'):
             text('The Maslow Community Garden')
