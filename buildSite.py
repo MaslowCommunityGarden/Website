@@ -13,7 +13,7 @@ with tag('html'):
             text('This page is a place for community driven open source projects to live')
         
         with tag('p'):
-            text('12,24 test')
+            text('11:37 test')
 
 
 
