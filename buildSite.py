@@ -11,11 +11,9 @@ with tag('html'):
             text('This page is a place for community driven open source projects to live')
         
         with tag('p'):
-            text('Test push from git through python')
+            text('And lets try again')
 
 
-
-print(doc.getvalue())
 
 f = open('index.html','w')
 f.write(doc.getvalue())
