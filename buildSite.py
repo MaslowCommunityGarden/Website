@@ -19,6 +19,9 @@ with tag('html'):
         with tag('p'):
             text('A place for community driven open source projects to live')
         
+        with tag('hr'):
+            pass
+        
         #Generate a grid of tracked projects
         
         for project in projects:
