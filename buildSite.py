@@ -4,6 +4,9 @@ f = open('itRan','w')
 f.write("test")
 f.close()
 
+import sys
+print(sys.version)
+
 from yattag import Doc
 
 import time
