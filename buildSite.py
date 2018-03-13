@@ -1,7 +1,10 @@
 #!/usr/bin/python
 
+f = open('itRan','w')
+f.write("test")
+f.close()
 
-#from yattag import Doc
+from yattag import Doc
 
 '''#!/usr/bin/python
 
