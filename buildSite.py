@@ -1,14 +1,13 @@
 #!/usr/bin/python
 
-with open('testfile.txt', 'a') as the_file:
-    the_file.write('Hello world from 2nd script\n')
 
+from yattag import Doc
 
 '''#!/usr/bin/python
 
 
 
-from yattag import Doc
+
 
 doc, tag, text = Doc().tagtext()
 
@@ -31,3 +30,6 @@ f.write(doc.getvalue())
 f.close()
 
 print "really got to the end"'''
+
+with open('testfile.txt', 'a') as the_file:
+    the_file.write('Hello world from 2nd script v 2\n')
