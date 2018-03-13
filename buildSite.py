@@ -13,9 +13,10 @@ with tag('html'):
             text('This page is a place for community driven open source projects to live')
         
         with tag('p'):
-            text('11:40 test')
+            text('12:18 test')
 
 
+print "got to the end of the script...almost"
 
 f = open('index.html','w')
 f.write(doc.getvalue())
