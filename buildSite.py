@@ -11,7 +11,7 @@ with tag('html'):
             text('This page is a place for community driven open source projects to live')
         
         with tag('p'):
-            text('And lets try again')
+            text('Hmmmm')
 
 
 
