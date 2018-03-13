@@ -13,7 +13,7 @@ with tag('html'):
             text('This page is a place for community driven open source projects to live')
         
         with tag('p'):
-            text('2:13 test')
+            text('hopefully final configuration test')
 
 
 print "got to the end of the script...almost"
