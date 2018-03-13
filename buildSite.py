@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
-f = open('itRan','w')
-f.write("test")
-f.close()
-
 import sys
 print(sys.version)
+
+f = open('itRan','w')
+f.write(sys.version)
+f.close()
 
 from yattag import Doc
 
