@@ -9,6 +9,9 @@ with tag('html'):
             text('The Maslow Community Garden')
         with tag('p'):
             text('This page is a place for community driven open source projects to live')
+        
+        with tag('p'):
+            text('Test push from git through python')
 
 
 
