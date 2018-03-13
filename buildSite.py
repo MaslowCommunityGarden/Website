@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+
+
 from yattag import Doc
 
 doc, tag, text = Doc().tagtext()
@@ -21,3 +23,5 @@ print "got to the end of the script...almost"
 f = open('index.html','w')
 f.write(doc.getvalue())
 f.close()
+
+print "really got to the end"
