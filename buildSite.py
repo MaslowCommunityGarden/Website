@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-from yattag import Doc
+#from yattag import Doc
 
 '''#!/usr/bin/python
 
@@ -31,5 +31,6 @@ f.close()
 
 print "really got to the end"'''
 
-with open('testfile.txt', 'a') as the_file:
-    the_file.write('Hello world from 2nd script v 2\n')
+f = open('index.html','w')
+f.write("test")
+f.close()
