@@ -27,6 +27,15 @@ with tag('html'):
         with tag('hr'):
             pass
         
+        with tag('a', href="http://example.com", klass="button"):
+            text('How does the garden work?')
+        
+        with tag('a', href="http://example.com", klass="button"):
+            text('Add a project')
+        
+        with tag('hr'):
+            pass
+        
         #Generate a grid of tracked projects
         
         for project in projects:
