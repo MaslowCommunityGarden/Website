@@ -120,15 +120,12 @@ class GenerateHTML:
             
             markdowner = Markdown() #allows for the conversion of markdown files into html
             
-            #find the project name
-            projectFile = self.findProjectFile(project)
-            
-            print "Generating entry for: "
-            print projectFile
+            print "Generating file: "
+            print project.projectFile
             
             #Generate and HTML file for the project
-            f = open(projectFile,'w')
-            f.write(markdowner.convert(linesInReadme.read()))
+            f = open(project.projectFile,'w')
+            f.write(markdowner.convert(project.READMEtext))
             f.close()
 
     def findProjectName(self, project):
