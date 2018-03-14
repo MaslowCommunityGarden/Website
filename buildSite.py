@@ -1,12 +1,15 @@
 #!/usr/bin/python
 
-from yattag import Doc
-import             urllib2  # the lib that handles the url stuff
+from yattag import  Doc
+import              urllib2  # the lib that handles the url stuff
+import              random
 
 #load the currently tracked projects
 trackedProjects = open('trackedProjects.txt')
 projects = trackedProjects.readlines()
-print projects
+random.shuffle(projects)
+
+
 
 #generate the HTML for the site
 doc, tag, text = Doc().tagtext()
