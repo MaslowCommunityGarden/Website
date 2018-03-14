@@ -36,7 +36,9 @@ with tag('html'):
                 
                 #this creates a boxed representation of the project
                 with tag('a', href="http://example.com"):
-                    with tag('div', klass = 'boxed', style="width: 400px; float: left;"):
+                    with tag('div', klass = 'boxed', style="width: 400px; height: 400px; float: left;"):
+                        numberOfLinesProcessed = 0
+                        maxNumberToProcess = 3
                         for line in linesInReadme: 
                             if line[0] is '#':
                                 with tag('h1'):
@@ -44,7 +46,10 @@ with tag('html'):
                             elif line[0] is not '!':
                                 with tag('p'):
                                     text(line)
-                        doc.stag('img', src= project + '/master/mainpicture.jpg')
+                            numberOfLinesProcessed = numberOfLinesProcessed + 1
+                            if numberOfLinesProcessed > maxNumberToProcess:
+                                break
+                        doc.stag('img', src= project + '/master/mainpicture.jpg', width="400", height="180")
             except Exception as e:
                 print "\n\n\n\n@#$#@$@"
                 print project
