@@ -185,7 +185,7 @@ class GenerateHTML:
         '''
         
         
-        doc, tag, text = Doc().tagtext()
+        doc, tag, text, line = Doc().ttl()
         
         with tag('head'):
             doc.stag('link',rel='stylesheet', href='styles.css')
@@ -209,7 +209,6 @@ class GenerateHTML:
                     pass
                 with tag('p'):
                     text("Upload a picture to identify the project:")
-                doc.input(name = 'project_photo', type = 'file', id = 'project_photo')
                 with tag('br'):
                     pass
                 with tag('p'):
@@ -217,7 +216,13 @@ class GenerateHTML:
                 with tag('br'):
                     pass
                 with tag('p'):
-                    text("How much control do you want over the project?")
+                    text("How much control do you want over the project? (what is this?)")
+                text("Community managed")
+                doc.input(name = 'managment_method', type = 'radio', value = '1')
+                with tag('br'):
+                    pass
+                text("I want to manage")
+                doc.input(name = 'managment_method', type = 'radio', value = '2')
                 with tag('br'):
                     pass
                 with tag('p'):
