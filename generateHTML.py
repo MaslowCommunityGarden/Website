@@ -200,7 +200,14 @@ class GenerateHTML:
             with tag('p', klass = 'title'):
                 text('Create A Project')
             
-            with tag('form', action = "create_new_project.php", method = "get"):
+            
+            doc.asis('<form action="welcome_get.php" method="get">')
+            doc.asis('Name: <input type="text" name="name"><br>')
+            doc.asis('E-mail: <input type="text" name="email"><br>')
+            doc.asis('<input type="submit">')
+            doc.asis('</form>')
+            
+            '''with tag('form', action = "create_new_project.php", method = "get"):
                 with tag('br'):
                     pass
                 with tag('p'):
@@ -238,7 +245,7 @@ class GenerateHTML:
                 doc.input(name = 'github_usr_name', type = 'text', value = ' ')
                 with tag('br'):
                     pass
-                doc.stag('input', type = 'submit', value = 'Create!')
+                doc.stag('input', type = 'submit', value = 'Create!')'''
                 
         f = open('addaproject.html','w')
         f.write(doc.getvalue())
