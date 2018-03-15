@@ -7,14 +7,17 @@
 
 <body class = "content">
 
-</p class = 'title'> Create A Project <p>
+</p> Create A Project <p>
 
 <form action="create_new_project.php" method="get">
     Project Name: 
     <input type="text" name="projectName"><br>
     Project Description: 
     <input type="text" name="projectDescription"><br>
-    
+    Upload a picture to identify the project:
+    <input type="file" name="projectPicture" id="projectPicture">
+    Upload a zip folder containing project files:
+    <input type="file" name="pojectFiles" id="pojectFiles">
     <input type="submit">
 </form>
 
