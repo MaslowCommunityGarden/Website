@@ -81,7 +81,7 @@ class GenerateHTML:
                     with tag('a', href="addaproject.html", klass="button"):
                         text('Add a project')
                         
-                    with tag('a', href="projectsList.html", klass="button"):
+                    with tag('a', href="index.html#projectsSection", klass="button"):
                         text('Browse projects')
                     
                     with tag('hr'):
@@ -91,7 +91,7 @@ class GenerateHTML:
                     with tag('p', klass = 'title'):
                         text('A place for community driven open source projects to live')
                     
-                    with tag('hr'):
+                    with tag('hr', id="projectsSection"):
                         pass
                     
 
