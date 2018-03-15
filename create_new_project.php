@@ -1,7 +1,7 @@
 <html>
 <body>
 
-Welcome <?php echo $_GET["project_name"]; ?><br>
+Welcome <?php echo "hello world"; ?><br>
 Your email address is: <?php echo $_GET["project_desc"]; ?>
 
 </body>
