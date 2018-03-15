@@ -200,11 +200,11 @@ class GenerateHTML:
             with tag('p', klass = 'title'):
                 text('Create A Project')
             
-            with tag('form', action = "/create_new_project.php"):
+            with tag('form', action = "create_new_project.php", method = "get"):
                 with tag('br'):
                     pass
                 with tag('p'):
-                    text("Give your project a title:")
+                    text("Give your project a title(cannot be changed later):")
                 doc.input(name = 'project_name', type = 'text', value = ' ')
                 with tag('br'):
                     pass
