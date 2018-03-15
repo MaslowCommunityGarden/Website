@@ -200,18 +200,19 @@ class GenerateHTML:
             with tag('p', klass = 'title'):
                 text('Create A Project')
             
-            
+            with tag('p'):
+                    text("Give your project a title(cannot be changed later):")
             doc.asis('<form action="create_new_project.php" method="get">')
             doc.asis('Project Name: <input type="text" name="name"><br>')
-            doc.asis('E-mail: <input type="text" name="email"><br>')
+            doc.asis('E-mail: <input type="text" name="short_desc"><br>')
+            
             doc.asis('<input type="submit">')
             doc.asis('</form>')
             
             '''with tag('form', action = "create_new_project.php", method = "get"):
                 with tag('br'):
                     pass
-                with tag('p'):
-                    text("Give your project a title(cannot be changed later):")
+                
                 doc.input(name = 'project_name', type = 'text', value = ' ')
                 with tag('br'):
                     pass
