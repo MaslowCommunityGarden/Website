@@ -1,5 +1,22 @@
+.content {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.body {
+        font-family: 'Open Sans', sans-serif;
+}
+
 .boxed {
     border: 1px solid black ;
+    text-align: center;
+    overflow: auto;
+    margin: auto;
+    width: 400px; 
+    height: 400px; 
 }
 
 
@@ -8,7 +25,7 @@
     border: none;
     color: white;
     padding: 15px 32px;
-    width: 40%;
+    width: 25%;
     text-align: center;
     text-decoration: none;
     display: inline-block;

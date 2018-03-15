@@ -61,55 +61,64 @@ class GenerateHTML:
         
         #generate the HTML for the site
         doc, tag, text = Doc().tagtext()
-        with tag('html'):
-            with tag('head'):
-                doc.stag('link',rel='stylesheet', href='styles.css')
-            doc.stag('img', src="logo.png", width="664", height="180")
-            with tag('body'):
-                with tag('h1'):
-                    text('The Maslow Community Garden')
-                with tag('p'):
-                    text('A place for community driven open source projects to live')
-                
-                with tag('hr'):
-                    pass
-                
-                with tag('a', href="http://example.com", klass="button"):
-                    text('How does the garden work?')
-                
-                with tag('a', href="http://example.com", klass="button"):
-                    text('Add a project')
-                
-                with tag('hr'):
-                    pass
-                
-                #Generate a grid of tracked projects
-                
-                for project in self.projects:
+        
+        with tag('div', klass="content"):
+            with tag('html'):
+                with tag('head'):
+                    doc.stag('link',rel='stylesheet', href='styles.css')
+                    doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
                     
-                    print "Generating grid entry for: "
-                    print project.projectName
+                with tag('body', klass = 'body'):
+                
+                    doc.stag('img', src="logo.png", width="166", height="45")
+                    
+                    with tag('a', href="http://example.com", klass="button"):
+                        text('How does the garden work?')
+                    
+                    with tag('a', href="http://example.com", klass="button"):
+                        text('Add a project')
+                    
+                    with tag('hr'):
+                        pass
                     
                     
-                    #this creates a boxed representation of the project
-                    with tag('a', href=project.projectFile):
-                        with tag('div', klass = 'boxed', style="width: 400px; height: 400px; float: left;"):
-                            numberOfLinesProcessed = 0
-                            maxNumberToProcess = 3
-                            linesInReadme = project.READMEtext.split('\n', 5)
-                            
-                            for line in linesInReadme:
-                                if len(line) > 0:
-                                    if line[0] is '#':
-                                        with tag('h1'):
-                                            text(line[1:])
-                                    elif line[0] is not '!':
-                                        with tag('p'):
-                                            text(line)
-                                numberOfLinesProcessed = numberOfLinesProcessed + 1
-                                if numberOfLinesProcessed > maxNumberToProcess:
-                                    break
-                            doc.stag('img', src= project.mainPicture, width="400", height="180")
+                    with tag('p'):
+                        text('A place for community driven open source projects to live')
+                    
+                    with tag('hr'):
+                        pass
+                    
+
+                    
+                    #Generate a grid of tracked projects
+                    
+                    for project in self.projects:
+                        
+                        print "Generating grid entry for: "
+                        print project.projectName
+                        
+                        
+                        #this creates a boxed representation of the project
+                        with tag('a', href=project.projectFile):
+                            with tag('div', klass = 'boxed'):
+                                
+                                doc.stag('img', src= project.mainPicture, width="400", height="180")
+                                
+                                numberOfLinesProcessed = 0
+                                maxNumberToProcess = 3
+                                linesInReadme = project.READMEtext.split('\n', 5)
+                                
+                                for line in linesInReadme:
+                                    if len(line) > 0:
+                                        if line[0] is '#':
+                                            with tag('h1'):
+                                                text(line[1:])
+                                        elif line[0] is not '!':
+                                            with tag('p'):
+                                                text(line)
+                                    numberOfLinesProcessed = numberOfLinesProcessed + 1
+                                    if numberOfLinesProcessed > maxNumberToProcess:
+                                        break
     
         f = open('index.html','w')
         f.write(doc.getvalue())
@@ -127,7 +136,14 @@ class GenerateHTML:
             f = open(project.projectFile,'w')
             f.write(markdowner.convert(project.READMEtext))
             f.close()
-
+    
+    def generateHowDoesTheGardenWorkPage(self):
+        '''
+        
+        The function which builds the "how does it work" page
+        
+        '''
+        pass
     def findProjectName(self, project):
         projectName = project.split('/')[-1]
         projectName = projectName[0:-1] #remove the trailing newline
