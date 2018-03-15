@@ -209,10 +209,15 @@ class GenerateHTML:
                     pass
                 with tag('p'):
                     text("Upload a picture to identify the project:")
+                doc.input(name = 'project_photo', type = 'file', id = 'project_photo')
                 with tag('br'):
                     pass
                 with tag('p'):
                     text("Upload the files for the project to start with in a zip folder:")
+                with tag('br'):
+                    pass
+                with tag('p'):
+                    text("How much control do you want over the project?")
                 with tag('br'):
                     pass
                 with tag('p'):
