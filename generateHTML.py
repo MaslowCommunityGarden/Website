@@ -72,17 +72,17 @@ class GenerateHTML:
                 
                     doc.stag('img', src="logo.png", width="166", height="45")
                     
-                    with tag('a', href="http://example.com", klass="button"):
+                    with tag('a', href="howdoesthegardenwork.html", klass="button"):
                         text('How does the garden work?')
                     
-                    with tag('a', href="http://example.com", klass="button"):
+                    with tag('a', href="addaproject.html", klass="button"):
                         text('Add a project')
                     
                     with tag('hr'):
                         pass
                     
                     
-                    with tag('p'):
+                    with tag('p', klass = 'title'):
                         text('A place for community driven open source projects to live')
                     
                     with tag('hr'):
@@ -143,7 +143,89 @@ class GenerateHTML:
         The function which builds the "how does it work" page
         
         '''
-        pass
+        
+        doc, tag, text = Doc().tagtext()
+        
+        with tag('div', klass="content"):
+            with tag('html'):
+                with tag('head'):
+                    doc.stag('link',rel='stylesheet', href='styles.css')
+                    doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
+                    
+                with tag('body', klass = 'body'):
+                    
+                    with tag('p'):
+                        text('The Maslow community garden is a place for humans to work together to design and share.')
+                    
+                    with tag('br'):
+                        pass
+                    
+                    with tag('p'):
+                        text('The Maslow community garden is designed to be different. The world has enough file sharing sites where designs are posted and the community'
+                        'can only comment or download.')
+                    
+                    with tag('br'):
+                        pass
+                    
+                    with tag('p'):
+                        text('Here every file is maintained collectively and hosted independantly. These projects have forums, not comment sections.')
+                    
+                    with tag('br'):
+                        pass
+        
+        f = open('howdoesthegardenwork.html','w')
+        f.write(doc.getvalue())
+        f.close()
+    
+    def generateAddAProject(self):
+        '''
+        
+        The function which builds the page to create a new project
+        
+        '''
+        
+        
+        doc, tag, text = Doc().tagtext()
+        
+        with tag('head'):
+            doc.stag('link',rel='stylesheet', href='styles.css')
+            doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
+        with tag('body', klass = "content"):
+            with tag('p', klass = 'title'):
+                text('Create A Project')
+            
+            with tag('form', action = "/create_new_project.php"):
+                with tag('br'):
+                    pass
+                with tag('p'):
+                    text("Give your project a title:")
+                doc.input(name = 'project_name', type = 'text', value = ' ')
+                with tag('br'):
+                    pass
+                with tag('p'):
+                    text("Enter a one sentence description of the project:")
+                doc.input(name = 'project_desc', type = 'text', value = ' ')
+                with tag('br'):
+                    pass
+                with tag('p'):
+                    text("Upload a picture to identify the project:")
+                with tag('br'):
+                    pass
+                with tag('p'):
+                    text("Upload the files for the project to start with in a zip folder:")
+                with tag('br'):
+                    pass
+                with tag('p'):
+                    text("Enter your GitHub user name so you can be given access to control the project:")
+                doc.input(name = 'github_usr_name', type = 'text', value = ' ')
+                with tag('br'):
+                    pass
+                doc.stag('input', type = 'submit', value = 'Create!')
+                
+        f = open('addaproject.html','w')
+        f.write(doc.getvalue())
+        f.close()
+    
     def findProjectName(self, project):
         projectName = project.split('/')[-1]
         projectName = projectName[0:-1] #remove the trailing newline
