@@ -24,7 +24,9 @@
     height: 400px; 
 }
 
-input { margin-bottom: 50px; }
+input { 
+    margin-bottom: 50px; 
+}
 
 .button {
     background-color: #4CAF50;
