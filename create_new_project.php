@@ -1,8 +1,8 @@
 <html>
 <body>
 
-Project name: <?php echo $_GET["name"]; ?><br>
-Project description: <?php echo $_GET["short_desc"]; ?>
+Welcome <?php echo $_GET["name"]; ?><br>
+Your email address is: <?php echo $_GET["email"]; ?>
 
 </body>
 </html>
