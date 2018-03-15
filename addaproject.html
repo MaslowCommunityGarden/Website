@@ -10,18 +10,32 @@
 </p> Create A Project <p>
 
 <form action="create_new_project.php" method="get">
-    Project Name: 
+    Give your project a title (cannot be changed later): 
+    <br>
     <input type="text" name="projectName"><br>
-    Project Description: 
+    Enter a one sentance description of the project: 
+    <br>
     <input type="text" name="projectDescription"><br>
     Upload a picture to identify the project:
+    <br>
+    <br>
     <input type="file" name="projectPicture" id="projectPicture"><br>
     Upload a zip folder containing project files:
+    <br>
+    <br>
     <input type="file" name="pojectFiles" id="pojectFiles"><br>
+    How much control do you want over the project?
+    <br>
+    <br>
     Community managed:
-    <input type="radio" name="gender" value="communityManaged" checked><br>
+    <input type="radio" name="gender" value="communityManaged" checked>
     I want to manage:
     <input type="radio" name="gender" value="customManaged"><br>
+    
+    Enter your GitHub user name so you can be given access to control the project: 
+    <br>
+    <input type="text" name="projectDescription"><br>
+    
     <input type="submit">
 </form>
 
