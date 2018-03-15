@@ -215,10 +215,12 @@ class GenerateHTML:
                     pass
                 with tag('p'):
                     text("Upload a picture to identify the project:")
+                doc.asis('<input type="file" name="projectPic" id="projectPic">')
                 with tag('br'):
                     pass
                 with tag('p'):
                     text("Upload a zip folder containing the project files:")
+                doc.asis('<input type="file" name="projectFiles" id="projectFiles">')
                 with tag('br'):
                     pass
                 with tag('p'):
