@@ -72,11 +72,17 @@ class GenerateHTML:
                 
                     doc.stag('img', src="logo.png", width="166", height="45")
                     
+                    with tag('br'):
+                        pass
+                    
                     with tag('a', href="howdoesthegardenwork.html", klass="button"):
                         text('How does the garden work?')
                     
                     with tag('a', href="addaproject.html", klass="button"):
                         text('Add a project')
+                        
+                    with tag('a', href="projectsList.html", klass="button"):
+                        text('Browse projects')
                     
                     with tag('hr'):
                         pass
@@ -212,7 +218,7 @@ class GenerateHTML:
                 with tag('br'):
                     pass
                 with tag('p'):
-                    text("Upload the files for the project to start with in a zip folder:")
+                    text("Upload a zip folder containing the project files:")
                 with tag('br'):
                     pass
                 with tag('p'):
