@@ -201,8 +201,8 @@ class GenerateHTML:
                 text('Create A Project')
             
             
-            doc.asis('<form action="welcome_get.php" method="get">')
-            doc.asis('Name: <input type="text" name="name"><br>')
+            doc.asis('<form action="create_new_project.php" method="get">')
+            doc.asis('Project Name: <input type="text" name="name"><br>')
             doc.asis('E-mail: <input type="text" name="email"><br>')
             doc.asis('<input type="submit">')
             doc.asis('</form>')
