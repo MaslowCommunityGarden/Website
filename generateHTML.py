@@ -204,7 +204,9 @@ class GenerateHTML:
                     text("Give your project a title(cannot be changed later):")
             doc.asis('<form action="create_new_project.php" method="get">')
             doc.asis('Project Name: <input type="text" name="name"><br>')
-            doc.asis('E-mail: <input type="text" name="short_desc"><br>')
+            with tag('p'):
+                    text("Enter a one sentence description of the project:")
+            doc.asis('Description: <input type="text" name="short_desc"><br>')
             
             doc.asis('<input type="submit">')
             doc.asis('</form>')
