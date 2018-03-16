@@ -15,7 +15,13 @@ $target_file = $target_dir . basename($_FILES["projectPicture"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+<br>
+
 echo $target_file;
+
+<br>
+
+<br>
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
