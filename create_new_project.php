@@ -1,6 +1,6 @@
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
+Project name: <?php echo $_POST["projectName"]; ?><br>
+
 
 <?php
 $target_dir = "uploads/";
