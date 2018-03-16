@@ -43,3 +43,9 @@ if ($uploadOk == 0) {
     }
 }
 ?>
+
+<?php
+    // run the script which will create the repository
+    $output=shell_exec('sh /var/www/html/createRepo.sh');
+    echo $output;
+?>
