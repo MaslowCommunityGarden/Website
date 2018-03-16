@@ -5,6 +5,8 @@ Project name: <?php echo $_GET["projectName"]; ?><br>
 Project description: <?php echo $_GET["projectDescription"]; ?><br>
 Management style: <?php echo $_GET["managementStyle"]; ?><br>
 GitHub user name: <?php echo $_GET["githubUser"]; ?><br>
+$output=shell_exec('sh /var/www/html/createRepo.sh');
+echo $output;
 
 <?php
 $target_dir = "uploads/";
