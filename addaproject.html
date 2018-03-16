@@ -17,11 +17,27 @@
     Enter a one sentence description of the project: 
     <br>
     <input type="text" name="projectDescription"><br>
-    Upload a picture to identify the project:
+    Upload a picture to identify the project (.jpg):
     <br>
     <br>
-    Select image to upload:
     <input type="file" name="projectImage" id="projectImage">
+    Upload a zip folder containing project files:
+    <br>
+    <br>
+    <input type="file" name="projectFiles" id="projectFiles">
+    How much control do you want over the project?
+    <br>
+    <br>
+    Community managed:
+    <input type="radio" name="managementStyle" value="communityManaged" checked>
+    I want to manage:
+    <input type="radio" name="managementStyle" value="customManaged"><br>
+    
+    Enter your GitHub user name so you can be given access to control the project: 
+    <br>
+    <input type="text" name="githubUser">
+    <br>
+    <br>
     <input type="submit" value="Create" name="submit">
 </form>
 
