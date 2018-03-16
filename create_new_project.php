@@ -14,4 +14,7 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
+
+echo $target_file;
+
 ?>
