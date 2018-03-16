@@ -132,15 +132,75 @@ class GenerateHTML:
 
     def generatePagesForProjects(self):
         for project in self.projects:
-            
-            markdowner = Markdown() #allows for the conversion of markdown files into html
-            
+            pageHTML = ""
             print "Generating file: "
             print project.projectFile
             
+            tabsAcrossTheTopHTML = ("<!DOCTYPE html>"
+                "<html>"
+                "<head>"
+                    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+                    "<link href=\"styles.css\" rel=\"stylesheet\" />"
+                    "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
+                "</head>"
+                "<body>"
+
+
+                "<div class=\"tab\">"
+                    "<button class=\"tablinks\" onclick=\"openCity(event, 'Home')\" id=\"defaultOpen\">Home</button>"
+                      "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
+                      "<button class=\"tablinks\" onclick=\"openCity(event, 'Forums')\">Forums</button>"
+                      "<button class=\"tablinks\" onclick=\"openCity(event, 'Buy')\">Buy</button>"
+                "</div>")
+                
+            pageHTML = pageHTML + tabsAcrossTheTopHTML
+            
+            #Generate HTML from the README.md file
+            markdowner = Markdown() #allows for the conversion of markdown files into html
+            pageHTML = pageHTML +  "<div id=\"Home\" class=\"tabcontent\">" + markdowner.convert(project.READMEtext) + "</div>"
+            
+            restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
+                              "<h3>Instructions</h3>"
+                              "<p>This is where the instructions for how to assemble the project go.</p> "
+                            "</div>"
+
+                            "<div id=\"Forums\" class=\"tabcontent\">"
+                              "<h3>Forums</h3>"
+                              "<p>These are the forums which the community around the project resides in</p>"
+                            "</div>"
+
+                            "<div id=\"Buy\" class=\"tabcontent\">"
+                              "<h3>Buy</h3>"
+                              "<p>This is where things listed for sale related to the project go</p>"
+                            "</div>"
+
+                            "<script>"
+                            "function openCity(evt, cityName) {"
+                                "var i, tabcontent, tablinks;"
+                                "tabcontent = document.getElementsByClassName(\"tabcontent\");"
+                                "for (i = 0; i < tabcontent.length; i++) {"
+                                    "tabcontent[i].style.display = \"none\";"
+                                "}"
+                                "tablinks = document.getElementsByClassName(\"tablinks\");"
+                                "for (i = 0; i < tablinks.length; i++) {"
+                                    "tablinks[i].className = tablinks[i].className.replace(\" active\", \"\");"
+                                "}"
+                                "document.getElementById(cityName).style.display = \"block\";"
+                                "evt.currentTarget.className += \" active\";"
+                            "}"
+
+                            "// Get the element with id=\"defaultOpen\" and click on it"
+                            "document.getElementById(\"defaultOpen\").click();"
+                            "</script>"
+                                 
+                            "</body>"
+                            "</html>")
+            
+            pageHTML = pageHTML + restOfThePage
+            
             #Generate and HTML file for the project
             f = open(project.projectFile,'w')
-            f.write(markdowner.convert(project.READMEtext))
+            f.write(pageHTML)
             f.close()
     
     def generateHowDoesTheGardenWorkPage(self):
@@ -180,77 +240,6 @@ class GenerateHTML:
                         pass
         
         f = open('howdoesthegardenwork.html','w')
-        f.write(doc.getvalue())
-        f.close()
-    
-    def generateAddAProject(self):
-        '''
-        
-        The function which builds the page to create a new project
-        
-        '''
-        
-        
-        doc, tag, text, line = Doc().ttl()
-        
-        with tag('head'):
-            doc.stag('link',rel='stylesheet', href='styles.css')
-            doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
-        with tag('body', klass = "content"):
-            with tag('p', klass = 'title'):
-                text('Create A Project')
-            
-            with tag('p'):
-                    text("Give your project a title (cannot be changed later):")
-            doc.asis('<form action="create_new_project.php" method="get">')
-            doc.asis('Project Name: <input type="text" name="name"><br>')
-            #with tag('p'):
-            #        text("Enter a one sentence description of the project:")
-            doc.asis('Description: <input type="text" name="short_desc"><br>')
-            
-            doc.asis('<input type="submit">')
-            doc.asis('</form>')
-            
-            '''with tag('form', action = "create_new_project.php", method = "get"):
-                with tag('br'):
-                    pass
-                
-                doc.input(name = 'project_name', type = 'text', value = ' ')
-                with tag('br'):
-                    pass
-                with tag('p'):
-                    text("Enter a one sentence description of the project:")
-                doc.input(name = 'project_desc', type = 'text', value = ' ')
-                with tag('br'):
-                    pass
-                with tag('p'):
-                    text("Upload a picture to identify the project:")
-                doc.asis('<input type="file" name="projectPic" id="projectPic">')
-                with tag('br'):
-                    pass
-                with tag('p'):
-                    text("Upload a zip folder containing the project files:")
-                doc.asis('<input type="file" name="projectFiles" id="projectFiles">')
-                with tag('br'):
-                    pass
-                with tag('p'):
-                    text("How much control do you want over the project? (what is this?)")
-                text("Community managed")
-                doc.input(name = 'managment_method', type = 'radio', value = '1')
-                with tag('br'):
-                    pass
-                text("I want to manage")
-                doc.input(name = 'managment_method', type = 'radio', value = '2')
-                with tag('br'):
-                    pass
-                with tag('p'):
-                    text("Enter your GitHub user name so you can be given access to control the project:")
-                doc.input(name = 'github_usr_name', type = 'text', value = ' ')
-                with tag('br'):
-                    pass
-                doc.stag('input', type = 'submit', value = 'Create!')'''
-                
-        f = open('addaproject.html','w')
         f.write(doc.getvalue())
         f.close()
     
