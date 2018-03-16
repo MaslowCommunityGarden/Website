@@ -16,19 +16,20 @@
 }
 
 .boxed {
+    display: inline-block;
     border: 1px solid black ;
     text-align: center;
     overflow: auto;
     margin: auto;
     width: 400px; 
-    height: 400px; 
+    height: 400px;
 }
 
 input { 
     margin-bottom: 50px; 
 }
 
-.button {
+.top_button {
     background-color: #4CAF50;
     border: none;
     color: white;
