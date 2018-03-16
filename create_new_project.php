@@ -14,8 +14,11 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["projectPicture"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+echo $uploadOK
+echo $$target_file
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+/*if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["projectPicture"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
@@ -52,10 +55,10 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-?>
+?>*/
 
 <?php
-// run the script which will create the respository
+// run the script which will create the repository
 $output=shell_exec('sh /var/www/html/createRepo.sh');
 echo $output;
 ?>
