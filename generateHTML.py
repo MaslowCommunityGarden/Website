@@ -144,8 +144,11 @@ class GenerateHTML:
                     "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
                 "</head>"
                 "<body>"
-
-
+                
+                "<a href=\"index.html\">"
+                    "<img src=\"logo.png\" style=\"width:166px;height:45px;border:0;\">"
+                "</a>"
+                
                 "<div class=\"tab\">"
                     "<button class=\"tablinks\" onclick=\"openCity(event, 'Files')\" id=\"defaultOpen\">Files</button>"
                       "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
@@ -171,7 +174,7 @@ class GenerateHTML:
 
                             "<div id=\"Buy\" class=\"tabcontent\">"
                               "<h3>Buy</h3>"
-                              "<p>This is where things listed for sale related to the project go</p>"
+                              "<p>Because most projects are not made entirely from CNC cut plywood, this section has links to buy the bolts, electronics, or wheels that go with the project</p>"
                             "</div>"
 
                             "<script>"
