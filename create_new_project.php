@@ -1,4 +1,6 @@
-Project name: <?php echo $_GET["projectName"]; ?><br>
+
+Welcome <?php echo $_GET["name"]; ?><br>
+Your email address is: <?php echo $_GET["email"]; ?>
 
 <?php
 $target_dir = "uploads/";
