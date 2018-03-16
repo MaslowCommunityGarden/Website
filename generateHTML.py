@@ -105,10 +105,10 @@ class GenerateHTML:
                         
                         
                         #this creates a boxed representation of the project
-                        with tag('a', href=project.projectFile):
+                        with tag('a', href=project.projectFile, klass = "project_link"):
                             with tag('div', klass = 'boxed'):
                                 
-                                doc.stag('img', src= project.mainPicture, width="400", height="180")
+                                doc.stag('img', src= project.mainPicture, klass = "project_img")
                                 
                                 numberOfLinesProcessed = 0
                                 maxNumberToProcess = 3
