@@ -147,7 +147,7 @@ class GenerateHTML:
 
 
                 "<div class=\"tab\">"
-                    "<button class=\"tablinks\" onclick=\"openCity(event, 'Home')\" id=\"defaultOpen\">Home</button>"
+                    "<button class=\"tablinks\" onclick=\"openCity(event, 'Files')\" id=\"defaultOpen\">Files</button>"
                       "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
                       "<button class=\"tablinks\" onclick=\"openCity(event, 'Forums')\">Forums</button>"
                       "<button class=\"tablinks\" onclick=\"openCity(event, 'Buy')\">Buy</button>"
@@ -157,7 +157,7 @@ class GenerateHTML:
             
             #Generate HTML from the README.md file
             markdowner = Markdown() #allows for the conversion of markdown files into html
-            pageHTML = pageHTML +  "<div id=\"Home\" class=\"tabcontent\">" + markdowner.convert(project.READMEtext) + "</div>"
+            pageHTML = pageHTML +  "<div id=\"Files\" class=\"tabcontent\">" + markdowner.convert(project.READMEtext) + "</div>"
             
             restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
                               "<h3>Instructions</h3>"
@@ -189,7 +189,6 @@ class GenerateHTML:
                                 "evt.currentTarget.className += \" active\";"
                             "}"
 
-                            "// Get the element with id=\"defaultOpen\" and click on it"
                             "document.getElementById(\"defaultOpen\").click();"
                             "</script>"
                                  
