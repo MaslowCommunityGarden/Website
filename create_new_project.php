@@ -1,5 +1,6 @@
 
 Project name: <?php echo $_POST["projectName"]; ?><br>
+Project description: <?php echo $_POST["projectDescription"]; ?><br>
 
 
 <?php
