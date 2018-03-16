@@ -1,3 +1,5 @@
+Project name: <?php echo $_GET["projectName"]; ?><br>
+
 <?php
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
