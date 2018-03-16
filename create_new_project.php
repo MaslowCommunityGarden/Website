@@ -1,6 +1,8 @@
 
 Project name: <?php echo $_POST["projectName"]; ?><br>
 Project description: <?php echo $_POST["projectDescription"]; ?><br>
+Management style: <?php echo $_POST["managementStyle"]; ?><br>
+GitHub user: <?php echo $_POST["githubUser"]; ?><br>
 
 
 <?php
