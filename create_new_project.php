@@ -68,6 +68,7 @@ echo $output;
 <br>
 
 <?php
+echo $$target_dir
 echo $target_file
 ?>
 
