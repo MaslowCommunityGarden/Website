@@ -33,8 +33,6 @@ class GenerateHTML:
                 #find the download link
                 thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
                 
-                print "Download link set to:"
-                print thisProject.downloadLink
                 
                 #find the raw version of the string
                 thisProject.projectPathRaw = self.findProjectRawPath(string)
@@ -46,6 +44,10 @@ class GenerateHTML:
                 
                 #Construct the project object
                 thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
+                
+                print "Project name set to"
+                print thisProject.projectName
+                
                 thisProject.projectFile = thisProject.projectName + '.html'
                 thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
                 thisProject.READMEpath  = readmeUrl
@@ -133,6 +135,7 @@ class GenerateHTML:
                                         if line[0] is '#':
                                             with tag('h1', klass = "boxed_text"):
                                                 text(line[1:])
+                                                project.projectName = line[1:]
                                         elif line[0] is not '!':
                                             with tag('p', klass = "boxed_text"):
                                                 text(line)
@@ -163,6 +166,10 @@ class GenerateHTML:
                     "<img src=\"logo.png\" style=\"width:166px;height:45px;border:0;\">"
                 "</a>"
                 
+                "<div, class = \"content\">"
+                    "<h1>" + project.projectName + "</h1>"
+                "</div>"
+                
                 "<div class=\"tab\">"
                     "<button class=\"tablinks\" onclick=\"openCity(event, 'Files')\" id=\"defaultOpen\">Files</button>"
                       "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
@@ -173,7 +180,8 @@ class GenerateHTML:
             pageHTML = pageHTML + tabsAcrossTheTopHTML
             
             #Add the main image and download buttons
-            topOfFilesPage = ("\"<div id=\"Files\" class=\"tabcontent\">"
+            topOfFilesPage = ("<div id=\"Files\" class=\"tabcontent\">"
+                "<h3>Files</h3>"
                 "<img src=" + project.mainPicture + " class = \"project_page_image\">"
                 "<a href=" + project.downloadLink + " class = \"top_button\">Download</a>"
                 "<a href=" + project.projectPath + " class = \"top_button\">Source</a>")
@@ -274,7 +282,6 @@ class GenerateHTML:
         
         '''
         projectName = project.split('/')[-1]
-        projectName = projectName[0:-1] #remove the trailing newline
         
         return projectName
     
