@@ -117,10 +117,10 @@ class GenerateHTML:
                                 for line in linesInReadme:
                                     if len(line) > 0:
                                         if line[0] is '#':
-                                            with tag('h1'):
+                                            with tag('h1', klass = "boxed_text"):
                                                 text(line[1:])
                                         elif line[0] is not '!':
-                                            with tag('p'):
+                                            with tag('p', klass = "boxed_text"):
                                                 text(line)
                                     numberOfLinesProcessed = numberOfLinesProcessed + 1
                                     if numberOfLinesProcessed > maxNumberToProcess:

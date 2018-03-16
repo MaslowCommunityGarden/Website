@@ -21,14 +21,22 @@
     background-color: #FDFDFD;
     text-align: center;
     overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
     margin: auto;
-    width: 400px; 
-    height: 400px;
+    width: 300px; 
+    height: 300px;
+}
+
+
+.boxed_text {
+    font-size: 16px; 
+    font-size: 1vw;
 }
 
 .project_img {
     display: inline-block;
-    max-width:350px;
+    max-width:250px;
     max-height:200px;
     width: auto;
     height: auto;
