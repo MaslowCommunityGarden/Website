@@ -25,15 +25,23 @@ class GenerateHTML:
             thisProject = Project()
                 
             try:
+                
+                #store the link to the page
+                thisProject.projectPath = string
+                thisProject.projectPath = thisProject.mainPicture.replace('\n', '') #remove the carriage return
+                
+                #find the raw version of the string
+                thisProject.projectPathRaw = self.findProjectRawPath(string)
+                
                 #find the path to the README file
-                readmeUrl = string + '/master/README.md'
+                readmeUrl = thisProject.projectPathRaw + '/master/README.md'
                 readmeUrl = "".join(readmeUrl.split())
                 thisProject.READMEpath = readmeUrl
                 
                 #Construct the project object
-                thisProject.projectName = self.findProjectName(string)
+                thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
                 thisProject.projectFile = thisProject.projectName + '.html'
-                thisProject.mainPicture = string + '/master/mainpicture.jpg'
+                thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
                 thisProject.READMEpath  = readmeUrl
                 
                 #read the README file
@@ -158,9 +166,17 @@ class GenerateHTML:
                 
             pageHTML = pageHTML + tabsAcrossTheTopHTML
             
+            #Add the main image and download buttons
+            topOfFilesPage = ("\"<div id=\"Files\" class=\"tabcontent\">"
+                "<img src=" + project.mainPicture + " class = \"project_page_image\">"
+                "<a href=\"url\", class = \"top_button\">Download</a>"
+                "<a href=" + project.READMEpath + ", class = \"top_button\">Source</a>")
+            
+            pageHTML = pageHTML + topOfFilesPage
+            
             #Generate HTML from the README.md file
             markdowner = Markdown() #allows for the conversion of markdown files into html
-            pageHTML = pageHTML +  "<div id=\"Files\" class=\"tabcontent\">" + markdowner.convert(project.READMEtext) + "</div>"
+            pageHTML = pageHTML +  markdowner.convert(project.READMEtext) + "</div>"
             
             restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
                               "<h3>Instructions</h3>"
@@ -246,8 +262,23 @@ class GenerateHTML:
         f.close()
     
     def findProjectName(self, project):
+        '''
+        
+        Extract the name of the project from the github URL
+        
+        '''
         projectName = project.split('/')[-1]
         projectName = projectName[0:-1] #remove the trailing newline
         
         return projectName
     
+    def findProjectRawPath(self, string):
+        '''
+        
+        Find the raw version of the project path
+        
+        '''
+        rawPath = string.split('.com')[-1]
+        rawPath = "https://raw.githubusercontent.com" + rawPath
+        rawPath = rawPath.replace('\n', '')
+        return rawPath

@@ -1,6 +1,6 @@
-https://raw.githubusercontent.com/MaslowCommunityGarden/TestProject
-https://raw.githubusercontent.com/MaslowCNC/Mechanics
-https://raw.githubusercontent.com/MaslowCNC/Electronics
-https://raw.githubusercontent.com/MaslowCNC/GroundControl
-https://raw.githubusercontent.com/MaslowCNC/Firmware
+https://github.com/MaslowCommunityGarden/TestProject
+https://github.com/MaslowCNC/mechanics
+https://github.com/MaslowCNC/Electronics
+https://github.com/MaslowCNC/GroundControl
+https://github.com/MaslowCNC/firmware
 A bogus line
