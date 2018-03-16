@@ -39,6 +39,7 @@ if ($uploadOk == 0) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
+        echo $target_file;
     }
 }
 ?>
