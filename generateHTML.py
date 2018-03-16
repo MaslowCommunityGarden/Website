@@ -28,7 +28,13 @@ class GenerateHTML:
                 
                 #store the link to the page
                 thisProject.projectPath = string
-                thisProject.projectPath = thisProject.mainPicture.replace('\n', '') #remove the carriage return
+                thisProject.projectPath = thisProject.projectPath.replace('\n', '') #remove the carriage return
+                
+                #find the download link
+                thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
+                
+                print "Download link set to:"
+                print thisProject.downloadLink
                 
                 #find the raw version of the string
                 thisProject.projectPathRaw = self.findProjectRawPath(string)
@@ -169,8 +175,8 @@ class GenerateHTML:
             #Add the main image and download buttons
             topOfFilesPage = ("\"<div id=\"Files\" class=\"tabcontent\">"
                 "<img src=" + project.mainPicture + " class = \"project_page_image\">"
-                "<a href=\"url\", class = \"top_button\">Download</a>"
-                "<a href=" + project.READMEpath + ", class = \"top_button\">Source</a>")
+                "<a href=" + project.downloadLink + " class = \"top_button\">Download</a>"
+                "<a href=" + project.projectPath + " class = \"top_button\">Source</a>")
             
             pageHTML = pageHTML + topOfFilesPage
             

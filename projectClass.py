@@ -9,3 +9,4 @@ class Project:
     projectName    = " "
     projectPath    = " "
     projectPathRaw = " "
+    downloadLink   = " "
