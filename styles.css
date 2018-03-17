@@ -28,6 +28,13 @@
     height: 300px;
 }
 
+.centered_div{
+    display: inline-block;
+}
+
+.regular_left_text{
+    text-align: left;
+}
 
 .boxed_text {
     font-size: 16px; 
