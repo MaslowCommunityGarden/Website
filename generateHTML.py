@@ -155,27 +155,27 @@ class GenerateHTML:
             
             tabsAcrossTheTopHTML = ("<!DOCTYPE html>"
                 "<html>"
-                "<head>"
-                    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-                    "<link href=\"styles.css\" rel=\"stylesheet\" />"
-                    "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
-                "</head>"
-                "<body>"
-                
-                "<a href=\"index.html\">"
-                    "<img src=\"logo.png\" style=\"width:166px;height:45px;border:0;\">"
-                "</a>"
-                
-                "<div, class = \"content\">"
-                    "<h1>" + project.projectName + "</h1>"
-                "</div>"
-                
-                "<div class=\"tab\">"
-                    "<button class=\"tablinks\" onclick=\"openCity(event, 'Files')\" id=\"defaultOpen\">Files</button>"
-                      "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
-                      "<button class=\"tablinks\" onclick=\"openCity(event, 'Forums')\">Forums</button>"
-                      "<button class=\"tablinks\" onclick=\"openCity(event, 'Buy')\">Buy</button>"
-                "</div>")
+                    "<head>"
+                        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+                        "<link href=\"styles.css\" rel=\"stylesheet\" />"
+                        "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
+                    "</head>"
+                    "<body>"
+                    
+                        "<a href=\"index.html\">"
+                            "<img src=\"logo.png\" style=\"width:166px;height:45px;border:0;\">"
+                        "</a>"
+                        
+                        "<div class = \"content\">"
+                            "<h1>" + project.projectName + "</h1>"
+                        "</div>"
+                    
+                        "<div class=\"tab\">"
+                            "<button class=\"tablinks\" onclick=\"openCity(event, 'Files')\" id=\"defaultOpen\">Files</button>"
+                              "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
+                              "<button class=\"tablinks\" onclick=\"openCity(event, 'Forums')\">Forums</button>"
+                              "<button class=\"tablinks\" onclick=\"openCity(event, 'Buy')\">Buy</button>"
+                        "</div>")
                 
             pageHTML = pageHTML + tabsAcrossTheTopHTML
             
