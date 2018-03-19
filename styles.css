@@ -30,6 +30,7 @@
 
 .centered_div{
     display: inline-block;
+    border: 1px solid black ;
 }
 
 .regular_left_text{
@@ -56,6 +57,7 @@
 .project_page_image{
     max-width: 40%;
     max-height: 40%;
+    float: left;
 }
 
 a.project_link:link

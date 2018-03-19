@@ -180,13 +180,20 @@ class GenerateHTML:
             pageHTML = pageHTML + tabsAcrossTheTopHTML
             
             #Add the main image and download buttons
-            topOfFilesPage = ("<div id=\"Files\" class=\"tabcontent\">"
+            topOfFilesPage = (
+            "<div id=\"Files\" class=\"tabcontent\">"
                 "<h3>Files</h3>"
-                "<img src=" + project.mainPicture + " class = \"project_page_image\">"
-                "<div class = \"centered_div\">"
-                    "<a href=" + project.downloadLink + " class = \"top_button\">Download</a>"
-                    "<a href=" + project.projectPath + " class = \"top_button\" target=\"_blank\">Source</a>"
-                "</div>")
+                "<table>"
+                    "<tr>"
+                        "<td>"
+                            "<img src=" + project.mainPicture + " class = \"project_page_image\">"
+                        "</td>"
+                        "<td>"
+                            "<a href=" + project.downloadLink + " class = \"top_button\">Download</a>"
+                            "<a href=" + project.projectPath + " class = \"top_button\" target=\"_blank\">Source</a>"
+                        "</td>"
+                    "</tr>"
+                "</table>")
             
             pageHTML = "<div>" + pageHTML + "</div>" + topOfFilesPage
             
