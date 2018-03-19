@@ -1,8 +1,10 @@
 #!/bin/bash
 
-cd uploads
+cd /var/www/html
 
-/var/www/html/createRepo.py
+python createRepo.py
+
+cd var/www/html/uploads
 
 find . -maxdepth 1 -name \* -type f -printf "deleting %P\n" -delete
 
