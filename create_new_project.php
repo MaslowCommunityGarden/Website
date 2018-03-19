@@ -4,6 +4,17 @@ Project description: <?php echo $_POST["projectDescription"]; ?><br>
 Management style: <?php echo $_POST["managementStyle"]; ?><br>
 GitHub user: <?php echo $_POST["githubUser"]; ?><br>
 
+<?php
+$data = $_POST['field1'] . '-' . $_POST['field2'] . "\n";
+$ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $_POST["projectName"], FILE_APPEND | LOCK_EX);
+if($ret === false) {
+    die('There was an error writing this file');
+}
+else {
+    echo "$ret bytes written to file";
+}
+?>
+
 
 <?php
 //Upload the image file
@@ -98,6 +109,7 @@ if ($uploadOk == 0) {
 <br>
 
 <br>
+
 
 <?php
     // run the script which will create the repository
