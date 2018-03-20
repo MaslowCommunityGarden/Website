@@ -1,5 +1,5 @@
 #!/bin/bash
-
+exec 1>/home/ubuntu/scriptlog.txt
 
 cd /var/www/html
 
