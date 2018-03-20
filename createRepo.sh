@@ -13,6 +13,8 @@ python createRepo.py
 
 cd /var/www/html/uploads
 
+rm -r -f /var/www/html/uploads/tmp
+
 find . -maxdepth 1 -name \* -type f -printf "deleting %P\n" -delete
 
 
