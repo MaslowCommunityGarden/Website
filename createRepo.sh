@@ -1,8 +1,9 @@
 #!/bin/bash
 
+
 cd /var/www/html
 
-sudo unzip /var/www/html/uploads/userUpload.zip -o
+sudo unzip /var/www/html/uploads/userUpload.zip
 
 #sudo rm /var/www/html/uploads/userUpload.zip 
 
