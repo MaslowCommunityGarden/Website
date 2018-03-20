@@ -5,15 +5,11 @@ echo "got to the beginning of the script"
 
 cd /var/www/html
 
-echo "after cd"
-
 unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
 
 #sudo rm /var/www/html/uploads/userUpload.zip 
 
 python createRepo.py
-
-echo "after python"
 
 cd /var/www/html/uploads
 
