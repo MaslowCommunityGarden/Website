@@ -2,7 +2,10 @@ from github import Github
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputs = file.readlines() 
-projectName = userInputs[0].replace('\n', '')
+try:
+    projectName = userInputs[0].replace('\n', '')
+except:
+    projectName = "none"
 projectDescription = userInputs[1].replace('\n', '')
 managementStyle = userInputs[2].replace('\n', '')
 githubUser = userInputs[3].replace('\n', '')

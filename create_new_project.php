@@ -5,7 +5,7 @@ Management style: <?php echo $_POST["managementStyle"]; ?><br>
 GitHub user: <?php echo $_POST["githubUser"]; ?><br>
 
 <?php
-$data = $_POST["projectName"] . '\n' . $_POST["projectDescription"] . "\n" . $_POST["managementStyle"] . "\n" . $_POST["githubUser"];
+$data = $_POST["projectName"] . '\n' . $_POST["projectDescription"] . '\n' . $_POST["managementStyle"] . '\n' . $_POST["githubUser"];
 $ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $data, FILE_APPEND | LOCK_EX);
 if($ret === false) {
     die('There was an error writing this file');
