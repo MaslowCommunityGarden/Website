@@ -1,5 +1,5 @@
 from github import Github
-import os
+from git import Repo
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -36,13 +36,14 @@ readmeText = "#" + projectName + "\n" + projectDescription
 if projectName != "none":
     repo = org.create_repo(projectName, description = projectDescription )
     
+    #create the markdown files
     repo.create_file("/README.MD", "init commit", readmeText)
     repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
-    print "this bit"
-    print os.system("git status")
+    #add the rest of the files
+    Repo.clone_from(repo.html_url, '/var/www/html/uploads')
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
