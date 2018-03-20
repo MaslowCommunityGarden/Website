@@ -43,14 +43,18 @@ if projectName != "none":
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
-    #Clone the newly created repo
-    Repo.clone_from(repo.html_url, '/var/www/html/uploads/tmp')
-    
-    #Move the files into that folder
+    #Keep track of what files we've got to add to the repo
     files = os.listdir('/var/www/html/uploads')
     print "files:"
     print files
     print "#$#"
+    
+    #Clone the newly created repo
+    Repo.clone_from(repo.html_url, '/var/www/html/uploads/tmp')
+    
+    #Add the new files to the repo
+    for file in files:
+        os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp" + file)
     
     #Commit it
     
