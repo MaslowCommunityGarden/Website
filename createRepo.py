@@ -1,7 +1,8 @@
 from github import Github
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
-userInputs = file.readlines() 
+userInputsText = file.readlines() 
+userInputs     = userInputsText.split('~')
 try:
     projectName = userInputs[0].replace('\n', '')
 except:
