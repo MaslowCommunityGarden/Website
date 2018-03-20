@@ -1,11 +1,8 @@
 #!/bin/bash
-exec &> /home/ubuntu/logfile.txt
 
 cd /var/www/html
 
-sudo apt-get install unzip
-
-sudo unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
+sudo unzip /var/www/html/uploads/userUpload.zip -d /home/ubuntu
 
 sudo rm /var/www/html/uploads/userUpload.zip
 
