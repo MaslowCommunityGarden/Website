@@ -1,4 +1,5 @@
 #!/bin/bash
+exec &> /var/www/html/logfile.txt
 
 cd /var/www/html
 
