@@ -2,6 +2,8 @@
 
 cd /var/www/html
 
+sudo apt-get install unzip
+
 sudo unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
 
 sudo rm /var/www/html/uploads/userUpload.zip
