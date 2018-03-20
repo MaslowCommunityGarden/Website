@@ -32,7 +32,7 @@ password = logins[1].replace('\n', '')
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
-readmeText = "#" + projectName + "\n" + projectDescription
+readmeText = "# " + projectName + "\n" + projectDescription
 
 if projectName != "none":
     repo = org.create_repo(projectName, description = projectDescription )
@@ -41,7 +41,6 @@ if projectName != "none":
     repo.create_file("/README.MD", "init commit", readmeText)
     repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
-    repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
     #Keep track of what files we've got to add to the repo
     files = os.listdir('/var/www/html/uploads')
@@ -57,11 +56,15 @@ if projectName != "none":
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
     #Commit it
-    Repo.git.commit("-a", "-m Initial upload from website")
+    Repo.index.add('/var/www/html/uploads/tmp/mainpicture.jpg')
+    Repo.index.commit("initial commit")
+    
+    origin = Repo.remote('origin')
+    origin.push()
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
-    repo.delete()
+    #repo.delete()
 
 
 
