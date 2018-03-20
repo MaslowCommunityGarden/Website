@@ -1,5 +1,6 @@
 from github import Github
 from git import Repo
+import os
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -42,8 +43,16 @@ if projectName != "none":
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
-    #add the rest of the files
+    #Clone the newly created repo
     Repo.clone_from(repo.html_url, '/var/www/html/uploads/tmp')
+    
+    #Move the files into that folder
+    files = os.listdir('/var/www/html/uploads')
+    print "files:"
+    print files
+    print "#$#"
+    
+    #Commit it
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
