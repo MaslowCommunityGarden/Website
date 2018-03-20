@@ -43,7 +43,7 @@ if projectName != "none":
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
     #add the rest of the files
-    Repo.clone_from(repo.html_url, '/var/www/html/uploads')
+    Repo.clone_from(repo.html_url, '/var/www/html/uploads/tmp')
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
