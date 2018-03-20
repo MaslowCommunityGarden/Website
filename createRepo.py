@@ -49,7 +49,7 @@ if projectName != "none":
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
     print "project path is:"
-    print repo.git_url
+    print repo.url
     
     #with open("/var/www/html/trackedProjects.txt", "a") as f:
     #    f.write("appended text")
