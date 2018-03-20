@@ -48,11 +48,8 @@ if projectName != "none":
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
-    print "project path is:"
-    print repo.html_url
-    
-    #with open("/var/www/html/trackedProjects.txt", "a") as f:
-    #    f.write("appended text")
+    with open("/var/www/html/trackedProjects.txt", "a") as f:
+       f.write("\n" + repo.html_url)
     repo.delete()
 
 
