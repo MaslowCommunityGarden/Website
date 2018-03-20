@@ -56,13 +56,8 @@ if projectName != "none":
     for file in files:
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
-    #Track the files
-    files = os.listdir('/var/www/html/uploads/tmp')
-    for file in files:
-        Repo.git.add(file)
-    
     #Commit it
-    repo.git.commit("Initial upload from website")
+    repo.git.commit("-a", "-m Initial upload from website")
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
