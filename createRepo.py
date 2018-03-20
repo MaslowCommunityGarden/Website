@@ -54,6 +54,8 @@ if projectName != "none":
     
     #Add the new files to the repo
     for file in files:
+        print "moving file: "
+        print file
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp" + file)
     
     #Commit it
