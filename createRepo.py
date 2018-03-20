@@ -20,14 +20,6 @@ try:
 except:
     githubUser = "nobody"
     
-print "\n\nProject name: "
-print projectName
-print "\n\nProject description"
-print projectDescription
-print "\n\nManagment style"
-print managementStyle
-print "\n\nUser name"
-print githubUser
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
 logins = file.readlines() 

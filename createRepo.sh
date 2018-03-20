@@ -2,11 +2,11 @@
 
 cd /var/www/html
 
-unzip /var/www/html/uploads/userUpload.zip
+sudo unzip /var/www/html/uploads/userUpload.zip
 
 #sudo rm /var/www/html/uploads/userUpload.zip
 
-python createRepo.py
+sudo python createRepo.py
 
 cd /var/www/html/uploads
 
