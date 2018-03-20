@@ -2,10 +2,10 @@ from github import Github
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputs = file.readlines() 
-projectName = logins[0].replace('\n', '')
-projectDescription = logins[1].replace('\n', '')
-managementStyle = logins[2].replace('\n', '')
-githubUser = logins[3].replace('\n', '')
+projectName = userInputs[0].replace('\n', '')
+projectDescription = userInputs[1].replace('\n', '')
+managementStyle = userInputs[2].replace('\n', '')
+githubUser = userInputs[3].replace('\n', '')
 
 print "\nProject name: "
 print projectName
