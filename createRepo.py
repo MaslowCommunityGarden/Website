@@ -44,9 +44,12 @@ if projectName != "none":
     repo = org.create_repo(projectName, description = projectDescription )
     print repo
     repo.create_file("/README.MD", "init commit", readmeText)
+    repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
+    repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
+    repo.create_file("/mainpicture.jpg", "init commit", readmeText)
 
 
-f = open('/var/www/html/uploads/testScriptRan.txt','w')
+f = open('/var/www/html/trackedProjects.txt','w')
 f.write("This is some text!")
 print f
 f.close()
