@@ -5,9 +5,9 @@ echo "got to the beginning of the script"
 
 cd /var/www/html
 
-sudo unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
+#sudo unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
 
-sudo rm /var/www/html/uploads/userUpload.zip 
+#sudo rm /var/www/html/uploads/userUpload.zip 
 
 sudo python createRepo.py
 
