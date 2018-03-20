@@ -39,8 +39,9 @@ g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
 if projectName != "none":
-    org = org.create_repo(projectName, description = projectDescription )
-    print org
+    repo = org.create_repo(projectName, description = projectDescription )
+    print repo
+    repo.create_file("/README.MD", "init commit", "This is some test text")
 
 
 f = open('/var/www/html/uploads/testScriptRan.txt','w')
