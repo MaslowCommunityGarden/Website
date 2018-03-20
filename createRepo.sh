@@ -1,9 +1,8 @@
 #!/bin/bash
-sudo exec &> logfile.txt
 
 cd /var/www/html
 
-sudo unzip /var/www/html/uploads/userUpload.zip -d /home/ubuntu
+unzip /var/www/html/uploads/userUpload.zip -d /home/ubuntu
 
 sudo rm /var/www/html/uploads/userUpload.zip
 
