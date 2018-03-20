@@ -57,7 +57,7 @@ if projectName != "none":
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
     #Commit it
-    repo.git.commit("-a", "-m Initial upload from website")
+    Repo.git.commit("-a", "-m Initial upload from website")
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
