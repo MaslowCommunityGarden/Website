@@ -12,9 +12,12 @@ password = logins[1]
 # using username and password
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
+print org
 
-repo = org.create_repo("auto login from server test")
+org.create_repo("auto login from server test")
+
 
 f = open('/var/www/html/uploads/testScriptRan.txt','w')
 f.write("This is some text!")
+print f
 f.close()
