@@ -35,13 +35,14 @@ readmeText = "#" + projectName + "\n" + projectDescription
 
 if projectName != "none":
     repo = org.create_repo(projectName, description = projectDescription )
-    print repo
+    
     repo.create_file("/README.MD", "init commit", readmeText)
     repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
     
-    os.system("pwd")
+    print "this bit"
+    print os.system("git status")
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
