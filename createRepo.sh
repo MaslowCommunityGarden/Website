@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo exec &> logfile.txt
 
 cd /var/www/html
 
