@@ -2,7 +2,7 @@
 
 cd /var/www/html
 
-unzip /var/www/html/uploads/userUpload.zip -d /var/www/uploads/
+sudo unzip /var/www/html/uploads/userUpload.zip -d /var/www/uploads/
 
 sudo rm /var/www/html/uploads/userUpload.zip
 
