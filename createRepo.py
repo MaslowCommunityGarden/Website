@@ -7,13 +7,13 @@ projectDescription = logins[1].replace('\n', '')
 managementStyle = logins[2].replace('\n', '')
 githubUser = logins[3].replace('\n', '')
 
-print "Project name: "
+print "\nProject name: "
 print projectName
-print "Project description"
+print "\nProject description"
 print projectDescription
-print "Managment style"
+print "\nManagment style"
 print managementStyle
-print "User name"
+print "\nUser name"
 print githubUser
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
