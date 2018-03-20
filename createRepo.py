@@ -1,4 +1,5 @@
 from github import Github
+import os
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -39,6 +40,8 @@ if projectName != "none":
     repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
+    
+    os.system("pwd")
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
