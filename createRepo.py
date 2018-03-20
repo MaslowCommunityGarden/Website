@@ -7,17 +7,26 @@ try:
     projectName = userInputs[0].replace('\n', '')
 except:
     projectName = "none"
-projectDescription = userInputs[1].replace('\n', '')
-managementStyle = userInputs[2].replace('\n', '')
-githubUser = userInputs[3].replace('\n', '')
-
-print "\nProject name: "
+try:
+    projectDescription = userInputs[1].replace('\n', '')
+except:
+    projectDescription = "No description entered"
+try:
+    managementStyle = userInputs[2].replace('\n', '')
+except:
+    managementStyle = "none"
+try:
+    githubUser = userInputs[3].replace('\n', '')
+except:
+    githubUser = "nobody"
+    
+print "\n\nProject name: "
 print projectName
-print "\nProject description"
+print "\n\nProject description"
 print projectDescription
-print "\nManagment style"
+print "\n\nManagment style"
 print managementStyle
-print "\nUser name"
+print "\n\nUser name"
 print githubUser
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
@@ -29,7 +38,8 @@ password = logins[1].replace('\n', '')
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
-#org.create_repo("auto login from server test")
+if projectName != "none":
+    org.create_repo(projectName, description = projectDescription, )
 
 
 f = open('/var/www/html/uploads/testScriptRan.txt','w')
