@@ -1,5 +1,5 @@
 #!/bin/bash
-exec 1>var/www/html/uploads/scriptlog.txt 2>&1
+#exec 1>var/www/html/uploads/scriptlog.txt 2>&1
 
 cd /var/www/html
 
