@@ -1,5 +1,7 @@
 from github import Github
 
+print "python script is running!"
+
 file = open("/home/ubuntu/gitlogin.txt", "r") 
 logins = file.readlines() 
 userName = logins[0].replace('\n', '')
