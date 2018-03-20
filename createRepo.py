@@ -47,11 +47,15 @@ if projectName != "none":
     repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
     repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
     repo.create_file("/mainpicture.jpg", "init commit", readmeText)
+    
+    print "project path is:"
+    print repo.git_url
+    
+    #with open("/var/www/html/trackedProjects.txt", "a") as f:
+    #    f.write("appended text")
     repo.delete()
 
 
-#f = open('/var/www/html/trackedProjects.txt','w')
-#f.write("This is some text!")
-#print f
-#f.close()
+
+
 
