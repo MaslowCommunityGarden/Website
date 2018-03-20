@@ -1,6 +1,6 @@
 from github import Github
 
-file = open("../gitlogin.txt", "r") 
+file = open("/home/ubuntu/gitlogin.txt", "r") 
 logins = file.readlines() 
 userName = logins[0].replace('\n', '')
 password = logins[1]
