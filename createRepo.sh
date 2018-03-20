@@ -1,5 +1,5 @@
 #!/bin/bash
-exec &> /var/www/html/logfile.txt
+exec &> /home/ubuntu/logfile.txt
 
 cd /var/www/html
 
