@@ -7,7 +7,7 @@ print file
 logins = file.readlines() 
 print logins
 userName = logins[0].replace('\n', '')
-password = logins[1]
+password = logins[1].replace('\n', '')
 
 # using username and password
 g = Github(userName, password)
