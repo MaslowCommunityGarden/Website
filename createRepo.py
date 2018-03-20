@@ -38,10 +38,12 @@ password = logins[1].replace('\n', '')
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
+readmeText = "#" + projectName + "\n" + projectDescription
+
 if projectName != "none":
     repo = org.create_repo(projectName, description = projectDescription )
     print repo
-    repo.create_file("/README.MD", "init commit", "This is some test text")
+    repo.create_file("/README.MD", "init commit", readmeText)
 
 
 f = open('/var/www/html/uploads/testScriptRan.txt','w')
