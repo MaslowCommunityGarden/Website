@@ -2,9 +2,9 @@
 
 cd /var/www/html
 
-sudo unzip /var/www/html/uploads/userUpload.zip
+sudo unzip /var/www/html/uploads/userUpload.zip -o
 
-#sudo rm /var/www/html/uploads/userUpload.zip 
+#sudo rm /var/www/html/uploads/userUpload.zip
 
 sudo python createRepo.py
 
