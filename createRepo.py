@@ -3,7 +3,9 @@ from github import Github
 print "python script is running!"
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
+print file
 logins = file.readlines() 
+print logins
 userName = logins[0].replace('\n', '')
 password = logins[1]
 
