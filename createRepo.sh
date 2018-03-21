@@ -9,8 +9,6 @@ unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
 
 rm /var/www/html/uploads/userUpload.zip 
 
-pip install pygit2
-
 python createRepo.py
 
 cd /var/www/html/uploads
