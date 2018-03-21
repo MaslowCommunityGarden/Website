@@ -1,5 +1,5 @@
 from github import Github
-from git import Repo
+import pygit2
 import os
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
@@ -49,22 +49,19 @@ if projectName != "none":
     print "#$#"
     
     #Clone the newly created repo
-    Repo.clone_from(repo.html_url, '/var/www/html/uploads/tmp')
+    Repo.pygit2.clone_repository(repo.html_url, '/var/www/html/uploads/tmp')
     
     #Add the new files to the repo
     for file in files:
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
     #Commit it
-    Repo.index.add('/var/www/html/uploads/tmp/mainpicture.jpg')
-    Repo.index.commit("initial commit")
     
-    origin = Repo.remote('origin')
-    origin.push()
+    
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
-    #repo.delete()
+    repo.delete()
 
 
 
