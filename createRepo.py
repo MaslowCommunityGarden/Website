@@ -50,9 +50,9 @@ if projectName != "none":
     files = os.listdir('/var/www/html/uploads')
     
     #Clone the newly created repo
-    repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
+    repoClone = pygit2.clone_repository(repo.ssh_url, '/var/www/html/uploads/tmp')
     print "GIT URL: "
-    print repo.clone_url
+    print repo.ssh_url
     print "<---"
     
     #Add the new files to the repo
@@ -60,7 +60,7 @@ if projectName != "none":
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
     #Commit it
-    repoClone.remotes.set_push_url("origin", repo.clone_url)
+    #repoClone.remotes.set_push_url("origin", repo.clone_url)
     index = repoClone.index
     index.add_all()
     index.write()
