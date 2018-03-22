@@ -11,6 +11,10 @@ rm /var/www/html/uploads/userUpload.zip
 
 python createRepo.py
 
+cd /var/www/html/uploads/tmp 
+
+git status
+
 cd /var/www/html/uploads
 
 rm -r -f /var/www/html/uploads/tmp
