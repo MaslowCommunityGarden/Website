@@ -64,7 +64,8 @@ if projectName != "none":
     remote = repoClone.remotes["origin"]
     remote.credentials = credentials
     signature = author
-    remote.push('refs/heads/master', signature, 'Pushed!')
+    specs = pygit2.remote.get_refspec()
+    remote.push(specs)
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
