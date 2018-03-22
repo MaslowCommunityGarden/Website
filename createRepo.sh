@@ -13,12 +13,6 @@ python createRepo.py
 
 cd /var/www/html/uploads/tmp 
 
-git status
-
-ssh-add /var/www/.ssh/id_rsa
-
-git push origin master
-
 cd /var/www/html/uploads
 
 rm -r -f /var/www/html/uploads/tmp

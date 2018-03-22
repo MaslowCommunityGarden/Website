@@ -3,9 +3,6 @@ import pygit2
 import os
 import subprocess
 
-def authenticate(credentials):
-    return credentials
-
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
 userInputs     = userInputsText.split('~')
@@ -69,11 +66,10 @@ if projectName != "none":
     commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
     tree = index.write_tree()
     oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
-    #remote = repoClone.remotes["origin"]
-    #remote.credentials = credentials
-    #signature = author
-    #remote.push(['refs/heads/master'], credentials)
-    output = subprocess.check_output(["git", "pull"])
+    remote = repoClone.remotes["origin"]
+    remote.credentials = credentials
+    signature = author
+    remote.push(['refs/heads/master'])
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
