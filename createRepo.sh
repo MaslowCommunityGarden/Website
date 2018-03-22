@@ -15,6 +15,8 @@ cd /var/www/html/uploads/tmp
 
 git status
 
+git push
+
 cd /var/www/html/uploads
 
 rm -r -f /var/www/html/uploads/tmp
