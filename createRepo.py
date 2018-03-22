@@ -2,6 +2,9 @@ from github import Github
 import pygit2
 import os
 
+def authenticate(credentials):
+    return credentials
+
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
 userInputs     = userInputsText.split('~')
@@ -68,7 +71,7 @@ if projectName != "none":
     remote = repoClone.remotes["origin"]
     remote.credentials = credentials
     signature = author
-    remote.push(['refs/heads/master'])
+    remote.push(['refs/heads/master'], authenticate(credentials))
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
