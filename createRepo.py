@@ -63,7 +63,7 @@ if projectName != "none":
     oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
     remote = repoClone.remotes["origin"]
     remote.credentials = credentials
-    signature = repoClone.default_signature
+    signature = author
     remote.push('refs/heads/master', signature, 'Pushed!')
     
     
