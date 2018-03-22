@@ -21,8 +21,8 @@ git push origin master
 
 cd /var/www/html/uploads
 
-#rm -r -f /var/www/html/uploads/tmp
+rm -r -f /var/www/html/uploads/tmp
 
-#find . -maxdepth 1 -name \* -type f -printf "deleting %P\n" -delete
+find . -maxdepth 1 -name \* -type f -printf "deleting %P\n" -delete
 
 
