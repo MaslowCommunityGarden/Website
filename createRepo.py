@@ -44,12 +44,10 @@ if projectName != "none":
     
     #Keep track of what files we've got to add to the repo
     files = os.listdir('/var/www/html/uploads')
-    print "files:"
-    print files
-    print "#$#"
     
     #Clone the newly created repo
-    Repo.pygit2.clone_repository(repo.html_url, '/var/www/html/uploads/tmp')
+    Repo = pygit2.clone_repository(repo.html_url, '/var/www/html/uploads/tmp')
+    print Repo
     
     #Add the new files to the repo
     for file in files:
