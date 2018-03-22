@@ -73,6 +73,8 @@ if projectName != "none":
     #signature = author
     #remote.push(['refs/heads/master'], credentials)
     
+    with open("/var/www/.ssh/id_rsa.pub", "a") as f:
+       print f.read()
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
