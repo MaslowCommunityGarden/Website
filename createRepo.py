@@ -47,7 +47,7 @@ if projectName != "none":
     files = os.listdir('/var/www/html/uploads')
     
     #Clone the newly created repo
-    repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
+    repoClone = pygit2.clone_repository(repo.clone_url, '/var/www/html/uploads/tmp')
     print "GIT URL: "
     print repo.clone_url
     print "<---"
@@ -72,7 +72,7 @@ if projectName != "none":
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
-    #repo.delete()
+    repo.delete()
 
 
 
