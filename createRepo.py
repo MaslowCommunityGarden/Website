@@ -58,7 +58,7 @@ if projectName != "none":
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
     #Commit it
-    repoClone.remotes.set_url("origin", repo.ssh_url)
+    repoClone.remotes.set_url("origin", repo.clone_url)
     index = repoClone.index
     index.add_all()
     index.write()
