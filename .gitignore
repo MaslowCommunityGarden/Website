@@ -1,3 +1,4 @@
 *.html
 *.pyc
 !addaproject.html
+!howdoesthegardenwork.html

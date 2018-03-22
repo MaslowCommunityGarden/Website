@@ -244,46 +244,6 @@ class GenerateHTML:
             f.write(pageHTML)
             f.close()
     
-    def generateHowDoesTheGardenWorkPage(self):
-        '''
-        
-        The function which builds the "how does it work" page
-        
-        '''
-        
-        doc, tag, text = Doc().tagtext()
-        
-        with tag('div', klass="content"):
-            with tag('html'):
-                with tag('head'):
-                    doc.stag('link',rel='stylesheet', href='styles.css')
-                    doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
-                    
-                with tag('body', klass = 'body'):
-                    
-                    with tag('p'):
-                        text('The Maslow community garden is a place for humans to work together to design and share.')
-                    
-                    with tag('br'):
-                        pass
-                    
-                    with tag('p'):
-                        text('The Maslow community garden is designed to be different. The world has enough file sharing sites where designs are posted and the community'
-                        'can only comment or download.')
-                    
-                    with tag('br'):
-                        pass
-                    
-                    with tag('p'):
-                        text('Here every file is maintained collectively and hosted independantly. These projects have forums, not comment sections.')
-                    
-                    with tag('br'):
-                        pass
-        
-        f = open('howdoesthegardenwork.html','w')
-        f.write(doc.getvalue())
-        f.close()
-    
     def findProjectName(self, project):
         '''
         
