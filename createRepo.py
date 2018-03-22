@@ -61,6 +61,9 @@ if projectName != "none":
     commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
     tree = index.write_tree()
     oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
+    remote = repoClone.remotes["origin"]
+    remote.credentials = credentials
+    remote.push()
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
