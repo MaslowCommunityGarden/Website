@@ -57,6 +57,10 @@ if projectName != "none":
     index = repoClone.index
     index.add_all()
     index.write()
+    author = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
+    commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
+    tree = index.write_tree()
+    oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
