@@ -64,7 +64,7 @@ if projectName != "none":
     remote = repoClone.remotes["origin"]
     remote.credentials = credentials
     signature = author
-    remote.push()
+    remote.push(['refs/heads/master'])
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
