@@ -31,6 +31,7 @@ password = logins[1].replace('\n', '')
 # using username and password
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
+credentials = pygit2.UserPass(username, password)
 
 readmeText = "# " + projectName + "\n" + projectDescription
 
@@ -47,14 +48,15 @@ if projectName != "none":
     
     #Clone the newly created repo
     repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
-    print repoClone
     
     #Add the new files to the repo
     for file in files:
         os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
     
     #Commit it
-    
+    index = repoClone.index
+    index.add_all()
+    index.write()
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
