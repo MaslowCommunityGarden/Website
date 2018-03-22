@@ -48,6 +48,9 @@ if projectName != "none":
     
     #Clone the newly created repo
     repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
+    print "GIT URL: "
+    print repo.git_url
+    print "<---"
     
     #Add the new files to the repo
     for file in files:
@@ -64,7 +67,7 @@ if projectName != "none":
     remote = repoClone.remotes["origin"]
     remote.credentials = credentials
     signature = author
-    remote.push(['refs/heads/master'])
+    #remote.push(['refs/heads/master'])
     
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
