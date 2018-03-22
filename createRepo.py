@@ -72,7 +72,7 @@ if projectName != "none":
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
-    repo.delete()
+    #repo.delete()
 
 
 
