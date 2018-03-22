@@ -15,7 +15,7 @@ cd /var/www/html/uploads/tmp
 
 git status
 
-git push
+git push origin master
 
 cd /var/www/html/uploads
 
