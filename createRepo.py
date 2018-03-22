@@ -31,7 +31,7 @@ password = logins[1].replace('\n', '')
 # using username and password
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
-credentials = pygit2.UserPass(username, password)
+credentials = pygit2.UserPass(userName, password)
 
 readmeText = "# " + projectName + "\n" + projectDescription
 
