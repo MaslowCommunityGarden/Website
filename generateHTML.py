@@ -236,7 +236,7 @@ class GenerateHTML:
 
                               "<script type=\"text/javascript\">"
                                 "DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',"
-                                                   "discourseEmbedUrl: 'http://maslowcommunitygarden.org/'" + project.projectFile + " };"
+                                                   "discourseEmbedUrl: 'http://maslowcommunitygarden.org/" + project.projectFile + "' };"
 
                                 "(function() {"
                                   "var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;"
