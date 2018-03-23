@@ -41,9 +41,9 @@ if projectName != "none":
         repo = org.create_repo(projectName, description = projectDescription )
         
         #create the markdown files
-        repo.create_file("/README.MD", "init commit", readmeText)
-        repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
-        repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
+        repo.create_file("/README.md", "init commit", readmeText)
+        repo.create_file("/INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions")
+        repo.create_file("/BOM.md", "init commit", "Edit this file to add a bill of materials")
         
         #Keep track of what files we've got to add to the repo
         files = os.listdir('/var/www/html/uploads')
