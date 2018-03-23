@@ -40,10 +40,13 @@ if projectName != "none":
     try:
         repo = org.create_repo(projectName, description = projectDescription )
         
+        robotText = "ModerationLevel = " + managementStyle + "\n Facilitator: " + githubUser + "\n"
+        
         #create the markdown files
         repo.create_file("/README.md", "init commit", readmeText)
         repo.create_file("/INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions")
         repo.create_file("/BOM.md", "init commit", "Edit this file to add a bill of materials")
+        repo.create_file("/ROBOT.md", "init commit", robotText)
         
         #Keep track of what files we've got to add to the repo
         files = os.listdir('/var/www/html/uploads')
