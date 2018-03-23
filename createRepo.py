@@ -32,7 +32,7 @@ password = logins[1].replace('\n', '')
 # using username and password
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
-credentials = pygit2.UserPass(userName, password)
+
 
 readmeText = "# " + projectName + "\n" + projectDescription
 
@@ -67,7 +67,8 @@ if projectName != "none":
     tree = index.write_tree()
     oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
     remote = repoClone.remotes["origin"]
-    remote.credentials = credentials
+    loginCredentials = pygit2.UserPass(userName, password)
+    remote.credentials = loginCredentials
     remote.push(['refs/heads/master'])
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
