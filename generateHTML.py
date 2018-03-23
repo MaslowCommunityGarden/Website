@@ -53,6 +53,8 @@ class GenerateHTML:
                 thisProject.READMEpath  = readmeUrl
                 
                 #read the README file
+                print "reading file:"
+                print readmeUrl
                 linesInReadme = urllib2.urlopen(readmeUrl)
                 thisProject.READMEtext  = linesInReadme.read()
                 
