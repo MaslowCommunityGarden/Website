@@ -1,5 +1,5 @@
 
-<h1>Your project is being generated!<\h1>
+<h1>Your project is being generated!</h1>
 
 <p>If your project generates properly, it will appear when the website regenerates in one minute.</p>
 
