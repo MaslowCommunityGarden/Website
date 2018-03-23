@@ -190,7 +190,7 @@ class GenerateHTML:
                         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
                         "<link href=\"styles.css\" rel=\"stylesheet\" />"
                         "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
-                        "<title>This is a test</title>"
+                        "<title>" + project.projectName + "</title>"
                     "</head>"
                     "<body>"
                     
