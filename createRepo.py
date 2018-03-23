@@ -69,6 +69,7 @@ if projectName != "none":
     remote = repoClone.remotes["origin"]
     loginCredentials = pygit2.UserPass(userName, password)
     remote.credentials = loginCredentials
+    print remote.credentials
     remote.push(['refs/heads/master'])
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
