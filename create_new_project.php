@@ -1,10 +1,5 @@
 
-<!––Project name: <?php echo $_POST["projectName"]; ?><br>––>
-<!––Project description: <?php echo $_POST["projectDescription"]; ?><br>––>
-<!––Management style: <?php echo $_POST["managementStyle"]; ?><br>––>
-<!––GitHub user: <?php echo $_POST["githubUser"]; ?><br>––>
-
-<h1>Your project is being generated!<!h1>
+<h1>Your project is being generated!<\h1>
 
 <p>If your project generates properly, it will appear when the website regenerates in one minute.</p>
 
