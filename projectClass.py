@@ -2,11 +2,15 @@
 
 
 class Project:
-    READMEtext     = " "
-    READMEpath     = " "
-    mainPicture    = " "
-    projectFile    = " "
-    projectName    = " "
-    projectPath    = " "
-    projectPathRaw = " "
-    downloadLink   = " "
+    READMEtext              = " "
+    READMEpath              = " "
+    INSTRUCTIONSpath        = " "
+    INSTRUCTIONtext         = " "
+    BOMpath                 = " "
+    BOMtext                 = " "
+    mainPicture             = " "
+    projectFile             = " "
+    projectName             = " "
+    projectPath             = " "
+    projectPathRaw          = " "
+    downloadLink            = " "

@@ -42,6 +42,16 @@ class GenerateHTML:
                 readmeUrl = "".join(readmeUrl.split())
                 thisProject.READMEpath = readmeUrl
                 
+                #find the path to the Instructions file
+                instructionsUrl = thisProject.projectPathRaw + '/master/INSTRUCTIONS.md'
+                instructionsUrl = "".join(instructionsUrl.split())
+                thisProject.INSTRUCTIONSpath = instructionsUrl
+                
+                #find the path to the BOM file
+                bomUrl = thisProject.projectPathRaw + '/master/BOM.md'
+                bomUrl = "".join(bomUrl.split())
+                thisProject.BOMpath = bomUrl
+                
                 #Construct the project object
                 thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
                 
@@ -53,10 +63,18 @@ class GenerateHTML:
                 thisProject.READMEpath  = readmeUrl
                 
                 #read the README file
-                print "reading file:"
-                print readmeUrl
                 linesInReadme = urllib2.urlopen(readmeUrl)
                 thisProject.READMEtext  = linesInReadme.read()
+                
+                #read the INSTRUCTIONS file
+                linesInReadme = urllib2.urlopen(instructionsUrl)
+                thisProject.INSTRUCTIONStext  = linesInReadme.read()
+                
+                #read the BOM file
+                linesInReadme = urllib2.urlopen(bomUrl)
+                thisProject.BOMtext  = linesInReadme.read()
+                
+                
                 
                 
                 print "Generating entry for: "
