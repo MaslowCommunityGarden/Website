@@ -232,12 +232,12 @@ class GenerateHTML:
 
                             "<div id=\"Forums\" class=\"tabcontent\">"
                               "<h3>Forums</h3>"
-                              + bomText +
+                              "<p>This is where the forums for the community will be (coming soon)</p>"
                             "</div>"
 
                             "<div id=\"Buy\" class=\"tabcontent\">"
                               "<h3>Buy</h3>"
-                              "<p>Because most projects are not made entirely from CNC cut plywood, this section has links to buy the bolts, electronics, or wheels that go with the project</p>"
+                              + bomText +
                             "</div>"
 
                             "<script>"
