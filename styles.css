@@ -55,8 +55,10 @@
 }
 
 .project_page_image{
-    max-width: 40%;
-    max-height: 40%;
+    max-width:550px;
+    max-height:500px;
+    width: auto;
+    height: auto;
     float: left;
 }
 
