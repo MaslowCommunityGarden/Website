@@ -26,62 +26,62 @@ class GenerateHTML:
                 
             try:
                 
-            #store the link to the page
-            thisProject.projectPath = string
-            thisProject.projectPath = thisProject.projectPath.replace('\n', '') #remove the carriage return
-            
-            #find the download link
-            thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
-            
-            
-            #find the raw version of the string
-            thisProject.projectPathRaw = self.findProjectRawPath(string)
-            
-            #find the path to the README file
-            readmeUrl = thisProject.projectPathRaw + '/master/README.md'
-            readmeUrl = "".join(readmeUrl.split())
-            thisProject.READMEpath = readmeUrl
-            
-            #find the path to the Instructions file
-            instructionsUrl = thisProject.projectPathRaw + '/master/INSTRUCTIONS.md'
-            instructionsUrl = "".join(instructionsUrl.split())
-            thisProject.INSTRUCTIONSpath = instructionsUrl
-            
-            #find the path to the BOM file
-            bomUrl = thisProject.projectPathRaw + '/master/BOM.md'
-            bomUrl = "".join(bomUrl.split())
-            thisProject.BOMpath = bomUrl
-            
-            #Construct the project object
-            thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
-            
-            print "Project name set to"
-            print thisProject.projectName
-            
-            thisProject.projectFile = thisProject.projectName + '.html'
-            thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
-            thisProject.READMEpath  = readmeUrl
-            
-            
-            #read the README file
-            linesInReadme = urllib2.urlopen(readmeUrl)
-            thisProject.READMEtext  = linesInReadme.read()
-            
-            #read the INSTRUCTIONS file
-            linesInReadme = urllib2.urlopen(instructionsUrl)
-            thisProject.INSTRUCTIONStext  = linesInReadme.read()
-            
-            #read the BOM file
-            linesInReadme = urllib2.urlopen(bomUrl)
-            thisProject.BOMtext  = linesInReadme.read()
-            
-            
-            
-            
-            print "Generating entry for: "
-            print thisProject.projectName
-            
-            self.projects.append(thisProject)
+                #store the link to the page
+                thisProject.projectPath = string
+                thisProject.projectPath = thisProject.projectPath.replace('\n', '') #remove the carriage return
+                
+                #find the download link
+                thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
+                
+                
+                #find the raw version of the string
+                thisProject.projectPathRaw = self.findProjectRawPath(string)
+                
+                #find the path to the README file
+                readmeUrl = thisProject.projectPathRaw + '/master/README.md'
+                readmeUrl = "".join(readmeUrl.split())
+                thisProject.READMEpath = readmeUrl
+                
+                #find the path to the Instructions file
+                instructionsUrl = thisProject.projectPathRaw + '/master/INSTRUCTIONS.md'
+                instructionsUrl = "".join(instructionsUrl.split())
+                thisProject.INSTRUCTIONSpath = instructionsUrl
+                
+                #find the path to the BOM file
+                bomUrl = thisProject.projectPathRaw + '/master/BOM.md'
+                bomUrl = "".join(bomUrl.split())
+                thisProject.BOMpath = bomUrl
+                
+                #Construct the project object
+                thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
+                
+                print "Project name set to"
+                print thisProject.projectName
+                
+                thisProject.projectFile = thisProject.projectName + '.html'
+                thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
+                thisProject.READMEpath  = readmeUrl
+                
+                
+                #read the README file
+                linesInReadme = urllib2.urlopen(readmeUrl)
+                thisProject.READMEtext  = linesInReadme.read()
+                
+                #read the INSTRUCTIONS file
+                linesInReadme = urllib2.urlopen(instructionsUrl)
+                thisProject.INSTRUCTIONStext  = linesInReadme.read()
+                
+                #read the BOM file
+                linesInReadme = urllib2.urlopen(bomUrl)
+                thisProject.BOMtext  = linesInReadme.read()
+                
+                
+                
+                
+                print "Generating entry for: "
+                print thisProject.projectName
+                
+                self.projects.append(thisProject)
                 
 
             except Exception as e:
@@ -222,14 +222,17 @@ class GenerateHTML:
             markdowner = Markdown() #allows for the conversion of markdown files into html
             pageHTML = pageHTML +  markdowner.convert(project.READMEtext) + "</div>"
             
+            instructionsText = markdowner.convert(project.INSTRUCTIONStext)
+            bomText = markdowner.convert(project.BOMtext)
+            
             restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
                               "<h3>Instructions</h3>"
-                              "<p>This is where the instructions for how to assemble the project go.</p> "
+                              + instructionsText +
                             "</div>"
 
                             "<div id=\"Forums\" class=\"tabcontent\">"
                               "<h3>Forums</h3>"
-                              "<p>These are the forums which the community around the project resides in</p>"
+                              + bomText +
                             "</div>"
 
                             "<div id=\"Buy\" class=\"tabcontent\">"
