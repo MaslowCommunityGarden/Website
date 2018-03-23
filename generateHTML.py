@@ -208,7 +208,7 @@ class GenerateHTML:
             topOfFilesPage = (
             "<div id=\"Files\" class=\"tabcontent\">"
                 "<h3>Files</h3>"
-                "<a href=" + project.editREADMEpath + " class = \"edit_button\">Edit this page</a>"
+                "<a href=" + project.editREADMEpath + " class = \"edit_this_page_button\">Edit this page</a>"
                 "<table>"
                     "<tr>"
                         "<td>"
@@ -232,7 +232,7 @@ class GenerateHTML:
             
             restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
                               "<h3>Instructions</h3>"
-                              "<a href=" + project.editINSTRUCTIONpath + " class = \"edit_button\">Edit this page</a>"
+                              "<a href=" + project.editINSTRUCTIONpath + " class = \"edit_this_page_button\">Edit this page</a>"
                               + instructionsText +
                             "</div>"
 
@@ -254,7 +254,7 @@ class GenerateHTML:
 
                             "<div id=\"Buy\" class=\"tabcontent\">"
                               "<h3>Buy</h3>"
-                              "<a href=" + project.editBOMpath + " class = \"edit_button\">Edit this page</a>"
+                              "<a href=" + project.editBOMpath + " class = \"edit_this_page_button\">Edit this page</a>"
                               + bomText +
                             "</div>"
 
