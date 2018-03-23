@@ -24,49 +24,49 @@ class GenerateHTML:
                 
             thisProject = Project()
                 
-#            try:
+            try:
                 
-            #store the link to the page
-            thisProject.projectPath = string
-            thisProject.projectPath = thisProject.projectPath.replace('\n', '') #remove the carriage return
-            
-            #find the download link
-            thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
-            
-            
-            #find the raw version of the string
-            thisProject.projectPathRaw = self.findProjectRawPath(string)
-            
-            #find the path to the README file
-            readmeUrl = thisProject.projectPathRaw + '/master/README.md'
-            readmeUrl = "".join(readmeUrl.split())
-            thisProject.READMEpath = readmeUrl
-            
-            #Construct the project object
-            thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
-            
-            print "Project name set to"
-            print thisProject.projectName
-            
-            thisProject.projectFile = thisProject.projectName + '.html'
-            thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
-            thisProject.READMEpath  = readmeUrl
-            
-            #read the README file
-            linesInReadme = urllib2.urlopen(readmeUrl)
-            thisProject.READMEtext  = linesInReadme.read()
-            
-            
-            print "Generating entry for: "
-            print thisProject.projectName
-            
-            self.projects.append(thisProject)
+                #store the link to the page
+                thisProject.projectPath = string
+                thisProject.projectPath = thisProject.projectPath.replace('\n', '') #remove the carriage return
+                
+                #find the download link
+                thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
+                
+                
+                #find the raw version of the string
+                thisProject.projectPathRaw = self.findProjectRawPath(string)
+                
+                #find the path to the README file
+                readmeUrl = thisProject.projectPathRaw + '/master/README.md'
+                readmeUrl = "".join(readmeUrl.split())
+                thisProject.READMEpath = readmeUrl
+                
+                #Construct the project object
+                thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
+                
+                print "Project name set to"
+                print thisProject.projectName
+                
+                thisProject.projectFile = thisProject.projectName + '.html'
+                thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
+                thisProject.READMEpath  = readmeUrl
+                
+                #read the README file
+                linesInReadme = urllib2.urlopen(readmeUrl)
+                thisProject.READMEtext  = linesInReadme.read()
+                
+                
+                print "Generating entry for: "
+                print thisProject.projectName
+                
+                self.projects.append(thisProject)
                 
 
-#            except Exception as e:
-#                print string
-#                print "<- could not be read"
-#                print (e)
+            except Exception as e:
+                print string
+                print "<- could not be read"
+                print (e)
     
     def buildMainSite(self):
         '''
