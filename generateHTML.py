@@ -62,18 +62,26 @@ class GenerateHTML:
             thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
             thisProject.READMEpath  = readmeUrl
             
-            #read the README file
-            linesInReadme = urllib2.urlopen(readmeUrl)
-            thisProject.READMEtext  = linesInReadme.read()
+            try:
+                #read the README file
+                linesInReadme = urllib2.urlopen(readmeUrl)
+                thisProject.READMEtext  = linesInReadme.read()
+            except:
+                pass
             
-            #read the INSTRUCTIONS file
-            linesInReadme = urllib2.urlopen(instructionsUrl)
-            thisProject.INSTRUCTIONStext  = linesInReadme.read()
+            try:
+                #read the INSTRUCTIONS file
+                linesInReadme = urllib2.urlopen(instructionsUrl)
+                thisProject.INSTRUCTIONStext  = linesInReadme.read()
+            except:
+                pass
             
-            #read the BOM file
-            linesInReadme = urllib2.urlopen(bomUrl)
-            thisProject.BOMtext  = linesInReadme.read()
-            
+            try:
+                #read the BOM file
+                linesInReadme = urllib2.urlopen(bomUrl)
+                thisProject.BOMtext  = linesInReadme.read()
+            except:
+                pass
             
             
             
