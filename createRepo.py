@@ -67,10 +67,14 @@ if projectName != "none":
     tree = index.write_tree()
     oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
     remote = repoClone.remotes["origin"]
-    loginCredentials = pygit2.UserPass(userName, password)
-    remote.credentials = loginCredentials
-    print remote.credentials
-    remote.push(['refs/heads/master'])
+    credentials = pygit2.UserPass(userName, password)
+    remote.credentials = credentials
+    
+    #credentials = pygit2.UserPass("marvin",marvin_git_passwd)
+    callbacks=pygit2.RemoteCallbacks(credentials=credentials)
+    #myRemote.push(["refs/heads/master"],callbacks=callbacks)
+    
+    remote.push(['refs/heads/master'],callbacks=callbacks)
     
     with open("/var/www/html/trackedProjects.txt", "a") as f:
        f.write("\n" + repo.html_url)
