@@ -187,7 +187,7 @@ class GenerateHTML:
                             "<img src=\"logo.png\" style=\"width:166px;height:45px;border:0;\">"
                         "</a>"
                         
-                        "<div class = \"content\">"
+                        "<div class = \"projectName\">"
                             "<h1>" + project.projectName + "</h1>"
                         "</div>"
                     
@@ -236,7 +236,7 @@ class GenerateHTML:
 
                               "<script type=\"text/javascript\">"
                                 "DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',"
-                                                   "discourseEmbedUrl: 'http://maslowcommunitygarden.org/TestProject.html' };"
+                                                   "discourseEmbedUrl: 'http://maslowcommunitygarden.org<%= current_page.url %>' };"
 
                                 "(function() {"
                                   "var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;"
