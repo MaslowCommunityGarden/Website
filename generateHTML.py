@@ -24,7 +24,7 @@ class GenerateHTML:
                 
             thisProject = Project()
                 
-#            try:
+            try:
                 
             #store the link to the page
             thisProject.projectPath = string
@@ -84,10 +84,10 @@ class GenerateHTML:
             self.projects.append(thisProject)
                 
 
-#            except Exception as e:
-#                print string
-#                print "<- could not be read"
-#                print (e)
+            except Exception as e:
+                print string
+                print "<- could not be read"
+                print (e)
     
     def buildMainSite(self):
         '''
