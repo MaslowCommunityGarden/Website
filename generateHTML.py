@@ -190,6 +190,7 @@ class GenerateHTML:
                         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
                         "<link href=\"styles.css\" rel=\"stylesheet\" />"
                         "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
+                        "<title>This is a test</title>"
                     "</head>"
                     "<body>"
                     
@@ -202,10 +203,10 @@ class GenerateHTML:
                         "</div>"
                     
                         "<div class=\"tab\">"
-                            "<button class=\"tablinks\" onclick=\"openCity(event, 'Files')\" id=\"defaultOpen\">Files</button>"
-                              "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
-                              "<button class=\"tablinks\" onclick=\"openCity(event, 'Forums')\">Forums</button>"
-                              "<button class=\"tablinks\" onclick=\"openCity(event, 'Buy')\">Buy</button>"
+                            "<button class=\"tablinks\" onclick=\"openTab(event, 'Files')\" id=\"defaultOpen\">Files</button>"
+                              "<button class=\"tablinks\" onclick=\"openTab(event, 'Instructions')\">Instructions</button>"
+                              "<button class=\"tablinks\" onclick=\"openTab(event, 'Forums')\">Forums</button>"
+                              "<button class=\"tablinks\" onclick=\"openTab(event, 'Buy')\">Buy</button>"
                         "</div>"
                         "<div id=\"Files\" class=\"tabcontent\">"
                             "<h3>Files</h3>"
@@ -252,7 +253,7 @@ class GenerateHTML:
                         "</div>"
 
                         "<script>"
-                        "function openCity(evt, cityName) {"
+                        "function openTab(evt, tabName) {"
                             "var i, tabcontent, tablinks;"
                             "tabcontent = document.getElementsByClassName(\"tabcontent\");"
                             "for (i = 0; i < tabcontent.length; i++) {"
@@ -262,7 +263,7 @@ class GenerateHTML:
                             "for (i = 0; i < tablinks.length; i++) {"
                                 "tablinks[i].className = tablinks[i].className.replace(\" active\", \"\");"
                             "}"
-                            "document.getElementById(cityName).style.display = \"block\";"
+                            "document.getElementById(tabName).style.display = \"block\";"
                             "evt.currentTarget.className += \" active\";"
                         "}"
 
