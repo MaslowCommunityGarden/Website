@@ -244,6 +244,7 @@ class GenerateHTML:
                               "(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);"
                             "})();"
                           "</script>"
+                          "<p>This is the bottom</p>"
                         "</div>"
 
                         "<div id=\"Buy\" class=\"tabcontent\">"
