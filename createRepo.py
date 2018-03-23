@@ -37,48 +37,57 @@ org = g.get_organization('MaslowCommunityGarden')
 readmeText = "# " + projectName + "\n" + projectDescription
 
 if projectName != "none":
-    repo = org.create_repo(projectName, description = projectDescription )
-    
-    #create the markdown files
-    repo.create_file("/README.MD", "init commit", readmeText)
-    repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
-    repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
-    
-    #Keep track of what files we've got to add to the repo
-    files = os.listdir('/var/www/html/uploads')
-    
-    #Clone the newly created repo
-    repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
-    print "GIT URL: "
-    print repo.clone_url
-    print "<---"
-    
-    #Add the new files to the repo
-    for file in files:
-        os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
-    
-    #Commit it
-    repoClone.remotes.set_url("origin", repo.clone_url)
-    index = repoClone.index
-    index.add_all()
-    index.write()
-    author = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
-    commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
-    tree = index.write_tree()
-    oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
-    remote = repoClone.remotes["origin"]
-    credentials = pygit2.UserPass(userName, password)
-    remote.credentials = credentials
-    
-    #credentials = pygit2.UserPass("marvin",marvin_git_passwd)
-    callbacks=pygit2.RemoteCallbacks(credentials=credentials)
-    #myRemote.push(["refs/heads/master"],callbacks=callbacks)
-    
-    remote.push(['refs/heads/master'],callbacks=callbacks)
-    
-    with open("/var/www/html/trackedProjects.txt", "a") as f:
-       f.write("\n" + repo.html_url)
-    #repo.delete()
+    try:
+        repo = org.create_repo(projectName, description = projectDescription )
+        
+        #create the markdown files
+        repo.create_file("/README.MD", "init commit", readmeText)
+        repo.create_file("/INSTRUCTIONS.MD", " init commit", "Edit this file to add assembly instructions")
+        repo.create_file("/BOM.MD", "init commit", "Edit this file to add a bill of materials")
+        
+        #Keep track of what files we've got to add to the repo
+        files = os.listdir('/var/www/html/uploads')
+        
+        #Clone the newly created repo
+        repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
+        print "GIT URL: "
+        print repo.clone_url
+        print "<---"
+        
+        #Add the new files to the repo
+        for file in files:
+            os.rename("/var/www/html/uploads/" + file, "/var/www/html/uploads/tmp/" + file)
+        
+        #Commit it
+        repoClone.remotes.set_url("origin", repo.clone_url)
+        index = repoClone.index
+        index.add_all()
+        index.write()
+        author = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
+        commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
+        tree = index.write_tree()
+        oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
+        remote = repoClone.remotes["origin"]
+        credentials = pygit2.UserPass(userName, password)
+        remote.credentials = credentials
+        
+        #credentials = pygit2.UserPass("marvin",marvin_git_passwd)
+        callbacks=pygit2.RemoteCallbacks(credentials=credentials)
+        #myRemote.push(["refs/heads/master"],callbacks=callbacks)
+        
+        remote.push(['refs/heads/master'],callbacks=callbacks)
+        
+        with open("/var/www/html/trackedProjects.txt", "a") as f:
+           f.write("\n" + repo.html_url)
+    except Exception as e: 
+        print "Oh darn, something went wrong in the python code..."
+        print(e)
+        try:
+            repo.delete()
+        except:
+            pass
+    else:
+        print "Congratulations! Your project is now live on the projects page!"
 
 
 
