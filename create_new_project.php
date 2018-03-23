@@ -1,14 +1,20 @@
 
-Project name: <?php echo $_POST["projectName"]; ?><br>
-Project description: <?php echo $_POST["projectDescription"]; ?><br>
-Management style: <?php echo $_POST["managementStyle"]; ?><br>
-GitHub user: <?php echo $_POST["githubUser"]; ?><br>
+<!––Project name: <?php echo $_POST["projectName"]; ?><br>––>
+<!––Project description: <?php echo $_POST["projectDescription"]; ?><br>––>
+<!––Management style: <?php echo $_POST["managementStyle"]; ?><br>––>
+<!––GitHub user: <?php echo $_POST["githubUser"]; ?><br>––>
+
+<h1>Your project is being generated!<!h1>
+
+<p>If your project generates properly, it will appear when the website regenerates in one minute.</p>
+
+<p>The output from the php script which uploads and tests your files is: </p>
 
 <?php
 $data = $_POST["projectName"] . '~' . $_POST["projectDescription"] . '~' . $_POST["managementStyle"] . '~' . $_POST["githubUser"];
 $ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $data, FILE_APPEND | LOCK_EX);
 if($ret === false) {
-    die('There was an error writing this file');
+    die('The script was unable to write your inputs to the file');
 }
 else {
     echo "$ret bytes written to file";
@@ -29,16 +35,16 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["projectImage"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+        echo "The image file looks good - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo "That file was not an image!.";
         $uploadOk = 0;
     }
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
+    echo "Oh no! That file already exists.";
     $uploadOk = 0;
 }
 // Check file size
@@ -86,7 +92,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["projectFiles"]["size"] > 500000) {
+if ($_FILES["projectFiles"]["size"] > 5000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -110,6 +116,10 @@ if ($uploadOk == 0) {
 ?>
 
 <br>
+
+<br>
+
+<p>The output from the python script which creates the github repository is: </p>
 
 <br>
 

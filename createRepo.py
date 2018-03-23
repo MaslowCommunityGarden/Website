@@ -40,7 +40,7 @@ if projectName != "none":
     try:
         repo = org.create_repo(projectName, description = projectDescription )
         
-        robotText = "ModerationLevel = " + managementStyle + "\n Facilitator: " + githubUser + "\n"
+        robotText = "ModerationLevel = " + managementStyle + "\n\n Facilitator: " + githubUser + "\n"
         
         #create the markdown files
         repo.create_file("/README.md", "init commit", readmeText)
