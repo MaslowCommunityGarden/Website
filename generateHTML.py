@@ -178,7 +178,7 @@ class GenerateHTML:
             print "Generating file: "
             print project.projectFile
             
-            markdowner = Markdown() #allows for the conversion of markdown files into html
+            markdowner = Markdown(extras=["tables"]) #allows for the conversion of markdown files into html
             
             readmeText          = markdowner.convert(project.READMEtext)
             instructionsText    = markdowner.convert(project.INSTRUCTIONStext)
