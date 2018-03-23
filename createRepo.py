@@ -1,7 +1,6 @@
 from github import Github
 import pygit2
 import os
-import subprocess
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -74,9 +73,7 @@ if projectName != "none":
         credentials = pygit2.UserPass(userName, password)
         remote.credentials = credentials
         
-        #credentials = pygit2.UserPass("marvin",marvin_git_passwd)
         callbacks=pygit2.RemoteCallbacks(credentials=credentials)
-        #myRemote.push(["refs/heads/master"],callbacks=callbacks)
         
         remote.push(['refs/heads/master'],callbacks=callbacks)
         
@@ -90,7 +87,7 @@ if projectName != "none":
         except:
             pass
     else:
-        print "Congratulations! Your project is now live on the projects page!"
+        print "Congratulations! Your project is has been created and will appear soon"
 
 
 

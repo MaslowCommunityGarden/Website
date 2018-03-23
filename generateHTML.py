@@ -178,7 +178,13 @@ class GenerateHTML:
             print "Generating file: "
             print project.projectFile
             
-            tabsAcrossTheTopHTML = ("<!DOCTYPE html>"
+            markdowner = Markdown() #allows for the conversion of markdown files into html
+            
+            readmeText          = markdowner.convert(project.READMEtext)
+            instructionsText    = markdowner.convert(project.INSTRUCTIONStext)
+            bomText             = markdowner.convert(project.BOMtext)
+            
+            pageHTML = ("<!DOCTYPE html>"
                 "<html>"
                     "<head>"
                         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
@@ -200,86 +206,71 @@ class GenerateHTML:
                               "<button class=\"tablinks\" onclick=\"openCity(event, 'Instructions')\">Instructions</button>"
                               "<button class=\"tablinks\" onclick=\"openCity(event, 'Forums')\">Forums</button>"
                               "<button class=\"tablinks\" onclick=\"openCity(event, 'Buy')\">Buy</button>"
-                        "</div>")
-                
-            pageHTML = pageHTML + tabsAcrossTheTopHTML
-            
-            #Add the main image and download buttons
-            topOfFilesPage = (
-            "<div id=\"Files\" class=\"tabcontent\">"
-                "<h3>Files</h3>"
-                "<a href=" + project.editREADMEpath + " class = \"edit_this_page_button\">Edit this page</a>"
-                "<table>"
-                    "<tr>"
-                        "<td>"
-                            "<img src=" + project.mainPicture + " class = \"project_page_image\">"
-                        "</td>"
-                        "<td>"
-                            "<a href=" + project.downloadLink + " class = \"top_button\">Download</a>"
-                            "<a href=" + project.projectPath + " class = \"top_button\" target=\"_blank\">Source</a>"
-                        "</td>"
-                    "</tr>"
-                "</table>")
-            
-            pageHTML = "<div>" + pageHTML + "</div>" + topOfFilesPage
-            
-            #Generate HTML from the README.md file
-            markdowner = Markdown() #allows for the conversion of markdown files into html
-            pageHTML = pageHTML +  markdowner.convert(project.READMEtext) + "</div>"
-            
-            instructionsText = markdowner.convert(project.INSTRUCTIONStext)
-            bomText = markdowner.convert(project.BOMtext)
-            
-            restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
-                              "<h3>Instructions</h3>"
-                              "<a href=" + project.editINSTRUCTIONpath + " class = \"edit_this_page_button\">Edit this page</a>"
-                              + instructionsText +
-                            "</div>"
+                        "</div>"
+                        "<div id=\"Files\" class=\"tabcontent\">"
+                            "<h3>Files</h3>"
+                            "<a href=" + project.editREADMEpath + " class = \"edit_this_page_button\">Edit this page</a>"
+                            "<table>"
+                                "<tr>"
+                                    "<td>"
+                                        "<img src=" + project.mainPicture + " class = \"project_page_image\">"
+                                    "</td>"
+                                    "<td>"
+                                        "<a href=" + project.downloadLink + " class = \"top_button\">Download</a>"
+                                        "<a href=" + project.projectPath + " class = \"top_button\" target=\"_blank\">Source</a>"
+                                    "</td>"
+                                "</tr>"
+                            "</table>"
+                            + readmeText +
+                        "</div>"
+                        "<div id=\"Instructions\" class=\"tabcontent\">"
+                          "<h3>Instructions</h3>"
+                          "<a href=" + project.editINSTRUCTIONpath + " class = \"edit_this_page_button\">Edit this page</a>"
+                          + instructionsText +
+                        "</div>"
 
-                            "<div id=\"Forums\" class=\"tabcontent\">"
-                              "<h3>Forums</h3>"
-                              "<div id='discourse-comments'></div>"
+                        "<div id=\"Forums\" class=\"tabcontent\">"
+                          "<h3>Forums</h3>"
+                          "<div id='discourse-comments'></div>"
 
-                              "<script type=\"text/javascript\">"
-                                "DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',"
-                                                   "discourseEmbedUrl: 'http://maslowcommunitygarden.org/" + project.projectFile + "' };"
+                          "<script type=\"text/javascript\">"
+                            "DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',"
+                                               "discourseEmbedUrl: 'http://maslowcommunitygarden.org/" + project.projectFile + "' };"
 
-                                "(function() {"
-                                  "var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;"
-                                  "d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';"
-                                  "(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);"
-                                "})();"
-                              "</script>"
-                            "</div>"
+                            "(function() {"
+                              "var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;"
+                              "d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';"
+                              "(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);"
+                            "})();"
+                          "</script>"
+                        "</div>"
 
-                            "<div id=\"Buy\" class=\"tabcontent\">"
-                              "<h3>Buy</h3>"
-                              "<a href=" + project.editBOMpath + " class = \"edit_this_page_button\">Edit this page</a>"
-                              + bomText +
-                            "</div>"
+                        "<div id=\"Buy\" class=\"tabcontent\">"
+                          "<h3>Buy</h3>"
+                          "<a href=" + project.editBOMpath + " class = \"edit_this_page_button\">Edit this page</a>"
+                          + bomText +
+                        "</div>"
 
-                            "<script>"
-                            "function openCity(evt, cityName) {"
-                                "var i, tabcontent, tablinks;"
-                                "tabcontent = document.getElementsByClassName(\"tabcontent\");"
-                                "for (i = 0; i < tabcontent.length; i++) {"
-                                    "tabcontent[i].style.display = \"none\";"
-                                "}"
-                                "tablinks = document.getElementsByClassName(\"tablinks\");"
-                                "for (i = 0; i < tablinks.length; i++) {"
-                                    "tablinks[i].className = tablinks[i].className.replace(\" active\", \"\");"
-                                "}"
-                                "document.getElementById(cityName).style.display = \"block\";"
-                                "evt.currentTarget.className += \" active\";"
+                        "<script>"
+                        "function openCity(evt, cityName) {"
+                            "var i, tabcontent, tablinks;"
+                            "tabcontent = document.getElementsByClassName(\"tabcontent\");"
+                            "for (i = 0; i < tabcontent.length; i++) {"
+                                "tabcontent[i].style.display = \"none\";"
                             "}"
+                            "tablinks = document.getElementsByClassName(\"tablinks\");"
+                            "for (i = 0; i < tablinks.length; i++) {"
+                                "tablinks[i].className = tablinks[i].className.replace(\" active\", \"\");"
+                            "}"
+                            "document.getElementById(cityName).style.display = \"block\";"
+                            "evt.currentTarget.className += \" active\";"
+                        "}"
 
-                            "document.getElementById(\"defaultOpen\").click();"
-                            "</script>"
-                                 
-                            "</body>"
-                            "</html>")
-            
-            pageHTML = pageHTML + restOfThePage
+                        "document.getElementById(\"defaultOpen\").click();"
+                        "</script>"
+                             
+                    "</body>"
+                "</html>")
             
             #Generate and HTML file for the project
             f = open(project.projectFile,'w')
