@@ -101,6 +101,21 @@ input {
     cursor: pointer;
 }
 
+.edit_button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    width: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
+
 /* Styles for the tabs in the project pages */
 .tab {
     overflow: hidden;

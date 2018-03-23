@@ -62,6 +62,10 @@ class GenerateHTML:
                 thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
                 thisProject.READMEpath  = readmeUrl
                 
+                thisProject.editREADMEpath      = thisProject.projectPath + '/blob/master/README.md'
+                thisProject.editINSTRUCTIONpath = thisProject.projectPath + '/blob/master/INSTRUCTIONS.md'
+                thisProject.editBOMpath         = thisProject.projectPath + '/blob/master/BOM.md'
+                
                 
                 #read the README file
                 linesInReadme = urllib2.urlopen(readmeUrl)
@@ -204,6 +208,7 @@ class GenerateHTML:
             topOfFilesPage = (
             "<div id=\"Files\" class=\"tabcontent\">"
                 "<h3>Files</h3>"
+                "<a href=" + project.editREADMEpath + " class = \"edit_button\">Edit this page</a>"
                 "<table>"
                     "<tr>"
                         "<td>"
@@ -227,6 +232,7 @@ class GenerateHTML:
             
             restOfThePage = ("<div id=\"Instructions\" class=\"tabcontent\">"
                               "<h3>Instructions</h3>"
+                              "<a href=" + project.editINSTRUCTIONpath + " class = \"edit_button\">Edit this page</a>"
                               + instructionsText +
                             "</div>"
 
@@ -248,6 +254,7 @@ class GenerateHTML:
 
                             "<div id=\"Buy\" class=\"tabcontent\">"
                               "<h3>Buy</h3>"
+                              "<a href=" + project.editBOMpath + " class = \"edit_button\">Edit this page</a>"
                               + bomText +
                             "</div>"
 
