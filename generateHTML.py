@@ -130,7 +130,7 @@ class GenerateHTML:
                     
                     
                     with tag('p', klass = 'title'):
-                        text('A place for community driven open source projects to live')
+                        text('Not ready to use! -- A place for community driven open source projects to live - Not yet ready to use!')
                     
                     with tag('hr', id="projectsSection"):
                         pass
