@@ -192,7 +192,7 @@ class GenerateHTML:
                         "<link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" type=\"text/css\" rel=\"stylesheet\" />"
                         "<title>" + project.projectName + "</title>"
                     "</head>"
-                    "<body>"
+                    "<body class = 'project_content'>"
                     
                         "<a href=\"index.html\">"
                             "<img src=\"logo.png\" style=\"width:166px;height:45px;border:0;\">"

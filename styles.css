@@ -7,6 +7,14 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.project_content {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .body {
     font-family: 'Open Sans', sans-serif;
 }
