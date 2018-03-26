@@ -71,7 +71,7 @@ p.boxed_text {
 }
 
 .project_img {
-    display: inline-block;
+ /*   display: inline-block;
     max-width:250px;
     max-height:200px;
     width: auto;
@@ -79,7 +79,7 @@ p.boxed_text {
     padding: 10px;
     -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
     -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);*/
 }
 
 .project-thumbnail {
