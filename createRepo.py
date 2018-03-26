@@ -44,9 +44,9 @@ if projectName != "none":
         time.sleep(3)
         
         try:
-            print "gitHUB USER:"
+            print "Adding GitHub User:"
             print githubUser
-            print ":::::"
+            print "       "
             repo.add_to_collaborators(githubUser)
         except Exception as e:
             print "Unable to add " + githubUser + " as a collaborator:"
