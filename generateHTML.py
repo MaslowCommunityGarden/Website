@@ -111,19 +111,21 @@ class GenerateHTML:
                     
                 with tag('body', klass = 'body'):
                 
-                    doc.stag('img', src="logo.png", width="auto", height="45")
-                    
-                    with tag('br'):
-                        pass
-                    
-                    with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
-                        text('How does the garden work?')
-                    
-                    with tag('a', href="addaproject.html", klass="top_button"):
-                        text('Add a project')
-                        
-                    with tag('a', href="index.html#projectsSection", klass="top_button"):
-                        text('Browse projects')
+                	with tag('header', klass = 'header'):
+                
+	                    doc.stag('img', src="logo.png", width="auto", height="90")
+	                    
+	                    with tag('br'):
+	                        pass
+	                    
+	                    with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
+	                        text('How does the garden work?')
+	                    
+	                    with tag('a', href="addaproject.html", klass="top_button"):
+	                        text('Add a project')
+	                        
+	                    with tag('a', href="index.html#projectsSection", klass="top_button"):
+	                        text('Browse projects')
                     
                     with tag('hr'):
                         pass
