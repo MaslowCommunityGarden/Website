@@ -1,6 +1,7 @@
 from github import Github
 import pygit2
 import os
+import time
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -39,6 +40,8 @@ readmeText = "# " + projectName + "\n" + projectDescription
 if projectName != "none":
     try:
         repo = org.create_repo(projectName, description = projectDescription )
+        
+        time.sleep(3)
         
         try:
             print "gitHUB USER:"
