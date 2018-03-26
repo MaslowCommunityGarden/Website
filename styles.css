@@ -149,6 +149,22 @@
         vertical-align: top;
     }   
 
+/*----------------------------------------
+    
+    MEDIA QUERIES
+    
+----------------------------------------*/ 
+
+    @media only screen and (max-width: 960px) {
+        
+        .two-col {
+            width: 300px;
+        }
+        
+        .three-col {
+            width: 300px;
+        }
+
 .centered_div{
     display: inline-block;
     border: 1px solid black ;
