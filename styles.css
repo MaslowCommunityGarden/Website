@@ -147,7 +147,114 @@
 
     td {
         vertical-align: top;
-    }   
+    }  
+
+
+/*----------------------------------------
+    
+    MISCELLANEOUS
+    
+----------------------------------------*/     
+    
+    .centered_div{
+        display: inline-block;
+        border: 1px solid black ;
+    }
+    
+    .regular_left_text{
+        text-align: left;
+    }
+    
+    
+    .project-thumbnail {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .project-thumbnail img {
+        object-fit: cover;
+    }
+    
+    .project_image_area {
+        border: 2px solid #eeeeee;
+    }
+    
+    .project_page_image{
+        max-width: 620px;
+        max-height:500px;
+        width: auto;
+        height: auto;
+        float: left;
+    }
+    
+    a.project_link:link
+    {
+       color: black;
+       text-decoration: none;
+    }
+    a.project_link:visited
+    {
+       color: black;
+       text-decoration: none;
+    }
+    a.project_link:hover
+    {
+       color: black;
+       text-decoration: none;
+    }
+    a.project_link:active
+    {
+       color: black;
+       text-decoration: none;
+    }
+    
+    .edit_this_page_button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        float: right;
+        font-size: 12px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    
+    /* Styles for the tabs in the project pages */
+    .tab {
+        overflow: hidden;
+        border-bottom: 2px solid #eeeeee;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        border-top: none;
+    }     
 
 /*----------------------------------------
     
@@ -165,102 +272,3 @@
             width: 300px;
         }
 
-.centered_div{
-    display: inline-block;
-    border: 1px solid black ;
-}
-
-.regular_left_text{
-    text-align: left;
-}
-
-
-.project-thumbnail {
-    width: 300px;
-    height: 300px;
-}
-
-.project-thumbnail img {
-    object-fit: cover;
-}
-
-.project_image_area {
-    border: 2px solid #eeeeee;
-}
-
-.project_page_image{
-    max-width: 620px;
-    max-height:500px;
-    width: auto;
-    height: auto;
-    float: left;
-}
-
-a.project_link:link
-{
-   color: black;
-   text-decoration: none;
-}
-a.project_link:visited
-{
-   color: black;
-   text-decoration: none;
-}
-a.project_link:hover
-{
-   color: black;
-   text-decoration: none;
-}
-a.project_link:active
-{
-   color: black;
-   text-decoration: none;
-}
-
-.edit_this_page_button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    float: right;
-    font-size: 12px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-/* Styles for the tabs in the project pages */
-.tab {
-    overflow: hidden;
-    border-bottom: 2px solid #eeeeee;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    border-top: none;
-}
