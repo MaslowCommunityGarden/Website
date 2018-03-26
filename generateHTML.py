@@ -198,7 +198,7 @@ class GenerateHTML:
                     "</head>"
                     "<body class = 'project_content'>"
                     
-                        "<header class = 'header'>"
+                    "<header class = 'header'>"
                             "<a href='index.html'>"
                                 "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
                             "</a>"
@@ -209,6 +209,7 @@ class GenerateHTML:
                             "</nav>"
                         "</header>"
                         
+                    "<section class = 'content'>"
                         "<div class = 'ProjectName'>"
                             "<h1 class='project-name'>" + project.projectName + "</h1>"
                         "</div>"
@@ -281,6 +282,7 @@ class GenerateHTML:
                         "document.getElementById('defaultOpen').click();"
                         "</script>"
                              
+                    "</section>"
                     "</body>"
                 "</html>")
             
