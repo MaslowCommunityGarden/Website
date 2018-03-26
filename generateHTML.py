@@ -200,9 +200,9 @@ class GenerateHTML:
                             "<a href='index.html'>"
                                 "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
                             "</a>"
-                            "<a href='howdoesthegardenwork.html' class='nav-link'>"How Does the Garden Work?"</a>"
-                            "<a href='addaproject.html' class='nav-link'>"Add A Project"</a>"
-                            "<a href='index.html#projectsSection' class='nav-link'>"Browse Projects"</a>"
+                            "<a href='howdoesthegardenwork.html' class='nav-link'>How Does the Garden Work?</a>"
+                            "<a href='addaproject.html' class='nav-link'>Add A Project</a>"
+                            "<a href='index.html#projectsSection' class='nav-link'>Browse Projects</a>"
                         "</header>"
                         
                         "<div class = 'ProjectName'>"
