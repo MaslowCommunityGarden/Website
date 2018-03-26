@@ -35,7 +35,7 @@ g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
 
-readmeText = "# " + projectName + "\n" + projectDescription
+readmeText = "# " + projectName + "\n\n" + projectDescription
 
 if projectName != "none":
     try:
