@@ -38,7 +38,6 @@
     overflow-y: hidden;
     margin: 10px;
     width: 300px; 
-    height: 300px;
 }
 
 .centered_div{
@@ -88,9 +87,7 @@ p.boxed_text {
 }
 
 .project-thumbnail img {
-    object-fit: contain;
-    max-height: 300px;
-    max-width: 300px;
+    object-fit: cover;
 }
 
 .project_page_image{
