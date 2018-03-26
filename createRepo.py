@@ -40,9 +40,9 @@ if projectName != "none":
         repo = org.create_repo(projectName, description = projectDescription )
         
         try:
-            repo.add_to_collaborators(githubUser, permission='admin')
+            repo.add_to_collaborators(githubUser)
         except Exception as e:
-            print "Unable to add " + githubUser + "as a collaborator:"
+            print "Unable to add " + githubUser + " as a collaborator:"
             print e
         
         robotText = "ModerationLevel = " + managementStyle + "\n\n Facilitator: " + githubUser + "\n"
