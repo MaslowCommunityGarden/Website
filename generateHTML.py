@@ -199,25 +199,15 @@ class GenerateHTML:
                     "<body class = 'project_content'>"
                     
                         "<header class = 'header'>"
-<<<<<<< HEAD
 	                        "<a href='index.html'>"
 	                            "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
 	                        "</a>"
                             "<nav class='navigation'>"
-	                            "<a href='howdoesthegardenwork.html' class='nav-link'>"How Does the Garden Work?"</a>"
-                                "<a href='addaproject.html' class='nav-link'>"Add A Project"</a>"
-                                "<a href='index.html#projectsSection' class='nav-link'>"Browse Projects"</a>"
+	                            "<a href='howdoesthegardenwork.html' class='nav-link'>How Does the Garden Work?</a>"
+                                "<a href='addaproject.html' class='nav-link'>Add A Project</a>"
+                                "<a href='index.html#projectsSection' class='nav-link'>Browse Projects</a>"
                             "</nav>"
 	                    "</header>"
-=======
-                            "<a href='index.html'>"
-                                "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
-                            "</a>"
-                            "<a href='howdoesthegardenwork.html' class='nav-link'>How Does the Garden Work?</a>"
-                            "<a href='addaproject.html' class='nav-link'>Add A Project</a>"
-                            "<a href='index.html#projectsSection' class='nav-link'>Browse Projects</a>"
-                        "</header>"
->>>>>>> 0075fec50e2e48f8902f9baaff3d34a21edeb9d9
                         
                         "<div class = 'ProjectName'>"
                             "<h1 class='project-name'>" + project.projectName + "</h1>"
