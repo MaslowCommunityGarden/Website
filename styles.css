@@ -264,11 +264,18 @@
 
     @media only screen and (max-width: 960px) {
         
+        .content, .inner-header {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         .two-col {
             width: 300px;
         }
         
         .three-col {
             width: 300px;
+        }
         }
 
