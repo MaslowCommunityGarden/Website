@@ -210,7 +210,7 @@ class GenerateHTML:
                             "<h1 class='title'>" + project.projectName + "</h1>"
                         "</div>"
                     
-                        "<div class='tab'>"
+                        "<div class='tab three-col'>"
                             "<button class=\"tablinks\" onclick=\"openTab(event, 'Files')\" id=\"defaultOpen\">Files</button>"
                               "<button class=\"tablinks\" onclick=\"openTab(event, 'Instructions')\">Instructions</button>"
                               "<button class=\"tablinks\" onclick=\"openTab(event, 'Forums')\">Forums</button>"
