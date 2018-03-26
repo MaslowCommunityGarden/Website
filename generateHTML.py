@@ -218,7 +218,7 @@ class GenerateHTML:
                         "</div>"
                         "<div id='Files' class='tabcontent'>"
                             "<div class='tab-title'>"
-                                "<h3>Files</h3>"
+                                "<h3 class='two-col'>Files</h3>"
                                 "<a href=" + project.editREADMEpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
                             "<table>"

@@ -226,9 +226,3 @@ a.project_link:active
     display: none;
     border-top: none;
 }
-
-.tabcontent h3 {
-    width: 620px;
-    float: left;
-    margin: 10px;
-}
