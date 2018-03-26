@@ -199,7 +199,7 @@ class GenerateHTML:
                         "</a>"
                         
                         "<div class = 'projectName'>"
-                            "<h1>" + project.projectName + "</h1>"
+                            "<h1 class="project-name">" + project.projectName + "</h1>"
                         "</div>"
                     
                         "<div class='tab'>"
