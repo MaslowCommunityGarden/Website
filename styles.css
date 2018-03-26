@@ -2,6 +2,7 @@
 	font-family: 'Open Sans', sans-serif;
 	box-sizing: border-box;
 	overflow: auto;
+	text-align: left;
 }
 
 .content, .inner-header {
@@ -198,6 +199,5 @@ input {
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
     border-top: none;
 }
