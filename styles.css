@@ -180,12 +180,8 @@
         width: auto;
     }
     
-    .project_image_area {
-        border: 2px solid #eeeeee;
-    }
-    
     .project_page_image{
-        max-width: 620px;
+        max-width: 600px;
         max-height:500px;
         width: auto;
         height: auto;
