@@ -64,6 +64,7 @@
     
     .button:hover {
         background-color: #388346;
+        color: white;
     }
     
     h1.boxed_text {
@@ -111,12 +112,22 @@
         margin-right: 10px;
         float: left;
     }
+    
+    .three-col {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
     .boxed {
         display: inline-block;
         overflow: auto;
         margin: 10px;
         margin-bottom: 50px;
+    }
+    
+    img {
+        max-width: 960px;
+        height: auto;
     }
     
 /*----------------------------------------

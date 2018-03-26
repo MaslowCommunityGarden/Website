@@ -244,7 +244,7 @@ class GenerateHTML:
 
                         "<div id='Forums' class='tabcontent'>"
                           "<div class='tab-title'>"
-                            "<h3>Forums</h3>"
+                            "<h3 class='three-col'>Forums</h3>"
                           "</div>"
                           "<div id='discourse-comments'></div>"
 
@@ -265,27 +265,31 @@ class GenerateHTML:
                                 "<h3 class='two-col'>Buy</h3>"
                                 "<a href=" + project.editBOMpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
-                          + bomText +
+                            
+                            "<div class='three-col'>"
+                              + bomText +
+                           "</div>"   
                         "</div>"
 
-                        "<script>"
-                        "function openTab(evt, tabName) {"
-                            "var i, tabcontent, tablinks;"
-                            "tabcontent = document.getElementsByClassName('tabcontent');"
-                            "for (i = 0; i < tabcontent.length; i++) {"
-                                "tabcontent[i].style.display = 'none';"
+                        "<div class='three-col'>"
+                            "<script>"
+                            "function openTab(evt, tabName) {"
+                                "var i, tabcontent, tablinks;"
+                                "tabcontent = document.getElementsByClassName('tabcontent');"
+                                "for (i = 0; i < tabcontent.length; i++) {"
+                                    "tabcontent[i].style.display = 'none';"
+                                "}"
+                                "tablinks = document.getElementsByClassName('tablinks');"
+                                "for (i = 0; i < tablinks.length; i++) {"
+                                    "tablinks[i].className = tablinks[i].className.replace(' active', '');"
+                                "}"
+                                "document.getElementById(tabName).style.display = 'block';"
+                                "evt.currentTarget.className += ' active';"
                             "}"
-                            "tablinks = document.getElementsByClassName('tablinks');"
-                            "for (i = 0; i < tablinks.length; i++) {"
-                                "tablinks[i].className = tablinks[i].className.replace(' active', '');"
-                            "}"
-                            "document.getElementById(tabName).style.display = 'block';"
-                            "evt.currentTarget.className += ' active';"
-                        "}"
-
-                        "document.getElementById('defaultOpen').click();"
-                        "</script>"
-                             
+    
+                            "document.getElementById('defaultOpen').click();"
+                            "</script>"
+                        "</div>"  
                     "</section>"
                     "</body>"
                 "</html>")
