@@ -120,13 +120,13 @@ class GenerateHTML:
                         
                         with tag('nav', klass = 'navigation'):
                         
-                            with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
+                            with tag('a', href="howdoesthegardenwork.html", klass="button"):
                                 text('How does the garden work?')
                             
-                            with tag('a', href="addaproject.html", klass="top_button"):
+                            with tag('a', href="addaproject.html", klass="button"):
                                 text('Add a project')
                                 
-                            with tag('a', href="index.html", klass="top_button"):
+                            with tag('a', href="index.html", klass="button"):
                                 text('Browse projects')
                                 
                 with tag('section', klass="content"):
@@ -198,9 +198,9 @@ class GenerateHTML:
                                 "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
                             "</a>"
                             "<nav class='navigation'>"
-                                "<a href='howdoesthegardenwork.html' class='nav-link top_button'>How Does the Garden Work?</a>"
-                                "<a href='addaproject.html' class='nav-link top_button'>Add A Project</a>"
-                                "<a href='index.html#projectsSection' class='nav-link top_button'>Browse Projects</a>"
+                                "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
+                                "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
+                                "<a href='index.html#projectsSection' class='nav-link button one-col'>Browse Projects</a>"
                             "</nav>"
                         "</div>"
                     "</header>"
@@ -221,12 +221,12 @@ class GenerateHTML:
                             "<a href=" + project.editREADMEpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "<table>"
                                 "<tr>"
-                                    "<td>"
+                                    "<td class="project_image_area two-col">"
                                         "<img src=" + project.mainPicture + " class = 'project_page_image'>"
                                     "</td>"
                                     "<td>"
-                                        "<a href=" + project.downloadLink + " class = 'top_button'>Download</a>"
-                                        "<a href=" + project.projectPath + " class = 'top_button' target='_blank'>Source</a>"
+                                        "<a href=" + project.downloadLink + " class = 'button one-col'>Download</a>"
+                                        "<a href=" + project.projectPath + " class = 'button one-col' target='_blank'>Source</a>"
                                     "</td>"
                                 "</tr>"
                             "</table>"
