@@ -29,39 +29,23 @@
 
 
 <form action="create_new_project.php" method="post" enctype="multipart/form-data">
-    Give your project a title (cannot be changed later): 
-    <br>
-    <br>
-    <input type="text" name="projectName" required><br>
-    Enter a one sentence description of the project: 
-    <br>
-    <br>
-    <input type="text" name="projectDescription" required><br>
-    Upload a picture to test identify the project (.jpg):
-    <br>
-    <br>
-    <input type="file" name="projectImage" id="projectImage" required>
-    <br>
-    <br>
-    Upload a zip folder containing project files:
-    <br>
-    <br>
-    <input type="file" name="projectFiles" id="projectFiles" required>
-    <br>
-    <br>
-    How much control do you want over the project?
-    <br>
-    <br>
-    Community managed:
-    <input type="radio" name="managementStyle" value="communityManaged" checked>
-    I want to manage:
-    <input type="radio" name="managementStyle" value="customManaged"><br>
-    
-    Enter your GitHub user name so you can be given access to control the project: 
-    <br>
-    <input type="text" name="githubUser">
-    <br>
-    <br>
+    <div class="two-col">
+        <p class="input-instruction">Give your project a title (cannot be changed later): </p>
+        <input type="text" name="projectName" required><br>
+        <p class="input-instruction">Enter a one sentence description of the project: </p>
+        <input type="text" name="projectDescription" required><br>
+        <p class="input-instruction">Enter your GitHub user name so you can be given access to control the project:</p>
+        <input type="text" name="githubUser">
+    </div>
+    <div class="one-col">
+        <p class="input-instruction">Upload a picture to test identify the project (.jpg):</p>
+        <input type="file" name="projectImage" id="projectImage" required>
+        <p class="input-instruction">Upload a zip folder containing project files:</p>
+        <input type="file" name="projectFiles" id="projectFiles" required>
+        <p class="input-instruction">How much control do you want over the project?</p>
+        <p><input type="radio" name="managementStyle" value="communityManaged" checked> Community managed</p>
+        <p><input type="radio" name="managementStyle" value="customManaged"> I want to manage</p>
+    </div>
     <input type="submit" value="Create" name="submit" class = "button">
 </form>
 
