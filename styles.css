@@ -50,7 +50,26 @@
         margin: 10px;
         cursor: pointer;
         float: left;
-}
+    }
+    
+    .button:hover {
+        background-color: #388346;
+    }
+    
+    h1.boxed_text {
+        font-weight: 700;
+        color: #4aaf5d;
+        text-align: left;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    p.boxed_text {
+        text-align: left;
+        font-size: 13px;
+        margin: 0 !important;
+    }
 
 /*----------------------------------------
     
@@ -69,29 +88,43 @@
         margin: auto;
     }
     
-    .one-col {
+    .one-col, .boxed {
         width: 300px;
         margin-left: 10px;
         margin-right: 10px;
+        float: left;
     }
     
     .two-col {
         width: 620px;
         margin-left: 10px;
         margin-right: 10px;
+        float: left;
     }
 
-.boxed {
-    display: inline-block;
-    background-color: #FDFDFD;
-    text-align: center;
-    overflow: auto;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    margin: 10px;
-    width: 300px; 
-    margin-bottom: 50px;
-}
+    .boxed {
+        display: inline-block;
+        overflow: auto;
+        margin: 10px;
+        margin-bottom: 50px;
+    }
+    
+/*----------------------------------------
+    
+    FORM 
+    
+----------------------------------------*/
+
+    input {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    
+    .float-right {
+        float: right;
+    }
+    
 
 .centered_div{
     display: inline-block;
@@ -102,25 +135,6 @@
     text-align: left;
 }
 
-.boxed_text {
-    font-size: 16px; 
-    font-size: 1vw;
-}
-
-h1.boxed_text {
-    font-weight: 700;
-    color: #4aaf5d;
-    text-align: left;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-p.boxed_text {
-    text-align: left;
-    font-size: 13px;
-    margin: 0 !important;
-}
 
 .project-thumbnail {
     width: 300px;
@@ -163,15 +177,6 @@ a.project_link:active
 {
    color: black;
    text-decoration: none;
-}
-
-input { 
-    margin-bottom: 50px; 
-}
-
-.
-button:hover {
-    background-color: #388346;
 }
 
 .edit_this_page_button {
