@@ -157,14 +157,13 @@ input {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 5px 5px;
-    width: 10%;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     float: right;
     font-size: 12px;
-    margin: 2px 1px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -200,4 +199,10 @@ input {
 .tabcontent {
     display: none;
     border-top: none;
+}
+
+.tabcontent h3 {
+    width: 620px;
+    float: left;
+    margin: 10px;
 }
