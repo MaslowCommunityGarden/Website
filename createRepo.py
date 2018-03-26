@@ -41,7 +41,7 @@ if projectName != "none":
     try:
         repo = org.create_repo(projectName, description = projectDescription )
         
-        time.sleep(3)
+        time.sleep(3) #This is probably more delay than github needs to create the repo. With no delay at all it worked about half the time
         
         try:
             print "Adding GitHub User:"
