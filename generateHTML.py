@@ -190,7 +190,7 @@ class GenerateHTML:
                         "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
                         "<title>" + project.projectName + "</title>"
                     "</head>"
-                    "<body class = 'project_content'>"
+                    "<body>"
                     
                     "<header class = 'header'>"
                         "<div class='inner-header'>"

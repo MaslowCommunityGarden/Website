@@ -44,7 +44,6 @@
         font-size: 36px;
         padding-top: 50px;
         padding-bottom: 50px;
-        margin: 10px;
     }
     
     .button {
@@ -92,11 +91,6 @@
         width: 960px;
         margin-left: auto;
         margin-right: auto;
-    }
-    
-    .project_content {
-        max-width: 960px;
-        margin: auto;
     }
     
     .one-col, .boxed {
