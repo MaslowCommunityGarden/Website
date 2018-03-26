@@ -207,7 +207,7 @@ class GenerateHTML:
                         
                     "<section class = 'content'>"
                         "<div class = 'ProjectName'>"
-                            "<h1 class='project-name'>" + project.projectName + "</h1>"
+                            "<h1 class='title'>" + project.projectName + "</h1>"
                         "</div>"
                     
                         "<div class='tab'>"
