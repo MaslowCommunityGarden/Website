@@ -111,7 +111,7 @@ class GenerateHTML:
                     
                 with tag('body', klass = 'body'):
                 
-                    doc.stag('img', src="logo.png", width="166", height="45")
+                    doc.stag('img', src="logo.png", width="auto", height="45")
                     
                     with tag('br'):
                         pass
@@ -198,8 +198,8 @@ class GenerateHTML:
                             "<img src='logo.png' style='width:166px;height:45px;border:0;'>"
                         "</a>"
                         
-                        "<div class = 'projectName'>"
-                            "<h1 class="project-name">" + project.projectName + "</h1>"
+                        "<div class = 'ProjectName'>"
+                            "<h1 class='project-name'>" + project.projectName + "</h1>"
                         "</div>"
                     
                         "<div class='tab'>"
