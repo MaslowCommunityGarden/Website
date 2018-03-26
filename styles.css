@@ -4,8 +4,7 @@
 
 .content {
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     background: white;
    /* padding: 10px;*/
 }
