@@ -232,14 +232,18 @@ class GenerateHTML:
                                     "</td>"
                                 "</tr>"
                             "</table>"
-                            + readmeText +
+                            "<div class='three-col'>"
+                                + readmeText +
+                            "</div>"
                         "</div>"
                         "<div id='Instructions' class='tabcontent'>"
                             "<div class='tab-title'>"
                                 "<h3 class='two-col'>Instructions</h3>"
                                 "<a href=" + project.editINSTRUCTIONpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
-                          + instructionsText +
+                            "<div class='three-col'>"
+                                + instructionsText +
+                            "</div>"
                         "</div>"
 
                         "<div id='Forums' class='tabcontent'>"
