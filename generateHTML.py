@@ -117,9 +117,6 @@ class GenerateHTML:
                         
                             doc.stag('img', src="logo.png", width="auto", height="90")
                         
-                        with tag('br'):
-                            pass
-                        
                         with tag('nav', klass = 'navigation'):
                         
                             with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
