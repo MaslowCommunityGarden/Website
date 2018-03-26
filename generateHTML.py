@@ -103,7 +103,6 @@ class GenerateHTML:
         #generate the HTML for the site
         doc, tag, text = Doc().tagtext()
         
-        with tag('div', klass="content"):
             with tag('html'):
                 with tag('head'):
                     doc.stag('link',rel='stylesheet', href='styles.css')
@@ -127,20 +126,13 @@ class GenerateHTML:
                                 with tag('a', href="addaproject.html", klass="top_button"):
                                     text('Add a project')
                                     
-                                with tag('a', href="index.html#projectsSection", klass="top_button"):
+                                with tag('a', href="index.html", klass="top_button"):
                                     text('Browse projects')
-                    
-                    with tag('hr'):
-                        pass
-                    
+                                    
+                with tag('section', klass="content"):
                     
                     with tag('p', klass = 'title'):
                         text('Not ready to use! -- A place for community driven open source projects to live - Not yet ready to use!')
-                    
-                    with tag('hr', id="projectsSection"):
-                        pass
-                    
-
                     
                     #Generate a grid of tracked projects
                     
