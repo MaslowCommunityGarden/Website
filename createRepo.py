@@ -19,8 +19,9 @@ except:
     managementStyle = "none"
 try:
     githubUser = userInputs[3].replace('\n', '')
+    githubUser = githubUser.replace(" ", "")
 except:
-    githubUser = "nobody"
+    githubUser = ""
     
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
@@ -43,7 +44,7 @@ if projectName != "none":
             print "gitHUB USER:"
             print githubUser
             print ":::::"
-            repo.add_to_collaborators("hannahebteagle")
+            repo.add_to_collaborators(githubUser)
         except Exception as e:
             print "Unable to add " + githubUser + " as a collaborator:"
             print e
