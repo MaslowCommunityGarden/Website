@@ -35,6 +35,7 @@
         font-size: 36px;
         padding-top: 50px;
         padding-bottom: 50px;
+        margin: 10px;
     }
     
     .button {
@@ -125,6 +126,15 @@
         float: right;
     }
     
+/*----------------------------------------
+    
+    TABLE
+    
+----------------------------------------*/ 
+
+    td {
+        vertical-align: top;
+    }   
 
 .centered_div{
     display: inline-block;
@@ -146,8 +156,7 @@
 }
 
 .project_image_area {
-    width: 620px;
-    margin: 10px;
+    border: 2px solid #eeeeee;
 }
 
 .project_page_image{
