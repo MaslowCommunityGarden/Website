@@ -141,6 +141,7 @@ navigation {
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
+    float: left;
 }
 
 .top_button:hover {
