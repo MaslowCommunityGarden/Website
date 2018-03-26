@@ -118,14 +118,16 @@ class GenerateHTML:
                         with tag('br'):
                             pass
                         
-                        with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
-                            text('How does the garden work?')
+                        with tag('nav', klass = 'navigation'):
                         
-                        with tag('a', href="addaproject.html", klass="top_button"):
-                            text('Add a project')
+                            with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
+                                text('How does the garden work?')
                             
-                        with tag('a', href="index.html#projectsSection", klass="top_button"):
-                            text('Browse projects')
+                            with tag('a', href="addaproject.html", klass="top_button"):
+                                text('Add a project')
+                                
+                            with tag('a', href="index.html#projectsSection", klass="top_button"):
+                                text('Browse projects')
                     
                     with tag('hr'):
                         pass
