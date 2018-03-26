@@ -155,7 +155,8 @@ class GenerateHTML:
                         with tag('a', href=project.projectFile, klass = "project_link"):
                             with tag('div', klass = 'boxed'):
                                 
-                                doc.stag('img', src= project.mainPicture, klass = "project_img")
+                                with tag ('div', klass = 'project-thumbnail'):
+                                    doc.stag('img', src= project.mainPicture, klass = "project_img")
                                 
                                 numberOfLinesProcessed = 0
                                 maxNumberToProcess = 3
