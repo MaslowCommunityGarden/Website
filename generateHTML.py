@@ -223,7 +223,7 @@ class GenerateHTML:
                             "</div>"
                             "<table>"
                                 "<tr>"
-                                    "<td class="project_image_area two-col">"
+                                    "<td class='project_image_area two-col'>"
                                         "<img src=" + project.mainPicture + " class = 'project_page_image'>"
                                     "</td>"
                                     "<td>"
