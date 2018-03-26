@@ -43,7 +43,7 @@ if projectName != "none":
             print "gitHUB USER:"
             print githubUser
             print ":::::"
-            repo.add_to_collaborators("BarbourSmith")
+            repo.add_to_collaborators("hannahebteagle")
         except Exception as e:
             print "Unable to add " + githubUser + " as a collaborator:"
             print e
