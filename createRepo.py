@@ -40,9 +40,10 @@ if projectName != "none":
         repo = org.create_repo(projectName, description = projectDescription )
         
         try:
-            print "   Colab:"
-            print repo.get_collaborators()
-            print "         "
+            print "gitHUB USER:"
+            print githubUser
+            print ":::::"
+            repo.add_to_collaborators("BarbourSmith")
         except Exception as e:
             print "Unable to add " + githubUser + " as a collaborator:"
             print e
