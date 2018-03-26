@@ -3,7 +3,7 @@
 }
 
 .content {
-    width: 1200px;
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
     background: white;
@@ -29,13 +29,12 @@
 
 .boxed {
     display: inline-block;
-    border: 10px solid white ;
     background-color: #FDFDFD;
     text-align: center;
     overflow: auto;
     overflow-x: hidden;
     overflow-y: hidden;
-    margin: auto;
+    margin: 10px;
     width: 300px; 
     height: 300px;
 }
@@ -114,17 +113,22 @@ input {
     margin-bottom: 50px; 
 }
 
+navigation {
+    display: flex;
+    justify-content: center;
+}
+
 .top_button {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px 32px;
-    width: 25%;
+    padding: 10px 15px;
+    width: 300px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 10px;
     cursor: pointer;
 }
 
