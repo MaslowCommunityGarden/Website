@@ -31,6 +31,15 @@
     
 ----------------------------------------*/
 
+    a {
+        text-decoration: none;
+        color: #4CAF50;
+    }
+    
+    a:hover {
+        color: #388346;
+    }
+    
     .title{
         font-size: 36px;
         padding-top: 50px;

@@ -235,13 +235,17 @@ class GenerateHTML:
                             + readmeText +
                         "</div>"
                         "<div id='Instructions' class='tabcontent'>"
-                          "<h3>Instructions</h3>"
-                          "<a href=" + project.editINSTRUCTIONpath + " class = 'edit_this_page_button'>Edit this page</a>"
+                            "<div class='tab-title'>"
+                                "<h3 class='two-col'>Instructions</h3>"
+                                "<a href=" + project.editINSTRUCTIONpath + " class = 'edit_this_page_button'>Edit this page</a>"
+                            "</div>"
                           + instructionsText +
                         "</div>"
 
                         "<div id='Forums' class='tabcontent'>"
-                          "<h3>Forums</h3>"
+                          "<div class='tab-title'>"
+                            "<h3>Forums</h3>"
+                          "</div>"
                           "<div id='discourse-comments'></div>"
 
                           "<script type='text/javascript'>"
@@ -257,8 +261,10 @@ class GenerateHTML:
                         "</div>"
 
                         "<div id='Buy' class='tabcontent'>"
-                          "<h3>Buy</h3>"
-                          "<a href=" + project.editBOMpath + " class = 'edit_this_page_button'>Edit this page</a>"
+                            "<div class='tab-title'>"
+                                "<h3 class='two-col'>Buy</h3>"
+                                "<a href=" + project.editBOMpath + " class = 'edit_this_page_button'>Edit this page</a>"
+                            "</div>"
                           + bomText +
                         "</div>"
 
