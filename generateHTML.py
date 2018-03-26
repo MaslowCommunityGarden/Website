@@ -129,42 +129,42 @@ class GenerateHTML:
                             with tag('a', href="index.html", klass="top_button"):
                                 text('Browse projects')
                                 
-            with tag('section', klass="content"):
-                
-                with tag('p', klass = 'title'):
-                    text('Not ready to use! -- A place for community driven open source projects to live - Not yet ready to use!')
-                
-                #Generate a grid of tracked projects
-                
-                for project in self.projects:
+                with tag('section', klass="content"):
                     
-                    print "Generating grid entry for: "
-                    print project.projectName
+                    with tag('p', klass = 'title'):
+                        text('Not ready to use! -- A place for community driven open source projects to live - Not yet ready to use!')
                     
+                    #Generate a grid of tracked projects
                     
-                    #this creates a boxed representation of the project
-                    with tag('a', href=project.projectFile, klass = "project_link"):
-                        with tag('div', klass = 'boxed'):
-                            
-                            with tag ('div', klass = 'project-thumbnail'):
-                                doc.stag('img', src= project.mainPicture, klass = "project_img")
-                            
-                            numberOfLinesProcessed = 0
-                            maxNumberToProcess = 3
-                            linesInReadme = project.READMEtext.split('\n', 5)
-                            
-                            for line in linesInReadme:
-                                if len(line) > 0:
-                                    if line[0] is '#':
-                                        with tag('h1', klass = "boxed_text"):
-                                            text(line[1:])
-                                            project.projectName = line[1:]
-                                    elif line[0] is not '!':
-                                        with tag('p', klass = "boxed_text"):
-                                            text(line)
-                                numberOfLinesProcessed = numberOfLinesProcessed + 1
-                                if numberOfLinesProcessed > maxNumberToProcess:
-                                    break
+                    for project in self.projects:
+                        
+                        print "Generating grid entry for: "
+                        print project.projectName
+                        
+                        
+                        #this creates a boxed representation of the project
+                        with tag('a', href=project.projectFile, klass = "project_link"):
+                            with tag('div', klass = 'boxed'):
+                                
+                                with tag ('div', klass = 'project-thumbnail'):
+                                    doc.stag('img', src= project.mainPicture, klass = "project_img")
+                                
+                                numberOfLinesProcessed = 0
+                                maxNumberToProcess = 3
+                                linesInReadme = project.READMEtext.split('\n', 5)
+                                
+                                for line in linesInReadme:
+                                    if len(line) > 0:
+                                        if line[0] is '#':
+                                            with tag('h1', klass = "boxed_text"):
+                                                text(line[1:])
+                                                project.projectName = line[1:]
+                                        elif line[0] is not '!':
+                                            with tag('p', klass = "boxed_text"):
+                                                text(line)
+                                    numberOfLinesProcessed = numberOfLinesProcessed + 1
+                                    if numberOfLinesProcessed > maxNumberToProcess:
+                                        break
     
         f = open('index.html','w')
         f.write(doc.getvalue())
