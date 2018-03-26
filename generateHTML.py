@@ -112,21 +112,23 @@ class GenerateHTML:
                 with tag('body', klass = 'body'):
                 
                     with tag('header', klass = 'header'):
+                    
+                        with tag('div', klass = 'inner-header'):
                 
-                        with tag('a', href = 'index.html', klass='header-logo'):
-                        
-                            doc.stag('img', src="logo.png", width="auto", height="90")
-                        
-                        with tag('nav', klass = 'navigation'):
-                        
-                            with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
-                                text('How does the garden work?')
+                            with tag('a', href = 'index.html', klass='header-logo'):
                             
-                            with tag('a', href="addaproject.html", klass="top_button"):
-                                text('Add a project')
+                                doc.stag('img', src="logo.png", width="auto", height="90")
+                            
+                            with tag('nav', klass = 'navigation'):
+                            
+                                with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
+                                    text('How does the garden work?')
                                 
-                            with tag('a', href="index.html#projectsSection", klass="top_button"):
-                                text('Browse projects')
+                                with tag('a', href="addaproject.html", klass="top_button"):
+                                    text('Add a project')
+                                    
+                                with tag('a', href="index.html#projectsSection", klass="top_button"):
+                                    text('Browse projects')
                     
                     with tag('hr'):
                         pass
@@ -199,6 +201,7 @@ class GenerateHTML:
                     "<body class = 'project_content'>"
                     
                     "<header class = 'header'>"
+                        "<div class='inner-header'>"
                             "<a href='index.html'>"
                                 "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
                             "</a>"
@@ -207,7 +210,8 @@ class GenerateHTML:
                                 "<a href='addaproject.html' class='nav-link top_button'>Add A Project</a>"
                                 "<a href='index.html#projectsSection' class='nav-link top_button'>Browse Projects</a>"
                             "</nav>"
-                        "</header>"
+                        "</div>"
+                    "</header>"
                         
                     "<section class = 'content'>"
                         "<div class = 'ProjectName'>"

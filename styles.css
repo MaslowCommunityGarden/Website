@@ -4,12 +4,16 @@
 	overflow: auto;
 }
 
-.content, header {
+.content, .inner-header {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
     background: white;
    /* padding: 10px;*/
+}
+
+.header {
+    border-bottom: 2px solid #eeeeee;
 }
 
 .project_content {
@@ -122,11 +126,6 @@ a.project_link:active
 
 input { 
     margin-bottom: 50px; 
-}
-
-navigation {
-    display: flex;
-    justify-content: center;
 }
 
 .top_button {
