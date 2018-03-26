@@ -1,6 +1,7 @@
 * {
 	font-family: 'Open Sans', sans-serif;
 	box-sizing: border-box;
+	overflow: auto;
 }
 
 .content {
@@ -79,6 +80,15 @@ p.boxed_text {
     -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
     -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
     box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.project-thumbnail {
+    width: 300px;
+    height: 300px;
+}
+
+.project-thumbnail img {
+    object-fit: cover;
 }
 
 .project_page_image{
