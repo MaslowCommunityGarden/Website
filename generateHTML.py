@@ -113,7 +113,9 @@ class GenerateHTML:
                 
                     with tag('header', klass = 'header'):
                 
-                        doc.stag('img', src="logo.png", width="auto", height="90")
+                        with tag('div', klass = 'logo'):
+                        
+                            doc.stag('img', src="logo.png", width="auto", height="90")
                         
                         with tag('br'):
                             pass
