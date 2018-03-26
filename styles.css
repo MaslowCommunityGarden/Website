@@ -270,9 +270,7 @@
     @media only screen and (max-width: 960px) {
         
         .content, .inner-header {
-            width: 960px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 300px;
         }
         
         .two-col {
