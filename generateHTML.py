@@ -103,68 +103,68 @@ class GenerateHTML:
         #generate the HTML for the site
         doc, tag, text = Doc().tagtext()
         
-            with tag('html'):
-                with tag('head'):
-                    doc.stag('link',rel='stylesheet', href='styles.css')
-                    doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
-                    
-                with tag('body', klass = 'body'):
+        with tag('html'):
+            with tag('head'):
+                doc.stag('link',rel='stylesheet', href='styles.css')
+                doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
                 
-                    with tag('header', klass = 'header'):
-                    
-                        with tag('div', klass = 'inner-header'):
+            with tag('body', klass = 'body'):
+            
+                with tag('header', klass = 'header'):
                 
-                            with tag('a', href = 'index.html', klass='header-logo'):
-                            
-                                doc.stag('img', src="logo.png", width="auto", height="90")
-                            
-                            with tag('nav', klass = 'navigation'):
-                            
-                                with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
-                                    text('How does the garden work?')
-                                
-                                with tag('a', href="addaproject.html", klass="top_button"):
-                                    text('Add a project')
-                                    
-                                with tag('a', href="index.html", klass="top_button"):
-                                    text('Browse projects')
-                                    
-                with tag('section', klass="content"):
-                    
-                    with tag('p', klass = 'title'):
-                        text('Not ready to use! -- A place for community driven open source projects to live - Not yet ready to use!')
-                    
-                    #Generate a grid of tracked projects
-                    
-                    for project in self.projects:
+                    with tag('div', klass = 'inner-header'):
+            
+                        with tag('a', href = 'index.html', klass='header-logo'):
                         
-                        print "Generating grid entry for: "
-                        print project.projectName
+                            doc.stag('img', src="logo.png", width="auto", height="90")
                         
+                        with tag('nav', klass = 'navigation'):
                         
-                        #this creates a boxed representation of the project
-                        with tag('a', href=project.projectFile, klass = "project_link"):
-                            with tag('div', klass = 'boxed'):
+                            with tag('a', href="howdoesthegardenwork.html", klass="top_button"):
+                                text('How does the garden work?')
+                            
+                            with tag('a', href="addaproject.html", klass="top_button"):
+                                text('Add a project')
                                 
-                                with tag ('div', klass = 'project-thumbnail'):
-                                    doc.stag('img', src= project.mainPicture, klass = "project_img")
+                            with tag('a', href="index.html", klass="top_button"):
+                                text('Browse projects')
                                 
-                                numberOfLinesProcessed = 0
-                                maxNumberToProcess = 3
-                                linesInReadme = project.READMEtext.split('\n', 5)
-                                
-                                for line in linesInReadme:
-                                    if len(line) > 0:
-                                        if line[0] is '#':
-                                            with tag('h1', klass = "boxed_text"):
-                                                text(line[1:])
-                                                project.projectName = line[1:]
-                                        elif line[0] is not '!':
-                                            with tag('p', klass = "boxed_text"):
-                                                text(line)
-                                    numberOfLinesProcessed = numberOfLinesProcessed + 1
-                                    if numberOfLinesProcessed > maxNumberToProcess:
-                                        break
+            with tag('section', klass="content"):
+                
+                with tag('p', klass = 'title'):
+                    text('Not ready to use! -- A place for community driven open source projects to live - Not yet ready to use!')
+                
+                #Generate a grid of tracked projects
+                
+                for project in self.projects:
+                    
+                    print "Generating grid entry for: "
+                    print project.projectName
+                    
+                    
+                    #this creates a boxed representation of the project
+                    with tag('a', href=project.projectFile, klass = "project_link"):
+                        with tag('div', klass = 'boxed'):
+                            
+                            with tag ('div', klass = 'project-thumbnail'):
+                                doc.stag('img', src= project.mainPicture, klass = "project_img")
+                            
+                            numberOfLinesProcessed = 0
+                            maxNumberToProcess = 3
+                            linesInReadme = project.READMEtext.split('\n', 5)
+                            
+                            for line in linesInReadme:
+                                if len(line) > 0:
+                                    if line[0] is '#':
+                                        with tag('h1', klass = "boxed_text"):
+                                            text(line[1:])
+                                            project.projectName = line[1:]
+                                    elif line[0] is not '!':
+                                        with tag('p', klass = "boxed_text"):
+                                            text(line)
+                                numberOfLinesProcessed = numberOfLinesProcessed + 1
+                                if numberOfLinesProcessed > maxNumberToProcess:
+                                    break
     
         f = open('index.html','w')
         f.write(doc.getvalue())
