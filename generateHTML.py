@@ -146,7 +146,7 @@ class GenerateHTML:
                         with tag('a', href=project.projectFile, klass = "project_link"):
                             with tag('div', klass = 'boxed'):
                                 
-                                with tag ('div', klass = 'project-thumbnail' backgroundImage = PhotoImage("project.mainPicture")):                                   
+                                "<div class='project-thumbnail' style='background-image:url('" + project.mainPicture + "')'></div>"                                   
                                 
                                 numberOfLinesProcessed = 0
                                 maxNumberToProcess = 3
