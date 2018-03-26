@@ -88,7 +88,9 @@ p.boxed_text {
 }
 
 .project-thumbnail img {
-    object-fit: cover;
+    object-fit: contain;
+    max-height: 300px;
+    max-width: 300px;
 }
 
 .project_page_image{
