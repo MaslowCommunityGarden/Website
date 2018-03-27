@@ -2,7 +2,7 @@
 
 To create a new project click the "Add A Project" button at the top of the page. This will take you to a simple form to create a new project.
 
-{picture of form}
+![create a new project](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/CreateAProject/BlankForm.JPG)
 
 The form is designed to allow you to create a new project quickly and easily. Most of the elements of the project can be changed later if you want.
 
@@ -25,7 +25,7 @@ Questions or comments? Let us know in [the forums](https://forums.maslowcnc.com)
 
 As soon as your project is created an invitation will be emailed to you inviting you to have direct access to the project. The invitation looks like this:
 
-{picture of invitation}
+![github invitation](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Invitation.JPG)
 
 After accepting the invitation you can:
 
@@ -33,11 +33,11 @@ After accepting the invitation you can:
 
 Edit any page by clicking the the "Edit this page" button on any page
 
-{photo of edit this page}
+![edit this page](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editthispage.JPG)
 
 and then clicking the pen icon in the upper right corner to edit the file.
 
-{photo of how to edit the file}
+![edit this file](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG)
 
 The "What's Markdown" section below can help you make your page look beautiful.
 
@@ -45,24 +45,26 @@ The "What's Markdown" section below can help you make your page look beautiful.
 
 To remove any file press the "Source" button from your project's page
 
-{source btn}
+![source btn](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/SourceBtn.JPG)
 
 Click the file you want to delete, then click the trash can icon in the upper right.
 
-{deletefile}
+![delete this file](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Deletefile.JPG)
 
 ### Upload new files
 
 To remove any file press the "Source" button from your project's page
 
-{source btn}
+![source btn](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/SourceBtn.JPG)
 
 Then click the "Upload Files" button in the upper right.
 
-{Uploadfiles}
+![upload files](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Uploadfiles.JPG)
 
 # How to edit, update, or add files to any project
 
 # What's Markdown?
+
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # How to add pictures to a page
