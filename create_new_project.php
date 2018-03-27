@@ -1,3 +1,24 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body>
+    <header class = 'header'>
+        <div class='inner-header'>
+            <a href='index.html'>
+                <img src='logo.png' style='width:auto;height:90px;border:0;'>
+            </a>
+            <nav class='navigation'>
+                <a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>
+                <a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>
+                <a href='index.html' class='nav-link button one-col'>Browse Projects</a>
+            </nav>
+        </div>
+    </header>
+
 
 <h1>Your project is being generated!</h1>
 
@@ -124,3 +145,5 @@ if ($uploadOk == 0) {
     $output=shell_exec('/var/www/html/createRepo.sh 2>&1');
     echo $output;
 ?>
+
+</body>
