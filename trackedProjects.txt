@@ -1,6 +1,14 @@
-https://github.com/MaslowCommunityGarden/TestProject
-https://github.com/MaslowCNC/mechanics
-https://github.com/MaslowCNC/Electronics
-https://github.com/MaslowCNC/GroundControl
-https://github.com/MaslowCNC/firmware
-A bogus line
+https://github.com/MaslowCommunityGarden/CNC-Cut-Dish-Rack
+https://github.com/MaslowCommunityGarden/Rigid-Hose-Adapter
+
+https://github.com/MaslowCommunityGarden/Sutro-Tower-Coat-Rack
+https://github.com/MaslowCommunityGarden/I-love-Oregon-Cornhole
+https://github.com/MaslowCommunityGarden/Open-Crutch
+https://github.com/MaslowCommunityGarden/Maslow-Logo
+
+https://github.com/MaslowCommunityGarden/Original-Maslow-Sled-Design
+https://github.com/MaslowCommunityGarden/Finger-Joint-Letter-Box
+https://github.com/MaslowCommunityGarden/Linkage-Kit-Sled-Templates
+https://github.com/MaslowCommunityGarden/Minecraft-Sward-and-Axe
+https://github.com/MaslowCommunityGarden/Chain-Guide
+https://github.com/MaslowCommunityGarden/A-Simple-Night-Stand
