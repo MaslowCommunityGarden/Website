@@ -295,6 +295,27 @@ class GenerateHTML:
                             "document.getElementById('defaultOpen').click();"
                             "</script>"
                         "</div>"  
+                        "<footer class='footer-basic-centered'>"
+
+                            "<p class='footer-company-motto'>The garden is a project of the <a href='www.MaslowCNC.com'>Maslow CNC</a> community.</p>"
+
+                            "<p class='footer-links'>"
+                                "<a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html'>Why</a>"
+                                "  "
+                                "<a href='#'>How</a>"
+                                "  "
+                                "<a href='http://maslowcommunitygarden.org/addaproject.html'>Add</a>"
+                                "  "
+                                "<a href='http://maslowcommunitygarden.org/index.html'>See</a>"
+                                "  "
+                                "<a href='http://www.maslowcnc.com/'>Maslow CNC</a>"
+                                "  "
+                                "<a href='http://www.maslowcnc.com/forums'>Forums</a>"
+                            "</p>"
+
+                            "<p class='footer-company-name'>All content available under license of creator</p>"
+
+                        "</footer>"
                     "</section>"
                     "</body>"
                 "</html>")
