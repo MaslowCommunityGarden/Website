@@ -297,7 +297,7 @@ class GenerateHTML:
                         "</div>"  
                         "<footer class='footer-basic-centered'>"
 
-                            "<p class='footer-company-motto'>The garden is a project of the <a href='www.MaslowCNC.com'>Maslow CNC</a> community.</p>"
+                            "<p class='footer-company-motto'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
 
                             "<p class='footer-links'>"
                                 "<a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html'>Why</a>"
