@@ -39,6 +39,8 @@ and then clicking the pen icon in the upper right corner to edit the file.
 
 ![edit this file](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG)
 
+It can take several minutes for your changes to show up on the website.
+
 The "What's Markdown" section below can help you make your page look beautiful.
 
 ### Remove any file
