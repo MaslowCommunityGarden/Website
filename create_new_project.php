@@ -26,6 +26,7 @@
 
 <p>The output from the php script which uploads and tests your files is: </p>
 
+<div style = "background-color: lightgray;">
 <?php
 $data = $_POST["projectName"] . '~' . $_POST["projectDescription"] . '~' . $_POST["managementStyle"] . '~' . $_POST["githubUser"];
 $ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $data, FILE_APPEND | LOCK_EX);
@@ -131,6 +132,8 @@ if ($uploadOk == 0) {
 }
 ?>
 
+</div>
+
 <br>
 
 <br>
@@ -139,11 +142,14 @@ if ($uploadOk == 0) {
 
 <br>
 
+<div style = "background-color: lightgray;">
 
 <?php
     // run the script which will create the repository
     $output=shell_exec('/var/www/html/createRepo.sh 2>&1');
     echo $output;
 ?>
+
+</div>
 
 </body>
