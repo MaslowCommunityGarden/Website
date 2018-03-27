@@ -10,10 +10,10 @@ The form will ask you for the following things:
 
 - **Project Title** This is the name of the project. It cannot be changed later because it will be used to choose the URL for the project.
 - **A Project Description** A short description of what the project is.
-- **Your GitHub Username** This is your username for [GitHub](https://github.com/). This is important because GitHub is the system we use for colaboration. You will automatically be sent an email invitation through github giving you acess to edit the project files. Don't have an account? Make a free one [here](https://github.com/join).
+- **Your GitHub Username** This is your username for [GitHub](https://github.com/). This is important because GitHub is the system we use for collaboration. You will automatically be sent an email invitation through github giving you access to edit the project files. Don't have an account? Make a free one [here](https://github.com/join).
 - **A Main Picture** This picture will show up in the list of projects in the community garden.
 - **A Zip Folder of Project Files** These are the files which your project will start off with. Files can easily be updated, added, or removed later. If the project has very large files it is probably easier to upload them later.
-- **How do you want the project controlled** If you select "community managed" the community will be able to vote to aprove or reject proposed changes to the project (you will still be able to make changes as the creator). If you choose that you want to manage then ONLY YOU will be able to approve changes to the project.
+- **How do you want the project controlled** If you select "community managed" the community will be able to vote to approve or reject proposed changes to the project (you will still be able to make changes as the creator). If you choose that you want to manage then ONLY YOU will be able to approve changes to the project.
 
 When you are ready click "Create" and your project will be generated! 
 
