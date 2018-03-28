@@ -176,7 +176,8 @@ class GenerateHTML:
             print "Generating file: "
             print project.projectFile
             
-            markdowner = Markdown(extras=["tables"]) #allows for the conversion of markdown files into html
+            classesDict = {'img':'page_img'}
+            markdowner = Markdown(extras={"tables": None, "html-classes":classesDict}) #allows for the conversion of markdown files into html
             
             readmeText          = markdowner.convert(project.READMEtext)
             instructionsText    = markdowner.convert(project.INSTRUCTIONStext)
@@ -241,8 +242,14 @@ class GenerateHTML:
                                 "<h3 class='two-col'>Instructions</h3>"
                                 "<a href=" + project.editINSTRUCTIONpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
+                            "<br>"
+                            "<br>"
+                            "<br>"
+                            "<br>"
                             "<div class='three-col'>"
-                                + instructionsText +
+                                "<div class = projectPages>"
+                                    + instructionsText +
+                                "</div>"
                             "</div>"
                         "</div>"
 
@@ -270,7 +277,10 @@ class GenerateHTML:
                                 "<h3 class='two-col'>Buy</h3>"
                                 "<a href=" + project.editBOMpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
-                            
+                            "<br>"
+                            "<br>"
+                            "<br>"
+                            "<br>"
                             "<div class='three-col'>"
                               + bomText +
                            "</div>"   

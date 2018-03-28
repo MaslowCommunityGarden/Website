@@ -7,7 +7,6 @@
     * {
         font-family: 'Open Sans', sans-serif;
         box-sizing: border-box;
-        overflow: auto;
         text-align: left;
     }
 
@@ -171,7 +170,6 @@
         text-align: left;
     }
     
-    
     .project-thumbnail {
         width: 300px;
         height: 300px;
@@ -260,7 +258,19 @@
     .tabcontent {
         display: none;
         border-top: none;
-    }     
+    }
+    
+    /*Size pictures properly on project pages*/
+    .page_img {
+        max-width: 600px;
+        max-height:500px;
+        width: auto;
+        height: auto;
+    }
+    
+    .projectPages{
+        background: white;
+    }
 
 /*----------------------------------------
     
