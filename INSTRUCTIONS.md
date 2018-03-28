@@ -73,7 +73,7 @@ Markdown is a language which lets you edit the feel of a file with from a text e
 
 # How to add pictures to a page
 
-To add a picture to your page imbed it with the markdown text `![some descripton of the picture](link-to-the-picture)`
+To add a picture to your page embed it with the markdown text `![some description of the picture](link-to-the-picture)`
 
 For us the images are usually hosted within the github repository for the project. To find the link to the picture click on the picture in the project repository, then right click and select "Open image in new tab".
 
