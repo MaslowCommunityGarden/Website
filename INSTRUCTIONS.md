@@ -67,6 +67,16 @@ Then click the "Upload Files" button in the upper right.
 
 # What's Markdown?
 
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+Markdown is a language which lets you edit the feel of a file with from a text editor. It supports behaviors like bold text, hyperlinks, imbeded images, lists and tables, and more!
+
+[This Markdown quick reference guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can help you get a better understanding of how to format your text...or just leave it plain if you don't want to bother.
 
 # How to add pictures to a page
+
+To add a picture to your page imbed it with the markdown text `![some descripton of the picture](link-to-the-picture)`
+
+For us the images are usually hosted within the github repository for the project. To find the link to the picture click on the picture in the project repository, then right click and select "Open image in new tab".
+
+{open image in new tab}
+
+Use the URL at the top of the page for the link to the picture. It should be something like `https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG` Note that URLs which look like `https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditYourProject/Editfile.JPG` will render properly on github itself, but the image won't show up on the project page in the community garden.
