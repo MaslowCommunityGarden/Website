@@ -77,6 +77,6 @@ To add a picture to your page embed it with the markdown text `![some descriptio
 
 For us the images are usually hosted within the github repository for the project. To find the link to the picture click on the picture in the project repository, then right click and select "Open image in new tab".
 
-{open image in new tab}
+![open image in a new tab](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/ImbedAnImage/openinnewtab.JPG)
 
 Use the URL at the top of the page for the link to the picture. It should be something like `https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG` Note that URLs which look like `https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditYourProject/Editfile.JPG` will render properly on github itself, but the image won't show up on the project page in the community garden.
