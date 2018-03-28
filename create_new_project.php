@@ -152,4 +152,12 @@ if ($uploadOk == 0) {
 
 </div>
 
+<p>While waiting for your project to be created check out the instructions page <a href="http://maslowcommunitygarden.org/Website.html">here</a> for tips on how to interact with your new project.</p>
+
+<br>
+
+<br>
+
+<br>
+
 </body>
