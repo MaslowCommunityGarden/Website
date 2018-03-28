@@ -247,9 +247,7 @@ class GenerateHTML:
                             "<br>"
                             "<br>"
                             "<div class='three-col'>"
-                                "<div class = projectPages>"
-                                    + instructionsText +
-                                "</div>"
+                                + instructionsText +
                             "</div>"
                         "</div>"
 
