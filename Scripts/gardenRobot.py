@@ -16,8 +16,6 @@ org = g.get_organization('MaslowCommunityGarden')
 
 repos = org.get_repos()
 
-#Robot will comment: "Congratulations on the pull request @name! \n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
-
 for repo in repos:
     
     #print "\n\nRobot processing repo: " + repo.name
@@ -53,7 +51,8 @@ for repo in repos:
                 #print "review comments:" + str(pullRequest.review_comments)
                 
                 
-                comments = repo.get_issue(pullRequest.number).get_comments()  #this is a work around for a but in pygithub. We have to use the issues API :rolleyes:
+                prAsIssue = repo.get_issue(pullRequest.number)
+                comments  = prAsIssue.get_comments()  #this is a work around for a but in pygithub. We have to use the issues API :rolleyes:
                 
                 #determine if the robot has already commented"
                 robotHasAlreadyCommented = False
@@ -61,7 +60,11 @@ for repo in repos:
                     if 'Congratulations on the' in comment.body:
                         robotHasAlreadyCommented = True
                 
-                print "Robot has commented: " + str(robotHasAlreadyCommented)
+                if robotHasAlreadyCommented:
+                    print "Previous robot comment detected, should count votes and check time since comment"
+                else:
+                    commentText = "Congratulations on the pull request @name! \n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
+                    prAsIssue.create_comment(body)
         else:
             print "This project is not community managed"
     except Exception as e:
