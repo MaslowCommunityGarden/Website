@@ -40,21 +40,17 @@ for repo in repos:
             
             openPullRequests = repo.get_pulls()
             for pullRequest in openPullRequests:
-                print (repo.name)
+                
                 print pullRequest.title
                 
                 pullRequestAlreadyRespondedTo = False
                 
-                print "mergable"
-                print pullRequest.mergeable
-                print "user:"
+                print "mergable " + str(pullRequest.mergeable)
                 print pullRequest.user
-                print "comments:"
-                print pullRequest.comments
-                print "review comments:"
-                print pullRequest.review_comments
+                print "comments:" + str(pullRequest.comments)
+                print "review comments:" + str(pullRequest.review_comments)
+                
                 comments = pullRequest.get_comments()
-                print comments
                 for aComment in comments:
                     print "Comment Text:"
                     print aComment.body
