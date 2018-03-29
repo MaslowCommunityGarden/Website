@@ -63,6 +63,6 @@ for repo in repos:
             for aComment in comments:
                 print "Comment Text:"
                 print aComment.body
-    except exception as e:
+    except Exception as e:
         print "This repo does not have a ROBOT.md file"
         print e
