@@ -31,10 +31,10 @@ for repo in repos:
         print pullRequest.comments
         print "review comments:"
         print pullRequest.review_comments
-        
+        print "comment zero:"
         print get_comment(0)
         comments = pullRequest.get_comments()
-        print comments[0]
+        print comments
         for aComment in comments:
             print "Comment Text:"
             print aComment.body
