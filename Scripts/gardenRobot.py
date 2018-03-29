@@ -32,7 +32,7 @@ for repo in repos:
         print "review comments:"
         print pullRequest.review_comments
         print "comment zero:"
-        print get_comment(0)
+        print pullRequest.get_comment(0)
         comments = pullRequest.get_comments()
         print comments
         for aComment in comments:
