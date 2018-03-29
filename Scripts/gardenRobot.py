@@ -63,8 +63,9 @@ for repo in repos:
                 if robotHasAlreadyCommented:
                     print "Previous robot comment detected, should count votes and check time since comment"
                 else:
-                    commentText = "Congratulations on the pull request @" + pullRequest.user.login + "\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
-                    prAsIssue.create_comment(commentText)
+                    commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
+                    theNewComment = prAsIssue.create_comment(commentText)
+                    theNewComment.create_reaction("+1")
         else:
             print "This project is not community managed"
     except Exception as e:
