@@ -9,11 +9,11 @@ password = logins[1].replace('\n', '')
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
-#Open list of tracked projects
-file = open("/var/www/html/trackedProjects.txt", "r") 
-trackedProjectPaths = file.readlines() 
+#Open list of tracked projects -- right now the robot can only work on repos in the community garden org
+#file = open("/var/www/html/trackedProjects.txt", "r") 
+#trackedProjectPaths = file.readlines() 
 
-for projectPath in trackedProjectPaths:
-    projectPath = projectPath.replace('\n', '')
-    print projectPath
-    print projectPath.split('/')[-1] #extract the repo name from the path
+repos = org.get_repos()
+
+for repo in repos:
+    print (repo.name)
