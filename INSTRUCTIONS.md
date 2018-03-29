@@ -63,7 +63,21 @@ Then click the "Upload Files" button in the upper right.
 
 ![upload files](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Uploadfiles.JPG)
 
-# How to edit, update, or add files to any project
+# How to edit, update, or add files to a project created by someone else
+
+The real power of GitHub is that anyone can edit any file or page. There is one big difference between when the creator of a project edits a page and when 
+
+![click the edit button](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/clickedit.png)
+
+![click the edit file pencil](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/editpencil.png)
+
+![see warning and edit](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/editthefile.png)
+
+![click propose a change](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/clickproposefilechange.png)
+
+![create a pull request](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/presscreatepullrequest.png)
+
+![send pull request](https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditAnyPage/sendpullrequest.png?raw=true)
 
 # What's Markdown?
 
