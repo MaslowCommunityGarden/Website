@@ -17,6 +17,7 @@ repos = org.get_repos()
 
 for repo in repos:
     openPullRequests = repo.get_pulls()
+    print openPullRequests
     for pullRequest in openPullRequests:
         print (repo.name)
         print pullRequest.title
@@ -27,4 +28,4 @@ for repo in repos:
         print comments
         for aComment in comments:
             print "Comment Text:"
-            #print aComment.body
+            print aComment.body
