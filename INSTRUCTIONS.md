@@ -65,17 +65,31 @@ Then click the "Upload Files" button in the upper right.
 
 # How to edit, update, or add files to a project created by someone else
 
-The real power of GitHub is that anyone can edit any file or page. There is one big difference between when the creator of a project edits a page and when 
+The real power of GitHub is that anyone can edit any file or page. There is one big difference between when the creator of a project edits a page and when anyone else does and that is that while the creator of a project can simply make changes at will, everyone else has to propose a change and have it approved by the project creator or the community.
+
+The process of contributing to a project that you didn't create is similar to the instructions above for a project you did create with the additional step of needing to ask permission.
+
+Let's demonstrate by editing the text on one of the project pages. First click the "Edit this page" button on any page.
 
 ![click the edit button](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/clickedit.png)
 
+Then click the pencil icon on in the upper right corner.
+
 ![click the edit file pencil](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/editpencil.png)
+
+Notice that there will be a notice at the top of the file. Scroll down and make your edits.
 
 ![see warning and edit](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/editthefile.png)
 
+When you are ready to propose your changes, click the "Propose a change" button at the bottom of the page.
+
 ![click propose a change](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/clickproposefilechange.png)
 
+Requests to change a file in GitHub are called "Pull Requests". Press the "Create pull request" button to create one
+
 ![create a pull request](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/presscreatepullrequest.png)
+
+Enter a description of what changes you made and why they should be included, then press "Send pull request". Your changes have now been submitted for approval! Congratulations! 
 
 ![send pull request](https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditAnyPage/sendpullrequest.png?raw=true)
 
