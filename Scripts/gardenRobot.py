@@ -16,9 +16,11 @@ org = g.get_organization('MaslowCommunityGarden')
 
 repos = org.get_repos()
 
+#Robot will comment: "Congratulations on the pull request @name! \n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
+
 for repo in repos:
     
-    print "\n\nRobot processing repo: " + repo.name
+    #print "\n\nRobot processing repo: " + repo.name
     
     #read the ROBOT.md file to see if the robot should interact with this project
     
@@ -36,7 +38,7 @@ for repo in repos:
         robotText   = text.read()
         
         if 'communityManaged' in robotText:
-            print "This project is community managed"
+            #print "This project is community managed"
             
             openPullRequests = repo.get_pulls()
             for pullRequest in openPullRequests:
@@ -45,17 +47,21 @@ for repo in repos:
                 
                 pullRequestAlreadyRespondedTo = False
                 
-                print "mergable " + str(pullRequest.mergeable)
-                print pullRequest.user
-                print "comments:" + str(pullRequest.comments)
-                print "review comments:" + str(pullRequest.review_comments)
+                #print "mergable " + str(pullRequest.mergeable)
+                #print pullRequest.user
+                #print "comments:" + str(pullRequest.comments)
+                #print "review comments:" + str(pullRequest.review_comments)
                 
                 
                 comments = repo.get_issue(pullRequest.number).get_comments()  #this is a work around for a but in pygithub. We have to use the issues API :rolleyes:
-                print list(comments)
+                
+                #determine if the robot has already commented"
+                robotHasAlreadyCommented = False
                 for comment in comments:
-                    print "Comment Text:"
-                    print comment.body
+                    if 'Congratulations on the' in comment.body:
+                        robotHasAlreadyCommented = True
+                
+                print "Robot has commented: " + str(robotHasAlreadyCommented)
         else:
             print "This project is not community managed"
     except Exception as e:
