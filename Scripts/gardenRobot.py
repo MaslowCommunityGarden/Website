@@ -10,6 +10,8 @@ g = Github(userName, password)
 
 #Open list of tracked projects
 file = open("/var/www/html/trackedProjects.txt", "r") 
-trackedProjects = file.readlines() 
+trackedProjectPaths = file.readlines() 
 
-print trackedProjects
+for projectPath in trackedProjectPaths:
+    projectPath = rawPath.replace('\n', '')
+    print projectPath
