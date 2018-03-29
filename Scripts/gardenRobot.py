@@ -27,6 +27,10 @@ for repo in repos:
         print pullRequest.mergeable
         print "user:"
         print pullRequest.user
+        print "comments:"
+        print pullRequest.comments
+        print "review comments:"
+        print pullRequest.review_comments
         
         comments = pullRequest.get_comments()
         print comments
