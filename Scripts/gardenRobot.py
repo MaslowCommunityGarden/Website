@@ -16,4 +16,8 @@ org = g.get_organization('MaslowCommunityGarden')
 repos = org.get_repos()
 
 for repo in repos:
+    print "Robot on repo:"
     print (repo.name)
+    openPullRequests = repo.get_pulls()
+    for pullRequest in openPullRequests:
+        print pullRequest.title
