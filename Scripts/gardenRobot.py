@@ -1,5 +1,6 @@
 from github     import Github
 import              urllib2
+import          datetime
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
 logins = file.readlines() 
@@ -75,10 +76,11 @@ for repo in repos:
                         print downVotes
                         
                         print "Pr created at"
-                        print pullRequest.created_at
+                        timeOpened = pullRequest.created_at
+                        print timeOpened
                         
-                        print "Pull request has been open for:"
-                        
+                        elapsedTime = (datetime.datetime.now() - timeOpened).total_seconds()
+                        print "Pull request has been open for: " + str(elapsedTime) + " seconds"
                         
                 
                 if not robotHasAlreadyCommented:
