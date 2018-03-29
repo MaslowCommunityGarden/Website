@@ -82,6 +82,12 @@ for repo in repos:
                         elapsedTime = (datetime.datetime.now() - timeOpened).total_seconds()
                         print "Pull request has been open for: " + str(elapsedTime) + " seconds"
                         
+                        seventyTwoHoursInSeconds = 259200
+                        if elapsedTime < seventyTwoHoursInSeconds:
+                            print "not enough time has passed to merge the pull request"
+                        else:
+                            print "enough time has passed and the PR should be merged"
+                        
                 
                 if not robotHasAlreadyCommented:
                     commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
