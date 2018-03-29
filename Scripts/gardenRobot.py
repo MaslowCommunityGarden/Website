@@ -50,12 +50,13 @@ for repo in repos:
                 print "comments:" + str(pullRequest.comments)
                 print "review comments:" + str(pullRequest.review_comments)
                 
-                comments = pullRequest.get_comments()
+                
+                comments = repo.get_issue( pullRequest.number ).get_comments()  #this is a work around for a but in pygithub. We have to use the issues API :rolleyes:
                 for aComment in comments:
                     print "Comment Text:"
                     print aComment.body
         else:
-            print "this project is not community managed"
+            print "This project is not community managed"
     except Exception as e:
         print "This repo does not have a ROBOT.md file"
         print e
