@@ -64,9 +64,9 @@ for repo in repos:
                         upVotes = 0
                         downVotes = 0
                         for reaction in comment.get_reactions():
-                            if reaction.content == '+1':
+                            if reaction.content is '+1':
                                 upVotes = upVotes + 1
-                            if reaction.content == '-1':
+                            if reaction.content is '-1':
                                 downVotes = downVotes + 1
                         
                         print "Up Votes:"
