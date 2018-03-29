@@ -22,6 +22,7 @@ for repo in repos:
         print pullRequest.title
         
         comments = pullRequest.get_comments()
+        print comments
         
         pullRequestAlreadyRespondedTo = False
         for comment in comments:
