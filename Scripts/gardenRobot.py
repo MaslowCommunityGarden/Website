@@ -61,12 +61,18 @@ for repo in repos:
                         robotHasAlreadyCommented = True
                         print "Previous robot comment detected, should count votes and check time since comment"
                         
-                        allVotes = []
+                        upVotes = 0
+                        downVotes = 0
                         for reaction in comment.get_reactions():
-                            allVotes.append(reaction.content)
+                            if reaction.content = '+1':
+                                upVotes = upVotes + 1
+                            if reaction.content = '-1':
+                                downVotes = downVotes + 1
                         
-                        print "votes:"
-                        print allVotes
+                        print "Up Votes:"
+                        print upVotes
+                        print "Down Votes:"
+                        print downVotes
                         
                 
                 if not robotHasAlreadyCommented:
