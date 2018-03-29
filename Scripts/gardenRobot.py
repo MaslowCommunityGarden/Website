@@ -1,4 +1,5 @@
-from github import Github
+from github     import Github
+import              urllib2
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
 logins = file.readlines() 
