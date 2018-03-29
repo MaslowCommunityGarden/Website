@@ -25,7 +25,7 @@ for repo in repos:
     rawPath     = trackedURL.split('.com')[-1]
     rawPath     = "https://raw.githubusercontent.com" + rawPath
     rawPath     = rawPath.replace('\n', '')
-    robotURL    = rawPath + '/master/README.md'
+    robotURL    = rawPath + '/master/ROBOT.md'
     robotURL    = "".join(robotURL.split())
     
     #read the file
@@ -34,6 +34,11 @@ for repo in repos:
     
     print "Robot text:"
     print robotText
+    
+    if 'communityManaged' in robotText:
+        print "This project is community managed"
+    else:
+        print "this project is not community managed"
     
     openPullRequests = repo.get_pulls()
     for pullRequest in openPullRequests:
