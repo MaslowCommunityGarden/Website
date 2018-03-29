@@ -59,20 +59,26 @@ for repo in repos:
                 for comment in comments:
                     if 'Congratulations on the' in comment.body:
                         robotHasAlreadyCommented = True
-                        print "Previous robot comment detected, should count votes and check time since comment"
+                        print "Previous robot comment detected, vote count:"
                         
                         upVotes = 0
                         downVotes = 0
                         for reaction in comment.get_reactions():
-                            if reaction.content is '+1':
+                            if reaction.content == '+1':
                                 upVotes = upVotes + 1
-                            if reaction.content is '-1':
+                            if reaction.content == '-1':
                                 downVotes = downVotes + 1
                         
                         print "Up Votes:"
                         print upVotes
                         print "Down Votes:"
                         print downVotes
+                        
+                        print "Pr created at"
+                        print pullRequest.created_at
+                        
+                        print "Pull request has been open for:"
+                        
                         
                 
                 if not robotHasAlreadyCommented:
