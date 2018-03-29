@@ -21,10 +21,10 @@ for repo in repos:
         print (repo.name)
         print pullRequest.title
         
+        pullRequestAlreadyRespondedTo = False
+        
         comments = pullRequest.get_comments()
         print comments
-        
-        pullRequestAlreadyRespondedTo = False
-        for comment in comments:
+        for aComment in comments:
             print "Comment Text:"
-            print comment.body
+            #print aComment.body
