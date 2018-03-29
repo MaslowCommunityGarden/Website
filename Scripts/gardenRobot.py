@@ -17,12 +17,16 @@ repos = org.get_repos()
 
 for repo in repos:
     openPullRequests = repo.get_pulls()
-    print openPullRequests
     for pullRequest in openPullRequests:
         print (repo.name)
         print pullRequest.title
         
         pullRequestAlreadyRespondedTo = False
+        
+        print "mergable"
+        print pullRequest.mergeable
+        print "user:"
+        print pullRequest.user
         
         comments = pullRequest.get_comments()
         print comments
