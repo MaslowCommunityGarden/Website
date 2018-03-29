@@ -16,4 +16,4 @@ trackedProjectPaths = file.readlines()
 for projectPath in trackedProjectPaths:
     projectPath = projectPath.replace('\n', '')
     print projectPath
-    print projectPath.split('/')
+    print projectPath.split('/')[-1] #extract the repo name from the path
