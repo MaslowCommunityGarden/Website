@@ -59,10 +59,17 @@ for repo in repos:
                 for comment in comments:
                     if 'Congratulations on the' in comment.body:
                         robotHasAlreadyCommented = True
+                        print "Previous robot comment detected, should count votes and check time since comment"
+                        
+                        allVotes = []
+                        for reaction in comment.get_reactions():
+                            allVotes.append(reaction.content)
+                        
+                        print "votes:"
+                        print allVotes
+                        
                 
-                if robotHasAlreadyCommented:
-                    print "Previous robot comment detected, should count votes and check time since comment"
-                else:
+                if not robotHasAlreadyCommented:
                     commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
                     theNewComment = prAsIssue.create_comment(commentText)
                     theNewComment.create_reaction("+1")
