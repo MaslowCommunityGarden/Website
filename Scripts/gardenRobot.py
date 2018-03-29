@@ -13,5 +13,5 @@ file = open("/var/www/html/trackedProjects.txt", "r")
 trackedProjectPaths = file.readlines() 
 
 for projectPath in trackedProjectPaths:
-    projectPath = rawPath.replace('\n', '')
+    projectPath = projectPath.replace('\n', '')
     print projectPath
