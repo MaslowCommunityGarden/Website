@@ -39,6 +39,12 @@ for repo in repos:
         if 'communityManaged' in robotText:
             #print "This project is community managed"
             
+            
+            '''
+            
+            Check if there are any open pull requests that need to be voted on
+            
+            '''
             openPullRequests = repo.get_pulls()
             for pullRequest in openPullRequests:
                 
@@ -93,6 +99,20 @@ for repo in repos:
                     commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
                     theNewComment = prAsIssue.create_comment(commentText)
                     theNewComment.create_reaction("+1")
+            
+            '''
+            
+            Check if there are any open pull requests that need to be voted on
+            
+            '''
+            
+            if 'delete' in robotText:
+                print "deleting the repo"
+                
+                #remove the string from the tracked projects list
+                
+                #delete the repo
+                repo.delete()
         else:
             print "This project is not community managed"
     except Exception as e:
