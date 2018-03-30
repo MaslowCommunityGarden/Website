@@ -22,7 +22,15 @@
 
 <h1>Your project is being generated!</h1>
 
-<p>If your project generates properly, it will appear when the website regenerates in one minute.</p>
+<p>If your project generates properly, you will receive an email inviting you to access the project and it will appear when the website regenerates in one minute.</p>
+
+<br>
+
+<p>While waiting for your project to be created check out the instructions tab <a href="http://maslowcommunitygarden.org/Website.html">here</a> for tips on how to interact with your new project.</p>
+
+<br>
+<br>
+<br>
 
 <p>The output from the php script which uploads and tests your files is: </p>
 
