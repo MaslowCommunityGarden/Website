@@ -107,4 +107,12 @@ For us the images are usually hosted within the github repository for the projec
 
 ![open image in a new tab](https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/ImbedAnImage/openinnewtab.JPG)
 
-Use the URL at the top of the page for the link to the picture. It should be something like `https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG` Note that URLs which look like `https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditYourProject/Editfile.JPG` will render properly on github itself, but the image won't show up on the project page in the community garden.
+Use the URL at the top of the page for the link to the picture. It should be something like
+
+`https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG` 
+
+Note that URLs which look like 
+
+`https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditYourProject/Editfile.JPG` 
+
+will render properly on github itself, but the image won't show up on the project page in the community garden.
