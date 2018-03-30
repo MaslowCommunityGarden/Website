@@ -92,11 +92,17 @@ for repo in repos:
                         if elapsedTime < seventyTwoHoursInSeconds:
                             print "not enough time has passed to merge the pull request"
                         else:
-                            print "enough time has passed and the PR should be merged"
+                            if upVotes > downVotes:
+                                commentText = "Woo!! Times up and we're ready to merge this pull request! Great work!"
+                                theNewComment = prAsIssue.create_comment(commentText)
+                                pullRequest.merge()
+                            else:
+                                commentText = "It looks like adding these changes right now isn't a good idea. Consider any feedback that the community has given about why not and feel free to open a new pull request with the changes"
+                                theNewComment = prAsIssue.create_comment(commentText)
                         
                 
                 if not robotHasAlreadyCommented:
-                    commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
+                    commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Votes are counted in 72 hours. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
                     theNewComment = prAsIssue.create_comment(commentText)
                     theNewComment.create_reaction("+1")
             
