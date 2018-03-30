@@ -65,8 +65,8 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["projectImage"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
+if ($_FILES["projectImage"]["size"] > 5000000) {
+    echo "Sorry, your image is too large. The limit is 5MB";
     $uploadOk = 0;
 }
 // Allow certain file formats
@@ -109,8 +109,8 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["projectFiles"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.";
+if ($_FILES["projectFiles"]["size"] > 50000000) {
+    echo "Sorry, your file is too large. The limit is 50mb. To add larger files upload them directly to GitHub once the project is created.";
     $uploadOk = 0;
 }
 // Allow certain file formats
