@@ -48,7 +48,7 @@ for repo in repos:
             openPullRequests = repo.get_pulls()
             for pullRequest in openPullRequests:
                 
-                print pullRequest.title
+                print "\n\n"+pullRequest.title
                 
                 pullRequestAlreadyRespondedTo = False
                 
@@ -103,6 +103,8 @@ for repo in repos:
                         if 'test' in robotText:
                             print "running test to close pr"
                             prAsIssue.edit(state='closed')
+                        else:
+                            print "test not found"
                         
                 
                 if not robotHasAlreadyCommented:
