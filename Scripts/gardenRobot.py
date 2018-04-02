@@ -99,6 +99,10 @@ for repo in repos:
                             else:
                                 commentText = "It looks like adding these changes right now isn't a good idea. Consider any feedback that the community has given about why not and feel free to open a new pull request with the changes"
                                 theNewComment = prAsIssue.create_comment(commentText)
+                                prAsIssue.edit(state='closed')
+                        if 'test' in robotText:
+                            print "running test to close pr"
+                            prAsIssue.edit(state='closed')
                         
                 
                 if not robotHasAlreadyCommented:
@@ -119,6 +123,7 @@ for repo in repos:
                 
                 #delete the repo
                 repo.delete()
+            
         else:
             print "This project is not community managed"
     except Exception as e:
