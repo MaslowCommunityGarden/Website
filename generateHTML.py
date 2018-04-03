@@ -176,7 +176,8 @@ class GenerateHTML:
             print "Generating file: "
             print project.projectFile
             
-            markdowner = Markdown(extras=["tables"]) #allows for the conversion of markdown files into html
+            classesDict = {'img':'page_img'}
+            markdowner = Markdown(extras={"tables": None, "html-classes":classesDict}) #allows for the conversion of markdown files into html
             
             readmeText          = markdowner.convert(project.READMEtext)
             instructionsText    = markdowner.convert(project.INSTRUCTIONStext)
@@ -241,6 +242,10 @@ class GenerateHTML:
                                 "<h3 class='two-col'>Instructions</h3>"
                                 "<a href=" + project.editINSTRUCTIONpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
+                            "<br>"
+                            "<br>"
+                            "<br>"
+                            "<br>"
                             "<div class='three-col'>"
                                 + instructionsText +
                             "</div>"
@@ -250,7 +255,7 @@ class GenerateHTML:
                           "<div class='tab-title'>"
                             "<h3 class='three-col'>Forums</h3>"
                           "</div>"
-                          "<div id='discourse-comments'>"
+                          "<div id='discourse-comments'></div>"
 
                           "<script type='text/javascript'>"
                             "DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',"
@@ -262,7 +267,6 @@ class GenerateHTML:
                               "(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);"
                             "})();"
                           "</script>"
-                          "</div>"
                         "</div>"
 
                         "<div id='Buy' class='tabcontent'>"
@@ -270,7 +274,10 @@ class GenerateHTML:
                                 "<h3 class='two-col'>Buy</h3>"
                                 "<a href=" + project.editBOMpath + " class = 'edit_this_page_button'>Edit this page</a>"
                             "</div>"
-                            
+                            "<br>"
+                            "<br>"
+                            "<br>"
+                            "<br>"
                             "<div class='three-col'>"
                               + bomText +
                            "</div>"   
@@ -295,6 +302,27 @@ class GenerateHTML:
                             "document.getElementById('defaultOpen').click();"
                             "</script>"
                         "</div>"  
+                        "<footer class='footer-basic-centered'>"
+
+                            "<p class='footer-company-motto'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
+
+                            "<p class='footer-links'>"
+                                "<a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html'>Why</a>"
+                                "  "
+                                "<a href='#'>How</a>"
+                                "  "
+                                "<a href='http://maslowcommunitygarden.org/addaproject.html'>Add</a>"
+                                "  "
+                                "<a href='http://maslowcommunitygarden.org/index.html'>See</a>"
+                                "  "
+                                "<a href='http://www.maslowcnc.com/'>Maslow CNC</a>"
+                                "  "
+                                "<a href='http://www.maslowcnc.com/forums'>Forums</a>"
+                            "</p>"
+
+                            "<p class='footer-company-name'>All content available under license of creator</p>"
+
+                        "</footer>"
                     "</section>"
                     "</body>"
                 "</html>")
