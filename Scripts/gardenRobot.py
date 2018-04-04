@@ -100,11 +100,6 @@ for repo in repos:
                                 commentText = "It looks like adding these changes right now isn't a good idea. Consider any feedback that the community has given about why not and feel free to open a new pull request with the changes"
                                 theNewComment = prAsIssue.create_comment(commentText)
                                 prAsIssue.edit(state='closed')
-                        if 'test' in robotText:
-                            print "running test to close pr"
-                            prAsIssue.edit(state='closed')
-                        else:
-                            print "test not found"
                         
                 
                 if not robotHasAlreadyCommented:
