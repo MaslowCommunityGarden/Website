@@ -1,10 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body>
+    <header class = 'header'>
+        <div class='inner-header'>
+            <a href='index.html'>
+                <img src='logo.png' style='width:auto;height:90px;border:0;'>
+            </a>
+            <nav class='navigation'>
+                <a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>
+                <a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>
+                <a href='index.html' class='nav-link button one-col'>Browse Projects</a>
+            </nav>
+        </div>
+    </header>
+
 
 <h1>Your project is being generated!</h1>
 
-<p>If your project generates properly, it will appear when the website regenerates in one minute.</p>
+<p>If your project generates properly, you will receive an email inviting you to access the project and it will appear when the website regenerates in one minute.</p>
+
+<br>
+
+<p>While waiting for your project to be created check out the instructions tab <a href="http://maslowcommunitygarden.org/Website.html">here</a> for tips on how to interact with your new project.</p>
+
+<br>
+<br>
+<br>
 
 <p>The output from the php script which uploads and tests your files is: </p>
 
+<div style = "background-color: lightgray;">
 <?php
 $data = $_POST["projectName"] . '~' . $_POST["projectDescription"] . '~' . $_POST["managementStyle"] . '~' . $_POST["githubUser"];
 $ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $data, FILE_APPEND | LOCK_EX);
@@ -43,8 +73,8 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["projectImage"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
+if ($_FILES["projectImage"]["size"] > 5000000) {
+    echo "Sorry, your image is too large. The limit is 5MB";
     $uploadOk = 0;
 }
 // Allow certain file formats
@@ -87,8 +117,8 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["projectFiles"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.";
+if ($_FILES["projectFiles"]["size"] > 50000000) {
+    echo "Sorry, your file is too large. The limit is 50mb. To add larger files upload them directly to GitHub once the project is created.";
     $uploadOk = 0;
 }
 // Allow certain file formats
@@ -110,6 +140,8 @@ if ($uploadOk == 0) {
 }
 ?>
 
+</div>
+
 <br>
 
 <br>
@@ -118,9 +150,22 @@ if ($uploadOk == 0) {
 
 <br>
 
+<div style = "background-color: lightgray;">
 
 <?php
     // run the script which will create the repository
     $output=shell_exec('/var/www/html/createRepo.sh 2>&1');
     echo $output;
 ?>
+
+</div>
+
+<p>While waiting for your project to be created check out the instructions page <a href="http://maslowcommunitygarden.org/Website.html">here</a> for tips on how to interact with your new project.</p>
+
+<br>
+
+<br>
+
+<br>
+
+</body>
