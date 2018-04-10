@@ -302,7 +302,7 @@ class GenerateHTML:
                                 "}"
                                 "document.getElementById(tabName).style.display = 'block';"
                                 "evt.currentTarget.className += ' active';"
-                                "var ifr = document.getElementById('discourse-embed-frame')[0];"
+                                "var ifr = document.getElementById('discourse-embed-frame');"
                                 "ifr.src = ifr.src;"
                             "}"
     
