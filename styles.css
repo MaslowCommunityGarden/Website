@@ -231,7 +231,7 @@
     
     /*style for the forums section*/
     .forums_section{
-        height: 2000;
+        height: 2000 !important;
     }
     
     /* Styles for the tabs in the project pages */
