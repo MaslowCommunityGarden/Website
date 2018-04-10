@@ -232,6 +232,7 @@
     /*style for the forums section*/
     .forums_section{
         height: 2000px;
+        background-color: blue;
     }
     
     /* Styles for the tabs in the project pages */
