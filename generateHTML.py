@@ -190,6 +190,11 @@ class GenerateHTML:
                         "<link href='styles.css' rel='stylesheet' />"
                         "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
                         "<title>" + project.projectName + "</title>"
+                        "<script>"
+                          "function resizeIframe(obj) {"
+                            "obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';"
+                          "}"
+                        "</script>"
                     "</head>"
                     "<body>"
                     
