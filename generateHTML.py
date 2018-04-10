@@ -255,7 +255,7 @@ class GenerateHTML:
                           "<div class='tab-title'>"
                             "<h3 class='three-col'>Forums</h3>"
                           "</div>"
-                          "<div id='discourse-comments'>"
+                          "<div id='discourse-comments' class = 'forums_section'>"
 
                           "<script type='text/javascript'>"
                             "DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',"
