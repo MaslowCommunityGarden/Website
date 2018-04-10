@@ -1,8 +1,6 @@
 #!/bin/bash
 #exec 1>var/www/html/uploads/scriptlog.txt 2>&1
 
-echo "got to the beginning of the script"
-
 cd /var/www/html
 
 unzip /var/www/html/uploads/userUpload.zip -d /var/www/html/uploads
