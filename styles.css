@@ -23,8 +23,11 @@
     .inner-header {
         margin-bottom: 10px;
     }
-    
-    
+
+    nav.navigation { 
+        display: inline-block;
+    }
+
 /*----------------------------------------
     
     TYPOGRAPHY 
