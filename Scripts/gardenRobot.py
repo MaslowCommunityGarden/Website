@@ -100,12 +100,6 @@ for repo in repos:
                                 commentText = "It looks like adding these changes right now isn't a good idea. Consider any feedback that the community has given about why not and feel free to open a new pull request with the changes"
                                 theNewComment = prAsIssue.create_comment(commentText)
                                 prAsIssue.edit(state='closed')
-                        if 'test' in robotText:
-                            print "running test to close pr"
-                            prAsIssue.edit(state='closed')
-                        else:
-                            print "test not found"
-                        
                 
                 if not robotHasAlreadyCommented:
                     commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Votes are counted in 72 hours. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
