@@ -34,8 +34,8 @@ password = logins[1].replace('\n', '')
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
-
-readmeText = "# " + projectName + "\n\n" + projectDescription
+hintText = "\n\nYou can find instructions on how to edit this page on the community garden meta page instructions tab[here](http://maslowcommunitygarden.org/Website.html)\n\n\n\nThe style cheat sheet [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is useful"
+readmeText = "# " + projectName + "\n\n" + projectDescription + hintText
 
 if projectName != "none":
     try:
@@ -54,10 +54,11 @@ if projectName != "none":
         
         robotText = "ModerationLevel = " + managementStyle + "\n\n Facilitator: " + githubUser + "\n"
         
+        
         #create the markdown files
         repo.create_file("/README.md", "init commit", readmeText)
-        repo.create_file("/INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions")
-        repo.create_file("/BOM.md", "init commit", "Edit this file to add a bill of materials")
+        repo.create_file("/INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions" + hintText)
+        repo.create_file("/BOM.md", "init commit", "Edit this file to add a bill of materials"  + hintText)
         repo.create_file("/ROBOT.md", "init commit", robotText)
         
         #Keep track of what files we've got to add to the repo
