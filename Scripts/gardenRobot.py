@@ -110,7 +110,7 @@ for repo in repos:
             Check if there are any open pull requests that need to be voted on
             
             '''
-            
+            print robotText
             if 'delete' in robotText:
                 
                 print "delete identified"
