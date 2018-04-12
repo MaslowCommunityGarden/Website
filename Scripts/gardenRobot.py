@@ -124,7 +124,7 @@ for repo in repos:
                     #f.write(text)
                 
                 #delete the repo
-                repo.delete()
+                #repo.delete()
             
         else:
             print "This project is not community managed"
