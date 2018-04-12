@@ -1,6 +1,7 @@
 from github     import Github
-import              urllib2
+import          urllib2
 import          datetime
+import          pygit2
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
 logins = file.readlines() 
@@ -16,6 +17,11 @@ org = g.get_organization('MaslowCommunityGarden')
 #trackedProjectPaths = file.readlines() 
 
 repos = org.get_repos()
+
+file = open("/home/ubuntu/gitlogin.txt", "r") 
+logins = file.readlines() 
+userName = logins[0].replace('\n', '')
+password = logins[1].replace('\n', '')
 
 for repo in repos:
     
@@ -66,7 +72,6 @@ for repo in repos:
                 for comment in comments:
                     if 'Congratulations on the' in comment.body:
                         robotHasAlreadyCommented = True
-                        print "Previous robot comment detected, vote count:"
                         
                         upVotes = 0
                         downVotes = 0
@@ -76,17 +81,11 @@ for repo in repos:
                             if reaction.content == '-1':
                                 downVotes = downVotes + 1
                         
-                        print "Up Votes:"
-                        print upVotes
-                        print "Down Votes:"
-                        print downVotes
                         
-                        print "Pr created at"
                         timeOpened = pullRequest.created_at
-                        print timeOpened
                         
                         elapsedTime = (datetime.datetime.now() - timeOpened).total_seconds()
-                        print "Pull request has been open for: " + str(elapsedTime) + " seconds"
+                        
                         
                         seventyTwoHoursInSeconds = 259200
                         if elapsedTime < seventyTwoHoursInSeconds:
@@ -113,9 +112,14 @@ for repo in repos:
             '''
             
             if 'delete' in robotText:
-                print "deleting the repo"
                 
                 #remove the string from the tracked projects list
+                with open("/var/www/html/trackedProjects.txt", "r+") as f:
+                    text = f.read()
+                    print text
+                    text = text.replace(repo.html_url,'')
+                    print "new text would be"
+                    #f.write(text)
                 
                 #delete the repo
                 repo.delete()
