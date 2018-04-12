@@ -110,7 +110,7 @@ for repo in repos:
             Check if there are any open pull requests that need to be voted on
             
             '''
-            print robotText
+            
             if 'delete' in robotText:
                 
                 print "delete identified"
@@ -120,7 +120,8 @@ for repo in repos:
                     text = f.read()
                     print text
                     text = text.replace(repo.html_url,'')
-                    print "new text would be"
+                    print "new text would be:"
+                    print text
                     #f.write(text)
                 
                 #delete the repo
