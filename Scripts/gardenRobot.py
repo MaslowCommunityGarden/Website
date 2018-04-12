@@ -122,10 +122,10 @@ for repo in repos:
                     text = text.replace(repo.html_url,'')
                     print "new text would be:"
                     print text
-                    #f.write(text)
+                    f.write(text)
                 
                 #delete the repo
-                #repo.delete()
+                repo.delete()
             
         else:
             print "This project is not community managed"
