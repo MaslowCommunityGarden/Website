@@ -113,15 +113,10 @@ for repo in repos:
             
             if 'delete' in robotText:
                 
-                print "delete identified"
-                
                 #remove the string from the tracked projects list
                 with open("/var/www/html/trackedProjects.txt", "r+") as f:
                     text = f.read()
-                    print text
                     text = text.replace(repo.html_url,'')
-                    print "new text would be:"
-                    print text
                     f.write(text)
                 
                 #delete the repo
