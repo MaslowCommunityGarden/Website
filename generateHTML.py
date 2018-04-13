@@ -55,8 +55,6 @@ class GenerateHTML:
                 #Construct the project object
                 thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
                 
-                print "Project name set to"
-                print thisProject.projectName
                 
                 thisProject.projectFile = thisProject.projectName + '.html'
                 thisProject.mainPicture = thisProject.projectPathRaw + '/master/mainpicture.jpg'
@@ -82,7 +80,7 @@ class GenerateHTML:
                 
                 
                 
-                print "Generating entry for: "
+                print "Generating object for: "
                 print thisProject.projectName
                 
                 self.projects.append(thisProject)
