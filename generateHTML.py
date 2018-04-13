@@ -20,6 +20,9 @@ class GenerateHTML:
         projectStrings = trackedProjects.readlines()
         random.shuffle(projectStrings)
         
+        print "project strings: "
+        print projectStrings
+        
         for string in projectStrings:                           #this will iterate through our list of tracked project strings and try to generate a meaningful project object from them
                 
             thisProject = Project()
