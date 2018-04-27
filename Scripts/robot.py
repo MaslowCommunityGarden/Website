@@ -6,6 +6,11 @@ import          pygit2
 class Robot:
     
     def voteOnPRs(self, repo):
+        '''
+        
+        Runs to tally votes on open pull requests if the project is community managed
+        
+        '''
         try:
             #find the URL to the file
             trackedURL  = repo.html_url
@@ -19,10 +24,7 @@ class Robot:
             text        = urllib2.urlopen(robotURL)
             robotText   = text.read()
             
-            if 'communityManaged' in robotText:
-                #print "This project is community managed"
-                
-                
+            if 'communityManaged' in robotText:                
                 '''
                 
                 Check if there are any open pull requests that need to be voted on
@@ -104,3 +106,12 @@ class Robot:
         except Exception as e:
             print "This repo does not have a ROBOT.md file"
             print e
+    
+    def fixImageLinks(self, repo):
+        '''
+        
+        Creates a pull request to edit files if a file has an image link which won't render right in the community garden
+        
+        '''
+        file_contents = repo.get_file_contents('/README.md')
+        print file_contents

@@ -2,3 +2,4 @@
 *.pyc
 !addaproject.html
 !howdoesthegardenwork.html
+/Scripts/testRobot.py
