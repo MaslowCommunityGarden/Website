@@ -115,3 +115,14 @@ class Robot:
         '''
         file_contents = repo.get_file_contents('/README.md')
         print file_contents
+    
+    def acceptInvitations(self, user):
+        '''
+        
+        Accept access to any repos that the robot has been invited to
+        
+        '''
+        
+        print user.get_invitations()
+        
+        
