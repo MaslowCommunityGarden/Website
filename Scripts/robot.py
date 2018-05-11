@@ -47,6 +47,11 @@ class Robot:
                     #determine if the robot has already commented"
                     robotHasAlreadyCommented = False
                     for comment in comments:
+                        
+                        #if something has gone wrong and the robot was unable to merge the PR on the last try...skip it
+                        if "Times up and" in comment.body:
+                            break
+                            
                         if 'Congratulations on the' in comment.body:
                             robotHasAlreadyCommented = True
                             
@@ -66,7 +71,6 @@ class Robot:
                             
                             fourtyEightHoursInSeconds = 172800
                             if elapsedTime < fourtyEightHoursInSeconds:
-                                print "not enough time has passed to merge the pull request"
                             else:
                                 if upVotes > downVotes:
                                     commentText = "Woo!! Times up and we're ready to merge this pull request! Great work!"
