@@ -71,6 +71,7 @@ class Robot:
                             
                             fourtyEightHoursInSeconds = 172800
                             if elapsedTime < fourtyEightHoursInSeconds:
+                                pass
                             else:
                                 if upVotes > downVotes:
                                     commentText = "Woo!! Times up and we're ready to merge this pull request! Great work!"
