@@ -17,12 +17,12 @@ repos = org.get_repos()
 robot = Robot()
 
 for repo in repos:
-    #handle pull requests by voting through the commuinity garden robot
+    #handle pull requests by voting through the community garden robot
     robot.voteOnPRs(repo)
 
 org = g.get_organization('MaslowCNC')
 repos = org.get_repos()
 
 for repo in repos:
-    #handle pull requests by voting through the commuinity garden robot
+    #handle pull requests by voting through the community garden robot
     robot.voteOnPRs(repo)
