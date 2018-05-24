@@ -74,7 +74,7 @@ class Robot:
                                 pass
                             else:
                                 if upVotes > downVotes:
-                                    commentText = "Time is up and we're ready to merge this pull request! Great work!"
+                                    commentText = "Time is up and we're ready to merge this pull request. Great work!"
                                     theNewComment = prAsIssue.create_comment(commentText)
                                     pullRequest.merge()
                                 else:
@@ -83,7 +83,7 @@ class Robot:
                                     prAsIssue.edit(state='closed')
                     
                     if not robotHasAlreadyCommented:
-                        commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. Vote by giving this comment a thumbs up or a thumbs down. Votes are counted in 48 hours. Ties will not be merged.\n\nI'm just a obot, but I love to see people contributing so I'm going vote thumbs up!"
+                        commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. Vote by giving this comment a thumbs up or a thumbs down. Votes are counted in 48 hours. Ties will not be merged.\n\nI'm just a robot, but I love to see people contributing so I'm going vote thumbs up!"
                         theNewComment = prAsIssue.create_comment(commentText)
                         theNewComment.create_reaction("+1")
                 
