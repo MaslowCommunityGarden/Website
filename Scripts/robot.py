@@ -148,7 +148,7 @@ class Robot:
         print fileText != newFileText
         
         if fileText != newFileText: #if we have fixed at least one link
-            newFileContents = base64.b64encode(newFileText)
+            
             repo.update_file(fileName, "fix image links", newFileText, fileContents.sha)
     
     def acceptInvitations(self, user):
