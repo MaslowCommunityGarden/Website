@@ -122,12 +122,18 @@ class Robot:
         '''
         
         import base64
+        import re
         
         file_contents = repo.get_file_contents('/README.md')
         
-        fileText = base64.b64decode(file_contents.content)
+        #fileText = base64.b64decode(file_contents.content)
         
-        print fileText
+        #updatedFileText = re.sub(pattern, repl, string, count=0, flags=0)
+        
+        print repo.full_name
+        print repo.name
+        
+        #print fileText
     
     def acceptInvitations(self, user):
         '''
