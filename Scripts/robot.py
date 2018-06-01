@@ -2,6 +2,7 @@ from github     import Github
 import          urllib2
 import          datetime
 import          pygit2
+import          base64
 
 class Robot:
     
@@ -114,17 +115,23 @@ class Robot:
             print "This repo does not have a ROBOT.md file"
             print e
     
-    def fixImageLinks(self, repo):
+    def fixImageLinks(self,repo):
+        
+        #fix images in the README file
+        self.fixImageLinksInOneFile(repo, '/README.md')
+        #fix images in the INSTRUCTIONS file
+        self.fixImageLinksInOneFile(repo, '/INSTRUCTIONS.md')
+        #fix images in the BOM file
+        self.fixImageLinksInOneFile(repo, '/BOM.md')
+    
+    def fixImageLinksInOneFile(self, repo, fileName):
         '''
         
-        Creates a pull request to edit files if a file has an image link which won't render right in the community garden
+        Detects and fixes if a file has an image link which won't render right in the community garden
         
         '''
         
-        import base64
-        import re
-        
-        fileContents = repo.get_file_contents('/README.md')
+        fileContents = repo.get_file_contents(fileName)
         
         fileText = base64.b64decode(fileContents.content)
         
@@ -142,7 +149,7 @@ class Robot:
         
         if fileText != newFileText: #if we have fixed at least one link
             newFileContents = base64.b64encode(newFileText)
-            repo.update_file('/README.md', "fix image links", newFileText, fileContents.sha)
+            repo.update_file(fileName, "fix image links", newFileText, fileContents.sha)
     
     def acceptInvitations(self, user):
         '''
