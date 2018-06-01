@@ -20,7 +20,7 @@ for repo in repos:
     #handle pull requests by voting through the community garden robot
     robot.voteOnPRs(repo)
     #fix any broken image links in the repo README files
-    #robot.fixImageLinks(repo)
+    robot.fixImageLinks(repo)
 
 org = g.get_organization('MaslowCNC')
 repos = org.get_repos()
