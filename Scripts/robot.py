@@ -124,16 +124,25 @@ class Robot:
         import base64
         import re
         
-        file_contents = repo.get_file_contents('/README.md')
+        fileContents = repo.get_file_contents('/README.md')
         
-        #fileText = base64.b64decode(file_contents.content)
+        fileText = base64.b64decode(fileContents.content)
         
-        #updatedFileText = re.sub(pattern, repl, string, count=0, flags=0)
+        #print "string to replace: " #https://github.com/MaslowCommunityGarden/A-Simple-Night-Stand/blob/master/
+        stringToReplace = 'https://github.com/' + repo.full_name + '/blob/master/'
+        #print "String to replace it with: " #https://raw.githubusercontent.com/MaslowCommunityGarden/A-Simple-Night-Stand/master/
+        replaceWithString = 'https://raw.githubusercontent.com/' + repo.full_name + '/master/'
+        
+        
+        newFileText = fileText.replace(stringToReplace, replaceWithString)
         
         print repo.full_name
-        print repo.name
+        print "We have made a change?"
+        print fileText != newFileText
         
-        #print fileText
+        if fileText != newFileText: #if we have fixed at least one link
+            newFileContents = base64.b64encode(newFileText)
+            repo.update_file('/README.md', "fix image links", newFileText, fileContents.sha)
     
     def acceptInvitations(self, user):
         '''
