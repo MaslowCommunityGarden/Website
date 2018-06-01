@@ -120,8 +120,14 @@ class Robot:
         Creates a pull request to edit files if a file has an image link which won't render right in the community garden
         
         '''
+        
+        import base64
+        
         file_contents = repo.get_file_contents('/README.md')
-        print file_contents
+        
+        fileText = base64.b64decode(file_contents.content)
+        
+        print fileText
     
     def acceptInvitations(self, user):
         '''
