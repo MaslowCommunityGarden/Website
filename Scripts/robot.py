@@ -49,6 +49,11 @@ class Robot:
                     #determine if the robot has already commented"
                     robotHasAlreadyCommented = False
                     for comment in comments:
+                        
+                        #if something has gone wrong and the robot was unable to merge the PR on the last try...skip it
+                        if "Times up and" in comment.body:
+                            break
+                            
                         if 'Congratulations on the' in comment.body:
                             robotHasAlreadyCommented = True
                             
@@ -66,12 +71,12 @@ class Robot:
                             elapsedTime = (datetime.datetime.now() - timeOpened).total_seconds()
                             
                             
-                            seventyTwoHoursInSeconds = 259200
-                            if elapsedTime < seventyTwoHoursInSeconds:
-                                print "not enough time has passed to merge the pull request"
+                            fourtyEightHoursInSeconds = 172800
+                            if elapsedTime < fourtyEightHoursInSeconds:
+                                pass
                             else:
                                 if upVotes > downVotes:
-                                    commentText = "Woo!! Times up and we're ready to merge this pull request! Great work!"
+                                    commentText = "Time is up and we're ready to merge this pull request. Great work!"
                                     theNewComment = prAsIssue.create_comment(commentText)
                                     pullRequest.merge()
                                 else:
@@ -80,7 +85,7 @@ class Robot:
                                     prAsIssue.edit(state='closed')
                     
                     if not robotHasAlreadyCommented:
-                        commentText = "Congratulations on the pull request @" + pullRequest.user.login + "!!\n\n Now we need to decide as a community if we want to integrate these changes. You can vote by giving this comment a thumbs up or a thumbs down. Votes are counted in 72 hours. Ties will not be merged.\n\nI'm just a silly robot, but I love to see people contributing so I'm going vote thumbs up!"
+                        commentText = "Congratulations on the pull request @" + pullRequest.user.login + "\n\n Now we need to decide as a community if we want to integrate these changes. Vote by giving this comment a thumbs up or a thumbs down. Votes are counted in 48 hours. Ties will not be merged.\n\nI'm just a robot, but I love to see people contributing so I'm going vote thumbs up!"
                         theNewComment = prAsIssue.create_comment(commentText)
                         theNewComment.create_reaction("+1")
                 
@@ -93,10 +98,12 @@ class Robot:
                 if 'delete' in robotText:
                     
                     #remove the string from the tracked projects list
-                    with open("/var/www/html/trackedProjects.txt", "r+") as f:
+                    newText = ""
+                    with open("/var/www/html/trackedProjects.txt", "r") as f:
                         text = f.read()
-                        text = text.replace(repo.html_url,'')
-                        f.write(text)
+                        newText = text.replace(repo.html_url,'')
+                    with open("/var/www/html/trackedProjects.txt", "w") as f:
+                        f.write(newText)
                     
                     #delete the repo
                     repo.delete()

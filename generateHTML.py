@@ -163,7 +163,27 @@ class GenerateHTML:
                                     numberOfLinesProcessed = numberOfLinesProcessed + 1
                                     if numberOfLinesProcessed > maxNumberToProcess:
                                         break
-    
+                with tag('script'):
+                    doc.asis("function truncate( n, useWordBoundary ){"
+                            "if (this.length <= n) { return this; }"
+                            "var subString = this.substr(0, n-1);"
+                            "return (useWordBoundary "
+                            "   ? subString.substr(0, subString.lastIndexOf(' ')) "
+                            "   : subString) + '&hellip;';"
+                        "};"
+
+                        "var boxed_titles = document.querySelectorAll('.boxed h1.boxed_text');"
+                        "var boxed_title_length = 55;"
+                        "for(var i = 0; i < boxed_titles.length; i++){"
+                        "  boxed_titles[i].innerHTML = truncate.apply(boxed_titles[i].innerText, [boxed_title_length, true]);   "
+                        "}"
+
+                        "var boxed_descriptions = document.querySelectorAll('.boxed p.boxed_text');"
+                        "var boxed_descriptions_length = 85;"
+                        "for(var i = 0; i < boxed_descriptions.length; i++){"
+                        "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
+                        "}"
+                        )
         f = open('index.html','w')
         f.write(doc.getvalue())
         f.close()
