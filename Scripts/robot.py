@@ -2,10 +2,16 @@ from github     import Github
 import          urllib2
 import          datetime
 import          pygit2
+import          base64
 
 class Robot:
     
     def voteOnPRs(self, repo):
+        '''
+        
+        Runs to tally votes on open pull requests if the project is community managed
+        
+        '''
         try:
             #find the URL to the file
             trackedURL  = repo.html_url
@@ -19,10 +25,7 @@ class Robot:
             text        = urllib2.urlopen(robotURL)
             robotText   = text.read()
             
-            if 'communityManaged' in robotText:
-                #print "This project is community managed"
-                
-                
+            if 'communityManaged' in robotText:                
                 '''
                 
                 Check if there are any open pull requests that need to be voted on
@@ -111,3 +114,50 @@ class Robot:
         except Exception as e:
             print "This repo does not have a ROBOT.md file"
             print e
+    
+    def fixImageLinks(self,repo):
+        
+        #fix images in the README file
+        self.fixImageLinksInOneFile(repo, '/README.md')
+        #fix images in the INSTRUCTIONS file
+        self.fixImageLinksInOneFile(repo, '/INSTRUCTIONS.md')
+        #fix images in the BOM file
+        self.fixImageLinksInOneFile(repo, '/BOM.md')
+    
+    def fixImageLinksInOneFile(self, repo, fileName):
+        '''
+        
+        Detects and fixes if a file has an image link which won't render right in the community garden
+        
+        '''
+        
+        fileContents = repo.get_file_contents(fileName)
+        
+        fileText = base64.b64decode(fileContents.content)
+        
+        #print "string to replace: " #https://github.com/MaslowCommunityGarden/A-Simple-Night-Stand/blob/master/
+        stringToReplace = 'https://github.com/' + repo.full_name + '/blob/master/'
+        #print "String to replace it with: " #https://raw.githubusercontent.com/MaslowCommunityGarden/A-Simple-Night-Stand/master/
+        replaceWithString = 'https://raw.githubusercontent.com/' + repo.full_name + '/master/'
+        
+        
+        newFileText = fileText.replace(stringToReplace, replaceWithString)
+        
+        print repo.full_name
+        print "We have made a change?"
+        print fileText != newFileText
+        
+        if fileText != newFileText: #if we have fixed at least one link
+            
+            repo.update_file(fileName, "fix image links", newFileText, fileContents.sha)
+    
+    def acceptInvitations(self, user):
+        '''
+        
+        Accept access to any repos that the robot has been invited to
+        
+        '''
+        
+        print user.get_invitations()
+        
+        
