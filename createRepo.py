@@ -34,7 +34,7 @@ password = logins[1].replace('\n', '')
 g = Github(userName, password)
 org = g.get_organization('MaslowCommunityGarden')
 
-hintText = "\n\nYou can find instructions on how to edit this page on the community garden meta page instructions tab [here](http://maslowcommunitygarden.org/Website.html)\n\n\n\nThe style cheat sheet [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is useful"
+hintText = "\n\nYou can find instructions on how to edit this page on the community garden meta page [here](http://maslowcommunitygarden.org/Website.html?instructions=true)\n\n\n\nThe style cheat sheet [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is useful"
 readmeText = "# " + projectName + "\n\n" + projectDescription
 
 if projectName != "none":
