@@ -131,25 +131,29 @@ class Robot:
         
         '''
         
-        fileContents = repo.get_file_contents(fileName)
+        try:
         
-        fileText = base64.b64decode(fileContents.content)
-        
-        #print "string to replace: " #https://github.com/MaslowCommunityGarden/A-Simple-Night-Stand/blob/master/
-        stringToReplace = 'https://github.com/' + repo.full_name + '/blob/master/'
-        #print "String to replace it with: " #https://raw.githubusercontent.com/MaslowCommunityGarden/A-Simple-Night-Stand/master/
-        replaceWithString = 'https://raw.githubusercontent.com/' + repo.full_name + '/master/'
-        
-        
-        newFileText = fileText.replace(stringToReplace, replaceWithString)
-        
-        print repo.full_name
-        print "We have made a change?"
-        print fileText != newFileText
-        
-        if fileText != newFileText: #if we have fixed at least one link
+            fileContents = repo.get_file_contents(fileName)
             
-            repo.update_file(fileName, "fix image links", newFileText, fileContents.sha)
+            fileText = base64.b64decode(fileContents.content)
+            
+            #print "string to replace: " #https://github.com/MaslowCommunityGarden/A-Simple-Night-Stand/blob/master/
+            stringToReplace = 'https://github.com/' + repo.full_name + '/blob/master/'
+            #print "String to replace it with: " #https://raw.githubusercontent.com/MaslowCommunityGarden/A-Simple-Night-Stand/master/
+            replaceWithString = 'https://raw.githubusercontent.com/' + repo.full_name + '/master/'
+            
+            
+            newFileText = fileText.replace(stringToReplace, replaceWithString)
+            
+            print repo.full_name
+            print "We have made a change?"
+            print fileText != newFileText
+            
+            if fileText != newFileText: #if we have fixed at least one link
+                
+                repo.update_file(fileName, "fix image links", newFileText, fileContents.sha)
+        except:
+            print "unable to update image links for" + str(repo.name)
     
     def acceptInvitations(self, user):
         '''
