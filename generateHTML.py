@@ -130,7 +130,7 @@ class GenerateHTML:
                 with tag('section', klass="content"):
                     
                     with tag('p', klass = 'title'):
-                        text('Beta! - A place for community driven open source projects to live - Beta!')
+                        text('A place for community driven open source projects to live')
                     
                     #Generate a grid of tracked projects
                     
