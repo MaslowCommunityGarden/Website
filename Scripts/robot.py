@@ -3,6 +3,7 @@ import          urllib2
 import          datetime
 import          pygit2
 import          base64
+import          json
 
 class Robot:
     
@@ -25,7 +26,22 @@ class Robot:
             text        = urllib2.urlopen(robotURL)
             robotText   = text.read()
             
-            if 'communityManaged' in robotText:                
+            projectIsCommunityManaged = False
+            
+            print repo.full_name
+            
+            try:
+                data = json.loads(robotText)
+                if data["ModerationLevel"] == 'communityManaged':
+                    projectIsCommunityManaged = True
+                    print "community managed by json"
+            except:
+                if 'communityManaged' in robotText:
+                    projectIsCommunityManaged = True
+                    print "community managed by old method"
+            
+            #if the project is community managed we need to see if there are pull requests to merge
+            if projectIsCommunityManaged:
                 '''
                 
                 Check if there are any open pull requests that need to be voted on

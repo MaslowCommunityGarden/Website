@@ -1,7 +1,7 @@
-from github import Github
-import pygit2
-import os
-import time
+from github import  Github
+import              pygit2
+import              os
+import              time
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -52,8 +52,11 @@ if projectName != "none":
             print "Unable to add " + githubUser + " as a collaborator:"
             print e
         
-        robotText = "ModerationLevel = " + managementStyle + "\n\n Facilitator: " + githubUser + "\n"
-        
+        robotText = (
+            '{\n'
+                '"ModerationLevel": "' + managementStyle + '",\n'
+                '"Facilitator": "' + githubUser + '"\n'
+            '}')
         
         #create the markdown files
         repo.create_file("/README.md", "init commit", readmeText)
