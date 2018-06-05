@@ -127,7 +127,7 @@ class GenerateHTML:
                         "</header>"
                         "<section class = content>"
                             "<div class='tab three-col'>"
-                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Maslow'        )\">Maslow</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Maslow'        )\"id=\"defaultOpen\">Maslow</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Furniture'     )\">Furniture</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Food+Shelter'  )\">Food+Shelter</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Signs'         )\">Signs</button>"
@@ -178,15 +178,11 @@ class GenerateHTML:
                     break
             projectSection = projectSection + "</div> </div> "
             
-            print project.ROBOTtext
-            
             
             try:
                 projectCategory = json.loads(project.ROBOTtext)["Category"]
-                print "we were able to read the json"
             except Exception as e:
                 projectCategory =  "other"
-                print e
             
             print projectCategory
             
@@ -239,11 +235,6 @@ class GenerateHTML:
             "}"
 
             "document.getElementById('defaultOpen').click();"
-            "</script>"
-            "<script>"
-                "if (window.location.search.indexOf('instructions=true') > -1) {"
-                    "document.getElementById('instructionsBTN').click();"
-                "}"
             "</script>"
         "</div>"  
         "<script>"
