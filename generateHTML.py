@@ -2,6 +2,7 @@ import              urllib2  # the lib that handles the url stuff
 import              random
 from markdown2      import Markdown
 from projectClass   import Project
+import              json
 
 class GenerateHTML:
     
@@ -51,6 +52,10 @@ class GenerateHTML:
                 bomUrl = "".join(bomUrl.split())
                 thisProject.BOMpath = bomUrl
                 
+                #find the path to the ROBOT file
+                robotUrl = thisProject.projectPathRaw + '/master/ROBOT.md'
+                robotUrl = "".join(robotUrl.split())
+                
                 #Construct the project object
                 thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
                 
@@ -65,17 +70,16 @@ class GenerateHTML:
                 
                 
                 #read the README file
-                linesInReadme = urllib2.urlopen(readmeUrl)
-                thisProject.READMEtext  = linesInReadme.read()
+                thisProject.READMEtext  = urllib2.urlopen(readmeUrl).read()
                 
                 #read the INSTRUCTIONS file
-                linesInReadme = urllib2.urlopen(instructionsUrl)
-                thisProject.INSTRUCTIONStext  = linesInReadme.read()
+                thisProject.INSTRUCTIONStext  = urllib2.urlopen(instructionsUrl).read()
                 
                 #read the BOM file
-                linesInReadme = urllib2.urlopen(bomUrl)
-                thisProject.BOMtext  = linesInReadme.read()
+                thisProject.BOMtext  = urllib2.urlopen(bomUrl).read()
                 
+                #read the ROBOT file
+                thisProject.ROBOTtext  = urllib2.urlopen(robotUrl).read()
                 
                 
                 
@@ -121,10 +125,24 @@ class GenerateHTML:
                                 "</p>"
                             "</div>"
                         "</header>"
-                        "<section class = content>")
+                        "<section class = content>"
+                            "<div class='tab three-col'>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Maslow'        )\">Maslow</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Furniture'     )\">Furniture</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Food+Shelter'  )\">Food+Shelter</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Signs'         )\">Signs</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Other'         )\">Other</button>"
+                            "</div>"
+                    )
                     
                     #Generate a grid of tracked projects
-                    
+        
+        maslowProjects      = ""
+        furnitureProjects   = ""
+        foodshelterProjects = ""
+        signsProjects       = ""
+        otherProjects       = ""
+        
         for project in self.projects:
             print "Generating grid entry for: "
             print project.projectName
@@ -158,10 +176,76 @@ class GenerateHTML:
                 numberOfLinesProcessed = numberOfLinesProcessed + 1
                 if numberOfLinesProcessed > maxNumberToProcess:
                     break
-            projectSection = projectSection + "</div> </div>"
-            pageHTML = pageHTML + projectSection
-    
+            projectSection = projectSection + "</div> </div> "
+            
+            print project.ROBOTtext
+            
+            
+            try:
+                projectCategory = json.loads(project.ROBOTtext)["Category"]
+                print "we were able to read the json"
+            except Exception as e:
+                projectCategory =  "other"
+                print e
+            
+            print projectCategory
+            
+            if projectCategory == "maslow":
+                maslowProjects = maslowProjects + projectSection
+            elif projectCategory == "furniture":
+                furnitureProjects = furnitureProjects + projectSection
+            elif projectCategory == "food+shelter":
+                foodshelterProjects = foodshelterProjects + projectSection
+            elif projectCategory == "signs":
+                signsProjects = signsProjects + projectSection
+            else:
+                otherProjects = otherProjects + projectSection
+                
+        
         pageHTML = pageHTML + (
+        "<div id='Maslow' class='tabcontent'>"
+            + maslowProjects +
+        "</div>"
+        
+        "<div id='Furniture' class='tabcontent'>"
+            + furnitureProjects +
+        "</div>"
+        
+        "<div id='Food+Shelter' class='tabcontent'>"
+            + foodshelterProjects +
+        "</div>"
+        
+        "<div id='Signs' class='tabcontent'>"
+            + signsProjects +
+        "</div>"
+        
+        "<div id='Other' class='tabcontent'>"
+            + otherProjects +
+        "</div>"
+        "<div class='three-col'>"
+            "<script>"
+            "function openTab(evt, tabName) {"
+                "var i, tabcontent, tablinks;"
+                "tabcontent = document.getElementsByClassName('tabcontent');"
+                "for (i = 0; i < tabcontent.length; i++) {"
+                    "tabcontent[i].style.display = 'none';"
+                "}"
+                "tablinks = document.getElementsByClassName('tablinks');"
+                "for (i = 0; i < tablinks.length; i++) {"
+                    "tablinks[i].className = tablinks[i].className.replace(' active', '');"
+                "}"
+                "document.getElementById(tabName).style.display = 'block';"
+                "evt.currentTarget.className += ' active';"
+            "}"
+
+            "document.getElementById('defaultOpen').click();"
+            "</script>"
+            "<script>"
+                "if (window.location.search.indexOf('instructions=true') > -1) {"
+                    "document.getElementById('instructionsBTN').click();"
+                "}"
+            "</script>"
+        "</div>"  
         "<script>"
             "function truncate( n, useWordBoundary ){"
                 "if (this.length <= n) { return this; }"
@@ -182,6 +266,7 @@ class GenerateHTML:
             "for(var i = 0; i < boxed_descriptions.length; i++){"
             "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
             "}"
+        "</script>"
             )
         f = open('index.html','w')
         f.write(pageHTML)
@@ -239,6 +324,7 @@ class GenerateHTML:
                             "<button class=\"tablinks\" onclick=\"openTab(event, 'Forums'      )\">Forums</button>"
                             "<button class=\"tablinks\" onclick=\"openTab(event, 'Buy'         )\">Buy</button>"
                         "</div>"
+                        
                         "<div id='Files' class='tabcontent'>"
                             "<div class='tab-title'>"
                                 "<h3 class='two-col'>Files</h3>"
@@ -259,6 +345,7 @@ class GenerateHTML:
                                 + readmeText +
                             "</div>"
                         "</div>"
+                        
                         "<div id='Instructions' class='tabcontent'>"
                             "<div class='tab-title'>"
                                 "<h3 class='two-col'>Instructions</h3>"

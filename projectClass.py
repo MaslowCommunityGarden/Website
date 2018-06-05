@@ -11,6 +11,7 @@ class Project:
     BOMpath                 = " "
     editBOMpath             = " "
     BOMtext                 = " "
+    ROBOTtext               = " "
     mainPicture             = " "
     projectFile             = " "
     projectName             = " "
