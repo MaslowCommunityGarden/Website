@@ -102,32 +102,26 @@ class GenerateHTML:
         doc, tag, text = Doc().tagtext()
         
         with tag('html'):
-            with tag('head'):
-                doc.stag('link',rel='stylesheet', href='styles.css')
-                doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
-                
+            doc.asis(
+                "<head>"
+                    "<link href='styles.css' rel='stylesheet' />"
+                    "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
+                "</head>")
             with tag('body', klass = 'body'):
-            
-                with tag('header', klass = 'header'):
                 
-                    with tag('div', klass = 'inner-header'):
-            
-                        with tag('a', href = 'index.html', klass='header-logo'):
-                        
-                            doc.stag('img', src="logo.png", width="auto", height="90")
-                        
-                        with tag('nav', klass = 'navigation'):
-                        
-                            with tag('a', href="howdoesthegardenwork.html", klass="button"):
-                                text('How does the garden work?')
-                            
-                            with tag('a', href="addaproject.html", klass="button"):
-                                text('Add a project')
-                                
-                            with tag('a', href="index.html", klass="button"):
-                                text('Browse projects')
-                        with tag('p', klass = "description"):
-                            text('A place for community driven open source projects to live')
+                doc.asis(
+                    "<header class = 'header'>"
+                        "<div class='inner-header'>"
+                            "<a href='index.html'>"
+                                "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
+                            "</a>"
+                            "<nav class='navigation'>"
+                                "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
+                                "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
+                                "<a href='index.html#projectsSection' class='nav-link button one-col'>Browse Projects</a>"
+                            "</nav>"
+                        "<p class = 'description'>"
+                            "A place for community driven open source projects to live")
                 
                 with tag('section', klass="content"):
                     
@@ -140,28 +134,35 @@ class GenerateHTML:
                         
                         
                         #this creates a boxed representation of the project
-                        with tag('a', href=project.projectFile, klass = "project_link"):
-                            with tag('div', klass = 'boxed'):
+                        
+                        projectSection = ("<a href= " + project.projectFile + " class = project_link>"
+                                            "<div class = boxed>"
+                                                "<div class = project-thumbnail>"
+                                                    "<img src="+project.mainPicture+" class = project_img>")
                                 
-                                with tag ('div', klass = 'project-thumbnail'):
-                                    doc.stag('img', src= project.mainPicture, klass = "project_img")                                    
-                                
-                                numberOfLinesProcessed = 0
-                                maxNumberToProcess = 3
-                                linesInReadme = project.READMEtext.split('\n', 5)
-                                
-                                for line in linesInReadme:
-                                    if len(line) > 0:
-                                        if line[0] is '#':
-                                            with tag('h1', klass = "boxed_text"):
-                                                text(line[1:])
-                                                project.projectName = line[1:]
-                                        elif line[0] is not '!':
-                                            with tag('p', klass = "boxed_text"):
-                                                text(line)
-                                    numberOfLinesProcessed = numberOfLinesProcessed + 1
-                                    if numberOfLinesProcessed > maxNumberToProcess:
-                                        break
+                        numberOfLinesProcessed = 0
+                        maxNumberToProcess = 3
+                        linesInReadme = project.READMEtext.split('\n', 5)
+                        
+                        for line in linesInReadme:
+                            if len(line) > 0:
+                                if line[0] is '#':
+                                    projectSection = projectSection + (
+                                    "<h1 class = boxed_text>"
+                                        +line[1:]+
+                                    "</h1>")
+                                    
+                                    project.projectName = line[1:]
+                                elif line[0] is not '!':
+                                    projectSection = projectSection + (
+                                    "<p class = boxed_text>"
+                                        +line+
+                                    "</p>")
+                            numberOfLinesProcessed = numberOfLinesProcessed + 1
+                            if numberOfLinesProcessed > maxNumberToProcess:
+                                break
+                        projectSection = projectSection + "</div> </div>"
+                        doc.asis(projectSection)
                 with tag('script'):
                     doc.asis("function truncate( n, useWordBoundary ){"
                             "if (this.length <= n) { return this; }"
