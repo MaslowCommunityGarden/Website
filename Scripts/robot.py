@@ -28,17 +28,13 @@ class Robot:
             
             projectIsCommunityManaged = False
             
-            print repo.full_name
-            
             try:
                 data = json.loads(robotText)
                 if data["ModerationLevel"] == 'communityManaged':
                     projectIsCommunityManaged = True
-                    print "community managed by json"
             except:
                 if 'communityManaged' in robotText:
                     projectIsCommunityManaged = True
-                    print "community managed by old method"
             
             #if the project is community managed we need to see if there are pull requests to merge
             if projectIsCommunityManaged:
@@ -53,12 +49,6 @@ class Robot:
                     print "\n\n"+pullRequest.title
                     
                     pullRequestAlreadyRespondedTo = False
-                    
-                    #print "mergable " + str(pullRequest.mergeable)
-                    #print pullRequest.user
-                    #print "comments:" + str(pullRequest.comments)
-                    #print "review comments:" + str(pullRequest.review_comments)
-                    
                     
                     prAsIssue = repo.get_issue(pullRequest.number)
                     comments  = prAsIssue.get_comments()  #this is a work around for a bug in pygithub. We have to use the issues API :rolleyes:
