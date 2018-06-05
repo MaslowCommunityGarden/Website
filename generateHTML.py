@@ -1,4 +1,3 @@
-from yattag import  Doc
 import              urllib2  # the lib that handles the url stuff
 import              random
 from markdown2      import Markdown
@@ -98,94 +97,94 @@ class GenerateHTML:
         
         '''
         
-        #generate the HTML for the site
-        doc, tag, text = Doc().tagtext()
+        #generate the HTML for the main page
         
-        with tag('html'):
-            doc.asis(
-                "<head>"
-                    "<link href='styles.css' rel='stylesheet' />"
-                    "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
-                "</head>")
-            with tag('body', klass = 'body'):
-                
-                doc.asis(
-                    "<header class = 'header'>"
-                        "<div class='inner-header'>"
-                            "<a href='index.html'>"
-                                "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
-                            "</a>"
-                            "<nav class='navigation'>"
-                                "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
-                                "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
-                                "<a href='index.html#projectsSection' class='nav-link button one-col'>Browse Projects</a>"
-                            "</nav>"
-                        "<p class = 'description'>"
-                            "A place for community driven open source projects to live")
-                
-                with tag('section', klass="content"):
+        pageHTML = ("<!DOCTYPE html>"
+                "<html>"
+                    "<head>"
+                        "<link href='styles.css' rel='stylesheet' />"
+                        "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
+                    "</head>"
+                    "<body class = body>"
+                        "<header class = 'header'>"
+                            "<div class='inner-header'>"
+                                "<a href='index.html'>"
+                                    "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
+                                "</a>"
+                                "<nav class='navigation'>"
+                                    "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
+                                    "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
+                                    "<a href='index.html#projectsSection' class='nav-link button one-col'>Browse Projects</a>"
+                                "</nav>"
+                                "<p class = 'description'>"
+                                    "A place for community driven open source projects to live"
+                                "</p>"
+                            "</div>"
+                        "</header>"
+                        "<section class = content>")
                     
                     #Generate a grid of tracked projects
                     
-                    for project in self.projects:
+        for project in self.projects:
+            print "Generating grid entry for: "
+            print project.projectName
+            
+            
+            #this creates a boxed representation of the project
+            
+            projectSection = ("<a href= " + project.projectFile + " class = project_link>"
+                                "<div class = boxed>"
+                                    "<div class = project-thumbnail>"
+                                        "<img src="+project.mainPicture+" class = project_img>")
+                    
+            numberOfLinesProcessed = 0
+            maxNumberToProcess = 3
+            linesInReadme = project.READMEtext.split('\n', 5)
+            
+            for line in linesInReadme:
+                if len(line) > 0:
+                    if line[0] is '#':
+                        projectSection = projectSection + (
+                        "<h1 class = boxed_text>"
+                            +line[1:]+
+                        "</h1>")
                         
-                        print "Generating grid entry for: "
-                        print project.projectName
-                        
-                        
-                        #this creates a boxed representation of the project
-                        
-                        projectSection = ("<a href= " + project.projectFile + " class = project_link>"
-                                            "<div class = boxed>"
-                                                "<div class = project-thumbnail>"
-                                                    "<img src="+project.mainPicture+" class = project_img>")
-                                
-                        numberOfLinesProcessed = 0
-                        maxNumberToProcess = 3
-                        linesInReadme = project.READMEtext.split('\n', 5)
-                        
-                        for line in linesInReadme:
-                            if len(line) > 0:
-                                if line[0] is '#':
-                                    projectSection = projectSection + (
-                                    "<h1 class = boxed_text>"
-                                        +line[1:]+
-                                    "</h1>")
-                                    
-                                    project.projectName = line[1:]
-                                elif line[0] is not '!':
-                                    projectSection = projectSection + (
-                                    "<p class = boxed_text>"
-                                        +line+
-                                    "</p>")
-                            numberOfLinesProcessed = numberOfLinesProcessed + 1
-                            if numberOfLinesProcessed > maxNumberToProcess:
-                                break
-                        projectSection = projectSection + "</div> </div>"
-                        doc.asis(projectSection)
-                with tag('script'):
-                    doc.asis("function truncate( n, useWordBoundary ){"
-                            "if (this.length <= n) { return this; }"
-                            "var subString = this.substr(0, n-1);"
-                            "return (useWordBoundary "
-                            "   ? subString.substr(0, subString.lastIndexOf(' ')) "
-                            "   : subString) + '&hellip;';"
-                        "};"
+                        project.projectName = line[1:]
+                    elif line[0] is not '!':
+                        projectSection = projectSection + (
+                        "<p class = boxed_text>"
+                            +line+
+                        "</p>")
+                numberOfLinesProcessed = numberOfLinesProcessed + 1
+                if numberOfLinesProcessed > maxNumberToProcess:
+                    break
+            projectSection = projectSection + "</div> </div>"
+            pageHTML = pageHTML + projectSection
+    
+        pageHTML = pageHTML + (
+        "<script>"
+            "function truncate( n, useWordBoundary ){"
+                "if (this.length <= n) { return this; }"
+                "var subString = this.substr(0, n-1);"
+                "return (useWordBoundary "
+                "   ? subString.substr(0, subString.lastIndexOf(' ')) "
+                "   : subString) + '&hellip;';"
+            "};"
 
-                        "var boxed_titles = document.querySelectorAll('.boxed h1.boxed_text');"
-                        "var boxed_title_length = 55;"
-                        "for(var i = 0; i < boxed_titles.length; i++){"
-                        "  boxed_titles[i].innerHTML = truncate.apply(boxed_titles[i].innerText, [boxed_title_length, true]);   "
-                        "}"
+            "var boxed_titles = document.querySelectorAll('.boxed h1.boxed_text');"
+            "var boxed_title_length = 55;"
+            "for(var i = 0; i < boxed_titles.length; i++){"
+            "  boxed_titles[i].innerHTML = truncate.apply(boxed_titles[i].innerText, [boxed_title_length, true]);   "
+            "}"
 
-                        "var boxed_descriptions = document.querySelectorAll('.boxed p.boxed_text');"
-                        "var boxed_descriptions_length = 85;"
-                        "for(var i = 0; i < boxed_descriptions.length; i++){"
-                        "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
-                        "}"
-                        )
+            "var boxed_descriptions = document.querySelectorAll('.boxed p.boxed_text');"
+            "var boxed_descriptions_length = 85;"
+            "for(var i = 0; i < boxed_descriptions.length; i++){"
+            "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
+            "}"
+            )
         f = open('index.html','w')
-        f.write(doc.getvalue())
+        f.write(pageHTML)
         f.close()
 
     def generatePagesForProjects(self):
