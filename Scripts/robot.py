@@ -28,11 +28,11 @@ class Robot:
             
             projectIsCommunityManaged = False
             
-            try:
+            try:                                                        #Try to read the robot.md file as a json file
                 data = json.loads(robotText)
                 if data["ModerationLevel"] == 'communityManaged':
                     projectIsCommunityManaged = True
-            except:
+            except:                                                     #If it's not a json file fall back to the old technique
                 if 'communityManaged' in robotText:
                     projectIsCommunityManaged = True
             
