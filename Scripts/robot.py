@@ -3,6 +3,7 @@ import          urllib2
 import          datetime
 import          pygit2
 import          base64
+import          json
 
 class Robot:
     
@@ -25,7 +26,18 @@ class Robot:
             text        = urllib2.urlopen(robotURL)
             robotText   = text.read()
             
-            if 'communityManaged' in robotText:                
+            projectIsCommunityManaged = False
+            
+            try:                                                        #Try to read the robot.md file as a json file
+                data = json.loads(robotText)
+                if data["ModerationLevel"] == 'communityManaged':
+                    projectIsCommunityManaged = True
+            except:                                                     #If it's not a json file fall back to the old technique
+                if 'communityManaged' in robotText:
+                    projectIsCommunityManaged = True
+            
+            #if the project is community managed we need to see if there are pull requests to merge
+            if projectIsCommunityManaged:
                 '''
                 
                 Check if there are any open pull requests that need to be voted on
@@ -37,12 +49,6 @@ class Robot:
                     print "\n\n"+pullRequest.title
                     
                     pullRequestAlreadyRespondedTo = False
-                    
-                    #print "mergable " + str(pullRequest.mergeable)
-                    #print pullRequest.user
-                    #print "comments:" + str(pullRequest.comments)
-                    #print "review comments:" + str(pullRequest.review_comments)
-                    
                     
                     prAsIssue = repo.get_issue(pullRequest.number)
                     comments  = prAsIssue.get_comments()  #this is a work around for a bug in pygithub. We have to use the issues API :rolleyes:
