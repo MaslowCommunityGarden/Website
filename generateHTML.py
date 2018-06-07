@@ -1,8 +1,8 @@
-from yattag import  Doc
 import              urllib2  # the lib that handles the url stuff
 import              random
 from markdown2      import Markdown
 from projectClass   import Project
+import              json
 
 class GenerateHTML:
     
@@ -52,6 +52,10 @@ class GenerateHTML:
                 bomUrl = "".join(bomUrl.split())
                 thisProject.BOMpath = bomUrl
                 
+                #find the path to the ROBOT file
+                robotUrl = thisProject.projectPathRaw + '/master/ROBOT.md'
+                robotUrl = "".join(robotUrl.split())
+                
                 #Construct the project object
                 thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
                 
@@ -66,17 +70,16 @@ class GenerateHTML:
                 
                 
                 #read the README file
-                linesInReadme = urllib2.urlopen(readmeUrl)
-                thisProject.READMEtext  = linesInReadme.read()
+                thisProject.READMEtext  = urllib2.urlopen(readmeUrl).read()
                 
                 #read the INSTRUCTIONS file
-                linesInReadme = urllib2.urlopen(instructionsUrl)
-                thisProject.INSTRUCTIONStext  = linesInReadme.read()
+                thisProject.INSTRUCTIONStext  = urllib2.urlopen(instructionsUrl).read()
                 
                 #read the BOM file
-                linesInReadme = urllib2.urlopen(bomUrl)
-                thisProject.BOMtext  = linesInReadme.read()
+                thisProject.BOMtext  = urllib2.urlopen(bomUrl).read()
                 
+                #read the ROBOT file
+                thisProject.ROBOTtext  = urllib2.urlopen(robotUrl).read()
                 
                 
                 
@@ -98,93 +101,163 @@ class GenerateHTML:
         
         '''
         
-        #generate the HTML for the site
-        doc, tag, text = Doc().tagtext()
+        #generate the HTML for the main page
         
-        with tag('html'):
-            with tag('head'):
-                doc.stag('link',rel='stylesheet', href='styles.css')
-                doc.stag('link',rel='stylesheet', type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans")
-                
-            with tag('body', klass = 'body'):
-            
-                with tag('header', klass = 'header'):
-                
-                    with tag('div', klass = 'inner-header'):
-            
-                        with tag('a', href = 'index.html', klass='header-logo'):
-                        
-                            doc.stag('img', src="logo.png", width="auto", height="90")
-                        
-                        with tag('nav', klass = 'navigation'):
-                        
-                            with tag('a', href="howdoesthegardenwork.html", klass="button"):
-                                text('How does the garden work?')
-                            
-                            with tag('a', href="addaproject.html", klass="button"):
-                                text('Add a project')
-                                
-                            with tag('a', href="index.html", klass="button"):
-                                text('Browse projects')
-                        with tag('p', klass = "description"):
-                            text('A place for community driven open source projects to live')
-                
-                with tag('section', klass="content"):
+        pageHTML = ("<!DOCTYPE html>"
+                "<html>"
+                    "<head>"
+                        "<link href='styles.css' rel='stylesheet' />"
+                        "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
+                    "</head>"
+                    "<body class = body>"
+                        "<header class = 'header'>"
+                            "<div class='inner-header'>"
+                                "<a href='index.html'>"
+                                    "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
+                                "</a>"
+                                "<nav class='navigation'>"
+                                    "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
+                                    " "
+                                    "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
+                                "</nav>"
+                            "</div>"
+                        "</header>"
+                        "<section class = content>"
+                            "<div class='tab three-col'>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Maslow'        )\"id=\"defaultOpen\">Maslow</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Furniture'     )\">Furniture</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Food+Shelter'  )\">Food+Shelter</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Signs'         )\">Signs</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Other'         )\">Other</button>"
+                            "</div>"
+                    )
                     
                     #Generate a grid of tracked projects
+        
+        maslowProjects      = ""
+        furnitureProjects   = ""
+        foodshelterProjects = ""
+        signsProjects       = ""
+        otherProjects       = ""
+        
+        for project in self.projects:
+            print "Generating grid entry for: "
+            print project.projectName
+            
+            
+            #this creates a boxed representation of the project
+            
+            projectSection = ("<a href= " + project.projectFile + " class = project_link>"
+                                "<div class = boxed>"
+                                    "<div class = project-thumbnail>"
+                                        "<img src="+project.mainPicture+" class = project_img>")
                     
-                    for project in self.projects:
+            numberOfLinesProcessed = 0
+            maxNumberToProcess = 3
+            linesInReadme = project.READMEtext.split('\n', 5)
+            
+            for line in linesInReadme:
+                if len(line) > 0:
+                    if line[0] is '#':
+                        projectSection = projectSection + (
+                        "<h1 class = boxed_text>"
+                            +line[1:]+
+                        "</h1>")
                         
-                        print "Generating grid entry for: "
-                        print project.projectName
-                        
-                        
-                        #this creates a boxed representation of the project
-                        with tag('a', href=project.projectFile, klass = "project_link"):
-                            with tag('div', klass = 'boxed'):
-                                
-                                with tag ('div', klass = 'project-thumbnail'):
-                                    doc.stag('img', src= project.mainPicture, klass = "project_img")                                    
-                                
-                                numberOfLinesProcessed = 0
-                                maxNumberToProcess = 3
-                                linesInReadme = project.READMEtext.split('\n', 5)
-                                
-                                for line in linesInReadme:
-                                    if len(line) > 0:
-                                        if line[0] is '#':
-                                            with tag('h1', klass = "boxed_text"):
-                                                text(line[1:])
-                                                project.projectName = line[1:]
-                                        elif line[0] is not '!':
-                                            with tag('p', klass = "boxed_text"):
-                                                text(line)
-                                    numberOfLinesProcessed = numberOfLinesProcessed + 1
-                                    if numberOfLinesProcessed > maxNumberToProcess:
-                                        break
-                with tag('script'):
-                    doc.asis("function truncate( n, useWordBoundary ){"
-                            "if (this.length <= n) { return this; }"
-                            "var subString = this.substr(0, n-1);"
-                            "return (useWordBoundary "
-                            "   ? subString.substr(0, subString.lastIndexOf(' ')) "
-                            "   : subString) + '&hellip;';"
-                        "};"
+                        project.projectName = line[1:]
+                    elif line[0] is not '!':
+                        projectSection = projectSection + (
+                        "<p class = boxed_text>"
+                            +line+
+                        "</p>")
+                numberOfLinesProcessed = numberOfLinesProcessed + 1
+                if numberOfLinesProcessed > maxNumberToProcess:
+                    break
+            projectSection = projectSection + "</div> </div> "
+            
+            
+            try:
+                projectCategory = json.loads(project.ROBOTtext)["Category"]
+            except Exception as e:
+                projectCategory =  "other"
+            
+            print projectCategory
+            
+            if projectCategory == "maslow":
+                maslowProjects = maslowProjects + projectSection
+            elif projectCategory == "furniture":
+                furnitureProjects = furnitureProjects + projectSection
+            elif projectCategory == "food+shelter":
+                foodshelterProjects = foodshelterProjects + projectSection
+            elif projectCategory == "signs":
+                signsProjects = signsProjects + projectSection
+            else:
+                otherProjects = otherProjects + projectSection
+                
+        
+        pageHTML = pageHTML + (
+        "<div id='Maslow' class='tabcontent'>"
+            + maslowProjects +
+        "</div>"
+        
+        "<div id='Furniture' class='tabcontent'>"
+            + furnitureProjects +
+        "</div>"
+        
+        "<div id='Food+Shelter' class='tabcontent'>"
+            + foodshelterProjects +
+        "</div>"
+        
+        "<div id='Signs' class='tabcontent'>"
+            + signsProjects +
+        "</div>"
+        
+        "<div id='Other' class='tabcontent'>"
+            + otherProjects +
+        "</div>"
+        "<div class='three-col'>"
+            "<script>"
+            "function openTab(evt, tabName) {"
+                "var i, tabcontent, tablinks;"
+                "tabcontent = document.getElementsByClassName('tabcontent');"
+                "for (i = 0; i < tabcontent.length; i++) {"
+                    "tabcontent[i].style.display = 'none';"
+                "}"
+                "tablinks = document.getElementsByClassName('tablinks');"
+                "for (i = 0; i < tablinks.length; i++) {"
+                    "tablinks[i].className = tablinks[i].className.replace(' active', '');"
+                "}"
+                "document.getElementById(tabName).style.display = 'block';"
+                "evt.currentTarget.className += ' active';"
+            "}"
 
-                        "var boxed_titles = document.querySelectorAll('.boxed h1.boxed_text');"
-                        "var boxed_title_length = 55;"
-                        "for(var i = 0; i < boxed_titles.length; i++){"
-                        "  boxed_titles[i].innerHTML = truncate.apply(boxed_titles[i].innerText, [boxed_title_length, true]);   "
-                        "}"
+            "document.getElementById('defaultOpen').click();"
+            "</script>"
+        "</div>"  
+        "<script>"
+            "function truncate( n, useWordBoundary ){"
+                "if (this.length <= n) { return this; }"
+                "var subString = this.substr(0, n-1);"
+                "return (useWordBoundary "
+                "   ? subString.substr(0, subString.lastIndexOf(' ')) "
+                "   : subString) + '&hellip;';"
+            "};"
 
-                        "var boxed_descriptions = document.querySelectorAll('.boxed p.boxed_text');"
-                        "var boxed_descriptions_length = 85;"
-                        "for(var i = 0; i < boxed_descriptions.length; i++){"
-                        "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
-                        "}"
-                        )
+            "var boxed_titles = document.querySelectorAll('.boxed h1.boxed_text');"
+            "var boxed_title_length = 55;"
+            "for(var i = 0; i < boxed_titles.length; i++){"
+            "  boxed_titles[i].innerHTML = truncate.apply(boxed_titles[i].innerText, [boxed_title_length, true]);   "
+            "}"
+
+            "var boxed_descriptions = document.querySelectorAll('.boxed p.boxed_text');"
+            "var boxed_descriptions_length = 85;"
+            "for(var i = 0; i < boxed_descriptions.length; i++){"
+            "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
+            "}"
+        "</script>"
+            )
         f = open('index.html','w')
-        f.write(doc.getvalue())
+        f.write(pageHTML)
         f.close()
 
     def generatePagesForProjects(self):
@@ -223,7 +296,6 @@ class GenerateHTML:
                             "<nav class='navigation'>"
                                 "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
                                 "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
-                                "<a href='index.html#projectsSection' class='nav-link button one-col'>Browse Projects</a>"
                             "</nav>"
                         "</div>"
                     "</header>"
@@ -239,6 +311,7 @@ class GenerateHTML:
                             "<button class=\"tablinks\" onclick=\"openTab(event, 'Forums'      )\">Forums</button>"
                             "<button class=\"tablinks\" onclick=\"openTab(event, 'Buy'         )\">Buy</button>"
                         "</div>"
+                        
                         "<div id='Files' class='tabcontent'>"
                             "<div class='tab-title'>"
                                 "<h3 class='two-col'>Files</h3>"
@@ -259,6 +332,7 @@ class GenerateHTML:
                                 + readmeText +
                             "</div>"
                         "</div>"
+                        
                         "<div id='Instructions' class='tabcontent'>"
                             "<div class='tab-title'>"
                                 "<h3 class='two-col'>Instructions</h3>"
