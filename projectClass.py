@@ -18,3 +18,4 @@ class Project:
     projectPath             = " "
     projectPathRaw          = " "
     downloadLink            = " "
+    starGazers              =  0
