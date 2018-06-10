@@ -3,6 +3,7 @@ import              random
 from markdown2      import Markdown
 from projectClass   import Project
 import              json
+import              re
 
 class GenerateHTML:
     
@@ -56,6 +57,7 @@ class GenerateHTML:
                 robotUrl = thisProject.projectPathRaw + '/master/ROBOT.md'
                 robotUrl = "".join(robotUrl.split())
                 
+                
                 #Construct the project object
                 thisProject.projectName = self.findProjectName(thisProject.projectPathRaw)
                 
@@ -81,10 +83,15 @@ class GenerateHTML:
                 #read the ROBOT file
                 thisProject.ROBOTtext  = urllib2.urlopen(robotUrl).read()
                 
+                #scrape the number of project star gazers
+                starGazersScrape = urllib2.urlopen(thisProject.projectPath).read()
+                match = re.search( '(?<=aria-label=")(.*)(?= users starred this repository)', starGazersScrape)
                 
-                
-                print "Generating object for: "
-                print thisProject.projectName
+                if match:
+                    thisProject.starGazers = int(match.group(1))
+                else:
+                    "unable to read stargazers defaulting to 0"
+                    
                 
                 self.projects.append(thisProject)
                 
@@ -180,8 +187,6 @@ class GenerateHTML:
                 projectCategory = json.loads(project.ROBOTtext)["Category"]
             except Exception as e:
                 projectCategory =  "other"
-            
-            print projectCategory
             
             if projectCategory == "maslow":
                 maslowProjects = maslowProjects + projectSection
