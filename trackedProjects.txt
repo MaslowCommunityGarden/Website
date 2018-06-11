@@ -32,7 +32,9 @@ https://github.com/MaslowCommunityGarden/Working-Desk-
 https://github.com/MaslowCommunityGarden/Bucket-Stand-
 https://github.com/MaslowCommunityGarden/Freecad-Final-Sled-with-CAM-files
 https://github.com/MaslowCommunityGarden/Judi
+https://github.com/MaslowCNC/Firmware
 https://github.com/MaslowCNC/Electronics
+https://github.com/MaslowCNC/GroundControl
 https://github.com/MaslowCommunityGarden/Forrest-Gump-Park-Bench
 https://github.com/MaslowCommunityGarden/Fold-Flat-Chair
 https://github.com/MaslowCommunityGarden/Coat-Hanger-1
@@ -42,3 +44,13 @@ https://github.com/MaslowCommunityGarden/EZ-Motor-Mounts
 https://github.com/MaslowCommunityGarden/Sharpie-Pen-Holder-by-krkeegan
 
 https://github.com/MaslowCommunityGarden/Template-Picnic-Table
+
+
+https://github.com/MaslowCommunityGarden/MCM-End-Table
+https://github.com/MaslowCommunityGarden/Wire-Dispenser-with-3d-Printed-Spools
+
+https://github.com/MaslowCommunityGarden/Slab-Flattening-Router-Jig
+https://github.com/MaslowCommunityGarden/Christmas---Grinch-Family---Max
+https://github.com/MaslowCommunityGarden/Storage-Rack-for-Plastic-Organisers-
+https://github.com/MaslowCommunityGarden/Red-Wagon-Fighter-Jet
+https://github.com/MaslowCommunityGarden/Tabletop-Arcade
