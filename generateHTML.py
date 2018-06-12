@@ -31,10 +31,6 @@ class GenerateHTML:
                 thisProject.projectPath = string
                 thisProject.projectPath = thisProject.projectPath.replace('\n', '') #remove the carriage return
                 
-                #find the download link
-                thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
-                
-                
                 #find the raw version of the string
                 thisProject.projectPathRaw = self.findProjectRawPath(string)
                 
@@ -82,6 +78,16 @@ class GenerateHTML:
                 
                 #read the ROBOT file
                 thisProject.ROBOTtext  = urllib2.urlopen(robotUrl).read()
+                
+                #find the download link
+                print thisProject.projectName
+                try:
+                    downloadTarget = json.loads(thisProject.ROBOTtext)["DownloadTarget"]
+                    thisProject.downloadLink = thisProject.projectPath + downloadTarget
+                    print "download target read*************************"
+                    print thisProject.downloadLink
+                except:
+                    thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
                 
                 #scrape the number of project star gazers
                 starGazersScrape = urllib2.urlopen(thisProject.projectPath).read()
