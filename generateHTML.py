@@ -101,6 +101,15 @@ class GenerateHTML:
                 print "<- could not be read"
                 print (e)
     
+    def sortProjects(self):
+        '''
+        
+        Sort projects based on how many likes each has gotten
+        
+        '''
+        
+        self.projects.sort(key=lambda x: x.starGazers, reverse=True)
+    
     def buildMainSite(self):
         '''
         
