@@ -80,12 +80,9 @@ class GenerateHTML:
                 thisProject.ROBOTtext  = urllib2.urlopen(robotUrl).read()
                 
                 #find the download link
-                print thisProject.projectName
                 try:
                     downloadTarget = json.loads(thisProject.ROBOTtext)["DownloadTarget"]
                     thisProject.downloadLink = thisProject.projectPath + downloadTarget
-                    print "download target read*************************"
-                    print thisProject.downloadLink
                 except:
                     thisProject.downloadLink = thisProject.projectPath + "/archive/master.zip"
                 
