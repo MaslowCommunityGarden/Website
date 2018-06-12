@@ -23,6 +23,12 @@ try:
     githubUser = githubUser.replace(" ", "")
 except:
     githubUser = ""
+try:
+    category = userInputs[4].replace('\n', '')
+    category = category.replace(" ", "")
+    category = category.lower()
+except:
+    category = "other"
     
 
 file = open("/home/ubuntu/gitlogin.txt", "r") 
@@ -55,7 +61,8 @@ if projectName != "none":
         robotText = (
             '{\n'
                 '"ModerationLevel": "' + managementStyle + '",\n'
-                '"Facilitator": "' + githubUser + '"\n'
+                '"Facilitator": "' + githubUser + '",\n'
+                '"Category": "' + category + '"\n'
             '}')
         
         #create the markdown files
