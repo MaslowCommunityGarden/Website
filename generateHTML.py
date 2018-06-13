@@ -451,6 +451,7 @@ class GenerateHTML:
                 "</html>")
             
             #Generate and HTML file for the project
+            pageHTML = pageHTML.encode('utf-8')
             f = open(project.projectFile,'w')
             f.write(pageHTML)
             f.close()
