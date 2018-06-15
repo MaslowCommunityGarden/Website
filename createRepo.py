@@ -13,7 +13,7 @@ except:
 
 if "test" in projectName:
     print "Test detected, exiting early without creating a project"
-    print "GIT URL:> https://www.example.com/ <---"
+    print "GIT URL:> https://www.example.com <---"
     import sys
     sys.exit()
 
