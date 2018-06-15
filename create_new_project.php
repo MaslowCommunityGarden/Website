@@ -128,7 +128,7 @@ if ($uploadOk == 0) {
     
     $githubURL = "";
     
-    preg_match("(?<=\>)(.*?)(?=\<)",$output,$githubURL);
+    preg_match("/(?<=\>)(.*?)(?=\<)/",$output,$githubURL);
     
     echo $output;
     
