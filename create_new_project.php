@@ -149,7 +149,11 @@ if ($uploadOk == 0) {
 
 </div>
 
-<a href="<?php echo $gitLinkURL;?>"> Link </a>
+<?php
+
+echo "<a href='$gitLinkURL'>Link</a>";
+
+?>
 <br>
 
 <br>
