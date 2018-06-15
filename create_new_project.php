@@ -157,7 +157,7 @@ if ($uploadOk == 0) {
 
 <br>
 
-<a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>
+<a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Markdown Guide</a>
 
 <br>
 
