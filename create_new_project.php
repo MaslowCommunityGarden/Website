@@ -126,7 +126,7 @@ if ($uploadOk == 0) {
     // run the script which will create the repository
     $pythonOutput=shell_exec('/var/www/html/createRepo.sh 2>&1');
     
-    $atestinput = "this input > is for < testing"
+    $atestinput = "this input > is for < testing";
     
     preg_match("/(?<=\>)(.*?)(?=\<)/", (string)$pythonOutput, $githubURL);
     
