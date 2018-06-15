@@ -130,12 +130,16 @@ if ($uploadOk == 0) {
     
     preg_match("/(?<=\>)(.*?)(?=\<)/",$pythonOutput,$githubURL);
     
+    echo "Python output: \n\n";
+    
     echo $pythonOutput;
     
-    echo "Here: ";
+    echo "\n\n:End python output";
     
-    echo $githubURL(0);
+    echo $githubURL[0];
+    echo $githubURL[1];
     echo $githubURL;
+    print_r($githubURL);
     
     echo "End of script";
 ?>
