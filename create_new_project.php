@@ -149,11 +149,10 @@ if ($uploadOk == 0) {
 
 </div>
 
-<?php
+<a href="<?php echo $gitLinkURL;?>"> Link </a>
 
-echo "<a href='$gitLinkURL'>Link</a>";
+<a href="www.google.com">external link</a>
 
-?>
 <br>
 
 <br>
