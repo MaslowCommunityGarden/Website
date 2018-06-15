@@ -32,7 +32,7 @@
 <br>
 <br>
 
-<p>The output from the php script which uploads and tests your files is: </p>
+<p>The output from the php and python scripts which uploads and tests your files is: </p>
 
 <div style = "background-color: lightgray;">
 <?php
@@ -44,13 +44,7 @@ if($ret === false) {
 else {
     echo "$ret bytes written to file";
 }
-?>
 
-<br>
-
-<br>
-
-<?php
 //Upload the image file
 $target_dir = "uploads/";
 $target_file = $target_dir . "mainpicture.jpg";
@@ -95,13 +89,7 @@ if ($uploadOk == 0) {
         echo $target_file;
     }
 }
-?>
 
-<br>
-
-<br>
-
-<?php
 //Upload the zip file
 $target_dir = "uploads/";
 $target_file = $target_dir . "userUpload.zip";
@@ -138,21 +126,6 @@ if ($uploadOk == 0) {
         echo $target_file;
     }
 }
-?>
-
-</div>
-
-<br>
-
-<br>
-
-<p>The output from the python script which creates the github repository is: </p>
-
-<br>
-
-<div style = "background-color: lightgray;">
-
-<?php
     // run the script which will create the repository
     $output=shell_exec('/var/www/html/createRepo.sh 2>&1');
     echo $output;
@@ -160,7 +133,6 @@ if ($uploadOk == 0) {
 
 </div>
 
-<p>While waiting for your project to be created check out the instructions page <a href="http://maslowcommunitygarden.org/Website.html">here</a> for tips on how to interact with your new project.</p>
 
 <br>
 
