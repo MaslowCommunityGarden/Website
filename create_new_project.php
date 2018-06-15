@@ -132,7 +132,7 @@ if ($uploadOk == 0) {
     
     echo "Python output: \n\n";
     
-    echo $pythonOutput;
+    //echo $pythonOutput;
     
     echo "\n\n:End python output     ";
     
@@ -141,6 +141,7 @@ if ($uploadOk == 0) {
     echo "    matches:   ";
     
     $gitLinkURL = $githubURL[0]."/invitations";
+    $gitLinkURL = str_replace(' ', '', $gitLinkURL);
     
     echo $gitLinkURL;
     
