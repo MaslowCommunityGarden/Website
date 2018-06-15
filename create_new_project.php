@@ -144,14 +144,16 @@ if ($uploadOk == 0) {
     
     echo $gitLinkURL;
     
-    echo '<a href="$gitLinkURL">Accept invitation</a>';
-    
     echo "End of script";
 ?>
 
 </div>
 
+<?php
 
+echo '<a href=$gitLinkURL>Accept invitation</a>';
+
+?>
 <br>
 
 <br>
