@@ -124,17 +124,17 @@ if ($uploadOk == 0) {
     }
 }
     // run the script which will create the repository
-    $output=shell_exec('/var/www/html/createRepo.sh 2>&1');
+    $pythonOutput=shell_exec('/var/www/html/createRepo.sh 2>&1');
     
     $githubURL = "";
     
-    preg_match("/(?<=\>)(.*?)(?=\<)/",$output,$githubURL);
+    preg_match("/(?<=\>)(.*?)(?=\<)/",$pythonOutput,$githubURL);
     
-    echo $output;
+    echo $pythonOutput;
     
     echo "Here: ";
     
-    echo $githubURL[0];
+    echo $githubURL(0);
     echo $githubURL;
     
     echo "End of script";
