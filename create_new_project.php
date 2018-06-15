@@ -134,7 +134,7 @@ if ($uploadOk == 0) {
     
     echo "\n\n:End python output";
     
-    print_r($githubURL);
+    print($githubURL[0]);
     
     echo "End of script";
 ?>
