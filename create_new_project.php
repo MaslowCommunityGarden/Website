@@ -128,7 +128,7 @@ if ($uploadOk == 0) {
     
     $atestinput = "this input > is for < testing";
     
-    preg_match("/(?<=\>)(.*?)(?=\<)/", (string)$pythonOutput, $githubURL);
+    preg_match("/(.*?)/", $atestinput, $githubURL);
     
     echo "Python output: \n\n";
     
