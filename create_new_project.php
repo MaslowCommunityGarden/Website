@@ -128,10 +128,13 @@ if ($uploadOk == 0) {
     
     $githubURL = "";
     
-    preg_match("(?<=\>)(.*?)(?=\<)",$output,$githubURL);
+    preg_match("/(?<=\>)(.*?)(?=\<)/",$output,$githubURL);
     
     echo $output;
     
+    echo "\n\n this bit here"
+    
+    echo $githubURL[1];
     echo $githubURL[1];
     
     echo "End of script";
