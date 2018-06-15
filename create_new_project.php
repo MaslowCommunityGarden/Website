@@ -122,7 +122,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["projectFiles"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["projectFiles"]["name"]). " has been uploaded.";
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo "There was an error uploading your file.";
         echo $target_file;
     }
 }
@@ -135,7 +135,7 @@ if ($uploadOk == 0) {
     
     echo $output;
     
-    echo $githubURL
+    echo $githubURL[1];
 ?>
 
 </div>
