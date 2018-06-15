@@ -144,7 +144,7 @@ if ($uploadOk == 0) {
     
     echo $gitLinkURL;
     
-    echo "<a href=$url>$gitLinkURL</a>"
+    echo "<a href=$url>$gitLinkURL</a>";
     
     echo "End of script";
 ?>
