@@ -83,9 +83,7 @@ if projectName != "none":
         
         #Clone the newly created repo
         repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
-        print "GIT URL:>"
-        print repo.html_url
-        print "<---"
+        print "GIT URL:> " + repo.html_url + " <---"
         
         #Add the new files to the repo
         for file in files:

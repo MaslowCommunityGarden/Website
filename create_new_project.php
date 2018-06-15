@@ -140,7 +140,7 @@ if ($uploadOk == 0) {
     
     echo "    matches:   ";
     
-    var_dump($githubURL);
+    echo $githubURL[0]
     
     echo "End of script";
 ?>
