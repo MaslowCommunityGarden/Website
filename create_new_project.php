@@ -134,7 +134,7 @@ if ($uploadOk == 0) {
     
     echo "Here: ";
     
-    echo $githubURL[1];
+    echo $githubURL[0];
     echo $githubURL;
     
     echo "End of script";
