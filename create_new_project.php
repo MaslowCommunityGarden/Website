@@ -149,15 +149,8 @@ if ($uploadOk == 0) {
 
 </div>
 
-<a href='<?php echo $gitLinkURL;?>'> Link </a>
 
-<br>
-
-<a href="https://www.google.com/">external link</a>
-
-<br>
-
-<a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>
+<a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a>
 
 <br>
 
