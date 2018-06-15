@@ -134,7 +134,7 @@ if ($uploadOk == 0) {
     
     echo "\n\n:End python output";
     
-    echo gettype($pythonOutput)
+    echo gettype($pythonOutput);
     
     var_dump($githubURL);
     
