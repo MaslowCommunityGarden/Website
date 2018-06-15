@@ -79,13 +79,13 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    echo "Sorry, your image file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["projectImage"]["tmp_name"], $target_file)) {
         echo "\nThe file ". basename( $_FILES["projectImage"]["name"]). " has been uploaded.";
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo "Sorry, there was an error uploading your image file.";
         echo $target_file;
     }
 }
@@ -95,10 +95,7 @@ $target_dir = "uploads/";
 $target_file = $target_dir . "userUpload.zip";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["projectFiles"]["tmp_name"]);
-}
+
 // Check if file already exists
 if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
@@ -106,7 +103,7 @@ if (file_exists($target_file)) {
 }
 // Check file size
 if ($_FILES["projectFiles"]["size"] > 50000000) {
-    echo "Sorry, your file is too large. The limit is 50mb. To add larger files upload them directly to GitHub once the project is created.";
+    echo "Sorry, your zip file is too large. The limit is 50mb. To add larger files upload them directly to GitHub once the project is created.";
     $uploadOk = 0;
 }
 // Allow certain file formats
@@ -122,7 +119,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["projectFiles"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["projectFiles"]["name"]). " has been uploaded.";
     } else {
-        echo "There was an error uploading your file.";
+        echo "There was an error uploading your zip file.";
         echo $target_file;
     }
 }
@@ -136,6 +133,8 @@ if ($uploadOk == 0) {
     echo $output;
     
     echo $githubURL[1];
+    
+    echo "End of script";
 ?>
 
 </div>

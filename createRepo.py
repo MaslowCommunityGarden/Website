@@ -10,6 +10,12 @@ try:
     projectName = userInputs[0].replace('\n', '')
 except:
     projectName = "none"
+
+if "test" in projectName:
+    print "Test detected, exiting early without creating a project"
+    import sys
+    sys.exit()
+
 try:
     projectDescription = userInputs[1].replace('\n', '')
 except:
