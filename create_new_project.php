@@ -140,7 +140,11 @@ if ($uploadOk == 0) {
     
     echo "    matches:   ";
     
-    echo $githubURL[0];
+    $gitLinkURL = $githubURL[0];
+    
+    echo $gitLinkURL;
+    
+    echo "<a href=$url>$gitLinkURL</a>"
     
     echo "End of script";
 ?>
