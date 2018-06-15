@@ -140,11 +140,10 @@ if ($uploadOk == 0) {
     
     echo "    matches:   ";
     
-    $gitLinkURL = $githubURL[0];
+    $gitLinkURL = $githubURL[0]."/invitations";
     
     echo $gitLinkURL;
     
-    echo "End of script";
 ?>
 
 </div>
