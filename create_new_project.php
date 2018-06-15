@@ -128,7 +128,14 @@ if ($uploadOk == 0) {
 }
     // run the script which will create the repository
     $output=shell_exec('/var/www/html/createRepo.sh 2>&1');
+    
+    $githubURL = "";
+    
+    preg_match("(?<=\>)(.*?)(?=\<)",$output,$githubURL);
+    
     echo $output;
+    
+    echo $githubURL
 ?>
 
 </div>
