@@ -136,6 +136,8 @@ if ($uploadOk == 0) {
     
     echo gettype($pythonOutput);
     
+    echo "matches:"
+    
     var_dump($githubURL);
     
     echo "End of script";
