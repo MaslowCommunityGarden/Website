@@ -20,19 +20,9 @@
     </header>
 
 
-<h1>Your project is being generated!</h1>
-
-<p>If your project generates properly, you will receive an email inviting you to access the project and it will appear when the website regenerates in one minute.</p>
+<h1>A GitHub repository, a forums thread, and a page in the Community Garden are being generated for your project!</h1>
 
 <br>
-
-<p>While waiting for your project to be created check out the instructions tab <a href="http://maslowcommunitygarden.org/Website.html">here</a> for tips on how to interact with your new project.</p>
-
-<br>
-<br>
-<br>
-
-<p>The output from the php and python scripts which uploads and tests your files is: </p>
 
 <div style = "background-color: lightgray;">
 <?php
@@ -139,12 +129,40 @@ if ($uploadOk == 0) {
 </div>
 
 
-<a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a>
+<a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
 
 <br>
 
-<br>
+You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also recieve an email inviting you to access them.
 
 <br>
+<br>
+
+<a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
+<br>
+Read the instructions for how to interact with and manage your new project
+
+<br>
+<br>
+
+<a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
+<br>
+Learn more about how to format your Community Garden page with Markdown
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Log from the python script which creates the github repo:
+
+<div style = "background-color: lightgray;">
+
+<?php
+    echo $pythonOutput;
+?>
+
+</div>
 
 </body>
