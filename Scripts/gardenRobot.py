@@ -18,7 +18,7 @@ repos = org.get_repos()
 robot = Robot()
 
 weShouldCheckImageLinks = False
-if random.randint(0, 20) == 1:
+if random.randint(0, 10) == 1:
     weShouldCheckImageLinks = True
 
 for repo in repos:
