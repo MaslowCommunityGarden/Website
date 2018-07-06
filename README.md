@@ -13,4 +13,4 @@ You can build your own version of the site by running the python script `python 
 
 The order in which the projects are displayed on the page is based on the number of stars that the project has received on GitHub. The more stars the closer to the top of the page the project will appear.
 
-You can link directly to the instructions tab of any project page by adding the text ?instructions=true to the end of the link URL for example: http://maslowcommunitygarden.org/Website.html?instructions=true will take you to the instructions tab for this project.
+You can link directly to the instructions tab of any project page by adding the text `?instructions=true` to the end of the link URL for example: http://maslowcommunitygarden.org/Website.html?instructions=true will take you to the instructions tab for this project.
