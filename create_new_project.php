@@ -157,17 +157,17 @@
         <br>
         
         <div>
-        
-                <p class="two-col">Log from the python script which creates the github repo:</p>
                     
+            <button title="script-log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">View the Script Log</button>
+            
+            <p class="two-col">Log from the python script which creates the github repo.</p>
+            
             <div id="spoiler" style="display:none">
                 
                 <?php
                     echo $pythonOutput;
                 ?>
             </div>
-
-            <button title="script-log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">View the Script Log</button>
         
         </div>
     </section>
