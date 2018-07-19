@@ -156,7 +156,7 @@
         <br>
         <br>
         
-        <div class = "button one-col">
+        <div>
         
                 <p class="two-col">Log from the python script which creates the github repo:</p>
                     
@@ -167,7 +167,7 @@
                 ?>
             </div>
 
-            <button title="View the Script Log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Show/hide</button>
+            <button title="script-log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">View the Script Log</button>
         
         </div>
     </section>
