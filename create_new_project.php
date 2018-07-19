@@ -158,11 +158,11 @@
         
         <div>
                     
-            <button title="script-log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">View the Script Log</button>
+            <button title="script-log" type="button" class="button one-col" style="float: left;" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">View the Script Log</button>
             
-            <p class="two-col">Log from the python script which creates the github repo.</p>
+            <p class="two-col" style="float: right;">Log from the python script which creates the github repo.</p>
             
-            <div id="spoiler" style="display:none">
+            <div id="spoiler" style="display:none" class="three-col">
                 
                 <?php
                     echo $pythonOutput;
@@ -170,6 +170,7 @@
             </div>
         
         </div>
+        
     </section>
 
 </body>
