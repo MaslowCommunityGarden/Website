@@ -29,14 +29,14 @@
         
         <br>
         
-        You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also recieve an email inviting you to access them.
+         <p class="two-col">You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also receive an email inviting you to access them.</p>
         
         <br>
         <br>
         
         <a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
         <br>
-        Read the instructions for how to interact with and manage your new project
+         <p class="two-col">Read the instructions for how to interact with and manage your new project</p>
         
         <br>
         <br>
