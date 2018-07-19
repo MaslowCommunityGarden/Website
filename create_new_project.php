@@ -184,10 +184,11 @@
     </section>
     
     <footer class='footer-basic-centered' style='clear: both;'>
+        <div class="inner-footer">
 
         <p class='footer-company-motto three-col' style='clear: both;'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>
 
-        <div class='footer-links content'>
+        <div class='footer-links'>
             <a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html' class='button'>Why</a>
             
             <a href='#' class='button'>How</a>
@@ -204,6 +205,7 @@
 
         <p class='footer-company-name three-col' style='clear: both;'>All content available under license of creator</p>
 
+        </div>
     </footer>
 
 </body>

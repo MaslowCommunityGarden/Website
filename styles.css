@@ -100,7 +100,7 @@
     
 ----------------------------------------*/
 
-    .content, .inner-header {
+    .content, .inner-header, .inner-footer {
         width: 960px;
         margin-left: auto !important;
         margin-right: auto !important;
