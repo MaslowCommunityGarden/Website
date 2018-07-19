@@ -71,7 +71,7 @@
                         die('The script was unable to write your inputs to the file');
                     }
                     else {
-                        echo "$ret bytes written to file";
+                        echo "<br> $ret bytes written to file";
                     }
                     
                     //Upload the image file
