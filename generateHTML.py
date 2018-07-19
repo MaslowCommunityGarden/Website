@@ -275,10 +275,6 @@ class GenerateHTML:
             "  boxed_descriptions[i].innerHTML = truncate.apply(boxed_descriptions[i].innerText, [boxed_descriptions_length, true]);  " 
             "}"
         "</script>"
-            )
-        f = open('index.html','w')
-        f.write(pageHTML)
-        f.close()
         "</section>"
         "<footer class='footer-basic-centered' style='clear:both;'>"
             "<div class='inner-footer'>"
@@ -305,6 +301,11 @@ class GenerateHTML:
         "</footer>"
     "</body>"
 "</html>"    
+
+            )
+        f = open('index.html','w')
+        f.write(pageHTML)
+        f.close()
     
         
     def generatePagesForProjects(self):
