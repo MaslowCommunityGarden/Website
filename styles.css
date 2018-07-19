@@ -9,6 +9,10 @@
         box-sizing: border-box;
         text-align: left;
     }
+    
+    body{
+        margin: 0 !important;
+    }
 
 /*----------------------------------------
     
@@ -17,7 +21,7 @@
 ----------------------------------------*/
 
     .header {
-        border-bottom: 2px solid #eeeeee;
+        background-color: #eeeeee;
     }
     
     .inner-header {
