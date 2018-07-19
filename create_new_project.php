@@ -187,7 +187,7 @@
 
         <p class='footer-company-motto'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>
 
-        <div class='footer-links'>
+        <div class='footer-links content'>
             <a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html' class='button'>Why</a>
             
             <a href='#' class='button'>How</a>
