@@ -162,7 +162,7 @@
             
             <p class="two-col" style="float: right;">Log from the python script which creates the github repo.</p>
             
-            <div id="spoiler" style="display:none" class="three-col">
+            <div id="spoiler" style="display:none" class="three-col log">
                 
                 <?php
                     echo $pythonOutput;

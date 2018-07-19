@@ -87,6 +87,11 @@
         font-size: 13px;
         margin: 0 !important;
     }
+    
+    .log {
+        font-family: "Courier New", Courier, monospace;
+        background-color: light-grey;
+    }
 
 /*----------------------------------------
     
