@@ -138,7 +138,10 @@ class GenerateHTML:
                                     "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
                                     " "
                                     "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
+                                    " "
+                                    "<a href='index.html' class='nav-link button one-col'>Browse Projects</a>"
                                 "</nav>"
+                                
                             "</div>"
                         "</header>"
                         "<section class = content>"
