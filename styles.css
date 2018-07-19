@@ -141,8 +141,8 @@
         onload="resizeIframe(this)";
     }
     
-    .new-project div {
-        clear: both;
+    .new-project .button {
+        float: left;
     }
     
 /*----------------------------------------
