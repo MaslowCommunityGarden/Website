@@ -25,30 +25,33 @@
         
         <br>
         
-        <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
+        <div>
+        
+            <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
+        
+            <p class="two-col">You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also receive an email inviting you to access them.</p>
+        </div>
         
         <br>
         
-         <p class="two-col">You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also receive an email inviting you to access them.</p>
+        <div>
+        
+            <a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
+            
+            <p class="two-col">Read the instructions for how to interact with and manage your new project</p>
+            
+        </div>
         
         <br>
-        <br>
         
-        <a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
-        <br>
-         <p class="two-col">Read the instructions for how to interact with and manage your new project</p>
+        <div>
         
-        <br>
-        <br>
+            <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
+
+            <p class="two-col">Learn more about how to format your Community Garden page with Markdown</p>
         
-        <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
-        <br>
-        <p class="two-col">Learn more about how to format your Community Garden page with Markdown</p>
-        
-        <br>
-        <br>
-        <br>
-        <br>
+        </div>
+            
         <br>
         
         <div>
