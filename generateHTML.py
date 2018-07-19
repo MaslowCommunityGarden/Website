@@ -279,8 +279,8 @@ class GenerateHTML:
         f = open('index.html','w')
         f.write(pageHTML)
         f.close()
-    "</section>"
-        "<footer class='footer-basic-centered'  style='clear: both;'>"
+        "</section>"
+        "<footer class='footer-basic-centered' style='clear:both;'>"
             "<div class='inner-footer'>"
 
                  "<p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
