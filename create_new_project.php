@@ -57,13 +57,13 @@
             
             <p class="two-col" style="float: right;">Log from the python script which creates the github repo.</p>
             
-            <div id="spoiler" style="display:none" class="three-col log">
+            <div id="spoiler" style="display:none" class="three-col">
                 
                 <br>
                 <br>
                 <br>
                 
-                <div>
+                <div class="log">
                     <?php
                     $data = htmlspecialchars($_POST["projectName"]) . '~' . htmlspecialchars($_POST["projectDescription"]) . '~' . htmlspecialchars($_POST["managementStyle"]) . '~' . htmlspecialchars($_POST["githubUser"]) . '~' . htmlspecialchars($_POST["category"]);
                     $ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $data, FILE_APPEND | LOCK_EX);
@@ -164,8 +164,6 @@
                         $gitLinkURL = str_replace(' ', '', $gitLinkURL);
                         
                     ?>
-                    
-                </div>
                 
                 <br>
                 <br>
@@ -174,6 +172,7 @@
                 <?php
                     echo $pythonOutput;
                 ?>
+                </div>
             </div>
         
         </div>
