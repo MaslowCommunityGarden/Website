@@ -25,7 +25,7 @@
         
         <br>
         
-        <div>
+        <div class="content" style='clear: both;'>
         
             <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
         
@@ -34,7 +34,7 @@
         
         <br>
         
-        <div>
+        <div class="content" style='clear: both;'>
         
             <a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
             
@@ -44,7 +44,7 @@
         
         <br>
         
-        <div>
+        <div class="content" style='clear: both;'>
         
             <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
 
@@ -54,7 +54,7 @@
             
         <br>
         
-        <div>
+        <div class="content" style='clear: both;'>
                     
             <button title="script-log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">View the Script Log</button>
             
@@ -185,7 +185,7 @@
     
     <footer class='footer-basic-centered' style='clear: both;'>
 
-        <p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>
+        <p class='footer-company-motto three-col' style='clear: both;'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>
 
         <div class='footer-links content'>
             <a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html' class='button'>Why</a>
@@ -202,7 +202,7 @@
             
         </div>
 
-        <p class='footer-company-name three-col'>All content available under license of creator</p>
+        <p class='footer-company-name three-col' style='clear: both;'>All content available under license of creator</p>
 
     </footer>
 
