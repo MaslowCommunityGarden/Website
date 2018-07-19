@@ -21,7 +21,9 @@
 
     <section class="content new-project" style='clear: both;'>
             
-        <h1>A GitHub repository, a forums thread, and a page in the Community Garden are being generated for your project!</h1>
+        <h1>Congratulations!</h1>
+        
+        A GitHub repository, a forums thread, and a page in the Community Garden are being generated for your project!
         
         <br>
         
