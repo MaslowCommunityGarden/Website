@@ -164,6 +164,10 @@
             
             <div id="spoiler" style="display:none" class="three-col log">
                 
+                <br>
+                <br>
+                <br>
+                
                 <?php
                     echo $pythonOutput;
                 ?>
