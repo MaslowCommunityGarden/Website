@@ -320,8 +320,8 @@
         
         
 .footer-basic-centered {
-    background-color: #666666;
-    border-top: 2px solid #292c2f;
+    background-color: #444444;
+    border-top: 2px solid #222222;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -333,7 +333,7 @@
 }
 
 .footer-basic-centered .footer-company-motto{
-    color:  #8d9093;
+    color:  #999999;
     font-size: 24px;
     text-align: center;
     margin: 0;
