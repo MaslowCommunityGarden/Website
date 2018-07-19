@@ -8,6 +8,7 @@
         font-family: 'Open Sans', sans-serif;
         box-sizing: border-box;
         text-align: left;
+        clear: both;
     }
 
 /*----------------------------------------
@@ -139,10 +140,6 @@
     
     iframe {
         onload="resizeIframe(this)";
-    }
-    
-    .new-project .button {
-        float: left;
     }
     
 /*----------------------------------------
