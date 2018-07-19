@@ -320,15 +320,15 @@
         
         
 .footer-basic-centered {
-    background-color: #e0e0e0;
+    background-color: #666666;
     border-top: 2px solid #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
     text-align: center;
     font: normal 18px sans-serif;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-top: 80px;
 }
 
