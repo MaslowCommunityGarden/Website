@@ -83,38 +83,38 @@
                     if(isset($_POST["submit"])) {
                         $check = getimagesize($_FILES["projectImage"]["tmp_name"]);
                         if($check !== false) {
-                            echo "The image file looks good - " . $check["mime"] . ".";
+                            echo "<br> The image file looks good - " . $check["mime"] . ".";
                             $uploadOk = 1;
                         } else {
-                            echo "That file was not an image!.";
+                            echo "<br> That file was not an image!.";
                             $uploadOk = 0;
                         }
                     }
                     // Check if file already exists
                     if (file_exists($target_file)) {
-                        echo "Oh no! That file already exists.";
+                        echo "<br> Oh no! That file already exists.";
                         $uploadOk = 0;
                     }
                     // Check file size
                     if ($_FILES["projectImage"]["size"] > 5000000) {
-                        echo "Sorry, your image is too large. The limit is 5MB";
+                        echo "<br> Sorry, your image is too large. The limit is 5MB";
                         $uploadOk = 0;
                     }
                     // Allow certain file formats
                     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                     && $imageFileType != "gif" ) {
-                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        echo "<br> Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                         $uploadOk = 0;
                     }
                     // Check if $uploadOk is set to 0 by an error
                     if ($uploadOk == 0) {
-                        echo "Sorry, your image file was not uploaded.";
+                        echo "<br> Sorry, your image file was not uploaded.";
                     // if everything is ok, try to upload file
                     } else {
                         if (move_uploaded_file($_FILES["projectImage"]["tmp_name"], $target_file)) {
-                            echo "\nThe file ". basename( $_FILES["projectImage"]["name"]). " has been uploaded.";
+                            echo "<br> \nThe file ". basename( $_FILES["projectImage"]["name"]). " has been uploaded.";
                         } else {
-                            echo "Sorry, there was an error uploading your image file.";
+                            echo "<br> Sorry, there was an error uploading your image file.";
                             echo $target_file;
                         }
                     }
@@ -127,28 +127,28 @@
                     
                     // Check if file already exists
                     if (file_exists($target_file)) {
-                        echo "Sorry, file already exists.";
+                        echo "<br> Sorry, file already exists.";
                         $uploadOk = 0;
                     }
                     // Check file size
                     if ($_FILES["projectFiles"]["size"] > 50000000) {
-                        echo "Sorry, your zip file is too large. The limit is 50mb. To add larger files upload them directly to GitHub once the project is created.";
+                        echo "<br> Sorry, your zip file is too large. The limit is 50mb. To add larger files upload them directly to GitHub once the project is created.";
                         $uploadOk = 0;
                     }
                     // Allow certain file formats
                     if($imageFileType != "zip") {
-                        echo "Sorry, only zip files are allowed.";
+                        echo "<br> Sorry, only zip files are allowed.";
                         $uploadOk = 0;
                     }
                     // Check if $uploadOk is set to 0 by an error
                     if ($uploadOk == 0) {
-                        echo "Sorry, your file was not uploaded.";
+                        echo "<br> Sorry, your file was not uploaded.";
                     // if everything is ok, try to upload file
                     } else {
                         if (move_uploaded_file($_FILES["projectFiles"]["tmp_name"], $target_file)) {
-                            echo "The file ". basename( $_FILES["projectFiles"]["name"]). " has been uploaded.";
+                            echo "<br> The file ". basename( $_FILES["projectFiles"]["name"]). " has been uploaded.";
                         } else {
-                            echo "There was an error uploading your zip file.";
+                            echo "<br> There was an error uploading your zip file.";
                             echo $target_file;
                         }
                     }
