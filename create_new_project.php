@@ -148,7 +148,7 @@
         
         <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
         <br>
-        Learn more about how to format your Community Garden page with Markdown
+        <p class="two-col">Learn more about how to format your Community Garden page with Markdown</p>
         
         <br>
         <br>
@@ -156,13 +156,18 @@
         <br>
         <br>
         
-        Log from the python script which creates the github repo:
+        <div class = "button one-col">
         
-        <div style = "background-color: lightgray;">
-        
-        <?php
-            echo $pythonOutput;
-        ?>
+                <p class="two-col">Log from the python script which creates the github repo:</p>
+                    
+            <div id="spoiler" style="display:none">
+                
+                <?php
+                    echo $pythonOutput;
+                ?>
+            </div>
+
+            <button title="View the Script Log" type="button" class="button one-col" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Show/hide</button>
         
         </div>
     </section>
