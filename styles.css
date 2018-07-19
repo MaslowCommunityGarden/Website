@@ -141,6 +141,10 @@
         onload="resizeIframe(this)";
     }
     
+    .new-project div {
+        clear: both;
+    }
+    
 /*----------------------------------------
     
     FORM 

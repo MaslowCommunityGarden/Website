@@ -19,7 +19,7 @@
         </div>
     </header>
 
-    <section class="content">
+    <section class="content new-project">
             
         <h1>A GitHub repository, a forums thread, and a page in the Community Garden are being generated for your project!</h1>
         
