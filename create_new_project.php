@@ -175,6 +175,7 @@
                 <?php
                     echo $pythonOutput;
                 ?>
+                <br>
                 </div>
             </div>
         
