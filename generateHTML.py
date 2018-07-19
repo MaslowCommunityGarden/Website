@@ -128,7 +128,7 @@ class GenerateHTML:
                         "<link href='styles.css' rel='stylesheet' />"
                         "<link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' />"
                     "</head>"
-                    "<body class = body>"
+                    "<body class = 'body'>"
                         "<header class = 'header'>"
                             "<div class='inner-header'>"
                                 "<a href='index.html'>"
@@ -169,10 +169,10 @@ class GenerateHTML:
             
             #this creates a boxed representation of the project
             
-            projectSection = ("<a href= " + project.projectFile + " class = project_link>"
+            projectSection = ("<a href= " + project.projectFile + " class = 'project_link'>"
                                 "<div class = boxed>"
-                                    "<div class = project-thumbnail>"
-                                        "<img src="+project.mainPicture+" class = project_img>")
+                                    "<div class = 'project-thumbnail'>"
+                                        "<img src="+project.mainPicture+" class = 'project_img'>")
                     
             numberOfLinesProcessed = 0
             maxNumberToProcess = 3
@@ -182,14 +182,14 @@ class GenerateHTML:
                 if len(line) > 0:
                     if line[0] is '#':
                         projectSection = projectSection + (
-                        "<h1 class = boxed_text>"
+                        "<h1 class = 'boxed_text'>"
                             +line[1:]+
                         "</h1>")
                         
                         project.projectName = line[1:]
                     elif line[0] is not '!':
                         projectSection = projectSection + (
-                        "<p class = boxed_text>"
+                        "<p class = 'boxed_text'>"
                             +line+
                         "</p>")
                 numberOfLinesProcessed = numberOfLinesProcessed + 1

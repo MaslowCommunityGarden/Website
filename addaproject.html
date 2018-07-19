@@ -22,36 +22,36 @@
     <section class="content">
 
 
-<h1 class = 'title'> Create A Project </h1>
-
-<form action="create_new_project.php" method="post" enctype="multipart/form-data">
-    <div class="two-col">
-        <p class="input-instruction">Give your project a title (cannot be changed later): </p>
-        <input type="text" name="projectName" required><br>
-        <p class="input-instruction">Enter a one sentence description of the project: </p>
-        <input type="text" name="projectDescription" required><br>
-        <p class="input-instruction">Enter your GitHub user name so you can be given access to control the project:</p>
-        <input type="text" name="githubUser">
-        <p class="input-instruction">What category should this project appear in?</p>
-        <select name="category">
-            <option value="Other" selected>Other</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Maslow">Maslow</option>
-            <option value="Food+Shelter">Food+Shelter</option>
-            <option value="Signs">Signs</option>
-        </select>
-    </div>
-    <div class="one-col float-right">
-        <p class="input-instruction">Upload a picture to test identify the project (.jpg):</p>
-        <input type="file" name="projectImage" id="projectImage" required>
-        <p class="input-instruction">Upload a zip folder containing project files (no spaces in file name please):</p>
-        <input type="file" name="projectFiles" id="projectFiles" required>
-        <p class="input-instruction">How much control do you want over the project?</p>
-        <p><input type="radio" name="managementStyle" value="communityManaged" checked> Community managed</p>
-        <p><input type="radio" name="managementStyle" value="customManaged"> I want to manage</p>
-    </div>
-    <input type="submit" value="Create" name="submit" class = "button">
-</form>
+        <h1 class = 'title'> Create A Project </h1>
+        
+        <form action="create_new_project.php" method="post" enctype="multipart/form-data">
+            <div class="two-col">
+                <p class="input-instruction">Give your project a title (cannot be changed later): </p>
+                <input type="text" name="projectName" required><br>
+                <p class="input-instruction">Enter a one sentence description of the project: </p>
+                <input type="text" name="projectDescription" required><br>
+                <p class="input-instruction">Enter your GitHub user name so you can be given access to control the project:</p>
+                <input type="text" name="githubUser">
+                <p class="input-instruction">What category should this project appear in?</p>
+                <select name="category">
+                    <option value="Other" selected>Other</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Maslow">Maslow</option>
+                    <option value="Food+Shelter">Food+Shelter</option>
+                    <option value="Signs">Signs</option>
+                </select>
+            </div>
+            <div class="one-col float-right">
+                <p class="input-instruction">Upload a picture to test identify the project (.jpg):</p>
+                <input type="file" name="projectImage" id="projectImage" required>
+                <p class="input-instruction">Upload a zip folder containing project files (no spaces in file name please):</p>
+                <input type="file" name="projectFiles" id="projectFiles" required>
+                <p class="input-instruction">How much control do you want over the project?</p>
+                <p><input type="radio" name="managementStyle" value="communityManaged" checked> Community managed</p>
+                <p><input type="radio" name="managementStyle" value="customManaged"> I want to manage</p>
+            </div>
+            <input type="submit" value="Create" name="submit" class = "button">
+        </form>
 
 
     </section>
