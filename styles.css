@@ -32,7 +32,7 @@
         display: inline-block;
     }
     
-    header .nav-link {
+    .header .nav-link {
         margin-top: 24px;
         margin-bottom: 24px;
     }
@@ -53,9 +53,9 @@
     }
     
     .title{
-        font-size: 36px;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        font-size: 40px;
+        padding-top: 20px;
+        color: #4CAF50;
     }
     
     .description{
@@ -315,7 +315,7 @@
                 width: 300px;
             }
             
-            header .nav-link {
+            .header .nav-link {
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
@@ -344,7 +344,7 @@
 
 .footer-basic-centered .footer-company-motto{
     color:  #aaaaaa;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     margin: 0;
 }
@@ -361,7 +361,7 @@
     list-style: none;
     font-weight: bold;
     color:  #ffffff;
-    padding: 35px 0 23px;
+    padding: 10px 0 120px;
     margin: 0;
     text-align: center;
 }
