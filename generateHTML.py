@@ -131,17 +131,11 @@ class GenerateHTML:
                     "<body class = 'body'>"
                         "<header class = 'header'>"
                             "<div class='inner-header'>"
-                                "<a href='index.html'>"
-                                    "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
-                                "</a>"
                                 "<nav class='navigation'>"
+                                    "<a href='index.html' class='nav-link one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a>"
                                     "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
-                                    " "
                                     "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
-                                    " "
-                                    "<a href='index.html' class='nav-link button one-col'>Browse Projects</a>"
                                 "</nav>"
-                                
                             "</div>"
                         "</header>"
                         "<section class = 'content'>"
@@ -295,7 +289,7 @@ class GenerateHTML:
                     "<a href='http://www.maslowcnc.com/forums' class='button'>Forums</a>"
                 "</div>"
     
-                "<p class='footer-company-name three-col'>All content available under license of creator</p>"
+                "<p class='footer-company-name three-col'>All content available under license of creator.</p>"
             "</div>"
     
         "</footer>"
@@ -337,19 +331,13 @@ class GenerateHTML:
                     "<body>"
                     
                     "<header class = 'header'>"
-                            "<div class='inner-header'>"
-                                "<a href='index.html'>"
-                                    "<img src='logo.png' style='width:auto;height:90px;border:0;'>"
-                                "</a>"
-                                "<nav class='navigation'>"
-                                    "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
-                                    " "
-                                    "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
-                                    " "
-                                    "<a href='index.html' class='nav-link button one-col'>Browse Projects</a>"
-                                "</nav>"
-                                
-                            "</div>"
+                        "<div class='inner-header'>"
+                            "<nav class='navigation'>"
+                                "<a href='index.html' class='nav-link one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a>"
+                                "<a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>"
+                                "<a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>"
+                            "</nav>"
+                        "</div>"
                     "</header>"
                         
                     "<section class = 'content'>"
@@ -481,7 +469,7 @@ class GenerateHTML:
                                 "<a href='http://www.maslowcnc.com/forums' class='button'>Forums</a>"
                             "</div>"
 
-                            "<p class='footer-company-name three-col'>All content available under license of creator</p>"
+                            "<p class='footer-company-name three-col'>All content available under license of creator.</p>"
 
                             "</div>"
                         "</footer>"
