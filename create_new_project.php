@@ -9,7 +9,7 @@
     <header class = 'header'>
         <div class='inner-header'>
             <nav class='navigation'>
-                <a href='index.html' class='nav-link one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a>
+                <a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a>
                 <a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a>
                 <a href='addaproject.html' class='nav-link button one-col'>Add A Project</a>
             </nav>

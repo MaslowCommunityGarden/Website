@@ -27,13 +27,14 @@
         border-bottom: 2px solid #e0e0e0;
         margin-bottom: 10px;
     }
-    
-    .inner-header {
-        margin-bottom: 10px;
-    }
 
     nav.navigation {  
         display: inline-block;
+    }
+    
+    header .nav-link {
+        margin-top: 24px;
+        margin-bottom: 24px;
     }
 
 /*----------------------------------------
@@ -164,6 +165,10 @@
     
     .float-right {
         float: right;
+    }
+    
+    div.form-height {
+        clear: both;
     }
     
 /*----------------------------------------
@@ -308,6 +313,11 @@
             
             .three-col {
                 width: 300px;
+            }
+            
+            header .nav-link {
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
         }
         
