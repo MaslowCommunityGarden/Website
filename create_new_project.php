@@ -20,8 +20,14 @@
             
         <h1>Congratulations!</h1>
         
+        <br>
+        <br>
+        <br>
+        
+        
         A GitHub repository, a forums thread, and a page in the Community Garden are being generated for your project!
         
+        <br>
         <br>
         
         <div class="content" style='clear: both;'>
