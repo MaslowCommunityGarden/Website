@@ -180,6 +180,11 @@
                         
                     ?>
                 
+                <?php 
+                    echo "and again:";
+                    echo $gitLinkURL;
+                ?>
+                
                 <br>
                 <br>
                 <br>
