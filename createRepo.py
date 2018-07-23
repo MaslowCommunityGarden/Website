@@ -2,6 +2,7 @@ from github import  Github
 import              pygit2
 import              os
 import              time
+import              base64
 
 file = open("/var/www/html/uploads/usrinput.txt", "r")
 userInputsText = file.read() 
@@ -106,8 +107,23 @@ if projectName != "none":
         
         remote.push(['refs/heads/master'],callbacks=callbacks)
         
-        with open("/var/www/html/trackedProjects.txt", "a") as f:
-           f.write("\n" + repo.html_url)
+        #This section writes the new tracked project name to the tracked projects list in github
+        
+        trackedProjectsRepo = org.get_repo('Website')
+        
+        fileName = '/trackedProjects.txt'
+        
+        #get the tracked projects list and decode it
+        fileContents = trackedProjectsRepo.get_file_contents(fileName)
+        trackedProjectsList = base64.b64decode(fileContents.content)
+        
+        #add the new project
+        updatedTrackedProjectsList = trackedProjectsList + "\n" + "some test text here"
+        
+        #push the new project on the list back to the github server
+        trackedProjectsRepo.update_file(fileName, "add a project", updatedTrackedProjectsList, fileContents.sha)
+        
+        
     except Exception as e: 
         print "Oh darn, something went wrong in the python code..."
         print(e)
