@@ -171,10 +171,10 @@
                         $gitLinkURL = $githubURL[0]."/invitations";
                         $gitLinkURL = str_replace(' ', '', $gitLinkURL);
                         
-                         echo "<br>"
-                         echo "<br>"
-                         echo "Link URL: "
-                         echo $gitLinkURL
+                         echo "<br>";
+                         echo "<br>";
+                         echo "Link URL: ";
+                         echo $gitLinkURL;
                         
                     ?>
                 
