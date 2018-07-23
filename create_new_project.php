@@ -30,6 +30,8 @@
         <br>
         <br>
         
+        <?php echo $gitLinkURL;?>
+        
         <div class="content" style='clear: both;'>
         
             <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
