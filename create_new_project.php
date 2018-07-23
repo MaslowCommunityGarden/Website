@@ -30,7 +30,10 @@
         <br>
         <br>
         Begin test
-        <?php echo $gitLinkURL;?>
+        <?php 
+            echo "and again:";
+            echo $gitLinkURL;
+        ?>
         End test
         <div class="content" style='clear: both;'>
         
