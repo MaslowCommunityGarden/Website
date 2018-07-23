@@ -29,40 +29,6 @@
         
         <br>
         <br>
-        Begin test
-        <?php 
-            echo "and again:";
-            echo $gitLinkURL;
-        ?>
-        End test
-        <div class="content" style='clear: both;'>
-        
-            <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
-        
-            <p class="two-col">You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also receive an email inviting you to access them.</p>
-        </div>
-        
-        <br>
-        
-        <div class="content" style='clear: both;'>
-        
-            <a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
-            
-            <p class="two-col">Read the instructions for how to interact with and manage your new project</p>
-            
-        </div>
-        
-        <br>
-        
-        <div class="content" style='clear: both;'>
-        
-            <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
-
-            <p class="two-col">Learn more about how to format your Community Garden page with Markdown</p>
-        
-        </div>
-            
-        <br>
         
         <div class="content" style='clear: both;'>
                     
@@ -183,23 +149,48 @@
                         
                     ?>
                 
-                <?php 
-                    echo "and again:";
-                    echo $gitLinkURL;
-                ?>
                 
-                <br>
-                <br>
-                <br>
-                
-                <?php
-                    echo $pythonOutput;
-                ?>
-                <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <?php
+                        echo $pythonOutput;
+                    ?>
+                    <br>
                 </div>
             </div>
         
         </div>
+        
+        <div class="content" style='clear: both;'>
+        
+            <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
+        
+            <p class="two-col">You are invited to be given access to manage your project's GitHub repository which stores all of your projects files. You will also receive an email inviting you to access them.</p>
+        </div>
+        
+        <br>
+        
+        <div class="content" style='clear: both;'>
+        
+            <a href='http://maslowcommunitygarden.org/Website.html?instructions=true' class='nav-link button one-col' target="_blank" >Read Instructions</a>  
+            
+            <p class="two-col">Read the instructions for how to interact with and manage your new project</p>
+            
+        </div>
+        
+        <br>
+        
+        <div class="content" style='clear: both;'>
+        
+            <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' class='nav-link button one-col' target="_blank" >Markdown Guide</a>  
+
+            <p class="two-col">Learn more about how to format your Community Garden page with Markdown</p>
+        
+        </div>
+            
+        <br>
         
     </section>
     
