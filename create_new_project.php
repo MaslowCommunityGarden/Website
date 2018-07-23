@@ -29,9 +29,9 @@
         
         <br>
         <br>
-        
+        Begin test
         <?php echo $gitLinkURL;?>
-        
+        End test
         <div class="content" style='clear: both;'>
         
             <a href='<?php echo $gitLinkURL;?>' class='nav-link button one-col' target="_blank" >Accept Invitation</a> 
