@@ -118,7 +118,7 @@ if projectName != "none":
         trackedProjectsList = base64.b64decode(fileContents.content)
         
         #add the new project
-        updatedTrackedProjectsList = trackedProjectsList + "\n" + "some test text here"
+        updatedTrackedProjectsList = trackedProjectsList + "\n" + repo.html_url
         
         #push the new project on the list back to the github server
         trackedProjectsRepo.update_file(fileName, "add a project", updatedTrackedProjectsList, fileContents.sha)
