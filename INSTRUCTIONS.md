@@ -113,6 +113,6 @@ Use the URL at the top of the page for the link to the picture. It should be som
 
 Note that URLs which look like 
 
-`https://github.com/MaslowCommunityGarden/Website/blob/master/Instructions/EditYourProject/Editfile.JPG` 
+`https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG` 
 
 will render properly on github itself, but the image won't show up on the project page in the community garden.
