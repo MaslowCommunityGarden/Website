@@ -74,3 +74,5 @@ https://github.com/MaslowCommunityGarden/Pine-Ipod-Case
 https://github.com/MaslowCommunityGarden/Maslow-Stool
 https://github.com/MaslowCommunityGarden/Community-Garden-Robot
 https://github.com/MaslowCommunityGarden/Maslow-CNC-Kit
+
+https://github.com/MaslowCommunityGarden/3D-Printed-Chain-Guides
