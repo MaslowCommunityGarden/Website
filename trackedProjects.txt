@@ -31,7 +31,6 @@ https://github.com/MaslowCommunityGarden/Cub-Scout-Bridge
 https://github.com/MaslowCommunityGarden/Working-Desk-
 https://github.com/MaslowCommunityGarden/Bucket-Stand-
 https://github.com/MaslowCommunityGarden/Freecad-Final-Sled-with-CAM-files
-https://github.com/MaslowCommunityGarden/Judi
 https://github.com/MaslowCNC/Firmware
 https://github.com/MaslowCNC/Electronics
 https://github.com/MaslowCNC/GroundControl
