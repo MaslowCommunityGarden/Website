@@ -76,4 +76,3 @@ https://github.com/MaslowCommunityGarden/3D-Printed-Chain-Guides
 https://github.com/MaslowCommunityGarden/Nazca-Lines-Bed
 https://github.com/MaslowCommunityGarden/Maslow-CNC-with-Panel-Saw-mod-by-John-Montani.
 
-https://github.com/MaslowCommunityGarden/Judix
