@@ -79,3 +79,4 @@ https://github.com/MaslowCommunityGarden/Maslow-CNC-with-Panel-Saw-mod-by-John-M
 
 https://github.com/MaslowCommunityGarden/1990-Volvo-240-Radio-Insert
 https://github.com/MaslowCommunityGarden/Big-Z-value-display
+https://github.com/MaslowCommunityGarden/Bosch-POF1200-Top-mount
