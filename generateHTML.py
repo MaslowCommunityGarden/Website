@@ -359,7 +359,7 @@ class GenerateHTML:
                                         "<img src=" + project.mainPicture + " class = 'project_page_image'>"
                                     "</td>"
                                     "<td>"
-                                        "<a href=" + project.downloadLink + " class = 'button one-col'>Download</a>"
+                                        "<a href=" + project.downloadLink + " class = 'button one-col'>Download Files</a>"
                                         "<a href=" + project.projectPath + " class = 'button one-col' target='_blank'>Source</a>"
                                     "</td>"
                                 "</tr>"
