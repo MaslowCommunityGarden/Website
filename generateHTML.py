@@ -144,6 +144,7 @@ class GenerateHTML:
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Maslow'        )\">Maslow</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Food+Shelter'  )\">Food+Shelter</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Signs'         )\">Signs</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Market'        )\">Market</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Other'         )\">Other</button>"
                             "</div>"
                     )
@@ -154,6 +155,7 @@ class GenerateHTML:
         furnitureProjects   = ""
         foodshelterProjects = ""
         signsProjects       = ""
+        marketProjects      = ""
         otherProjects       = ""
         
         for project in self.projects:
@@ -205,6 +207,8 @@ class GenerateHTML:
                 foodshelterProjects = foodshelterProjects + projectSection
             elif projectCategory == "signs":
                 signsProjects = signsProjects + projectSection
+            elif projectCategory == "market":
+                marketProjects = marketProjects + projectSection
             else:
                 otherProjects = otherProjects + projectSection
                 
@@ -224,6 +228,11 @@ class GenerateHTML:
         
         "<div id='Signs' class='tabcontent'>"
             + signsProjects +
+        "</div>"
+        
+        "<div id='Market' class='tabcontent'>"
+            "<p>This space is moderated by the community and is a central listing space for parts and kits useful to and sold by the Maslow community.</p>"
+            + marketProjects +
         "</div>"
         
         "<div id='Other' class='tabcontent'>"
