@@ -169,7 +169,14 @@ class GenerateHTML:
                                 "<div class = boxed>"
                                     "<div class = 'project-thumbnail'>"
                                         "<img src="+project.mainPicture+" class = 'project_img'>")
-                    
+            
+            
+            try:
+                price = json.loads(project.ROBOTtext)["Price"]
+                projectSection = projectSection + "<div class='bottom-left'>$"+str(price)+"</div>"
+            except Exception as e:
+                pass
+            
             numberOfLinesProcessed = 0
             maxNumberToProcess = 3
             linesInReadme = project.READMEtext.split('\n', 5)
