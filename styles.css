@@ -141,6 +141,17 @@
         margin: 10px;
         margin-bottom: 50px;
         height: 400px;
+        position: relative;
+    }
+    
+    .bottom-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: #222222 1px 1px 0;
     }
     
     img {
