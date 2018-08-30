@@ -145,7 +145,7 @@ class GenerateHTML:
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Food+Shelter'  )\"id=\"fsButton\">Food+Shelter</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Signs'         )\"id=\"signsBtn\">Signs</button>"
                                 "<button class=\"tablinks\" onclick=\"openTab(event, 'Other'         )\"id=\"otherBtn\">Other</button>"
-                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Market'        )\">Market</button>"
+                                "<button class=\"tablinks\" onclick=\"openTab(event, 'Market'        )\"id=\"marketBtn\">Market</button>"
                             "</div>"
                     )
                     
@@ -266,6 +266,11 @@ class GenerateHTML:
             "<script>"
                 "if (window.location.search.indexOf('signs=true') > -1 || window.location.search.indexOf('signs=True') > -1) {"
                     "document.getElementById('signsBtn').click();"
+                "}"
+            "</script>"
+            "<script>"
+                "if (window.location.search.indexOf('market=true') > -1 || window.location.search.indexOf('market=True') > -1) {"
+                    "document.getElementById('marketBtn').click();"
                 "}"
             "</script>"
         "</div>"  
