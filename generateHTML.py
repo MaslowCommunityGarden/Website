@@ -238,7 +238,9 @@ class GenerateHTML:
         "</div>"
         
         "<div id='Market' class='tabcontent'>"
-            "<p>This space is moderated by the community and is a central listing space for parts and kits useful to and sold by the Maslow community.</p>"
+            "<p>This space is moderated by the community and is a central listing space for parts and kits useful to and sold by the Maslow community.</p>""<br>" +
+            "<br>" +
+            "<p>To be listed in this category a product must have a price and a current link to purchase.<\p>"
             + marketProjects +
         "</div>"
         
