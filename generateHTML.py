@@ -296,25 +296,15 @@ class GenerateHTML:
             "}"
         "</script>"
         "</section>"
-        "<footer class='footer-basic-centered' style='clear:both;'>"
-            "<div class='inner-footer'>"
+            "<footer class='footer-basic-centered'  style='clear: both;'>"
+                "<div class='inner-footer'>"
 
-                 "<p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
-    
-                "<div class='footer-links'>"
-                    "<a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html' class='button'>How</a>"
-                    "  "
-                    "<a href='http://maslowcommunitygarden.org/addaproject.html' class='button'>Add</a>"
-                    "  "
-                    "<a href='http://www.maslowcnc.com/' class='button'>Maslow CNC</a>"
-                    "  "
-                    "<a href='http://www.maslowcnc.com/forums' class='button'>Forums</a>"
+                    "<p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
+
+                    "<p class='footer-company-name three-col'>All content available under license of creator.</p>"
+
                 "</div>"
-    
-                "<p class='footer-company-name three-col'>All content available under license of creator.</p>"
-            "</div>"
-    
-        "</footer>"
+            "</footer>"
     "</body>"
 "</html>"    
 
@@ -472,22 +462,12 @@ class GenerateHTML:
                         "</div>"  
                        
                     "</section>"
-                     "<footer class='footer-basic-centered'  style='clear: both;'>"
-                        "<div class='inner-footer'>"
+                         "<footer class='footer-basic-centered'  style='clear: both;'>"
+                            "<div class='inner-footer'>"
 
-                            "<p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
+                                "<p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p>"
 
-                            "<div class='footer-links'>"
-                                "<a href='http://maslowcommunitygarden.org/howdoesthegardenwork.html' class='button'>How</a>"
-                                "  "
-                                "<a href='http://maslowcommunitygarden.org/addaproject.html' class='button'>Add</a>"
-                                "  "
-                                "<a href='http://www.maslowcnc.com/' class='button'>Maslow CNC</a>"
-                                "  "
-                                "<a href='http://www.maslowcnc.com/forums' class='button'>Forums</a>"
-                            "</div>"
-
-                            "<p class='footer-company-name three-col'>All content available under license of creator.</p>"
+                                "<p class='footer-company-name three-col'>All content available under license of creator.</p>"
 
                             "</div>"
                         "</footer>"
