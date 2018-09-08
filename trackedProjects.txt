@@ -96,3 +96,4 @@ https://github.com/MaslowCommunityGarden/Biplane
 https://github.com/MaslowCommunityGarden/Maslow-Brains-Motor-Shield-formerly-Blue-Smoke-Herder-Shield-
 
 https://github.com/MaslowCommunityGarden/Motor-Wire---Single
+https://github.com/MaslowCommunityGarden/3D-Printed-Chain-guide-and-locking-pin
