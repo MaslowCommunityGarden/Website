@@ -173,7 +173,7 @@ class GenerateHTML:
             
             try:
                 price = json.loads(project.ROBOTtext)["Price"]
-                projectSection = projectSection + "<div class='bottom-left'>$"+str(price)+"</div>"
+                projectSection = projectSection + "<div class='bottom-left'>"+str(price)+"</div>"
             except Exception as e:
                 pass
             
