@@ -107,3 +107,4 @@ https://github.com/MaslowCommunityGarden/Test-File
 https://github.com/MaslowCommunityGarden/Motor-Mount-Bracket
 https://github.com/MaslowCommunityGarden/Mega-2560-R3
 https://github.com/MaslowCommunityGarden/Maslow-Z-Axis-Kit
+https://github.com/MaslowCommunityGarden/US-Power-Supply
