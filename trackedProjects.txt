@@ -110,3 +110,4 @@ https://github.com/MaslowCommunityGarden/Maslow-Z-Axis-Kit
 https://github.com/MaslowCommunityGarden/US-Power-Supply
 https://github.com/MaslowCommunityGarden/EU-Power-Supply
 https://github.com/MaslowCommunityGarden/Hardware-set-3
+https://github.com/MaslowCommunityGarden/Medium-Hardware-Bag
