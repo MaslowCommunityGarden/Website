@@ -105,3 +105,4 @@ https://github.com/MaslowCommunityGarden/Ground-Control-Automated-Release-Script
 https://github.com/MaslowCommunityGarden/The-Cell-PC
 https://github.com/MaslowCommunityGarden/Test-File
 https://github.com/MaslowCommunityGarden/Motor-Mount-Bracket
+https://github.com/MaslowCommunityGarden/Mega-2560-R3
