@@ -112,3 +112,4 @@ https://github.com/MaslowCommunityGarden/EU-Power-Supply
 https://github.com/MaslowCommunityGarden/Hardware-set-3
 https://github.com/MaslowCommunityGarden/Medium-Hardware-Bag
 https://github.com/MaslowCommunityGarden/Chain-Tension-Hardware-Kit
+https://github.com/MaslowCommunityGarden/Carriage-Brackets
