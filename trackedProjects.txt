@@ -121,3 +121,4 @@ https://github.com/MaslowCommunityGarden/Halloween-Cat
 https://github.com/MaslowCommunityGarden/Decorative-Jack-O-Lantern
 https://github.com/MaslowCommunityGarden/Crosshair
 https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod
+https://github.com/MaslowCommunityGarden/Cupcake-Sign
