@@ -125,3 +125,4 @@ https://github.com/MaslowCommunityGarden/Wavy-wall-decoration
 https://github.com/MaslowCommunityGarden/Indi-the-Dingo-Bitch-Circumnavigates-the-Globe
 https://github.com/MaslowCommunityGarden/Shield-TLE5206
 https://github.com/MaslowCommunityGarden/Santa-Sleigh
+https://github.com/MaslowCommunityGarden/Essential-Parts-Kit---A-more-affordable-way-to-start-building-your-own-MaslowCNC.
