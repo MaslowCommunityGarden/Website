@@ -128,4 +128,3 @@ https://github.com/MaslowCommunityGarden/Santa-Sleigh
 https://github.com/MaslowCommunityGarden/Essential-Parts-Kit---A-more-affordable-way-to-start-building-your-own-MaslowCNC.
 https://github.com/MaslowCommunityGarden/Help-me-with-a-design-to-convert-the-Maslow-to-a-CNC-Plasma-Cutter-for-metal
 https://github.com/MaslowCommunityGarden/Simple-bat-house
-https://github.com/MaslowCommunityGarden/not-a-real-project
