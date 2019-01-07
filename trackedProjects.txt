@@ -130,3 +130,4 @@ https://github.com/MaslowCommunityGarden/Help-me-with-a-design-to-convert-the-Ma
 https://github.com/MaslowCommunityGarden/Simple-bat-house
 
 https://github.com/MaslowCommunityGarden/3d-printed-Router-Clamps-for-MetalMaslow
+https://github.com/MaslowCommunityGarden/Metal-Maslow-CNC-kit
