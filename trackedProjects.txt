@@ -132,4 +132,3 @@ https://github.com/MaslowCommunityGarden/Simple-bat-house
 https://github.com/MaslowCommunityGarden/3d-printed-Router-Clamps-for-MetalMaslow
 https://github.com/MaslowCommunityGarden/Metal-Maslow-CNC-kit
 
-https://github.com/MaslowCommunityGarden/not-a-real-project
