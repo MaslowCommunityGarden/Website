@@ -53,6 +53,9 @@ readmeText = "# " + projectName + "\n\n" + projectDescription
 
 if projectName != "none":
     try:
+        
+        print("At the very top");
+        
         repo = org.create_repo(projectName, description = projectDescription )
         
         time.sleep(3) #This is probably more delay than github needs to create the repo. With no delay at all it worked about half the time
@@ -69,6 +72,8 @@ if projectName != "none":
                 '"Category": "' + category + '"\n'
             '}')
         
+        print("Creating markdown file");
+        
         #create the markdown files
         repo.create_file("/README.md", "init commit", readmeText)
         repo.create_file("/INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions" + hintText)
@@ -81,6 +86,7 @@ if projectName != "none":
         #Clone the newly created repo
         repoClone = pygit2.clone_repository(repo.git_url, '/var/www/html/uploads/tmp')
         print "GIT URL:> " + repo.html_url + " <---"
+        
         
         #Add the new files to the repo
         for file in files:
@@ -107,7 +113,7 @@ if projectName != "none":
         
         trackedProjectsRepo = org.get_repo('Website')
         
-        fileName = 'trackedProjects.txt'
+        fileName = '/trackedProjects.txt'
         
         #get the tracked projects list and decode it
         fileContents = trackedProjectsRepo.get_file_contents(fileName)
