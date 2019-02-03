@@ -72,15 +72,15 @@ if projectName != "none":
                 '"Category": "' + category + '"\n'
             '}')
         
-        print("Creating markdown file");
+        print("Creating markdown file")
         
         #create the markdown files
-        repo.create_file("/README.md", "init commit", readmeText)
-        repo.create_file("/INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions" + hintText)
-        repo.create_file("/BOM.md", "init commit", "Edit this file to add a bill of materials"  + hintText)
-        repo.create_file("/ROBOT.md", "init commit", robotText)
+        repo.create_file("README.md", "init commit", readmeText)
+        repo.create_file("INSTRUCTIONS.md", " init commit", "Edit this file to add assembly instructions" + hintText)
+        repo.create_file("BOM.md", "init commit", "Edit this file to add a bill of materials"  + hintText)
+        repo.create_file("ROBOT.md", "init commit", robotText)
         
-        print("keeping track");
+        print("keeping track")
         
         #Keep track of what files we've got to add to the repo
         files = os.listdir('/var/www/html/uploads')
@@ -104,12 +104,12 @@ if projectName != "none":
         tree = index.write_tree()
         oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
         remote = repoClone.remotes["origin"]
-        print("about to login");
+        print("about to login")
         credentials = pygit2.UserPass(userName, password)
         remote.credentials = credentials
         
         callbacks=pygit2.RemoteCallbacks(credentials=credentials)
-        print("about to push");
+        print("about to push")
         remote.push(['refs/heads/master'],callbacks=callbacks)
         
         #This section writes the new tracked project name to the tracked projects list in github
@@ -118,7 +118,7 @@ if projectName != "none":
         
         fileName = '/trackedProjects.txt'
         
-        print("getting file contents");
+        print("getting file contents")
         
         #get the tracked projects list and decode it
         fileContents = trackedProjectsRepo.get_file_contents(fileName)
@@ -127,7 +127,7 @@ if projectName != "none":
         #add the new project
         updatedTrackedProjectsList = trackedProjectsList + "\n" + repo.html_url
         
-        print("About to update file");
+        print("About to update file")
         
         #push the new project on the list back to the github server
         trackedProjectsRepo.update_file(fileName, "add a project", updatedTrackedProjectsList, fileContents.sha)
