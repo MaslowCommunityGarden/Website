@@ -121,7 +121,7 @@ if projectName != "none":
         
         trackedProjectsRepo = org.get_repo('Website')
         
-        fileName = '/trackedProjects.txt'
+        fileName = 'trackedProjects.txt'
         
         print("getting file contents")
         
