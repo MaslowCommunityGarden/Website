@@ -80,6 +80,8 @@ if projectName != "none":
         repo.create_file("/BOM.md", "init commit", "Edit this file to add a bill of materials"  + hintText)
         repo.create_file("/ROBOT.md", "init commit", robotText)
         
+        print("keeping track");
+        
         #Keep track of what files we've got to add to the repo
         files = os.listdir('/var/www/html/uploads')
         
@@ -121,6 +123,8 @@ if projectName != "none":
         
         #add the new project
         updatedTrackedProjectsList = trackedProjectsList + "\n" + repo.html_url
+        
+        print("About to update file");
         
         #push the new project on the list back to the github server
         trackedProjectsRepo.update_file(fileName, "add a project", updatedTrackedProjectsList, fileContents.sha)
