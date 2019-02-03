@@ -97,8 +97,10 @@ if projectName != "none":
         #Commit it
         repoClone.remotes.set_url("origin", repo.clone_url)
         index = repoClone.index
+        print("index")
         index.add_all()
         index.write()
+        print("after write")
         author = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
         commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
         tree = index.write_tree()
