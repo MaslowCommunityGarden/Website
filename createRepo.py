@@ -103,8 +103,10 @@ if projectName != "none":
         print("after write")
         author = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
         commiter = pygit2.Signature("MaslowCommunityGardenRobot", "info@maslowcnc.com")
+        print("setup author")
         tree = index.write_tree()
         oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.get_object().hex])
+        print("clone")
         remote = repoClone.remotes["origin"]
         print("about to login")
         credentials = pygit2.UserPass(userName, password)
