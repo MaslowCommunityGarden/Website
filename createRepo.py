@@ -106,7 +106,36 @@ if projectName != "none":
         print("setup author")
         tree = index.write_tree()
         print("\nclone\n");
+        oid = repoClone.create_commit('refs/heads/master', author, commiter, "init commit",tree,[repoClone.head.target])
+        print("clone")
+        remote = repoClone.remotes["origin"]
+        print("about to login")
+        credentials = pygit2.UserPass(userName, password)
+        remote.credentials = credentials
         
+        callbacks=pygit2.RemoteCallbacks(credentials=credentials)
+        print("about to push")
+        remote.push(['refs/heads/master'],callbacks=callbacks)
+        
+        #This section writes the new tracked project name to the tracked projects list in github
+        
+        trackedProjectsRepo = org.get_repo('Website')
+        
+        fileName = '/trackedProjects.txt'
+        
+        print("getting file contents")
+        
+        #get the tracked projects list and decode it
+        fileContents = trackedProjectsRepo.get_file_contents(fileName)
+        trackedProjectsList = base64.b64decode(fileContents.content)
+        
+        #add the new project
+        updatedTrackedProjectsList = trackedProjectsList + "\n" + repo.html_url
+        
+        print("About to update file")
+        
+        #push the new project on the list back to the github server
+        trackedProjectsRepo.update_file(fileName, "add a project", updatedTrackedProjectsList, fileContents.sha)
         
         
     except Exception as e: 
