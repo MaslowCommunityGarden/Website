@@ -45,6 +45,7 @@
                 <div class="log">
                     <?php
                     $data = htmlspecialchars($_POST["projectName"]) . '~' . htmlspecialchars($_POST["projectDescription"]) . '~' . htmlspecialchars($_POST["managementStyle"]) . '~' . htmlspecialchars($_POST["githubUser"]) . '~' . htmlspecialchars($_POST["category"]);
+                    echo($data);
                     $ret = file_put_contents('/var/www/html/uploads/usrinput.txt', $data, FILE_APPEND | LOCK_EX);
                     if($ret === false) {
                         die('The script was unable to write your inputs to the file - pulled from github');
