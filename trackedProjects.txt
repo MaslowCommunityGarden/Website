@@ -82,19 +82,16 @@ https://github.com/MaslowCommunityGarden/Fortnite-Sign
 https://github.com/MaslowCommunityGarden/18-quot-Wok-Holder
 https://github.com/MaslowCommunityGarden/Fancy-Cupcake-Stand-
 https://github.com/MaslowCommunityGarden/Z-axis-37mm-motor-holder-for-C-Beam-Open-builds-40x80-aluminum-profile.-and-motor-mount.
-
 https://github.com/MaslowCommunityGarden/Arduino-Shield-v1.2
 https://github.com/MaslowCommunityGarden/Maslow-CNC-Motor
 https://github.com/MaslowCommunityGarden/Surplus-L-Bracket
 https://github.com/MaslowCommunityGarden/Maslow-triangulation-linkage-kit
 https://github.com/MaslowCommunityGarden/Biplane
 https://github.com/MaslowCommunityGarden/Maslow-Brains-Motor-Shield-formerly-Blue-Smoke-Herder-Shield-
-
 https://github.com/MaslowCommunityGarden/3D-Printed-Chain-guide-and-locking-pin
 https://github.com/MaslowCommunityGarden/aa
 https://github.com/MaslowCommunityGarden/Nightmare-Before-Christmas-Figures
 https://github.com/MaslowCommunityGarden/The-Cell-PC
-
 https://github.com/MaslowCommunityGarden/Motor-Mount-Bracket
 https://github.com/MaslowCommunityGarden/Mega-2560-R3
 https://github.com/MaslowCommunityGarden/Maslow-Z-Axis-Kit
@@ -114,9 +111,6 @@ https://github.com/MaslowCommunityGarden/Crosshair
 https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod
 https://github.com/MaslowCommunityGarden/Cupcake-Sign
 https://github.com/MaslowCommunityGarden/Brad-s-3D-Printed-Chain-Guide
-
-new test text
-new test text
 https://github.com/MaslowCommunityGarden/Motor-Gear-Upgrade
 https://github.com/MaslowCommunityGarden/Pentaflake-Tabletop
 https://github.com/MaslowCommunityGarden/Maslow-kits-for-sale-soon.
@@ -128,7 +122,5 @@ https://github.com/MaslowCommunityGarden/Santa-Sleigh
 https://github.com/MaslowCommunityGarden/Essential-Parts-Kit---A-more-affordable-way-to-start-building-your-own-MaslowCNC.
 https://github.com/MaslowCommunityGarden/Help-me-with-a-design-to-convert-the-Maslow-to-a-CNC-Plasma-Cutter-for-metal
 https://github.com/MaslowCommunityGarden/Simple-bat-house
-
 https://github.com/MaslowCommunityGarden/3d-printed-Router-Clamps-for-MetalMaslow
 https://github.com/MaslowCommunityGarden/Metal-Maslow-CNC-kit
-
