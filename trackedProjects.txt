@@ -127,4 +127,3 @@ https://github.com/MaslowCommunityGarden/Metal-Maslow-CNC-kit
 
 
 https://github.com/MaslowCommunityGarden/Lift-desk-light
-https://github.com/MaslowCommunityGarden/one-more-try-to-be-sure-it-is-working
