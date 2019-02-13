@@ -130,3 +130,4 @@ https://github.com/MaslowCommunityGarden/Metal-Maslow-CNC-kit
 
 https://github.com/MaslowCommunityGarden/Ring-and-bit-alignment
 https://github.com/MaslowCommunityGarden/z-axis-for-AEG-router
+https://github.com/MaslowCommunityGarden/Clamp-Z-Axis-Ridgid
