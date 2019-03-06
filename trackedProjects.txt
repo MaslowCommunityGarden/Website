@@ -133,3 +133,4 @@ https://github.com/MaslowCommunityGarden/z-axis-for-AEG-router
 https://github.com/MaslowCommunityGarden/Clamp-Z-Axis-Ridgid
 https://github.com/MaslowCommunityGarden/Mail-Organizer
 https://github.com/MaslowCommunityGarden/Spiral-Down-Cut-Router-Bit
+https://github.com/MaslowCommunityGarden/Spiral-Up-Cut-Router-Bit
