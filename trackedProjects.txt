@@ -136,3 +136,4 @@ https://github.com/MaslowCommunityGarden/Spiral-Down-Cut-Router-Bit
 https://github.com/MaslowCommunityGarden/Spiral-Up-Cut-Router-Bit
 https://github.com/MaslowCommunityGarden/Drive-Chains
 https://github.com/MaslowCommunityGarden/Spool-for-Cable-Rope-Chain-etc.
+https://github.com/MaslowCommunityGarden/60-and-90-degree-V-Groove-Bit
