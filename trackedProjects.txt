@@ -139,3 +139,4 @@ https://github.com/MaslowCommunityGarden/Spool-for-Cable-Rope-Chain-etc.
 https://github.com/MaslowCommunityGarden/60-and-90-degree-V-Groove-Bit
 https://github.com/MaslowCommunityGarden/CNC-Compression-Bit
 https://github.com/MaslowCommunityGarden/Maslow-Mark-II-3D
+https://github.com/MaslowCommunityGarden/Complete-Ring-Kit
