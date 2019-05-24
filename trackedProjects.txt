@@ -141,3 +141,4 @@ https://github.com/MaslowCommunityGarden/CNC-Compression-Bit
 https://github.com/MaslowCommunityGarden/Maslow-Mark-II-3D
 https://github.com/MaslowCommunityGarden/Complete-Ring-Kit
 https://github.com/MaslowCommunityGarden/Z-Axis-Kit
+https://github.com/MaslowCommunityGarden/Ridgid-Router-3D-printed-dust-collector-coupler
