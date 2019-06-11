@@ -145,5 +145,5 @@ https://github.com/MaslowCommunityGarden/Ridgid-Router-3D-printed-dust-collector
 https://github.com/MaslowCommunityGarden/3-Bit-CNC-Starter-Pack
 https://github.com/MaslowCommunityGarden/DUE-Shield
 
-https://github.com/MaslowCommunityGarden/Emmett
+
 https://github.com/MaslowCommunityGarden/Larry
