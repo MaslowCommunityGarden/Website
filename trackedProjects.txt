@@ -167,3 +167,4 @@ https://github.com/MaslowCommunityGarden/Snoopy
 https://github.com/MaslowCommunityGarden/Tyson
 https://github.com/MaslowCommunityGarden/Kieth
 https://github.com/MaslowCommunityGarden/Charles
+https://github.com/MaslowCommunityGarden/Walter
