@@ -208,3 +208,4 @@ https://github.com/MaslowCommunityGarden/Florencio
 https://github.com/MaslowCommunityGarden/Cordell
 https://github.com/MaslowCommunityGarden/Ferdinand
 https://github.com/MaslowCommunityGarden/Napoleon
+https://github.com/MaslowCommunityGarden/Jarred
