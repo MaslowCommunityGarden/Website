@@ -182,3 +182,4 @@ https://github.com/MaslowCommunityGarden/Cameron
 https://github.com/MaslowCommunityGarden/Frankie
 https://github.com/MaslowCommunityGarden/Erich
 https://github.com/MaslowCommunityGarden/Elvis
+https://github.com/MaslowCommunityGarden/Jared
