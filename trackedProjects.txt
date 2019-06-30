@@ -164,3 +164,4 @@ https://github.com/MaslowCommunityGarden/Merle
 https://github.com/MaslowCommunityGarden/Adolph
 https://github.com/MaslowCommunityGarden/Edmund
 https://github.com/MaslowCommunityGarden/Snoopy
+https://github.com/MaslowCommunityGarden/Tyson
