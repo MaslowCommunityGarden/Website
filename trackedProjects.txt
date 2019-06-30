@@ -221,3 +221,4 @@ https://github.com/MaslowCommunityGarden/Horace
 https://github.com/MaslowCommunityGarden/Isreal
 https://github.com/MaslowCommunityGarden/Sophie
 https://github.com/MaslowCommunityGarden/Russel
+https://github.com/MaslowCommunityGarden/Quinn
