@@ -171,3 +171,4 @@ https://github.com/MaslowCommunityGarden/Walter
 https://github.com/MaslowCommunityGarden/Brendon
 https://github.com/MaslowCommunityGarden/Alvaro
 https://github.com/MaslowCommunityGarden/Juan
+https://github.com/MaslowCommunityGarden/Jonathan
