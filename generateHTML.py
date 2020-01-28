@@ -96,6 +96,13 @@ class GenerateHTML:
                     "unable to read stargazers defaulting to 0"
                     
                 
+                try:
+                    fullKit = json.loads(thisProject.ROBOTtext)["FullKit"]
+                    print "Full kit recognized"
+                    thisProject.starGazers = thisProject.starGazers + 10000
+                except Exception as e:
+                    pass
+                
                 self.projects.append(thisProject)
                 
 
