@@ -245,7 +245,7 @@ class GenerateHTML:
         "</div>"
         
         "<div id='Market' class='tabcontent'>"
-            "<p>This space is moderated by the community and is a central listing space for parts and kits useful to and sold by the Maslow community. To be listed in this category a product must have a price and a current link to purchase.</p>" +
+            "<p>There are currently multiple companies selling Maslow kits or parts. All of the machines use the same basic design, but each kit offers slightly different hardware options. Click on any of the options below to learn more.</p>" +
             "<br>"
             + marketProjects +
         "</div>"
