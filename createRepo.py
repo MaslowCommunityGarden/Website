@@ -12,8 +12,8 @@ try:
 except:
     projectName = "none"
 
-if "test" in projectName:
-    print "Creating new projects is currently not :) disabled to prevent spam"
+if "test" in projectName or True:
+    print "Creating new projects is currently disabled to prevent spam"
     print "GIT URL:> https://www.example.com <---"
     import sys
     sys.exit()
