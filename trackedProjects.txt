@@ -92,14 +92,12 @@ https://github.com/MaslowCommunityGarden/3D-Printed-Chain-guide-and-locking-pin
 https://github.com/MaslowCommunityGarden/aa
 https://github.com/MaslowCommunityGarden/Nightmare-Before-Christmas-Figures
 https://github.com/MaslowCommunityGarden/The-Cell-PC
-
 https://github.com/MaslowCommunityGarden/Mega-2560-R3
 https://github.com/MaslowCommunityGarden/Maslow-Z-Axis-Kit
 https://github.com/MaslowCommunityGarden/US-Power-Supply
 https://github.com/MaslowCommunityGarden/EU-Power-Supply
 https://github.com/MaslowCommunityGarden/Hardware-set-3
 https://github.com/MaslowCommunityGarden/Medium-Hardware-Bag
-
 https://github.com/MaslowCommunityGarden/Carriage-Brackets
 https://github.com/MaslowCommunityGarden/Custom-Made-Sled-Ring-Bearings
 https://github.com/MaslowCommunityGarden/Rocket-Corner-Shelf-with-flame-
@@ -124,10 +122,6 @@ https://github.com/MaslowCommunityGarden/Help-me-with-a-design-to-convert-the-Ma
 https://github.com/MaslowCommunityGarden/Simple-bat-house
 https://github.com/MaslowCommunityGarden/3d-printed-Router-Clamps-for-MetalMaslow
 https://github.com/MaslowCommunityGarden/Metal-Maslow-CNC-kit
-
-
-
-
 https://github.com/MaslowCommunityGarden/Ring-and-bit-alignment
 https://github.com/MaslowCommunityGarden/z-axis-for-AEG-router
 https://github.com/MaslowCommunityGarden/Clamp-Z-Axis-Ridgid
@@ -144,15 +138,7 @@ https://github.com/MaslowCommunityGarden/Z-Axis-Kit
 https://github.com/MaslowCommunityGarden/Ridgid-Router-3D-printed-dust-collector-coupler
 https://github.com/MaslowCommunityGarden/3-Bit-CNC-Starter-Pack
 https://github.com/MaslowCommunityGarden/DUE-Shield
-
-
-
-
-
-
-
 https://github.com/MaslowCommunityGarden/Maslow-Electronics-Case
-
 https://github.com/MaslowCommunityGarden/The-Original-Maslow-CNC
 https://github.com/MaslowCommunityGarden/Maslow-CNC-Jumpstart-Bundle
 https://github.com/MaslowCommunityGarden/Metal-Maslow-Sled-amp-linkage-kit
@@ -164,5 +150,3 @@ https://github.com/MaslowCommunityGarden/Flat-Pack-Bar-Stool
 https://github.com/MaslowCommunityGarden/Flat-Pack-Bar-Stool
 https://github.com/MaslowCommunityGarden/Mickey-Mouse
 https://github.com/MaslowCommunityGarden/Chain-Guide-and-Peeler
-https://github.com/MaslowCommunityGarden/johnan
-https://github.com/MaslowCommunityGarden/john
