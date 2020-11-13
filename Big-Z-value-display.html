@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Big Z-value display</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Big Z-value display</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCommunityGarden/Big-Z-value-display/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCommunityGarden/Big-Z-value-display/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCommunityGarden/Big-Z-value-display/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCommunityGarden/Big-Z-value-display class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Big Z-value display</h1>
+
+<p>Be able to see the current Z value of your maslow from all over the workshop</p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCommunityGarden/Big-Z-value-display/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h1>Building instructions</h1>
+
+<h2>Materials</h2>
+
+<ul>
+<li>1x arduino (any will do - I'm using a Pro Mini)</li>
+<li>1x 5V power supply for the display. you CAN NOT use the maslow power - you will get USB errors and lose your work.</li>
+<li>57x WS2812/NeoPixel cut in separate strips with 4 in each segment. leave a single for decimal separator</li>
+<li>??x connection wire (the led strips need 3 connections between each segment)</li>
+<li>1x Front plate cut from SVG or DVG file</li>
+<li>1x Back plate cut from SVG or DVG file</li>
+<li>optional: opaque acrylic cut from the same pattern as the Back file.</li>
+</ul>
+
+<h2>Program the arduino</h2>
+
+<p>Just like the maslow firmware we need to program the arduino. In the repository there is a .ino file which you will have to program to the arduino board of your choice.
+In the first few lines of code there are a few definitions of how many pixels per segment (default is 4) and which pin you want to connect to. I chose pin 6 because - default. you can change it to whatever you want. 
+Remember: If you change the number of pixels per segment you will have to update the offset values in the code. </p>
+
+<h2>Assemble the display</h2>
+
+<ol>
+<li><p>Place the front piece on top of the back piece. Using a pencil lineout the cutouts for each segment.</p></li>
+<li><p>on the back-side of the front piece you will have to carve a channel for the wiring. it's not important where the channel is but from experience it's easiest if you try to hit the middle of the segments where possible
+Remember: If you change the segment orientation which is quite likely if you don't route the segments like I have - you will need to update the segment-offset values in the code. othervise the segment decoder will not work properly.</p></li>
+<li><p>Mark the channels on the base-board.</p></li>
+</ol>
+
+<p><img src="https://discourse-cdn-sjc2.com/standard11/uploads/maslowcnc/optimized/2X/e/eb81d6e02dab8cacec9e2735df8e9e419a1ad547_1_666x500.jpg" alt="alt text" title="Marking of wiring positions" class="page_img" /></p>
+
+<ol>
+<li>Using the glue on the back-side of the LED strip put down the segments</li>
+</ol>
+
+<p><img src="https://discourse-cdn-sjc2.com/standard11/uploads/maslowcnc/optimized/2X/5/54c8866b411bd2bb5826c702f6d6923179126853_1_375x500.jpg" alt="alt text" title="Segments in place" class="page_img" /></p>
+
+<ol>
+<li>solder time! connect all the segments with Ground, Power and Signal wires. the last pixel is the decimal indicator.
+Using the markings the wires can be laid out more easily. This is an old picture of the display - you should have a decimal point as the last part of the string</li>
+</ol>
+
+<p><img src="https://discourse-cdn-sjc2.com/standard11/uploads/maslowcnc/optimized/2X/a/ab6f488a7f50dd49a3eed87c0b82ff0b01723ca8_1_375x500.jpg" alt="alt text" title="Front board put on top of segments and wires" class="page_img" /></p>
+
+<h2>Wiring to the Maslow controller</h2>
+
+<p>This is perhaps the most tricky bit. I did have some trouble with my configuration being blown to bits so please power down your system when doing this</p>
+
+<p>you will need to connect two wires from the Maslow controller: Ground and 'TX' - yes, you have to connect to the transmit pin since we're listening in on the communication FROM the controller (not the data sent TO the controller)</p>
+
+<ul>
+<li>Ground connects to ground on the display controller</li>
+<li>TX from the Maslow connects to RX on the display controller.</li>
+</ul>
+
+<p>That's it - you should now have a huge display for your machine!</p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/Big-Z-value-display.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCommunityGarden/Big-Z-value-display/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>Edit this file to add a bill of materials</p>
+
+<p>You can find instructions on how to edit this page on the community garden meta page <a href="http://maslowcommunitygarden.org/Website.html?instructions=true">here</a></p>
+
+<p>The style cheat sheet <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">here</a> is useful</p>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>

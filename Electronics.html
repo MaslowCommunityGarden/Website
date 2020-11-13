@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Maslow Electronics</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Maslow Electronics</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCNC/Electronics/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCNC/Electronics/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCNC/Electronics/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCNC/Electronics class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Maslow Electronics</h1>
+
+<p>The printed circuit board which powers the Maslow CNC Machine</p>
+
+<p>======================</p>
+
+<p>Layout</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/PowerDistributionBoardLayout.PNG" alt="Layout" class="page_img" /></p>
+
+<p>Schematic</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/PowerDistributionBoardSchematic.PNG" alt="Schematic" class="page_img" /></p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCNC/Electronics/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h1>Maslow Electronics Setup</h1>
+
+<p>We've done our best to keep the electronics for Maslow as simple as possible.</p>
+
+<h3>Step 1: Identifying Parts</h3>
+
+<p>There are five pieces to the Maslow electronics system. Shown in the picture below from left to right and top to bottom they are:
+1. The Motor/Encoder/Gear Box Units
+2. Motor Wires
+3. Maslow CNC motor controller shield
+4. Keystudio Mega 2560 microcontroller (Arduino compatible) with USB Cable
+5. 12V DC 5A / 110-250V AC Power Supply
+<img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/Documentation/Identifying%20Parts.jpg" alt="Identifying Parts" class="page_img" /></p>
+
+<h3>Step 2: Attach Heatsinks</h3>
+
+<p>Attach the sticky backed heat sinks found in your hardware bag to the motor controller shield. (Note orientation of heatsinks)
+<img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/Documentation/Attach%20Heat%20Sinks.jpg" alt="Attach Heatsinks" class="page_img" /></p>
+
+<h3>Step 3: Connect Arduino Shield</h3>
+
+<p>Attach the Arduino shield onto the Keystudio Mega 2560 microcontroller. Make sure all the pins are not twisted and that are aligned with the microcontroller before pushing the motor controller shield.
+<img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/Documentation/Attach%20Arduino.jpg" alt="Attach Arduino" class="page_img" /></p>
+
+<h3>Step 4: Connect The Motors</h3>
+
+<p>Attach the motors to the motor controller shield. <strong>Note that the motors connect to ports 1 and 3 not 1 and 2</strong>. This is to better distribute the motor power draw across both motor driver chips.  Port 3 controls the left motor and Port 1 the right motor (as viewed when facing the MaslowCNC).
+The cables have two sides, so make sure that when plugged in the Arduino shield, the yellow wire is at the bottom in both ports as seen in the following photo.
+When using the optional Z axis, this motor is connected to port 2.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/Documentation/Attach%20Motors.jpg" alt="Attach Motors" class="page_img" /></p>
+
+<h3>Step 5: Connect The Power Supply</h3>
+
+<p>Plug the 12V power supply into the motor controller shield. <strong>Note that the power supply plugs into the motor controller shield and not to the microcontroller.</strong> Plugging the power supply into the Arduino will not damage it, but it also will not provide power to the motors. We chose the most common power supply plug to make replacements easy to find, unfortunately because it is so common this is also the same power supply plug that the Arduino uses, which is somewhat confusing.
+<img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/Documentation/Attach%20Power%20Supply.jpg" alt="Attach Power Supply" class="page_img" /></p>
+
+<h3>Step 6: Connect The USB Cord</h3>
+
+<p>Plug the USB cord into the Arduino and into your computer. Note that the "USB" light will come on to indicate that the board is connected and receiving power from your computer.
+<img src="https://raw.githubusercontent.com/MaslowCNC/Electronics/master/Documentation/Attach%20USB.jpg" alt="Attach USB" class="page_img" /></p>
+
+<h3>Step 7: Proceed</h3>
+
+<p>You have finished setting up the Maslow electronics system. Proceed to the <a href="http://maslowcommunitygarden.org/Firmware.html?instructions=true">next step</a> and install the open source Maslow Firmware on your Arduino.</p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/Electronics.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCNC/Electronics/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h3>The complete Maslow PCB can be ordered from the Maslow store <a href="http://www.maslowcnc.com/store/arduino-shield">here</a></h3>
+
+<h1>PCB BOM</h1>
+
+<p>All of the part numbers below are digikey parts unless otherwise stated.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Part</th>
+  <th align="center">Part #</th>
+  <th align="center">Number Needed</th>
+  <th align="left"># In Schematic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>XH-Series Connectors</td>
+  <td align="center">455-2271-ND</td>
+  <td align="center">3</td>
+  <td align="left">J1-3</td>
+</tr>
+<tr>
+  <td>Power Jack</td>
+  <td align="center">CP-202BH-ND</td>
+  <td align="center">1</td>
+  <td align="left">J4</td>
+</tr>
+<tr>
+  <td>1x8 .1" headers</td>
+  <td align="center">732-5321-ND</td>
+  <td align="center">4</td>
+  <td align="left">J5-8</td>
+</tr>
+<tr>
+  <td>2x2 .1" headers</td>
+  <td align="center">952-2119-ND</td>
+  <td align="center">2</td>
+  <td align="left">J9,10</td>
+</tr>
+<tr>
+  <td>Flyback Diodes</td>
+  <td align="center">MRA4004T3GOSCT-ND</td>
+  <td align="center">12</td>
+  <td align="left">D1-12</td>
+</tr>
+<tr>
+  <td>.1uF Filter Caps</td>
+  <td align="center">311-1361-1-ND</td>
+  <td align="center">4</td>
+  <td align="left">C1-4</td>
+</tr>
+<tr>
+  <td>1uF Filter Caps</td>
+  <td align="center">445-5146-1-ND</td>
+  <td align="center">2</td>
+  <td align="left">C5,6</td>
+</tr>
+<tr>
+  <td>H-Bridge</td>
+  <td align="center">497-3624-1-ND</td>
+  <td align="center">2</td>
+  <td align="left">IC-1,2</td>
+</tr>
+<tr>
+  <td>Indicator LED</td>
+  <td align="center">475-1410-1-ND</td>
+  <td align="center">2</td>
+  <td align="left">LED 1-2</td>
+</tr>
+<tr>
+  <td>Current Limiting R1</td>
+  <td align="center">RMCF0805JT270RCT-ND</td>
+  <td align="center">1</td>
+  <td align="left">R1</td>
+</tr>
+<tr>
+  <td>Current Limiting R2</td>
+  <td align="center">541-4162-1-ND</td>
+  <td align="center">1</td>
+  <td align="left">R2</td>
+</tr>
+<tr>
+  <td>23x23mm heatsink</td>
+  <td align="center">Mouser-532-374124B35G</td>
+  <td align="center">2</td>
+  <td align="left">N/A</td>
+</tr>
+</tbody>
+</table>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>

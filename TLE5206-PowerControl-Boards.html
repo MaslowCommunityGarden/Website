@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> TLE5206 PowerControl Boards</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> TLE5206 PowerControl Boards</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>TLE5206 PowerControl Boards</h1>
+
+<p>PowerControl board based on the TLE5206. Thru-hole and SMD versions</p>
+
+<h1>About the boards:</h1>
+
+<p>The standard Maslow PowerControl board uses a pair of simple surface-mount motor-control chips, the L298P013TR, to control the motors. Each chip can control two motors, up to total 4A divided between the motors. Only three motors are provisioned in the release version of the board. There has been concern about the current capacity of these chips and there have been instances where the chips have been damaged when software malfunctioned. Once a chip is damaged, the board would require replacing a 20-pin surface-mount chip to repair.</p>
+
+<p>The TLE5206 offers higher current capacity, over-temperature and over-current detection and protection, along with a simpler package. In addition, there is a thru-hole version of the chip available that would allow a thru-hole version of the board, easier for some users to construct or repair. While the control pins are different from the L298 chips, the firmware requires very little change to work with the TLE5206.</p>
+
+<p>This is a first stab at using the TLE5206 chips on the PowerControl board.
+ -  The Electronics folder has EagleCAD board and schematic files for a SMD version and a thru-hole version. I've built and tested both.
+ -  The Firmware has been merged with the main MaslowCNC Firmware branch. It adds three true PWM pins to the AUX group which might be used for spindle control with some software development. It doesn't implement the software over-current detection that the TLE5206 offers. For now, the chips sense the over-current or over-temperature condition and protect themselves by turning off the outputs. Use the Arduino IDE to upload the master firmware to control the TLE5206 board.</p>
+
+<p>This design brings:
+- separate controller chip for each motor
+- higher current capacity (5A) per motor
+- thru-hole version to aid hand assembly and repair
+- board-mounted heat sinks for the thru-hole version
+- mounting holes to match three of the Arduino mounting holes
+- AUX pins moved to extended end of board
+- 4 digital AUX pins
+- 2 analog/digital AUX pins
+- 3 PWM-capable digital AUX pins
+- board version ID pins avoids using SPI pins</p>
+
+<p>It doesn't bring:
+- additional motor control channels
+- software over-current or over-temperature sensing</p>
+
+<h1># PCBs</h1>
+
+<p>Layout</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/master/PowerDistributionBoardSMDLayout.JPG" alt="SMD Layout" class="page_img" /></p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/master/PowerDistributionBoardThruholeLayout.JPG" alt="Thruhole Layout" class="page_img" /></p>
+
+<p>Schematic - SMD version</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/master/PowerDistributionBoardSMDSchematic.JPG" alt="SMD schematic" class="page_img" /></p>
+
+<p>Schematic - Thruhole version</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/master/PowerDistributionBoardThruholeSchematic.JPG" alt="Thruhole Schematic" class="page_img" /></p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>The circuit boards are electronically the same, one uses thru-hole parts for easier assembly. The thru-hole board uses heat sinks that can be soldered to the board for rigidity.</p>
+
+<p>Many web-based PCB houses will accept an EagleCAD .brd file for manufacturing.</p>
+
+<p>The firmware has been merged with the main MaslowCNC Firmware branch. Use the Arduino IDE to upload the master firmware to control the TLE5206 board.</p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/TLE5206-PowerControl-Boards.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCommunityGarden/TLE5206-PowerControl-Boards/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>The Electronics folder has BOM files for both versions of the board. Many web-based PCB houses accept an EagleCAD .brd file for ordering.
+The Firmware has the branch of Firmware to use the boards.</p>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>

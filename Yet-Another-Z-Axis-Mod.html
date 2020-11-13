@@ -1,0 +1,186 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Yet Another Z-Axis Mod</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Yet Another Z-Axis Mod</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Yet Another Z-Axis Mod</h1>
+
+<p>I had gotten the z-axis kit with my Maslow originally, but I frequently found it off of spec when cutting. I tried all the simple fixes (bungee cord, gluing a bushing to the frame to keep alignment), and while they helped, I still had trouble with incomplete cuts way too often.</p>
+
+<p>So I designed my own Z-axis kit that extends the stock solution, but doesn't rely on the Ridgid router's collar and it's not-intended-for-this-purpose mechanics.</p>
+
+<p>The kit relies on the Z-axis motor from the original Maslow z-axis kit. Other than that all parts are 3D printed or listed in the BOM.</p>
+
+<p>Additionally you will need the 3D printed parts from the forum and all the materials listed in the BOM.</p>
+
+<p>Shout out to Gary D (@gder) for doing a <strong>lot</strong> of work beta testing and for contributing a bunch of ideas to the design. Thanks to Gary the design is a lot better than it would have been.</p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h2>Assembly</h2>
+
+<p>(<strong>IMPORTANT NOTE</strong>: There are now two alternate versions of the dust shroud and dust sleeve. If you have the ring kit or the original "L" brackets as your linkage system, then print the "standard" dust shroud and dust sleeve, which you will find in the main "Project Files" folder (v3<em>dust</em>shroud (use supports).stl and v3<em>dust</em>sleeve.stl). If you have a triangulation linkage kit (e.g. https://www.etsy.com/listing/558743441/maslow-triangulation-linkage-kit), you may need the alternate versions of the dust shroud (v3<em>dust</em>shroud<em>alternate</em>version.stl) and dust sleeve (v3<em>dust</em>sleeve<em>alternate</em>version.stl). You'll find those parts in the "Individual Parts" sub-folder. Please be sure to plan out where your linkage system attaches and then decide which version you need before you start printing, as it takes upwards of 6 hours to print those models out.)</p>
+
+<p>(<strong>NOTE</strong>: These instructions are available to download at https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/Build%20Instructions.pdf. Github is not honoring all of my markdown around bullets, so the online instructions are formatted a bit funky.)</p>
+
+<ol>
+<li>Print one set of all 3D printed parts. Where you need multiples of any given part, the provided STL files include the correct number of parts already. Some notes:
+<ol>
+<li>PETG, ABS, or PLA should all be fine. I used PETG for mine.</li>
+<li>Default infill should be 20-25% or so, EXCEPT for the router body clamps (v3<em>body</em>clamp<em>back</em>half<em>pair.stl &amp; v3</em>body<em>clamp</em>front<em>half</em>braced_pair.stl). Print those with at least 50% infill for clamping strength.</li>
+<li>You should not require supports on any parts EXCEPT the dust shroud (v3<em>dust</em>shroud (use supports).stl). Supports will be necessary unless you have a very dialed-in printer.</li>
+<li>Some post-printing cleanup may be required, especially on:
+<ul>
+<li>The slots where M3 square nuts slide in</li>
+<li>The alignment pegs at the bottom of the rods base (v3<em>rods</em>base.stl) and the dust shroud (v3<em>dust</em>shroud (use supports).stl)</li>
+</ul></li>
+</ol></li>
+<li>Cut a sled blank. I cut mine on a table saw out of some scrap plywood; just find a way to cut a ~17" roughly-circular blank. </li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/sled_blank.jpg" alt="Sled Blank" class="page_img" /></li>
+<li>Mark the center on your sled blank and cut a 2 - 2.5" hole as close to center as possible.</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/sled_blank_w_hole.jpg" alt="Sled Blank with Hole" class="page_img" /></li>
+<li>Find the "rods base" (v3<em>rods</em>base.stl) in your 3D printed part set and position it so the snap-off "bullseye" is centered on the hole you just cut. </li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/placing_rods_base.jpg" alt="Placing Rods Base" class="page_img" /></li>
+<li>(<strong>NOTE:</strong> You can proceed to mark all the holes at one time and then drill them in a following step, or you can mark-drill, mark-drill. The latter is probably more accurate, but I did all my marking in one step, so that's how I talk it through here.)</li>
+<li>Dry-fit the dust shroud (v3<em>dust</em>shroud (use supports).stl) to the rods base using the alignment pegs at the base. (Note, make sure you've cleaned up the pegs of any printing artifacts so you get a nice snug fit; if the pegs don't slide in all the way clean them up some more.)</li>
+<li>Assemble all parts of the motor brace assembly (v3<em>motor</em>brace<em>assembly</em>all.stl). It should be self-explanatory enough how to assemble, and the result should look like the following photos. Just remember that you'll need 6 M6 bolts (35mm long to 50mm long) and 6 M6 square nuts to attach the cross-members.</li>
+<li>Dry-fit the motor brace assembly to the rods  base (there are two alignment pegs at the base to ensure alignment. Remember to clean the pegs &amp; holes up for a snug fit if needed.)</li>
+<li>Now that you have all the parts that mount directly to the sled dry-fit, confirm the placement of the bullseye and mark all of the holes for drilling. Note:
+<ol>
+<li>There are six holes in the rods base</li>
+<li>There are four holes in the motor brace assembly</li>
+<li>There are two holes in the dust shroud</li>
+<li>If you don't have another way to countersink, you can turn your router back into a hand-held router temporarily and use it to router out the countersink holes you need.</li>
+</ol></li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/dry_fit_hole_marking.jpg" alt="Dry-fit / Hole Marking" class="page_img" /></li>
+<li>Drill and countersink (from below) all the holes you marked.</li>
+<li>Once you've drilled all of your holes, you can remove the bullseye from the rods base. Just use an X-acto knife or similar to snip it off close to the base:
+<ol>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/remove_bullseye.jpg" alt="Remove the Bullseye" class="page_img" /></li>
+</ol></li>
+<li>Now mount the two rail support blocks (left and right sides) and the pillow block (center) in the rods base and tighten them down fully. Some notes:
+<ol>
+<li>Make sure to come up from below with your bolts.</li>
+<li>The pillow-block (center) uses M5 bolts. The rail support blocks take M6 bolts.</li>
+<li>The rail support blocks have a slot that is there to make it easier to tighten the lock screw. </li>
+</ol></li>
+<li>Mount the lead screw in the pillow block (in center). It uses two set screws to hold the lead screw fast.  (Note: on mine, the lead screw has a little wobble even when properly secured. It'll all firm up when it's fully assembled.)</li>
+<li>Mount the linear rails in the rail support blocks and tighten the set screws.</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/assemble_rods_base.jpg" alt="Assemble Rods Base" class="page_img" /></li>
+<li>Now add the motor brace assembly and bolt it down fully from below.</li>
+<li>Ditto the dust shroud. It should look like this when partially assembled:</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/partially_assembled.jpg" alt="Partially Assembled" class="page_img" /></li>
+<li>Now prepare the router clamp as follows:
+<ol>
+<li>There are four parts to the router clamp, two per STL file (v3<em>body</em>clamp<em>back</em>half<em>pair.stl &amp; v3</em>body<em>clamp</em>front<em>half</em>braced_pair.stl).</li>
+<li>The two parts of the "lower half" join together with the cylindrical pegs, one to the other. Join them together now. (They will probably never come apart once joined, but if you want to be extra safe, put some CA glue in the holes before you join them.) (Note: ignore that in the photo both halves have that smiley-face cutout; yours will only have that on the "bottom" piece.)</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/join_lower_half.jpg" alt="Join Lower Half" class="page_img" /></li>
+<li>The two parts of the "upper" half don't physically join, but you will install them bearing-holder to bearing-holder.</li>
+<li>Insert the four 8UU bearings in the bearing holders in the "upper" halves and tighten down with M3x8mm screws and square nuts.</li>
+<li>Insert the lead-screw trapezoidal nut in the <em>bottom</em> piece of the "upper" half (the one with four additional M3 holes in it for bolting on the dust sleeve). This requires 4 M3x25mm screws and nuts.</li>
+<li>Use four M3x20mm screws and nuts to bolt the top half of the dust sleeve onto the bottom of the upper-half bottom:</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/upper_half_assembled_1.jpg" alt="Upper Half Assembled (1)" class="page_img" /></li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/upper_half_assembled_2.jpg" alt="Upper Half Assembled (2)" class="page_img" /></li>
+<li>Finally, insert two M3 square nuts in the bottom piece of the lower-half and place two 8mm M3 screws in them. There are two slots on the ends of the bottom piece to accept the nuts. (Note they will not screw all the way in; they are designed to stick out about 2 mm or so for cleating the dust sleeve.)</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/install_cleating_screws.jpg" alt="Install Cleating Screws" class="page_img" /></li>
+<li>It's best if you try to get the cleating screws at about the right depth now; to do that, fit the bottom half of the dust sleeve (v3<em>dust</em>sleeve.stl) on the bottom of the clamp piece, and screw the screw in snugly, then <strong>back it off 1/2 turn</strong>. Now remove the dust sleeve, it goes on only when operating the rig.</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/install_cleating_screws_2.jpg" alt="Install Cleating Screws (2)" class="page_img" /></li>
+</ol></li>
+<li>Install the upper half of the router clamp:
+<ol>
+<li>Place the "bottom" piece (the one with the dust sleeve attached) on the rails. Some notes:
+a. Be gentle, if you come in at too much of an angle, you can force ball bearings out of your linear bearing.
+a. You might have to gently straighten out the tops of the linear rods to seat the bearings correctly.
+a. Once you have the bearings on, you will need to push down a little to get the trapezoidal nut to engage the lead screw.
+a. Once the lead screw is engaged, you can move the clamp up and down by turning the lead screw manually.
+a. <img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/install_upper_half.jpg" alt="Install Upper Half" class="page<em>img" />
+a. Now place the other top-half piece, making sure to flip it so the bearing holders are touching each other, as shown.
+a. <img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/install_upper_half_2.jpg" alt="Install Upper Half (2)" class="page</em>img" /></li>
+</ol></li>
+<li>Assemble the Axis Cap:
+<ol>
+<li>Find the 3D printed part for the Axis Cap (v3<em>axis</em>cap.stl)</li>
+<li>Insert two M3x8mm screws and <em>square nuts</em> in the rod holders. (If you don't use square nuts, you will have to hold the nuts with needlenose pliers when tightening them.) <strong>Leave these loose / not fully tightened.</strong></li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/secure_rod_holders.jpg" alt="Rod Holders" class="page_img" /></li>
+<li>You do not need to install square nuts in the slots in the top of the axis cap; that's a remnant of a previous design iteration.</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/dont_install_nuts_here.jpg" alt="Don't Install Square Nuts" class="page_img" /></li>
+<li>Now use 6 M3x6mm screws to mount the motor from your stock kit. Note the motor shaft should be towards the open side of the axis cap, as shown:</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/mount_motor.jpg" alt="Mount Motor in Axis Cap" class="page_img" /></li>
+</ol></li>
+<li>Mount the Axis Cap:
+<ol>
+<li>Find your coupler (from the BOM, not from the stock kit) and slide it on the lead screw. Do not tighten yet.</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/place_coupler.jpg" alt="Place Coupler" class="page_img" /></li>
+<li>Gently place the axis cap on top of the linear rails and slide the motor shaft into the coupler, as shown:</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/place_axis_cap.jpg" alt="Place Axis Cap" class="page_img" /></li>
+<li>Now attach the coupler onto the motor shaft and lead screw using the set screws. Some notes on this:
+<ol>
+<li>Slide the coupler up a bit to preserve your full range of motion. But not so high it will grind against the motor screws when in operation.</li>
+<li>The upper set screw tightens against the flat side of the motor shaft.</li>
+<li>You may need to connect your motor to GroundControl (GC) to get the shaft oriented so you can access the flat side. Use small moves to get the shaft in the correct position.</li>
+<li>Once you have the coupler fixed to the motor, use the lower set screw to clamp it to the lead screw.</li>
+<li>Following this, find the <em>other</em> two set screws and tighten them down as well; this will make sure everything is tight and secure. (Again, you may need to use GC to orient the shaft to permit you access.)</li>
+<li>Finally, tighten those M3 screws that secure the linear rods into the rod holders underneath the axis cap.</li>
+</ol></li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/secure_axis_cap.jpg" alt="Secure Axis Cap" class="page_img" /></li>
+</ol></li>
+<li>Bolt the Axis Cap to the Motor Brace Assembly using two 8Mx35mm bolts and two M8 square nuts. You will need to hold the square nuts in place from underneath--the slots for them are on the bottom face of the Axis Cap.
+<ol>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/bolt_axis_cap.jpg" alt="Bolt Axis Cap" class="page_img" /></li>
+</ol></li>
+<li>Place the Router
+<ol>
+<li>Now it's time to place the router. Lay it into the groove created by the two top-half clamps with the front of the router facing towards the hose coupler.</li>
+<li>If you had previously greased your router body, as is recommended for the stock kit, clean that grease off before placing it. We don't need it slipping inside the clamp.</li>
+<li>Leave about an inch or so of the router body visible below the bottom-most part of the clamp. (You can fine-tune the placement later if you find you have too much or too little vertical range.)</li>
+<li>The braced-pair "lower" half of the router clamp needs to be mounted to hold it in place. Be sure you place the lower half correctly: with the "smiley" hole and the cleat-screws closer to the sled.</li>
+<li>Use 4 M8x35mm bolts and M8 square nuts to secure the lower half of the clamp. It can be a bit tricky to place the nuts, hold the router, and screw things together. It's a bit easier if you flip the whole rig on its back on a table.</li>
+<li>It's not horribly important that you have your router precisely facing the hose opening, but get it as close to that as possible. If you mount it wrong, the power cord and back part of the router can make contact with the axis cap and cause runtime issues.</li>
+<li>Don't tighten the M8 bolts right away, just make them snug at first. Then check the router's placement and orientation and tighten things down.</li>
+<li>When tightening, alternate between the left-side and right-side bolts, using small (e.g. 1/4 turn) turns. This makes sure you don't stress one side of the clamp too much.</li>
+<li>Here's where you find out if you printed the router clamp with enough infill. Less than 50% infill and it's liable to crack when you try to tighten it down fully.</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/secure_router.jpg" alt="Secure Router" class="page<em>img" />
+<img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/fully_assembled.jpg" alt="Fully Assembled" class="page</em>img" /></li>
+</ol></li>
+</ol>
+
+<h3>Pre-flight and Usage</h3>
+
+<ol>
+<li>Before attempting any moves in GC, be sure to modify your GC configuration. Find the setting for Z-axis pitch, and put the appropriate setting for your lead screw. If you bought the kit I linked in the BOM, that value should be 8mm.
+<ol>
+<li>NOTE that this kit does not have an end-stop, so you can tell GC to crash the nut into the coupler or the pillow-block at bottom. Be cautious in your moves, and be ready to hit the "Stop!" button in GC if you've mistakenly told GC to lower / raise beyond the limits.</li>
+<li>Test your kit by moving your new z axis up and down (in small increments at first).</li>
+<li>Prior to actually doing any cutting, be sure to define "zero" on your newly-installed Z axis kit.</li>
+</ol></li>
+<li>The dust sleeve is designed to go on and come off easily so you can access the collet and change bits. To place it initially:
+<ol>
+<li>Slide the back into the cleating screws you placed in the bottom of the body clamp:</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/dust_sleeve_1.jpg" alt="Using the Dust Sleeve" class="page_img" /></li>
+<li>Once the sleeve is fully engaged on the cleating screws, place a medium-size binder clip at the front clip-point (the smiley-shaped opening):</li>
+<li><img src="https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/raw/master/dust_sleeve_2.jpg" alt="Using the Dust Sleeve" class="page_img" /></li>
+</ol></li>
+<li>To access your collet and change bits and zero your router:
+<ol>
+<li>Remove the binder clip and remove the front part of the dust sleeve</li>
+<li>Raise your router to maximum height so it clears the dust shroud</li>
+<li>You should be able to access the collet lock from behind, and get a wrench into the opening where the dust sleeve had been.</li>
+</ol></li>
+</ol>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/Yet-Another-Z-Axis-Mod.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCommunityGarden/Yet-Another-Z-Axis-Mod/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h2>Bill of Materials (BOM)</h2>
+
+<ul>
+<li>Wood for the sled. </li>
+<li>Linear Motion kit (or equivalent). You'll either need a linear-rod kit like <a href="https://smile.amazon.com/gp/product/B0797Q2C92">this one.</a> or equivalent parts. If you decide to source the parts yourself instead, here's what you really need from that kit:
+<ul>
+<li>2x 8mm x 150mm smooth rails</li>
+<li>1x 8mm x 150mm lead screw</li>
+<li>4x LM 8UU bearings (the kit has these embedded inside linear slide blocks, but they pop out easily if you remove the retaining clip)</li>
+<li>1x 8mm lead-screw nut</li>
+<li>2x 42x24x10mm 8mm rail support block</li>
+<li>1x 48x12x27mm 8mm pillow block bearing</li>
+<li>(You do not need the shaft couplers, plus there is an extra pillow block, and 2 extra rail support blocks)</li>
+</ul></li>
+<li>One 6mm to 8mm shaft coupler, like <a href="https://smile.amazon.com/gp/product/B06X9W3TNS">this one.</a></li>
+<li>An assortment of <a href="https://smile.amazon.com/Stainless-Assortment-Precise-Beautiful-Printed/dp/B0714FLXND">M3 screws &amp; nuts.</li>
+<li>Additionally you will need 4 M3x25mm screws</li>
+<li>You will also need some square M3 nuts, as well as some M6 and M8 ones. Probably best to get a kit like <a href="https://smile.amazon.com/gp/product/B06Y3NBT4Z">this one</a>.</li>
+<li>4x M8 x 30mm hex screws (<a href="https://smile.amazon.com/Machine-Phillips-Threaded-M8-1-25-Threads/dp/B00917MQC8">phillips head</a> or <a href="https://smile.amazon.com/M8-1-25-Socket-Screws-Stainless-Machine/dp/B07GCMGP8S">"button" style</a> [that accepts a hex driver]).</li>
+<li>2x M8 x 35mm hex screws</li>
+<li>6x M6 x 35mm (up to 50mm) screws for the motor-assembly cross-braces</li>
+<li>Some M6 x 20mm screws and nuts and M5 x 15mm screws with nuts for mounting parts to the sled</li>
+<li>(Note: I got all of the M8/M6/M5 screws I needed by buying a TV mounting kit like <a href="https://smile.amazon.com/gp/product/B073WKR1QR/ref=oh_aui_search_asin_title?ie=UTF8&amp;psc=1">this one</a>.)</li>
+</ul>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>

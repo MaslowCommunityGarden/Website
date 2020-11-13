@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Edge Clamp Connector</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Edge Clamp Connector</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCommunityGarden/Edge-Clamp-Connector/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCommunityGarden/Edge-Clamp-Connector/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCommunityGarden/Edge-Clamp-Connector/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCommunityGarden/Edge-Clamp-Connector class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Edge Clamp Connector</h1>
+
+<p>Clamp style connector allowing you to join the edges of plywood or other materials together.</p>
+
+<p>This edge clamp connector was inspired by the commercial connectors made by Ply Products (https://www.plyproducts.com) and Playwood (https://www.playwood.it). If you don't want to make your own or are looking to save time; please buy their connectors!</p>
+
+<p>I created this as proof of concept and it certainly needed a bit more refinement, and that's where you come in! Please use, make, modify and submit your changes and feedback for all to benefit from!</p>
+
+<p>This connector was designed for creating a 90-degree joint between 1/2" (12.7 mm) to 3/4" (19 mm) stock (plywood, OSB, lumber, etc.). I used a 1-1/4" #8-32 machine screw and nut (it's what I had on hand); you will need a longer nut for 3/4" stock. </p>
+
+<p><strong>Side view:</strong>
+<img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Edge-Clamp-Connector/master/pictures/IMG_2682.jpg" alt="alt text" class="page_img" /></p>
+
+<p><strong>Top view:</strong>
+<img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Edge-Clamp-Connector/master/pictures/IMG_2683.jpg" alt="alt text" class="page_img" /></p>
+
+<p><strong>Bottom view</strong>
+<img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Edge-Clamp-Connector/master/pictures/IMG_2685.jpg" alt="alt text" class="page_img" /></p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCommunityGarden/Edge-Clamp-Connector/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h3>About the files in this repository:</h3>
+
+<p><strong>Corner Connector v15.f3d:</strong> The Fusion360 model uses a user defined parameter for "materialThickness" this may need to be changed for your application and in hindsight I probably should have set the file up differently with parameters for Material Thickness, edge lengths, angles (90, 105, 150); that way a user could just adjust those for what they want.</p>
+
+<p><strong>edgeclamp-75.nc:</strong> This was the NC g-code file that I used to cut the POC connector out of 3/4" (actually 23/32") CDX plywood. There is some optimization that can be done on this g-code; this is the first time I just Fusion360's CAM module to create g-code for the Maslow. </p>
+
+<p><strong>Construction:</strong> 
+1. To construct the clamp you will need to cut 2 outer pieces and 2 inner pieces (i.e. run the g-code twice)
+1. Glue the 2 out pieces together and the 2 inner pieces. This is to double up the clamp; so if you are using 3/4" stock the resulting piece from gluing are 1.5" thick. 
+1. Drill a hole that corresponds to your screw through the center of each part (like in the pictures). Countersink the nut if you want (this will allow you to use shorter screws, just leave enough material in there). 
+1. Insert screw and nut. 
+1. Clamp something together.</p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/Edge-Clamp-Connector.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCommunityGarden/Edge-Clamp-Connector/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>This project was inspired by the Ply Products and PlayWood plywood connectors which work in a similar way.</p>
+
+<p>You can purchase PlyProducts connectors <a href="https://www.plyproducts.com/">here</a></p>
+
+<p>You can purchase PlayWood connectors <a href="https://www.playwood.it/">here</a></p>
+
+<p>For the POC a 1-1/4" #8-32 machine screw and nut was used, a longer screw will be need for 3/4" stock.</p>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>

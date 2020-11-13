@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Community Garden Website</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Community Garden Website</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCommunityGarden/Website/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCommunityGarden/Website/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCommunityGarden/Website class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Community Garden Website</h1>
+
+<p>This is the code which generates the Maslow Community Garden website which you are most likely reading. Meta right?</p>
+
+<p>The community garden exists as a place to help facilitate collaborative open source projects.</p>
+
+<p>The garden is a project of the <a href="https://www.maslowcnc.com">Maslow CNC</a> community. Everyone is welcome and pull requests to improve the site are appreciated.</p>
+
+<p>Every five minutes the website is automatically generated from a list of tracked Github repositories. The website is generated from a python script.</p>
+
+<p>You can build your own version of the site by running the python script <code>python buildSite.py</code> the home page will be index.html. This can also be a good way to test any proposed changes to the design of the site.</p>
+
+<p>The order in which the projects are displayed on the page is based on the number of stars that the project has received on GitHub. The more stars the closer to the top of the page the project will appear.</p>
+
+<p>You can link directly to the instructions tab of any project page by adding the text <code>?instructions=true</code> to the end of the link URL for example: http://maslowcommunitygarden.org/Website.html?instructions=true will take you to the instructions tab for this project.</p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCommunityGarden/Website/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h1>How to create a project</h1>
+
+<p>To create a new project click the "Add A Project" button at the top of the page. This will take you to a simple form to create a new project.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/CreateAProject/BlankForm.JPG" alt="create a new project" class="page_img" /></p>
+
+<p>The form is designed to allow you to create a new project quickly and easily. Most of the elements of the project can be changed later if you want.</p>
+
+<p>The form will ask you for the following things:</p>
+
+<ul>
+<li><strong>Project Title</strong> This is the name of the project. It cannot be changed later because it will be used to choose the URL for the project.</li>
+<li><strong>A Project Description</strong> A short description of what the project is.</li>
+<li><strong>Your GitHub Username</strong> This is your username for <a href="https://github.com/">GitHub</a>. This is important because GitHub is the system we use for collaboration. You will automatically be sent an email invitation through github giving you access to edit the project files. Don't have an account? Make a free one <a href="https://github.com/join">here</a>.</li>
+<li><strong>A Main Picture</strong> This picture will show up in the list of projects in the community garden.</li>
+<li><strong>A Zip Folder of Project Files</strong> These are the files which your project will start off with. Files can easily be updated, added, or removed later. If the project has very large files it is probably easier to upload them later.</li>
+<li><strong>How do you want the project controlled</strong> If you select "community managed" the community will be able to vote to approve or reject proposed changes to the project (you will still be able to make changes as the creator). If you choose that you want to manage then ONLY YOU will be able to approve changes to the project.</li>
+</ul>
+
+<p>When you are ready click "Create" and your project will be generated! </p>
+
+<p>The website refreshes every few minutes so it may be several minutes before your project shows up.</p>
+
+<p>Questions or comments? Let us know in <a href="https://forums.maslowcnc.com">the forums</a></p>
+
+<h1>How to edit, update, or add files to a project you created</h1>
+
+<p>As soon as your project is created an invitation will be emailed to you inviting you to have direct access to the project. The invitation looks like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Invitation.JPG" alt="github invitation" class="page_img" /></p>
+
+<p>After accepting the invitation you can:</p>
+
+<h3>Edit any page</h3>
+
+<p>Edit any page by clicking the the "Edit this page" button on any page</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editthispage.JPG" alt="edit this page" class="page_img" /></p>
+
+<p>and then clicking the pen icon in the upper right corner to edit the file.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG" alt="edit this file" class="page_img" /></p>
+
+<p>It can take several minutes for your changes to show up on the website.</p>
+
+<p>The "What's Markdown" section below can help you make your page look beautiful.</p>
+
+<h3>Remove any file</h3>
+
+<p>To remove any file press the "Source" button from your project's page</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/SourceBtn.JPG" alt="source btn" class="page_img" /></p>
+
+<p>Click the file you want to delete, then click the trash can icon in the upper right.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Deletefile.JPG" alt="delete this file" class="page_img" /></p>
+
+<h3>Upload new files</h3>
+
+<p>To remove any file press the "Source" button from your project's page</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/SourceBtn.JPG" alt="source btn" class="page_img" /></p>
+
+<p>Then click the "Upload Files" button in the upper right.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Uploadfiles.JPG" alt="upload files" class="page_img" /></p>
+
+<h1>How to edit, update, or add files to a project created by someone else</h1>
+
+<p>The real power of GitHub is that anyone can edit any file or page. There is one big difference between when the creator of a project edits a page and when anyone else does and that is that while the creator of a project can simply make changes at will, everyone else has to propose a change and have it approved by the project creator or the community.</p>
+
+<p>The process of contributing to a project that you didn't create is similar to the instructions above for a project you did create with the additional step of needing to ask permission.</p>
+
+<p>Let's demonstrate by editing the text on one of the project pages. First click the "Edit this page" button on any page.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/clickedit.png" alt="click the edit button" class="page_img" /></p>
+
+<p>Then click the pencil icon on in the upper right corner.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/editpencil.png" alt="click the edit file pencil" class="page_img" /></p>
+
+<p>Notice that there will be a notice at the top of the file. Scroll down and make your edits.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/editthefile.png" alt="see warning and edit" class="page_img" /></p>
+
+<p>When you are ready to propose your changes, click the "Propose a change" button at the bottom of the page.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/clickproposefilechange.png" alt="click propose a change" class="page_img" /></p>
+
+<p>Requests to change a file in GitHub are called "Pull Requests". Press the "Create pull request" button to create one</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/presscreatepullrequest.png" alt="create a pull request" class="page_img" /></p>
+
+<p>Enter a description of what changes you made and why they should be included, then press "Send pull request". Your changes have now been submitted for approval! Congratulations! </p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditAnyPage/sendpullrequest.png?raw=true" alt="send pull request" class="page_img" /></p>
+
+<h1>What's Markdown?</h1>
+
+<p>Markdown is a language which lets you edit the feel of a file with from a text editor. It supports behaviors like bold text, hyperlinks, imbeded images, lists and tables, and more!</p>
+
+<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">This Markdown quick reference guide</a> can help you get a better understanding of how to format your text...or just leave it plain if you don't want to bother.</p>
+
+<h1>How to add pictures to a page</h1>
+
+<p>To add a picture to your page embed it with the markdown text <code>![some description of the picture](link-to-the-picture)</code></p>
+
+<p>For us the images are usually hosted within the github repository for the project. To find the link to the picture click on the picture in the project repository, then right click and select "Open image in new tab".</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/ImbedAnImage/openinnewtab.JPG" alt="open image in a new tab" class="page_img" /></p>
+
+<p>Use the URL at the top of the page for the link to the picture. It should be something like</p>
+
+<p><code>https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG</code> </p>
+
+<p>Note that URLs which look like </p>
+
+<p><code>https://raw.githubusercontent.com/MaslowCommunityGarden/Website/master/Instructions/EditYourProject/Editfile.JPG</code> </p>
+
+<p>will render properly on github itself, but the image won't show up on the project page in the community garden.</p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/Website.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCommunityGarden/Website/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>Every project in the community garden has a "Buy" tab which contains a BOM and ideally links to buy the necessary parts to make the project.</p>
+
+<p>This tab fulfills two important roles. </p>
+
+<p>First, since most of the projects we are working on here are physical things in the real world it having a reference to the right hinge, bolt, or paint to make a project work is important.</p>
+
+<p>Second, while the community garden is designed to be very low cost to run, it would be ideal for the garden to be self sustaining to ensure it's future. Linking to for sale items could some day cover the operating costs of the garden.</p>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>

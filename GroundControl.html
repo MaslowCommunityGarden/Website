@@ -1,0 +1,278 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Ground Control</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Ground Control</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCNC/GroundControl/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCNC/GroundControl/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCNC/GroundControl/releases class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCNC/GroundControl class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Ground Control</h1>
+
+<p>Ground Control is the program which allows you to control the Maslow CNC machine.</p>
+
+<p><strong><em>Note:</em></strong> Ground Control has been superseeded by Web Control which is a community led project. For new installs consider using Web Control instead.</p>
+
+<p>======================</p>
+
+<h2>Overview</h2>
+
+<p>Ground Control is the program which allows you to control the <a href="http://www.maslowcnc.com/">Maslow CNC machine</a>.</p>
+
+<p>From within Ground Control, you can move the machine to where you want to begin a cut, calibrate the machine, open and run a <a href="/wiki/G-Code-and-MaslowCNC">g-code</a> file, or monitor the progress of an ongoing cut.</p>
+
+<p>At present, the UI looks like this:</p>
+
+<p><img src="/Documentation/GroundControl.jpg" alt="UI" class="page_img" /></p>
+
+<p>Ground Control is written in <a href="https://www.python.org/">Python</a>. It was chosen because it has good cross platform support and is relatively simple to work with.</p>
+
+<p>Two of the goals of Ground Control are:</p>
+
+<p>1) It runs on as many platforms as possible.
+2) It is as easy as possible for members of the community to contribute to making the program better.</p>
+
+<h3>Index</h3>
+
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#development-setup">Development Setup</a></li>
+<li><a href="#support">Support</a></li>
+<li><a href="#how-to-contribute">How To Contribute</a></li>
+<li><a href="#program-data-flow">Program Data Flow</a></li>
+<li><a href="#beginners-tips">Beginner's Tips</a></li>
+</ul>
+
+<hr />
+
+<h2>Installation</h2>
+
+<p>For Windows and OS X binaries, see the <a href="https://github.com/MaslowCNC/GroundControl/releases">releases</a> page.</p>
+
+<p>For help installing binaries, see the <a href="https://github.com/MaslowCNC/GroundControl/wiki#gc-installation-guides">installation guides</a>.</p>
+
+<h2>Documentation</h2>
+
+<p>Ground control documentation is available on the <a href="https://github.com/MaslowCNC/GroundControl/wiki">project wiki</a>.</p>
+
+<p>For help in using Ground Control, see the <a href="https://github.com/MaslowCNC/GroundControl/wiki/Ground-Control-Users-Guide">users guide</a>.</p>
+
+<h2>Development Setup</h2>
+
+<p>Ground Control is built using the 2.7.x version of the Python language. 2.7 was chosen instead of 3.x because the support for compiling binaries for the 3.x version is not good enough yet.</p>
+
+<p>Maslow uses the <a href="https://kivy.org/#home">Kivy framework</a> for the UI  and the <a href="https://pythonhosted.org/pyserial/">pyserial</a> module for USB communication.</p>
+
+<p>You might also consider taking a look at <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">Virtual Environments</a> to save you from python version headaches later on. This is not a prerequisite for installation on any platform.</p>
+
+<h3>Windows</h3>
+
+<p>To setup your computer to run Ground Control from the source code, first download and install <a href="https://www.python.org/downloads/">Python version 2.7.x</a>.</p>
+
+<p>Once you have installed Python 2.7.x, open the command prompt and type</p>
+
+<p><code>bat
+python --version
+</code></p>
+
+<p>You should then see something similar to this:</p>
+
+<p><code>bat
+Python 2.7.11
+</code></p>
+
+<p>If python does not open, it is most likely an issue with the <code>PATH</code> environment variable.</p>
+
+<p>For more information about configuring the <code>PATH</code> in Windows, see <a href="http://superuser.com/questions/143119/how-to-add-python-to-the-windows-path">superuser: How to add python to the windows path</a>.</p>
+
+<p>Next, you need to install Kivy and Pyserial. Fortunately, python comes with a built in package manager, <code>pip</code> which will install both of them for you.</p>
+
+<h4>Installing pyserial</h4>
+
+<p>To install pyserial, type:</p>
+
+<p><code>bat
+python -m pip install pyserial
+</code></p>
+
+<h4>Installing Kivy</h4>
+
+<p>Installing Kivy is a little more complicated. First, check to make sure your version of <code>pip</code> is up to date by running:</p>
+
+<p><code>bat
+python -m pip install --upgrade pip wheel setuptools
+</code></p>
+
+<p>then install dependencies:</p>
+
+<p><code>bat
+python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
+</code></p>
+
+<p>and finally install Kivy:</p>
+
+<p><code>bat
+python -m pip install kivy
+</code></p>
+
+<h3>OS X</h3>
+
+<p>To install Python on OS X, first install <a href="https://brew.sh/">Homebrew</a></p>
+
+<p><code>bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></p>
+
+<p>then install Python:</p>
+
+<p><code>bash
+brew install python
+</code></p>
+
+<p>Install required dependencies:</p>
+
+<p><code>bash
+pip install -r requirements_osx.txt
+</code></p>
+
+<h3>Linux</h3>
+
+<p>Python is bundled with all major linux distributions.  You can confirm the version of python you have installed with:</p>
+
+<p><code>bash
+python --version
+</code></p>
+
+<p>See documentation for your linux distro on how to install Python 2.7.x if it is not installed.</p>
+
+<p>Once Python 2.7.x is installed, install required dependencies:</p>
+
+<p><code>bash
+pip install -r requirements_linux.txt
+</code></p>
+
+<h3>Running Ground Control</h3>
+
+<p>Ground Control can be run from the command line. From within the project folder, run the following:</p>
+
+<p><code>bash
+python main.py
+</code></p>
+
+<h2>Support</h2>
+
+<p>If you have any questions or issues with this process please get in touch through the <a href="http://www.maslowcnc.com/forums/#!/dev">Maslow forums</a>.</p>
+
+<p>If you had any issues which you were able to resolve, please consider raising a Pull Request on this <code>README.md</code> file with corrections or additions.  For more information, see <a href="#how-to-contribute">How To Contribute</a> below.</p>
+
+<h2>How To Contribute</h2>
+
+<p>Maslow is an open source project, get involved!</p>
+
+<h3>Bugs</h3>
+
+<p>If you find a bug in the software, report it on the <a href="/issues">issues page</a>.</p>
+
+<h3>Feature requests</h3>
+
+<p>If you have an idea for a new feature, let us know in the <a href="http://www.maslowcnc.com/forums/#!/dev">Maslow forums</a>.</p>
+
+<h3>Contributing</h3>
+
+<p>If you want to get involved, say hi in the <a href="http://www.maslowcnc.com/forums/#!/dev">Maslow forums</a>.</p>
+
+<p>If you've already jumped in and started making the software better, feel free to submit a pull request! You can learn more about how to do that here <a href="https://help.github.com/articles/creating-a-pull-request/">Github Help: Creating a pull request</a></p>
+
+<h2>Program Data Flow</h2>
+
+<p><img src="/Documentation/GroundControlDataFlow.png" alt="Program Data Flow" class="page_img" /></p>
+
+<h2>Beginner's Tips</h2>
+
+<h3>In the .kv file:</h3>
+
+<p>Kivy uses groundcontrol.kv as a description language for most of the widgets in GroundControl; some tips:
+1. Class References: 
+    <code>root.X</code> refers to things inside the class.  You can add your own variables, but they don't get initialized in time to be used (so root.data doesn't work)
+    but you can use <code>app.X</code> to refer to things in the app namespace, so <code>app.data</code> will always work.  BUT you must define the variable in <code>DataStructures/data.py</code>;
+    things put in the data dict at runtime <em>will not work</em>.</p>
+
+<ol>
+<li><p>Formatting:
+You can include format strings and logic in the .kv file; eg <code>text: "{Z: %.2f}"%app.data.zPos</code> will automatically expand/update when <code>app.data.zPos</code> changes.
+But, if it's a text input field, you need to hook the field to an event -- changing the text in the box <em>will not</em> update <code>app.data.zPos</code>.</p></li>
+<li><p>Referring to UI bits in code:
+If you want to refer to a widget in the code, you need to give it an id, <em>and</em> you need to put a <code>id:id</code> statement after the widget definition starts
+Otherwise, you won't be able to access it in the code.  If you put an <code>id:id</code> statement in place but you don't declare a widget with that id, it will
+crash when you bring up the widget.</p></li>
+<li><p>Attributes:
+Most attributes (eg. <code>text_size</code>, <code>multiline</code>, <code>disabled</code>, etc) are not inheritable (you can't set the attribute in the "GridLayout" portion); 
+they have to be decorated on each control.</p></li>
+<li><p>Layouts:
+GridLayout's et al don't support "span" to span columns or rows.  If you want to do that kind of thing, redo the grid to the large size and put
+sub-GridLayouts in the cells.   Try to make the cells the same size so they line up nicely.
+The Layouts will not actually work unless you have <code>rows</code> &amp; <code>columns</code> attributes in them.  The log file will complain about this, so watch for it.
+You can auto-size-to-the-minimum <em>sometimes</em> with <code>size_hint_x: None</code>.  But if you give it a 2 (ie, <code>size_hint_x: 2</code> for 2%), it always works 
+kinda (it always works but may not do what you expected).</p></li>
+<li><p>Coordinate Systems:
+Kivy defines things as origin is bottom-left, an increasing Y is up, increasing X is right.
+Please use <code>self.origin</code> in the code -- if you draw something, 0,0 is the bottom-left of the application, not the bottom-left of your widget.</p></li>
+<li><p>Events:
+Always bind to the <code>on_touch_up</code> event.  If you bind to the <code>on_touch_down</code> instead, you get a behavior that looks like a click-through:</p>
+
+<ul>
+<li>You catch the <code>on_touch_down</code>, and pop-up a menu with a button on it.</li>
+<li>The mouse is still down... so it will select a file (if file_dialog), or if the next dialog catches the <code>on_touch_up</code> event, it will fire as soon as the click is released</li>
+</ul></li>
+</ol>
+
+<h3>Python Tips:</h3>
+
+<ol>
+<li>If an object begins with a capital letter, it is a global object (eg, <code>CanvasSize=4</code>).  Don't do <code>CamelCase</code>; do <code>camelCase</code> instead.</li>
+<li>If you want to persist values across functions, they need to be in the object-space (<code>self.x</code>) or in the global-space (<code>CanvasSize</code>), or in App-space 
+(<code>app.data.X</code> or <code>self.data.X</code> after init)
+If you use a variable without the <code>self.</code>, it will work but it won't be persisted, so it can be annoying to figure out what (didn't) happened.</li>
+<li>If you want to call another function in your class, preface it with <code>self.</code> (eg, <code>self.recomputethis()</code> -- and the self arg gets passed in automagically)</li>
+<li>Always remember to call the super if you're implementing <code>__init__</code></li>
+<li>Remember - your dialog/widget/etc can go away <em>without</em> calling the callback function - the user just clicks back to the main window.
+Don't count on the callback to save state.  Don't use the callback to put the machine in a known state (because it may not get executed).</li>
+<li>Dialogs don't get to close themselves; when your <code>self.done</code> is executed, call your callback function, and your parent can get data out of 
+your dialog and is responsible for closing you.  But see rule #5.</li>
+<li>Remember - Python is case-sensitive... and filename/directory/case sensitive as well.</li>
+<li>Much mumbo-jumbo about how to save data in the .ini file</li>
+<li>Some mumbo-jumbo about how to use the logger</li>
+<li>If you need to send a command to Maslow, use the <code>self.data.gcode_queue.put('GCode-Here')</code></li>
+<li>Mumbo-jumbo about how to get data back from Maslow</li>
+<li>On the g-code canvas, 0,0 is the center, and bottom-left is -X,-Y (y axis is reversed compared to old computer code, but "usual" in math terms).</li>
+<li>json does not know about tuples.  It will make the variables a <em>list</em> and if your functions can't handle that, you need to convert them.</li>
+</ol>
+
+<h3>General UI Layout:</h3>
+
+<ul>
+<li>frontPage - is the root host for all widgets.
+<ul>
+<li>screenControls - has all the buttons on the main screen (both the top bar and the right side)</li>
+</ul></li>
+</ul>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCNC/GroundControl/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p><strong>Note</strong> GroundControl was the original control software written by @BarbourSmith for the Maslow CNC. Since then WebControl was introduced and is now considered the goto control software. You can still download and use GroundControl, but developement has stopped, any you will find less and less support for it as memories fade. We recommend you use WebControl.</p>
+
+<p>Ground Control is the program which runs on your computer and lets you control your machine. It provides controls to move the machine around, gives you a digital position readout, and lets you open and run Gcode files.</p>
+
+<p>Ground Control is free and is updated every other week with new features.</p>
+
+<p>Ground Control runs on Windows, Mac, and Linux computers.</p>
+
+<p>Click below for instructions to install Ground Control on your system:</p>
+
+<ul>
+<li><p><a href="https://github.com/MaslowCNC/GroundControl/wiki/Windows">Windows computer</a></p></li>
+<li><p><a href="https://github.com/MaslowCNC/GroundControl/wiki/Mac">Mac computer</a></p></li>
+<li><p><a href="https://github.com/MaslowCNC/GroundControl/wiki/Linux">Linux computer</a></p></li>
+<li><p><a href="https://github.com/MaslowCNC/GroundControl/wiki/Raspberry-Pi">Raspberry Pi</a></p></li>
+</ul>
+
+<h3>Please note:</h3>
+
+<p>The first time you open Ground Control you will need to tell it how to connect to your machine. Click <strong>Actions</strong> in the top left corner of the screen, click the <strong>Ports</strong> drop down to select the same port you chose when uploading the firmware, then press <strong>Connect</strong>. Your choice will be remembered so you do not need to do this step again.</p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCNC/GroundControl/master/Documentation/Choose%20Port.png" alt="choose a port" class="page_img" /></p>
+
+<p>Here is the <a href="https://github.com/MaslowCNC/GroundControl/wiki/Ground-Control-Users-Guide">Ground Control Users Guide</a></p>
+
+<p><img src="https://raw.githubusercontent.com/MaslowCNC/GroundControl/master/mainpicture.jpg" alt="Maslow Ground Control" class="page_img" /></p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/GroundControl.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCNC/GroundControl/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>Ground Control is free and open and always will be!</p>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>
