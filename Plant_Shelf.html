@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> Plant Shelf</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> Plant Shelf</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/AaronVerDow/Plant_Shelf/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/AaronVerDow/Plant_Shelf/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/AaronVerDow/Plant_Shelf class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>Plant Shelf</h1>
+
+<p>Parametric plant shelf.  The photographed version can be cut from a single sheet of plywood.</p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/AaronVerDow/Plant_Shelf/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h1>Instructions for new users</h1>
+
+<ul>
+<li>Download the scad files and keep them in the same directory. <br />
+<ul>
+<li>joints.scad is a library that creates the pins for connecting parts</li>
+<li>plant_shelf.scad contains the meat of the code</li>
+<li>assembled.scad shows a 3D view of the assemlbed box</li>
+<li>cutsheet.scad files are for generating the 2D output for actually cutting</li>
+</ul></li>
+<li>Open assembled.scad and optionally cutsheet.scad in OpenSCAD</li>
+<li>Make sure Design -> Automatic Reload and Compile is checked</li>
+<li>Edit plant_shelf.scad in a text editor.  After saving changes the OpenSCAD windows should update. </li>
+<li>Play with the numbers to create the box you want.  A visual representation of what the different variables do is shown below.</li>
+<li>Once complete render the 2D files by pressing F6</li>
+<li>File -> Export DXF or SVG</li>
+<li>The cutsheets aren't smart enough to scale for all box sizes.  Some options to fix this:
+<ul>
+<li>Edit functions.scad</li>
+<li>Try to drag the drawings in your CAM program.  Some will support this.</li>
+<li>Open the DXF or SVG in Inkscape</li>
+<li>Post a copy of variables.scad on the Maslow forums.  I <em>might</em> be able to post a fixed cutsheet module.  </li>
+</ul></li>
+</ul>
+
+<h1>Variables</h1>
+
+<p>Below is a visual representation of changing some of the variables.</p>
+
+<h2>height_demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/height_demo.gif" alt="" class="page_img" /></p>
+
+<h2>shelf<em>x</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/shelf_x_demo.gif" alt="" class="page_img" /></p>
+
+<h2>shelf<em>y</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/shelf_y_demo.gif" alt="" class="page_img" /></p>
+
+<h2>side<em>gap</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/side_gap_demo.gif" alt="" class="page_img" /></p>
+
+<h2>shelf<em>offset</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/shelf_offset_demo.gif" alt="" class="page_img" /></p>
+
+<h2>side<em>angle</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/side_angle_demo.gif" alt="" class="page_img" /></p>
+
+<h2>side<em>back</em>angle_demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/side_back_angle_demo.gif" alt="" class="page_img" /></p>
+
+<h2>side<em>wall</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/side_wall_demo.gif" alt="" class="page_img" /></p>
+
+<h2>wood_demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/wood_demo.gif" alt="" class="page_img" /></p>
+
+<h2>shelves_demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/shelves_demo.gif" alt="" class="page_img" /></p>
+
+<h2>shelf<em>start</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/shelf_start_demo.gif" alt="" class="page_img" /></p>
+
+<h2>shelf<em>end</em>demo</h2>
+
+<p><img src="https://raw.githubusercontent.com/AaronVerDow/Plant_Shelf/master/animations/output/shelf_end_demo.gif" alt="" class="page_img" /></p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/Plant_Shelf.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/AaronVerDow/Plant_Shelf/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><ul>
+<li>Plywood</li>
+<li>Wood glue </li>
+<li>Nail gun?</li>
+</ul>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>
