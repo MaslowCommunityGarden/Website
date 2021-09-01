@@ -4,6 +4,7 @@ from markdown2      import Markdown
 from projectClass   import Project
 import              json
 import              re
+import              string
 
 class GenerateHTML:
     
@@ -335,6 +336,9 @@ class GenerateHTML:
             
             classesDict = {'img':'page_img'}
             markdowner = Markdown(extras={"tables": None, "html-classes":classesDict}) #allows for the conversion of markdown files into html
+            
+            printable = set(string.printable)
+            project.projectName = filter(lambda x: x in printable, project.projectName)
             
             readmeText          = markdowner.convert(project.READMEtext)
             instructionsText    = markdowner.convert(project.INSTRUCTIONStext)

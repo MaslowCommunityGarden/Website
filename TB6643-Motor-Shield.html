@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><link href='styles.css' rel='stylesheet' /><link href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css' rel='stylesheet' /><title> TB6643 Based Power Control Shield</title><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script></head><body><header class = 'header'><div class='inner-header'><nav class='navigation'><a href='index.html' class='one-col'><img src='logo.png' style='width:auto;height:90px;border:0;'></a><a href='howdoesthegardenwork.html' class='nav-link button one-col'>How Does the Garden Work?</a><a href='addaproject.html' class='nav-link button one-col'>Add A Project</a></nav></div></header><section class = 'content'><div class = 'ProjectName'><h1 class='title'> TB6643 Based Power Control Shield</h1></div><div class='tab three-col'><button class="tablinks" onclick="openTab(event, 'Files'       )" id="defaultOpen">Files</button><button class="tablinks" onclick="openTab(event, 'Instructions')" id="instructionsBTN">Instructions</button><button class="tablinks" onclick="openTab(event, 'Forums'      )">Forums</button><button class="tablinks" onclick="openTab(event, 'Buy'         )"id="buyBTN">Buy</button></div><div id='Files' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Files</h3><a href=https://github.com/MaslowCommunityGarden/TB6643-Motor-Shield/blob/master/README.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><table><tr><td class='project_image_area two-col'><img src=https://raw.githubusercontent.com/MaslowCommunityGarden/TB6643-Motor-Shield/master/mainpicture.jpg class = 'project_page_image'></td><td><a href=https://github.com/MaslowCommunityGarden/TB6643-Motor-Shield/archive/master.zip class = 'button one-col'>Download Files</a><a href=https://github.com/MaslowCommunityGarden/TB6643-Motor-Shield class = 'button one-col' target='_blank'>Source</a></td></tr></table><div class='three-col'><h1>TB6643 Based Power Control Shield</h1>
+
+<p>A Malsow power control shield based on the Toshiba TB6643 Thru-hole Motor Driver IC</p>
+
+<h1>Project Background:</h1>
+
+<p>The original Maslow shield uses a pair of simple surface-mount motor-control chips, the L298P013TR, to control the motors. Each chip can control two motors, up to a total of 4 amps divided between the motors. Only three motors are provisioned in the release version of the board. There has been concern about the current capacity of these chips and there have been instances where the chips have been damaged when software malfunctioned. Once a chip is damaged, the board would require replacing a 20-pin surface-mount chip to repair.</p>
+
+<p>Subsequently, an open source improvement to the original Maslow shield was developed and released on the Maslow Community Garden. These shields utilized the TLE5206 Motor Driver IC's and provided a substantial improvement over the original design. Over time however, the TLE5206 IC's have become harder to source.</p>
+
+<p>This project's goal was to modify the open source TLE thru-hole design to allow for the use of an easier to obtain and more readily available chip. It became apparent that a simple chip swap was not possible and a complete re-design of the board was necessary. As much as possible however, the intent of the original TLE based solution was maintained.</p>
+
+<h1>Intended User</h1>
+
+<p>The intended users of this shield are those who want to maintain the open source nature of the hardware design and want the added challenge of building their own controller. There are several commercialy available controller shields available to the community and most users will probably be best served by purchasing one of those.</p>
+
+<h1>Project Disclaimer</h1>
+
+<p>I started this project as a way to ensure that there was a motor control shield of last resort that is of current design and available to the community should any of the current vendors either cease vending or go closed source with their designs. I should mention that prior to this project, I had never designed a PCB before. I had never used EagleCAD before. I had never ordered a PCB from a manufacturer before. Other than downloading source code, I had never really used GitHub before. My coding skills are nearly non-existent and I have had to rely on others for the vast majority of the software support and a fair bit of the hardware support. This project is very much a case of someone knowing a little bit of a lot of things, bumbling his way through the process. </p>
+
+<p>This project is by no means complete. The bulk of the design work was accomplished through brute force and ignorance. Therefore opinions, suggestions, and changes by others that are probably far more qualified than I are most welcome.</p>
+
+<h1>Design Features:</h1>
+
+<ul>
+<li>Separate controller chip for each motor channel</li>
+<li>Higher current capacity (4.5 amps) per motor (compared to the original Maslow Control Shield)</li>
+<li>Thru-hole design to aid hand assembly and repair</li>
+<li>Board-mounted heat sinks for improved heat dissipation</li>
+<li>Shield mounting holes that correspond to the Arduino Megga mounting hole pattern</li>
+<li>AUX pins moved to an extended end of the board which include:
+4 digital AUX pins
+2 analog/digital AUX pins
+3 PWM-capable digital AUX pins</li>
+<li>AUX 1 is reserved for use as the spindle power control signal output</li>
+<li>AUX 4 is reserved for use as the Z-Axis zero probe input</li>
+<li>Board version ID pins avoids using SPI pins</li>
+</ul>
+
+<h1>Design Overview</h1>
+
+<p>BOARD</p>
+
+<p><img src="https://user-images.githubusercontent.com/45378122/128949810-b847e005-7730-46d1-b915-a6621299a94f.jpg" alt="TB6643KQ MegaShield<em>1 8a</em>BRD" class="page_img" /></p>
+
+<p>SCHEMATIC</p>
+
+<p><img src="https://user-images.githubusercontent.com/45378122/128949826-9fa7c070-1250-4d74-9fb4-404bf2126c70.jpg" alt="TB6643KQ MegaShield<em>1 8a</em>SCH" class="page_img" /></p>
+
+<p>UNPOPULATED PCB </p>
+
+<p><img src="https://user-images.githubusercontent.com/45378122/130371717-2cca9319-fa36-4fd9-8b40-77969bc52fd3.jpeg" alt="TB6643<em>1 8a</em>PCB" class="page_img" /></p>
+
+<p>MANUFACTURER CHIP SPECIFICATIONS (From Toshiba)</p>
+
+<p>The TB6643KQ is a full-bridge DC motor driver IC employing the MOS process for output power transistors. The low ON-resistance MOS process and PWM control enables driving DC motors with high thermal efficiency. Four operating modes are selectable via IN1 and IN2: clockwise (CW), counterclockwise (CCW), Short Brake and Stop.</p>
+
+<p>Features:
+- Power supply voltage: 50 V (max)
+- Output current: 4.5 A (max)
+- PWM control
+- Overcurrent shutdown circuit (ISD)
+- Overvoltage shutdown circuit (VSD)
+- Thermal shutdown circuit (TSD)
+- Undervoltage lockout circuit (UVLO)</p>
+</div></div><div id='Instructions' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Instructions</h3><a href=https://github.com/MaslowCommunityGarden/TB6643-Motor-Shield/blob/master/INSTRUCTIONS.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><h1>File Location</h1>
+
+<p>All EagleCAD design files, parts library, BOM's, CAM data, and manufacturers specification sheets are located in the "TB6643 Design Files" Directory. I created a custom EagleCAD parts library specificaly for this project. In order to use the library, you will need to copy the library file to the $Home\Documents\EAGLE\libraries folder or whatever folder your installation of Eagle uses for a library location. You will then need to enable the library for use in EagleCAD.</p>
+
+<h1>Firmware Compatibility</h1>
+
+<p>MaslowCNC:master branch:
+- Firmware has been updated to include support for this shield.
+- Updated firmware can be downloaded <a href="https://github.com/MaslowCNC/Firmware">HERE</a></p>
+
+<p>WebControl:master branch:
+- A pull request has been submitted to include support for this shield.</p>
+
+<p>WebControl:holey branch:
+- A pull request has been submitted to include support for this shield.
+- Beta WebControl:holey firmware can be found <a href="https://forums.maslowcnc.com/t/good-news-and-bad-news/16922/13?u=Orob">HERE</a>.</p>
+
+<p>Firmware support by other suppliers is unknown at this time.</p>
+
+<h1>PCB Ordering Notes</h1>
+
+<p>The EagleCAD design files (BRD and SCH) can be used to generate the necessary CAM data required by PCB suppliers. Alternatively, the "TB6643KQ MegaShield<em>1.8a</em>2021-08-08 (CAM Data).zip" file is the pre-generated CAM output and can also be used to order the PCB's.</p>
+
+<p>JLC PCB SPECIFIC ORDERING REQUIREMENTS</p>
+
+<p>These considerations are specific to JLC PCB orders only, they may not be applicable to other PCB manufacturers.</p>
+
+<p>At least one manufacturer (JLC PCB) will silkscreen their order number in any available location on the PCB. It is my preference to keep this number as it serves as a handy serial number reference for the batch of boards I order. You can select the option to remove the order number entirely but that is an extra cost. Therefore, the .BRD file contains a reference on the silkscreen layer for "JLCJLCJLCJLC". This is used by JLC to locate their order number on the board in the area indicated. When ordering, be sure to select the option to "specify loction" under the order number section and make the following reference to this in the order notes:</p>
+
+<pre><code>  "Please locate the JLC Order Number in the area indicated."
+</code></pre>
+
+<p>SLOTTED HOLES</p>
+
+<p>The .BRD file contains a detail on milling layer 46 to tell the PCB manufacturer that there are three slotted holes to acomidate the D.C. power jack. These are indicated by three oblong holes in the part footprint. To make sure the manufacturer understands what is intended, include the follwing notation in the order notes:</p>
+
+<pre><code>  "Please note the GKO layer contains slotted holes to accomidate the pins of a DC power jack. These holes are to be made as oval, plated slots."
+</code></pre>
+
+<h1>Assembly Considertations</h1>
+
+<p>Due to their length, it is necessary to trim the IC pins after soldering. Failure to do so will result in the pins contacting the Arduino Megga and causing eratic operation and possible damage to either device.</p>
+
+<p>Apply thermal compound between the IC's and heatsinks.</p>
+</div></div><div id='Forums' class='tabcontent'><div class='tab-title'><h3 class='three-col'>Forums</h3></div><div id='discourse-comments', class = 'forums_section'><script type='text/javascript'>DiscourseEmbed = { discourseUrl: 'https://forums.maslowcnc.com/',discourseEmbedUrl: 'http://maslowcommunitygarden.org/TB6643-Motor-Shield.html' };(function() {var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);})();</script></div></div><div id='Buy' class='tabcontent'><div class='tab-title'><h3 class='two-col'>Buy</h3><a href=https://github.com/MaslowCommunityGarden/TB6643-Motor-Shield/blob/master/BOM.md class = 'edit_this_page_button' target='_blank'>Edit this page</a></div><br><br><br><br><div class='three-col'><p>The complete Bill of Materials can be found in the "TB6643 Design Files" Directory.</p>
+
+<p>Please note that the BOM lists EXACT quantities. It is recommended that additional spare components be ordered.</p>
+
+<p>The BOM lists the DigiKey part numbers in addition to the manufacturers part numbers.</p>
+
+<h1>PANDEMIC RELATED CHIP SHORTAGES</h1>
+
+<p>August, 2021 - Due to ongoing worldwide chip supply shortages, the TB6643 chips are experiencing extended delivery times. </p>
+</div></div><div class='three-col'><script>function openTab(evt, tabName) {var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName('tabcontent');for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = 'none';}tablinks = document.getElementsByClassName('tablinks');for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(' active', '');}document.getElementById(tabName).style.display = 'block';evt.currentTarget.className += ' active';var ifr = document.getElementById('discourse-embed-frame');ifr.src = ifr.src;}document.getElementById('defaultOpen').click();</script><script>if (window.location.search.indexOf('instructions=true') > -1 || window.location.search.indexOf('instructions=True') > -1) {document.getElementById('instructionsBTN').click();}if (window.location.search.indexOf('buy=true') > -1 || window.location.search.indexOf('buy=True') > -1) {document.getElementById('buyBTN').click();}</script></div></section><footer class='footer-basic-centered'  style='clear: both;'><div class='inner-footer'><p class='footer-company-motto three-col'>The garden is a project of the <a href='http://www.maslowcnc.com'>Maslow CNC</a> community.</p><p class='footer-company-name three-col'>All content available under license of creator.</p></div></footer></body></html>
