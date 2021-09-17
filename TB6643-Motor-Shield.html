@@ -6,9 +6,9 @@
 
 <p>The original Maslow shield uses a pair of simple surface-mount motor-control chips, the L298P013TR, to control the motors. Each chip can control two motors, up to a total of 4 amps divided between the motors. Only three motors are provisioned in the release version of the board. There has been concern about the current capacity of these chips and there have been instances where the chips have been damaged when software malfunctioned. Once a chip is damaged, the board would require replacing a 20-pin surface-mount chip to repair.</p>
 
-<p>Subsequently, an open source improvement to the original Maslow shield was developed and released on the Maslow Community Garden. These shields utilized the TLE5206 Motor Driver IC's and provided a substantial improvement over the original design. Over time however, the TLE5206 IC's have become harder to source.</p>
+<p>Subsequently, an open source improvement to the original Maslow shield was developed by user @blrfl and released on the Maslow Community Garden. These shields utilized the TLE5206 Motor Driver IC's and provided a substantial improvement over the original design. Over time however, the TLE5206 IC's have become harder to source.</p>
 
-<p>This project's goal was to modify the open source TLE thru-hole design to allow for the use of an easier to obtain and more readily available chip. It became apparent that a simple chip swap was not possible and a complete re-design of the board was necessary. As much as possible however, the intent of the original TLE based solution was maintained.</p>
+<p>This project's goal was to modify @blrfl's open source TLE thru-hole design to allow for the use of an easier to obtain and more readily available chip. It became apparent that a simple chip swap was not possible and a complete re-design of the board was necessary. As much as possible however, the intent of the original TLE based solution was maintained.</p>
 
 <h1>Intended User</h1>
 
@@ -69,28 +69,17 @@
 
 <h1>Firmware Compatibility</h1>
 
-<p>MaslowCNC:master branch:
-- Firmware has been updated to include support for this shield.
-- Updated firmware can be downloaded <a href="https://github.com/MaslowCNC/Firmware">HERE</a></p>
-
-<p>WebControl:master branch:
-- A pull request has been submitted to include support for this shield.</p>
-
-<p>WebControl:holey branch:
-- A pull request has been submitted to include support for this shield.
-- Beta WebControl:holey firmware can be found <a href="https://forums.maslowcnc.com/t/good-news-and-bad-news/16922/13?u=Orob">HERE</a>.</p>
-
-<p>Firmware support by other suppliers is unknown at this time.</p>
+<p>Firmware modifications are under development. The plan is to first implement the necessary modifications within the MaslowCNC:master branch and then merge those into the two WebControl branches (master and holey).</p>
 
 <h1>PCB Ordering Notes</h1>
 
-<p>The EagleCAD design files (BRD and SCH) can be used to generate the necessary CAM data required by PCB suppliers. Alternatively, the "TB6643KQ MegaShield<em>1.8a</em>2021-08-08 (CAM Data).zip" file is the pre-generated CAM output and can also be used to order the PCB's.</p>
-
-<p>JLC PCB SPECIFIC ORDERING REQUIREMENTS</p>
-
 <p>These considerations are specific to JLC PCB orders only, they may not be applicable to other PCB manufacturers.</p>
 
-<p>At least one manufacturer (JLC PCB) will silkscreen their order number in any available location on the PCB. It is my preference to keep this number as it serves as a handy serial number reference for the batch of boards I order. You can select the option to remove the order number entirely but that is an extra cost. Therefore, the .BRD file contains a reference on the silkscreen layer for "JLCJLCJLCJLC". This is used by JLC to locate their order number on the board in the area indicated. When ordering, be sure to select the option to "specify loction" under the order number section and make the following reference to this in the order notes:</p>
+<p>The EagleCAD design files (BRD and SCH) can be used to generate the necessary CAM data required by all PCB suppliers. Alternatively, the "TB6643KQ MegaShield<em>1.8a</em>2021-08-08 (CAM Data).zip" file is the pre-generated CAM output and can also be used to order the PCB's through JLC PCB.</p>
+
+<p>ORDER NUMBER LOCATION</p>
+
+<p>JLC PCB will silkscreen their order number in any available location on the PCB at their discretion. It is my preference to keep this number as it serves as a handy serial number reference for the batch of boards I order. You can select the option to remove the order number entirely but that is an extra cost. Therefore, the .BRD file contains a reference on the silkscreen layer for "JLCJLCJLCJLC". This is used by JLC to locate their order number on the board in the area indicated. When ordering, be sure to select the option to "specify loction" under the order number section and make the following reference to this in the order notes:</p>
 
 <pre><code>  "Please locate the JLC Order Number in the area indicated."
 </code></pre>
